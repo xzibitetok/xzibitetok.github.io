@@ -1,25 +1,82 @@
----
-layout: base
----
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ page.title | default: site.title }}</title>
+  <meta name="description" content="{{ site.description }}">
+  <meta name="author" content="Ubong Etok">
+  <link rel="icon" href="{{ '/assets/img/favicon.ico' | relative_url }}" type="image/x-icon">
 
-<div class="intro-header"></div>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-<main class="{% if page.full-width %} container-fluid {% else %} container-md {% endif %}">
-  {% if page.before-content %}
-    <div class="before-content">
-      {% for file in page.before-content %}
-        {% include {{ file }} %}
-      {% endfor %}
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/css/custom-styles.css' | relative_url }}">
+
+  <!-- Open Graph Meta -->
+  <meta property="og:title" content="{{ site.title }}">
+  <meta property="og:description" content="{{ site.description }}">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="{{ site.url }}">
+  <meta property="og:image" content="{{ '/assets/img/githubpics.jpg' | relative_url }}">
+</head>
+<body>
+
+  <!-- HERO SECTION -->
+  <section class="hero" id="home">
+    <canvas id="particles-js"></canvas>
+    <div class="hero-content">
+      <img src="/assets/img/githubpics.jpg" alt="Ubong Etok" class="hero-profile">
+      <div class="hero-right">
+        <h1>Hi, I’m <span>Ubong Etok</span></h1>
+        <p id="typed"></p>
+        <a href="/assets/Ubong_Etok_Resume.pdf" class="resume-btn" download>Download Resume</a>
+      </div>
     </div>
-  {% endif %}
+  </section>
 
-  {{ content }}
+  <!-- MAIN CONTENT -->
+  <main>
+    {{ content }}
+  </main>
 
-  {% if page.after-content %}
-    <div class="after-content">
-      {% for file in page.after-content %}
-        {% include {{ file }} %}
-      {% endfor %}
-    </div>
-  {% endif %}
-</main>
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; {{ site.time | date: '%Y' }} Ubong Etok | Built with ❤️ using Jekyll</p>
+  </footer>
+
+  <!-- Typed.js -->
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+  <script>
+    const typed = new Typed("#typed", {
+      strings: ["Business Intelligence Manager", "Data Scientist", "Data Analyst", "ML Enthusiast"],
+      typeSpeed: 70,
+      backSpeed: 40,
+      loop: true
+    });
+  </script>
+
+  <!-- Particles.js -->
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <script>
+    particlesJS.load('particles-js', '/assets/particles.json', function() {
+      console.log('particles.js loaded successfully');
+    });
+  </script>
+
+  <!-- Smooth Scroll for Navigation -->
+  <script>
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+  </script>
+
+</body>
+</html>
