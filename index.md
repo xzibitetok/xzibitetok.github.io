@@ -78,18 +78,18 @@ full-width: true
       <p>📍 Location: Abuja, Nigeria</p>
       <p>📧 Email: <a href="mailto:ubyetok@gmail.com">ubyetok@gmail.com</a></p>
       <p>📞 Phone / WhatsApp: <a href="https://wa.me/2348161777214" target="_blank">
-        <img src="{{ '/assets/img/whatsapp.svg' | relative_url }}" alt="WhatsApp" class="contact-icon">
+        <img src="{{ '/assets/img/whatsapp.png' | relative_url }}" alt="WhatsApp" class="contact-icon">
         +234 816 177 7214
       </a></p>
       <p>Connect with me:</p>
       <p>
         <a href="https://www.linkedin.com/in/ubong-etok-56b4a0170/" target="_blank">
-          <img src="{{ '/assets/img/linkedin.svg' | relative_url }}" alt="LinkedIn" class="contact-icon"> LinkedIn
+          <img src="{{ '/assets/img/linkedin.png' | relative_url }}" alt="LinkedIn" class="contact-icon"> LinkedIn
         </a>
       </p>
       <p>
         <a href="https://www.facebook.com/uby.etok.5" target="_blank">
-          <img src="{{ '/assets/img/facebook.svg' | relative_url }}" alt="Facebook" class="contact-icon"> Facebook
+          <img src="{{ '/assets/img/facebook.png' | relative_url }}" alt="Facebook" class="contact-icon"> Facebook
         </a>
       </p>
     </div>
