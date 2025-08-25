@@ -29,7 +29,6 @@ navbar-links:
   Resources:
     - Beautiful Jekyll: "https://beautifuljekyll.com"
     - Learn markdown: "https://www.markdowntutorial.com/"
-  Author's home: "https://deanattali.com"
 
 ################
 # --- Logo --- #
@@ -61,10 +60,10 @@ social-network-links:
   github: xzibitetok
   linkedin: ubong-etok-56b4a0170
   facebook: uby.etok.5
-  twitter: null
-  patreon: null
-  youtube: null
-  rss: null
+  # twitter: null
+  # patreon: null
+  # youtube: null
+  # rss: null
   whatsapp: +2348161777214
 
 # If you want your website to generate an RSS feed, provide a description
