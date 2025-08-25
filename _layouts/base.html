@@ -1,12 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>{{ page.title | default: site.title }}</title>
-<link rel="stylesheet" href="{{ '/assets/css/custom-styles.css' | relative_url }}">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ page.title | default: site.title }}</title>
+  <link rel="stylesheet" href="{{ '/assets/css/custom-styles.css' | relative_url }}">
 </head>
 <body>
+
   {{ content }}
+
+  <!-- Typed.js -->
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+  <script>
+    new Typed("#typed", {
+      strings: ["Business Intelligence Manager", "Data Scientist", "Data Analyst", "ML Enthusiast"],
+      typeSpeed: 70,
+      backSpeed: 40,
+      loop: true
+    });
+  </script>
+
+  <!-- Particles.js -->
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <script>
+    particlesJS.load('particles-js', '/assets/particles.json', function() {
+      console.log('particles.js loaded');
+    });
+  </script>
 </body>
 </html>
