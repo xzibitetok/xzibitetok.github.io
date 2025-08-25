@@ -9,19 +9,12 @@ full-width: true
 
 <!-- HERO SECTION -->
 <section class="hero" id="home">
-  <div class="hero-content">
-    <!-- Circular Avatar -->
-    <img src="/assets/img/githubpics.jpg" alt="Ubong Etok" class="hero-avatar">
-
-    <h1>Hi, I'm <span>Ubong Etok</span></h1>
-
-    <!-- Typed.js Roles Card -->
-    <div class="typed-card">
-      <span id="typed"></span>
-    </div>
-
-    <a href="/assets/myresume.pdf" class="resume-btn" download>Download Resume</a>
+  <img src="/assets/img/githubpics.jpg" alt="Ubong Etok" class="hero-avatar">
+  <h1>Hi, I'm <span>Ubong Etok</span></h1>
+  <div class="typed-card">
+    <span id="typed"></span>
   </div>
+  <a href="/assets/myresume.pdf" class="resume-btn" download>Download Resume</a>
 </section>
 
 <!-- NAVIGATION -->
@@ -38,12 +31,31 @@ full-width: true
 <!-- ABOUT SECTION -->
 <section id="about">
   <h2>About Me</h2>
+
   <p>
-    I’m a passionate Data Scientist and Analyst with a strong foundation in
-    data analytics, visualization, and machine learning. Currently pursuing an MSc in
-    Data Science at the University of South Wales, I specialize in turning raw data into
-    actionable insights.
+    I am a data-driven and detail-oriented Business Intelligence Manager with over 4 years of experience in data analysis, reporting, and visualization. I have a strong foundation in tools like Power BI, Excel, MySQL, and Python for creating actionable insights that drive strategic decisions.
   </p>
+
+  <p>
+    Currently, I lead business intelligence efforts at Micnous Service Nigeria Ltd, where I design interactive dashboards, conduct risk assessments, and implement KPI-driven performance monitoring for multi-million naira projects.
+  </p>
+
+  <p>
+    I am passionate about leveraging data to solve real-world problems across health, infrastructure, and development sectors. To strengthen this capability, I am pursuing an MSc in Data Science at the University of South Wales, focusing on machine learning, predictive analytics, and statistical modeling.
+  </p>
+
+  <h3>Core Skills</h3>
+  <ul class="skills-list">
+    <li>Data Analysis & Business Intelligence</li>
+    <li>Power BI & Google Data Studio Dashboards</li>
+    <li>MySQL Database Management</li>
+    <li>Data Cleaning & Transformation (Excel, Python)</li>
+    <li>KPI Development & Risk Assessment</li>
+  </ul>
+
+  <h3>Career Goal</h3>
+  <p>To build advanced data solutions that deliver measurable impact and help organizations make informed decisions.</p>
+
   <div class="skills">
     <span class="skill-badge">Python</span>
     <span class="skill-badge">Power BI</span>
@@ -67,7 +79,7 @@ full-width: true
     </div>
     <div class="service-card">
       <h3>Business Intelligence Consulting</h3>
-      <p>Design KPIs and reporting systems for your business.</p>
+      <p>Design KPIs and reporting systems.</p>
     </div>
   </div>
 </section>
@@ -100,12 +112,14 @@ full-width: true
   <div class="contact-grid">
     <div class="contact-card">
       <h3>Contact Info</h3>
-      <p>📍 Location: Abuja, Nigeria<br>
-         📧 Email: <a href="mailto:ubyetok@gmail.com">ubyetok@gmail.com</a><br>
-         📞 Phone: +234 816 177 7214</p>
-      <p><strong>Connect with me:</strong><br>
-         <a href="https://www.linkedin.com/in/ubong-etok-56b4a0170/" target="_blank">LinkedIn</a> |
-         <a href="https://github.com/xzibitetok" target="_blank">GitHub</a></p>
+      <p>📍 Location: Abuja, Nigeria</p>
+      <p>📧 Email: <a href="mailto:ubyetok@gmail.com">ubyetok@gmail.com</a></p>
+      <p>📞 Phone: +234 816 177 7214</p>
+      <p>Connect with me:</p>
+      <p>
+        <a href="https://www.linkedin.com/in/ubong-etok-56b4a0170/" target="_blank">LinkedIn</a> |
+        <a href="https://github.com/xzibitetok" target="_blank">GitHub</a>
+      </p>
     </div>
     <div class="contact-card">
       <h3>Send a Message</h3>
