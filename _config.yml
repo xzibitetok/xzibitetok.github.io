@@ -1,130 +1,26 @@
-###########################################################
-### Beautiful Jekyll Configuration for Ubong Etok
-###########################################################
+# Site settings
+title: "Ubong Etok Portfolio"
+email: "ubyetok@gmail.com"
+description: "Business Intelligence Manager & Data Scientist Portfolio"
+baseurl: "" # leave blank for GitHub Pages
+url: "https://xzibitetok.github.io"
 
-############################
-# --- Required options --- #
-############################
+# Author info
+author:
+  name: "Ubong Etok"
+  email: "ubyetok@gmail.com"
 
-# Name of website
-title: "Ubong Etok | Data Scientist & Analyst"
+# Theme settings (if using Beautiful Jekyll)
+theme: "beautiful-jekyll"
 
-# Your name to show in the footer
-author: "Ubong Etok"
-
-###############################################
-# --- Navigation Links --- #
-###############################################
-navbar-links:
-  Home: "#home"
-  About: "#about"
-  Services: "#services"
-  Projects: "#projects"
-  Contact: "#contact"
-
-################
-# --- Logo / Avatar --- #
-################
-avatar: "/assets/img/githubpics.jpg"
-round-avatar: true
-favicon: "/assets/img/favicon.ico"
-
-#####################################
-# --- Footer social media links --- #
-#####################################
+# Social network links
 social-network-links:
-  email: ubyetok@gmail.com
-  github: xzibitetok
-  linkedin: ubong-etok-56b4a0170
-  facebook: uby.etok.5
   whatsapp: "+2348161777214"
+  linkedin: "ubong-etok-56b4a0170"
+  facebook: "uby.etok.5"
+  email: "ubyetok@gmail.com"
 
-rss-description: "Ubong Etok's personal portfolio showcasing Data Science and BI projects."
-
-###########################
-# --- General options --- #
-###########################
-share-links-active:
-  twitter: true
-  facebook: true
-  linkedin: true
-  vk: false
-  reddit: false
-
-url-pretty: "xzibitetok.github.io"
-
-title-on-all-pages: true
-excerpt_length: 50
-feed_show_excerpt: true
-feed_show_tags: true
-post_search: true
-edit_page_button: true
-navbar-var-length: false
-
-######################################
-# --- Colours / Styles --- #
-######################################
-page-col: "#F9FAFB"
-text-col: "#1F2937"
-link-col: "#2563EB"
-hover-col: "#1E40AF"
-navbar-col: "#FFFFFF"
-navbar-text-col: "#374151"
-navbar-border-col: "#E5E7EB"
-footer-col: "#111827"
-footer-text-col: "#D1D5DB"
-footer-link-col: "#93C5FD"
-footer-hover-col: "#60A5FA"
-
-# Include custom CSS
-site-css:
-  - "/assets/css/custom-styles.css"
-
-#################################
-# --- Web Analytics (Optional) --- #
-#################################
-gtag: "G-XXXXXXXXXX"
-
-################
-# --- Misc --- #
-################
-date_format: "%B %-d, %Y"
-timezone: "Africa/Lagos"
+# Build settings
 markdown: kramdown
-highlighter: rouge
-permalink: /:year-:month-:day-:title/
-paginate: 5
-
-kramdown:
-  input: GFM
-
-# Default layout for posts and pages
-defaults:
-  -
-    scope:
-      path: ""
-      type: "posts"
-    values:
-      layout: "post"
-      comments: true
-      social-share: true
-  -
-    scope:
-      path: ""
-    values:
-      layout: "page"
-
-# Exclude these files from production
-exclude:
-  - CHANGELOG.md
-  - CNAME
-  - Gemfile
-  - Gemfile.lock
-  - LICENSE
-  - README.md
-  - screenshot.png
-  - docs/
-
 plugins:
-  - jekyll-paginate
-  - jekyll-sitemap
+  - jekyll-feed
