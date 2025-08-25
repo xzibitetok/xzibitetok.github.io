@@ -10,8 +10,16 @@ full-width: true
 <!-- HERO SECTION -->
 <section class="hero" id="home">
   <div class="hero-content">
+    <!-- Circular Avatar -->
+    <img src="/assets/img/githubpics.jpg" alt="Ubong Etok" class="hero-avatar">
+
     <h1>Hi, I'm <span>Ubong Etok</span></h1>
-    <p><span id="typed"></span></p>
+
+    <!-- Typed.js Roles Card -->
+    <div class="typed-card">
+      <span id="typed"></span>
+    </div>
+
     <a href="/assets/myresume.pdf" class="resume-btn" download>Download Resume</a>
   </div>
 </section>
