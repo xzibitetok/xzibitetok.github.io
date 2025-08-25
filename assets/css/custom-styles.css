@@ -1,21 +1,8 @@
-/* ================================
-   GENERAL STYLES
-=================================== */
-html {
-  scroll-behavior: smooth;
-}
+/* General Styles */
+html { scroll-behavior: smooth; }
+body { font-family: "Poppins", Arial, sans-serif; margin: 0; padding: 0; background: #f9f9f9; color: #333; }
 
-body {
-  font-family: "Poppins", Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  background: #f9f9f9;
-  color: #333;
-}
-
-/* ================================
-   HERO SECTION
-=================================== */
+/* HERO SECTION */
 .hero {
   position: relative;
   height: 100vh;
@@ -26,7 +13,6 @@ body {
   color: #fff;
   overflow: hidden;
 }
-
 .hero-content {
   display: flex;
   align-items: center;
@@ -35,7 +21,6 @@ body {
   width: 90%;
   gap: 40px;
 }
-
 .hero-profile {
   width: 180px;
   height: 180px;
@@ -44,203 +29,46 @@ body {
   object-fit: cover;
   box-shadow: 0 10px 25px rgba(0,0,0,0.2);
 }
-
-.hero-right h1 {
-  font-size: 3rem;
-  margin: 0;
-}
-
-.hero-right h1 span {
-  color: #4CAF50;
-}
-
-.hero-right p {
-  font-size: 1.5rem;
-  margin: 10px 0 20px;
-}
-
-.resume-btn {
-  padding: 12px 25px;
-  background: #4CAF50;
-  color: #fff;
-  font-weight: bold;
-  text-decoration: none;
-  border-radius: 8px;
-  transition: background 0.3s ease;
-}
-
-.resume-btn:hover {
-  background: #388E3C;
-}
+.hero-right h1 { font-size: 3rem; margin: 0; }
+.hero-right h1 span { color: #4CAF50; }
+.hero-right p { font-size: 1.5rem; margin: 10px 0 20px; }
+.resume-btn { padding: 12px 25px; background: #4CAF50; color: #fff; font-weight: bold; text-decoration: none; border-radius: 8px; transition: 0.3s ease; }
+.resume-btn:hover { background: #388E3C; }
 
 /* Particles background */
-#particles-js {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  z-index: 0;
-}
+#particles-js { position: absolute; width: 100%; height: 100%; top: 0; left: 0; z-index: 0; }
 
-/* ================================
-   SECTIONS
-=================================== */
-section {
-  padding: 80px 20px;
-  max-width: 1100px;
-  margin: auto;
-}
+/* Sections */
+section { padding: 80px 20px; max-width: 1100px; margin: auto; }
+section h2 { font-size: 2.5rem; text-align: center; margin-bottom: 50px; color: #2c3e50; position: relative; }
+section h2::after { content: ''; display: block; width: 60px; height: 4px; background: #4CAF50; margin: 10px auto; border-radius: 2px; }
 
-section h2 {
-  font-size: 2.5rem;
-  text-align: center;
-  margin-bottom: 50px;
-  color: #2c3e50;
-  position: relative;
-}
+/* Skills */
+.skills { display: flex; flex-wrap: wrap; gap: 15px; justify-content: center; margin-top: 20px; }
+.skill-badge { background: #4CAF50; color: #fff; padding: 8px 15px; border-radius: 20px; font-size: 0.9rem; font-weight: 600; }
 
-section h2::after {
-  content: '';
-  display: block;
-  width: 60px;
-  height: 4px;
-  background: #4CAF50;
-  margin: 10px auto;
-  border-radius: 2px;
-}
+/* Projects / Services */
+.projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
+.project-card { background: #fff; border-radius: 12px; box-shadow: 0 6px 15px rgba(0,0,0,0.08); padding: 25px; text-align: center; transition: transform 0.3s ease, box-shadow 0.3s ease; }
+.project-card:hover { transform: translateY(-10px); box-shadow: 0 10px 25px rgba(0,0,0,0.15); }
+.project-card h3 { color: #2c3e50; }
+.project-card p { font-size: 1rem; color: #555; margin: 10px 0; }
+.project-card a { display: inline-block; margin-top: 10px; color: #4CAF50; font-weight: bold; text-decoration: none; transition: color 0.3s ease; }
+.project-card a:hover { color: #2c3e50; }
 
-/* ================================
-   ABOUT / SKILLS
-=================================== */
-.skills {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 15px;
-  justify-content: center;
-  margin-top: 20px;
-}
+/* Contact */
+.contact-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; justify-items: center; }
+.contact-card { background: #fff; padding: 20px; border-radius: 12px; box-shadow: 0 6px 15px rgba(0,0,0,0.08); text-align: center; }
+.contact-card img { width: 40px; height: 40px; margin-bottom: 10px; }
+.contact-card a { color: #4CAF50; text-decoration: none; font-weight: 600; }
+.contact-card a:hover { text-decoration: underline; }
 
-.skill-badge {
-  background: #4CAF50;
-  color: #fff;
-  padding: 8px 15px;
-  border-radius: 20px;
-  font-size: 0.9rem;
-  font-weight: 600;
-}
+/* Footer */
+footer { text-align: center; padding: 25px; background: #2c3e50; color: #fff; font-size: 0.95rem; }
 
-/* ================================
-   PROJECTS / SERVICES
-=================================== */
-.projects-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 25px;
-}
-
-.project-card {
-  background: #fff;
-  border-radius: 12px;
-  box-shadow: 0 6px 15px rgba(0,0,0,0.08);
-  padding: 25px;
-  text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.project-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-}
-
-.project-card h3 {
-  color: #2c3e50;
-}
-
-.project-card p {
-  font-size: 1rem;
-  color: #555;
-  margin: 10px 0;
-}
-
-.project-card a {
-  display: inline-block;
-  margin-top: 10px;
-  color: #4CAF50;
-  font-weight: bold;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-.project-card a:hover {
-  color: #2c3e50;
-}
-
-/* ================================
-   CONTACT / GET IN TOUCH
-=================================== */
-.contact-cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 20px;
-  justify-items: center;
-}
-
-.contact-card {
-  background: #fff;
-  padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 6px 15px rgba(0,0,0,0.08);
-  text-align: center;
-}
-
-.contact-card img {
-  width: 40px;
-  height: 40px;
-  margin-bottom: 10px;
-}
-
-.contact-card p {
-  margin: 5px 0;
-  font-size: 1rem;
-}
-
-.contact-card a {
-  color: #4CAF50;
-  text-decoration: none;
-  font-weight: 600;
-}
-
-.contact-card a:hover {
-  text-decoration: underline;
-}
-
-/* ================================
-   FOOTER
-=================================== */
-footer {
-  text-align: center;
-  padding: 25px;
-  background: #2c3e50;
-  color: #fff;
-  font-size: 0.95rem;
-}
-
-/* ================================
-   RESPONSIVE
-=================================== */
+/* Responsive */
 @media screen and (max-width: 768px) {
-  .hero-content {
-    flex-direction: column;
-    text-align: center;
-    gap: 25px;
-  }
-
-  .hero-right h1 {
-    font-size: 2.5rem;
-  }
-
-  .hero-right p {
-    font-size: 1.2rem;
-  }
+  .hero-content { flex-direction: column; text-align: center; gap: 25px; }
+  .hero-right h1 { font-size: 2.5rem; }
+  .hero-right p { font-size: 1.2rem; }
 }
