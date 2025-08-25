@@ -50,8 +50,8 @@ full-width: true
   <div class="projects-grid">
     <div class="project-card">
       <h3>Data Visualization Dashboard</h3>
-      <p>Interactive Power BI dashboard for analyzing financial data trends.</p>
-      <a href="https://github.com/xzibitetok/project1" target="_blank">View on GitHub</a>
+      <p>Full Excel-based analysis with pivots and dashboards.</p>
+      <a href="https://github.com/xzibitetok/Xzibit-Sales-Analysis" target="_blank">View on GitHub</a>
     </div>
     <div class="project-card">
       <h3>Machine Learning Model</h3>
