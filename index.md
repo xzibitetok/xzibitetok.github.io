@@ -10,8 +10,9 @@ full-width: true
 <!-- HERO SECTION -->
 <section class="hero" id="home">
   <div class="hero-content">
-    <img src="/assets/img/githubpics.jpg" class="hero-avatar" alt="Ubong Etok">
+    <img src="/assets/img/githubpics.jpg" alt="Ubong Etok" class="profile-img">
     <h1>Hi, I'm <span id="typed"></span></h1>
+    <p>Data Scientist | Data Analyst | ML Enthusiast | BI Specialist</p>
     <a href="/assets/myresume.pdf" class="resume-btn" download>Download Resume</a>
   </div>
 </section>
@@ -21,8 +22,8 @@ full-width: true
   <ul>
     <li><a href="#home">Home</a></li>
     <li><a href="#about">About</a></li>
-    <li><a href="#services">Services</a></li>
     <li><a href="#projects">Projects</a></li>
+    <li><a href="#services">Services</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
 </nav>
@@ -34,40 +35,15 @@ full-width: true
     I am a data-driven and detail-oriented Business Intelligence Manager with over 4 years of experience in data analysis, reporting, and visualization. I have a strong foundation in tools like Power BI, Excel, MySQL, and Python for creating actionable insights that drive strategic decisions.
   </p>
   <p>
-    Currently, I lead business intelligence efforts at Micnous Service Nigeria Ltd, where I design interactive dashboards, conduct risk assessments, and implement KPI-driven performance monitoring for multi-million naira projects.
+    Currently, I lead business intelligence efforts at Micnous Service Nigeria Ltd, designing interactive dashboards, conducting risk assessments, and implementing KPI-driven performance monitoring for multi-million naira projects. I am pursuing an MSc in Data Science at the University of South Wales.
   </p>
-  <p>
-    I am passionate about leveraging data to solve real-world problems across health, infrastructure, and development sectors. To strengthen this capability, I am pursuing an MSc in Data Science at the University of South Wales, focusing on machine learning, predictive analytics, and statistical modeling.
-  </p>
-
-  <h3>Core Skills</h3>
   <div class="skills">
-    <span class="skill-badge">Data Analysis & BI</span>
-    <span class="skill-badge">Power BI & Dashboards</span>
-    <span class="skill-badge">MySQL Database</span>
-    <span class="skill-badge">Excel & Python</span>
-    <span class="skill-badge">KPI & Risk Assessment</span>
-  </div>
-
-  <p><strong>Career Goal:</strong> To build advanced data solutions that deliver measurable impact and help organizations make informed decisions.</p>
-</section>
-
-<!-- SERVICES SECTION -->
-<section id="services">
-  <h2>💼 Services</h2>
-  <div class="projects-grid">
-    <div class="project-card">
-      <h3>Data Visualization</h3>
-      <p>Build interactive dashboards with Power BI & Tableau.</p>
-    </div>
-    <div class="project-card">
-      <h3>Data Cleaning & Analysis</h3>
-      <p>Transform raw data into actionable insights.</p>
-    </div>
-    <div class="project-card">
-      <h3>Business Intelligence Consulting</h3>
-      <p>Design KPIs and reporting systems for strategic decisions.</p>
-    </div>
+    <span class="skill-badge">Data Analysis</span>
+    <span class="skill-badge">Power BI</span>
+    <span class="skill-badge">Excel</span>
+    <span class="skill-badge">SQL</span>
+    <span class="skill-badge">Python</span>
+    <span class="skill-badge">KPI Development</span>
   </div>
 </section>
 
@@ -93,17 +69,35 @@ full-width: true
   </div>
 </section>
 
+<!-- SERVICES SECTION -->
+<section id="services">
+  <h2>💼 Services</h2>
+  <div class="projects-grid">
+    <div class="project-card">
+      <h3>Data Visualization</h3>
+      <p>Build interactive dashboards with Power BI & Tableau</p>
+    </div>
+    <div class="project-card">
+      <h3>Data Cleaning & Analysis</h3>
+      <p>Transform raw data into actionable insights</p>
+    </div>
+    <div class="project-card">
+      <h3>Business Intelligence Consulting</h3>
+      <p>Design KPIs and reporting systems</p>
+    </div>
+  </div>
+</section>
+
 <!-- CONTACT SECTION -->
 <section id="contact">
   <h2>📫 Get in Touch</h2>
   <div class="contact-cards">
     <div class="contact-card">
-      <p><img src="/assets/img/whatsapp.png" class="contact-icon" alt="WhatsApp"> +234 816 177 7214</p>
-      <p><img src="/assets/img/facebook.png" class="contact-icon" alt="Facebook"> <a href="https://www.facebook.com/uby.etok.5" target="_blank">Facebook</a></p>
-      <p><img src="/assets/img/linkedin.png" class="contact-icon" alt="LinkedIn"> <a href="https://www.linkedin.com/in/ubong-etok-56b4a0170/" target="_blank">LinkedIn</a></p>
-      <p>📧 <a href="mailto:ubyetok@gmail.com">ubyetok@gmail.com</a></p>
+      <p><img src="/assets/img/whatsapp.png" class="contact-icon"> +234 816 177 7214</p>
+      <p><img src="/assets/img/facebook.png" class="contact-icon"> <a href="https://www.facebook.com/uby.etok.5" target="_blank">Facebook</a></p>
+      <p><img src="/assets/img/linkedin.png" class="contact-icon"> <a href="https://www.linkedin.com/in/ubong-etok-56b4a0170/" target="_blank">LinkedIn</a></p>
+      <p><img src="/assets/img/email.png" class="contact-icon"> <a href="mailto:ubyetok@gmail.com">ubyetok@gmail.com</a></p>
     </div>
-
     <div class="contact-card">
       <form action="https://formspree.io/f/xwpnkevb" method="POST">
         <input type="text" name="name" placeholder="Your Name" required>
@@ -124,7 +118,7 @@ full-width: true
 <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
 <script>
   new Typed("#typed", {
-    strings: ["Ubong Etok", "Data Scientist", "BI Consultant", "ML Enthusiast"],
+    strings: ["Ubong Etok", "Data Scientist", "BI Specialist", "ML Enthusiast"],
     typeSpeed: 70,
     backSpeed: 40,
     loop: true
@@ -134,7 +128,7 @@ full-width: true
 <!-- PARTICLES.JS -->
 <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 <script>
-  particlesJS.load('particles-js', 'assets/particles.json', function() {
+  particlesJS.load('particles-js', '/assets/particles.json', function() {
     console.log('particles.js loaded');
   });
 </script>
