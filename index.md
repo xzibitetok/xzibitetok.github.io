@@ -21,15 +21,15 @@ Experienced Business Intelligence Manager with a strong background in data analy
 ## 📊 Core Statistics
 <div style="display:flex; justify-content:space-around; text-align:center; margin: 20px 0;">
   <div>
-    <h2 style="color:#4CAF50;">4+</h2>
+    <h2 style="color:#4CAF50;">3+</h2>
     <p>Years Experience</p>
   </div>
   <div>
-    <h2 style="color:#4CAF50;">6+</h2>
+    <h2 style="color:#4CAF50;">3+</h2>
     <p>Certifications</p>
   </div>
   <div>
-    <h2 style="color:#4CAF50;">10+</h2>
+    <h2 style="color:#4CAF50;">8+</h2>
     <p>Projects Delivered</p>
   </div>
 </div>
