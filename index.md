@@ -28,7 +28,7 @@ full-width: true
     </div>
   </div>
 
-  <!-- Skills with Animated Counters -->
+  <!-- Skills with Animated Bars -->
   <div class="skills">
     <div class="skill">
       <span class="skill-name">Python</span>
