@@ -13,7 +13,9 @@ body {
   color: #333;
 }
 
-/* Navigation Bar */
+/* ================================
+   NAVIGATION BAR
+=================================== */
 nav {
   position: fixed;
   top: 0;
@@ -153,6 +155,40 @@ section h2::after {
 }
 
 /* ================================
+   SERVICES SECTION
+=================================== */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+  justify-items: center;
+}
+
+.service-card {
+  background: #fff;
+  padding: 25px 20px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.service-card h3 {
+  color: #2c3e50;
+  margin-bottom: 10px;
+}
+
+.service-card p {
+  color: #555;
+  font-size: 1rem;
+}
+
+/* ================================
    PROJECTS SECTION
 =================================== */
 .projects-grid {
@@ -199,26 +235,68 @@ section h2::after {
 }
 
 /* ================================
-   CONTACT FORM
+   CONTACT / GET IN TOUCH SECTION
 =================================== */
-#contact form {
-  max-width: 600px;
-  margin: auto;
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+  justify-items: center;
 }
 
-#contact input, #contact textarea {
+.contact-card {
+  background: #fff;
+  padding: 25px 20px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+.contact-card h3 {
+  color: #2c3e50;
+  margin-bottom: 15px;
+}
+
+.contact-card p, .contact-card a {
+  color: #555;
+  font-size: 1rem;
+  line-height: 1.5;
+  text-decoration: none;
+}
+
+.contact-card a {
+  color: #4CAF50;
+  font-weight: bold;
+}
+
+.contact-card a:hover {
+  color: #2c3e50;
+}
+
+.contact-card form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 15px;
+}
+
+.contact-card input,
+.contact-card textarea {
   padding: 12px;
   font-size: 1rem;
   border: 1px solid #ccc;
   border-radius: 8px;
 }
 
-#contact button {
+.contact-card button {
   background: #4CAF50;
-  color: white;
+  color: #fff;
   font-size: 1rem;
   padding: 12px;
   border: none;
@@ -228,7 +306,7 @@ section h2::after {
   transition: background 0.3s ease;
 }
 
-#contact button:hover {
+.contact-card button:hover {
   background: #388E3C;
 }
 
@@ -250,11 +328,9 @@ footer {
   .hero h1 {
     font-size: 2.5rem;
   }
-
   .hero p {
     font-size: 1.2rem;
   }
-
   nav ul {
     gap: 15px;
   }
