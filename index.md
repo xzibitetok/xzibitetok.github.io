@@ -7,7 +7,7 @@ full-width: true
 <!-- HERO SECTION -->
 <section class="hero">
   <div class="hero-content">
-    <img src="/assets/img/profile.jpg" alt="Ubong Etok" class="hero-profile">
+    <img src="/assets/img/githubpics.jpg" alt="Ubong Etok" class="hero-profile">
     <div class="hero-right">
       <h1>Hi, I’m <span>Ubong Etok</span></h1>
       <p id="typed"></p>
