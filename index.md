@@ -120,26 +120,7 @@ full-width: true
 
 <!-- CONTACT SECTION -->
 <section id="contact">
-  <h2>📫 Get in Touch</h2>
-  <div class="contact-grid">
-    <div class="contact-card">
-      <img src="/assets/img/whatsapp.png" alt="Whatsapp">
-      <a href="https://wa.me/2348161777214" target="_blank">+234 816 177 7214</a>
-    </div>
-    <div class="contact-card">
-      <img src="/assets/img/linkedin.png" alt="LinkedIn">
-      <a href="https://www.linkedin.com/in/ubong-etok-56b4a0170/" target="_blank">LinkedIn</a>
-    </div>
-    <div class="contact-card">
-      <img src="/assets/img/facebook.png" alt="Facebook">
-      <a href="https://www.facebook.com/uby.etok.5" target="_blank">Facebook</a>
-    </div>
-    <div class="contact-card">
-      <img src="/assets/img/email.png" alt="Email">
-      <a href="mailto:ubyetok@gmail.com">ubyetok@gmail.com</a>
-    </div>
-  </div>
-
+  
   <form action="https://formspree.io/f/xwpnkevb" method="POST">
     <input type="text" name="name" placeholder="Your Name" required>
     <input type="email" name="_replyto" placeholder="Your Email" required>
