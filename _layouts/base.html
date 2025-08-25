@@ -1,39 +1,198 @@
----
-common-css:
-  - "/assets/css/bootstrap-social.css"
-  - "/assets/css/beautifuljekyll.css"
-common-ext-css:
-  - href: "https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-    sri: "sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
-  - "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-  - "https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic"
-  - "https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800"
-common-ext-js:
-  - href: "https://code.jquery.com/jquery-3.5.1.slim.min.js"
-    sri: "sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs="
-  - href: "https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-    sri: "sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-  - href: "https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-    sri: "sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-common-js:
-  - "/assets/js/beautifuljekyll.js"
----
-
 <!DOCTYPE html>
-<html lang="{{ page.language | default: site.language | default: 'en' }}">
-<!-- Beautiful Jekyll 6.0.1 | Copyright Dean Attali 2023 -->
-{% include head.html %}
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ page.title | default: site.title }}</title>
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/css/custom-styles.css' | relative_url }}">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, sans-serif;
+      scroll-behavior: smooth;
+    }
 
+    /* Navigation */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.9);
+      display: flex;
+      justify-content: center;
+      padding: 15px;
+      border-bottom: 1px solid #eee;
+      z-index: 1000;
+    }
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+    }
+    nav a:hover {
+      color: #4CAF50;
+    }
+
+    /* Hero Section */
+    .hero {
+      height: 100vh;
+      background: linear-gradient(120deg, #0f2027, #203a43, #2c5364);
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero h1 {
+      font-size: 3rem;
+      margin: 0;
+    }
+    .hero p {
+      font-size: 1.3rem;
+      margin-top: 15px;
+    }
+    canvas#particles-js {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+    }
+    .hero-content {
+      z-index: 2;
+      position: relative;
+    }
+
+    /* Sections */
+    section {
+      padding: 80px 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    /* Projects Grid */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    .project-card {
+      background: white;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    .project-card h3 {
+      margin-top: 0;
+    }
+    .project-card a {
+      text-decoration: none;
+      color: #4CAF50;
+      font-weight: bold;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #f8f9fa;
+      color: #777;
+    }
+  </style>
+</head>
 <body>
-  {% include gtm_body.html %}
+  <!-- Navigation -->
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
 
-  {% include nav.html %}
+  <!-- Hero Section -->
+  <header class="hero" id="home">
+    <canvas id="particles-js"></canvas>
+    <div class="hero-content">
+      <h1 id="animated-text"></h1>
+      <p>Data Analyst | Excel | Power BI | SQL | Python</p>
+      <a href="#projects" style="margin-top:20px; display:inline-block; padding:12px 20px; background:#4CAF50; color:white; border-radius:8px; text-decoration:none;">View My Work</a>
+    </div>
+  </header>
 
-  {{ content }}
+  <!-- About Section -->
+  <section id="about">
+    <h2>About Me</h2>
+    <p>Hello! I'm Xzibit, an aspiring Data Scientist with experience in Excel, Power BI, SQL, and Python. I love turning data into actionable insights and creating meaningful dashboards.</p>
+    <div style="margin-top:20px;">
+      <span style="background:#4CAF50; color:white; padding:8px 12px; border-radius:6px; margin:5px;">Excel</span>
+      <span style="background:#2196F3; color:white; padding:8px 12px; border-radius:6px; margin:5px;">Power BI</span>
+      <span style="background:#FF9800; color:white; padding:8px 12px; border-radius:6px; margin:5px;">SQL</span>
+      <span style="background:#9C27B0; color:white; padding:8px 12px; border-radius:6px; margin:5px;">Python</span>
+    </div>
+  </section>
 
-  {% include footer.html %}
+  <!-- Projects Section -->
+  <section id="projects">
+    <h2>Featured Projects</h2>
+    <div class="projects-grid">
+      <div class="project-card">
+        <h3>Xzibit Sales Dashboard</h3>
+        <p>Full Excel-based analysis with pivots and dashboards.</p>
+        <a href="https://github.com/xzibitetok/Xzibit-Sales-Analysis" target="_blank">View Project →</a>
+      </div>
+    </div>
+  </section>
 
-  {% include footer-scripts.html %}
+  <!-- Contact Section -->
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <form action="https://formspree.io/f/your-form-id" method="POST" style="max-width:500px; margin:auto;">
+      <input type="text" name="name" placeholder="Your Name" required style="width:100%; padding:10px; margin:10px 0;">
+      <input type="email" name="email" placeholder="Your Email" required style="width:100%; padding:10px; margin:10px 0;">
+      <textarea name="message" placeholder="Your Message" required style="width:100%; padding:10px; margin:10px 0;"></textarea>
+      <button type="submit" style="padding:10px 20px; background:#4CAF50; color:white; border:none; border-radius:8px;">Send Message</button>
+    </form>
+  </section>
 
+  <footer>
+    <p>&copy; {{ site.time | date: '%Y' }} Xzibit. Built with Beautiful Jekyll.</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    // Typing Effect
+    const text = "Hi, I'm Xzibit";
+    const animatedText = document.getElementById('animated-text');
+    let i = 0;
+    function typeEffect() {
+      if (i < text.length) {
+        animatedText.textContent += text.charAt(i);
+        i++;
+        setTimeout(typeEffect, 150);
+      }
+    }
+    typeEffect();
+  </script>
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <script>
+    particlesJS("particles-js", {
+      "particles": {
+        "number": {"value": 80, "density": {"enable": true, "value_area": 800}},
+        "color": {"value": "#ffffff"},
+        "shape": {"type": "circle"},
+        "opacity": {"value": 0.5},
+        "size": {"value": 3},
+        "line_linked": {"enable": true, "color": "#ffffff"},
+        "move": {"enable": true, "speed": 2}
+      }
+    });
+  </script>
 </body>
 </html>
