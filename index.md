@@ -9,12 +9,14 @@ full-width: true
 
 <!-- HERO SECTION -->
 <section class="hero" id="home">
-  <img src="/assets/img/githubpics.jpg" alt="Ubong Etok" class="hero-avatar">
-  <h1>Hi, I'm <span>Ubong Etok</span></h1>
-  <div class="typed-card">
-    <span id="typed"></span>
+  <div class="hero-avatar">
+    <img src="/assets/img/githubpics.jpg" alt="Ubong Etok" />
   </div>
-  <a href="/assets/myresume.pdf" class="resume-btn" download>Download Resume</a>
+  <div class="hero-content">
+    <h1>Hi, I'm <span>Ubong Etok</span></h1>
+    <p><span id="typed"></span></p>
+    <a href="/assets/myresume.pdf" class="resume-btn" download>Download Resume</a>
+  </div>
 </section>
 
 <!-- NAVIGATION -->
@@ -31,55 +33,45 @@ full-width: true
 <!-- ABOUT SECTION -->
 <section id="about">
   <h2>About Me</h2>
-
   <p>
     I am a data-driven and detail-oriented Business Intelligence Manager with over 4 years of experience in data analysis, reporting, and visualization. I have a strong foundation in tools like Power BI, Excel, MySQL, and Python for creating actionable insights that drive strategic decisions.
   </p>
-
   <p>
     Currently, I lead business intelligence efforts at Micnous Service Nigeria Ltd, where I design interactive dashboards, conduct risk assessments, and implement KPI-driven performance monitoring for multi-million naira projects.
   </p>
-
   <p>
     I am passionate about leveraging data to solve real-world problems across health, infrastructure, and development sectors. To strengthen this capability, I am pursuing an MSc in Data Science at the University of South Wales, focusing on machine learning, predictive analytics, and statistical modeling.
   </p>
 
   <h3>Core Skills</h3>
-  <ul class="skills-list">
-    <li>Data Analysis & Business Intelligence</li>
-    <li>Power BI & Google Data Studio Dashboards</li>
-    <li>MySQL Database Management</li>
-    <li>Data Cleaning & Transformation (Excel, Python)</li>
-    <li>KPI Development & Risk Assessment</li>
-  </ul>
-
-  <h3>Career Goal</h3>
-  <p>To build advanced data solutions that deliver measurable impact and help organizations make informed decisions.</p>
-
   <div class="skills">
-    <span class="skill-badge">Python</span>
+    <span class="skill-badge">Data Analysis & BI</span>
     <span class="skill-badge">Power BI</span>
-    <span class="skill-badge">SQL</span>
-    <span class="skill-badge">Machine Learning</span>
-    <span class="skill-badge">GitHub</span>
+    <span class="skill-badge">Google Data Studio</span>
+    <span class="skill-badge">MySQL</span>
+    <span class="skill-badge">Python</span>
+    <span class="skill-badge">KPI Development</span>
+    <span class="skill-badge">Risk Assessment</span>
   </div>
+
+  <p><strong>Career Goal:</strong> To build advanced data solutions that deliver measurable impact and help organizations make informed decisions.</p>
 </section>
 
 <!-- SERVICES SECTION -->
 <section id="services">
   <h2>💼 Services</h2>
-  <div class="services-grid">
-    <div class="service-card">
+  <div class="projects-grid">
+    <div class="project-card">
       <h3>Data Visualization</h3>
       <p>Build interactive dashboards with Power BI & Tableau.</p>
     </div>
-    <div class="service-card">
+    <div class="project-card">
       <h3>Data Cleaning & Analysis</h3>
       <p>Transform raw data into actionable insights.</p>
     </div>
-    <div class="service-card">
+    <div class="project-card">
       <h3>Business Intelligence Consulting</h3>
-      <p>Design KPIs and reporting systems.</p>
+      <p>Design KPIs and reporting systems for strategic decisions.</p>
     </div>
   </div>
 </section>
@@ -106,22 +98,21 @@ full-width: true
   </div>
 </section>
 
-<!-- CONTACT / GET IN TOUCH SECTION -->
+<!-- CONTACT SECTION -->
 <section id="contact">
   <h2>📫 Get in Touch</h2>
-  <div class="contact-grid">
-    <div class="contact-card">
+  <div class="projects-grid">
+    <div class="project-card">
       <h3>Contact Info</h3>
       <p>📍 Location: Abuja, Nigeria</p>
       <p>📧 Email: <a href="mailto:ubyetok@gmail.com">ubyetok@gmail.com</a></p>
       <p>📞 Phone: +234 816 177 7214</p>
-      <p>Connect with me:</p>
-      <p>
-        <a href="https://www.linkedin.com/in/ubong-etok-56b4a0170/" target="_blank">LinkedIn</a> |
+      <p>Connect with me: <br>
+        <a href="https://www.linkedin.com/in/ubong-etok-56b4a0170/" target="_blank">LinkedIn</a> | 
         <a href="https://github.com/xzibitetok" target="_blank">GitHub</a>
       </p>
     </div>
-    <div class="contact-card">
+    <div class="project-card">
       <h3>Send a Message</h3>
       <form action="https://formspree.io/f/xwpnkevb" method="POST">
         <input type="text" name="name" placeholder="Your Name" required>
@@ -142,8 +133,13 @@ full-width: true
 <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
 <script>
   new Typed("#typed", {
-    strings: ["Data Scientist", "Data Analyst", "ML Enthusiast", "Tech Innovator"],
-    typeSpeed: 70,
+    strings: [
+      "Data Scientist",
+      "Business Intelligence Analyst",
+      "ML Enthusiast",
+      "Tech Innovator"
+    ],
+    typeSpeed: 60,
     backSpeed: 40,
     loop: true
   });
@@ -152,7 +148,7 @@ full-width: true
 <!-- PARTICLES.JS -->
 <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 <script>
-  particlesJS.load('particles-js', 'assets/particles.json', function() {
+  particlesJS.load('particles-js', '/assets/particles.json', function() {
     console.log('particles.js loaded');
   });
 </script>
