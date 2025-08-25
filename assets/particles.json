@@ -5,12 +5,7 @@
     "shape": { "type": "circle" },
     "opacity": { "value": 0.5 },
     "size": { "value": 3 },
-    "line_linked": { "enable": true, "color": "#ffffff", "opacity": 0.4, "width": 1 },
-    "move": { "enable": true, "speed": 2, "direction": "none", "random": false, "straight": false }
-  },
-  "interactivity": {
-    "detect_on": "canvas",
-    "events": { "onhover": { "enable": true, "mode": "repulse" } }
-  },
-  "retina_detect": true
+    "line_linked": { "enable": true, "color": "#ffffff" },
+    "move": { "enable": true, "speed": 2 }
+  }
 }
