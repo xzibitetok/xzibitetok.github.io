@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,38 +17,6 @@
   <link rel="stylesheet" href="{{ '/assets/css/custom-styles.css' | relative_url }}">
 </head>
 <body>
-
-  <!-- SIDE NAVIGATION TOGGLE BUTTON -->
-  <div id="nav-toggle" class="nav-toggle">
-    ☰
-  </div>
-
-  <!-- SIDE NAVIGATION PANEL -->
-  <div id="side-nav" class="side-nav">
-    <div class="side-nav-header">
-      <img src="/assets/img/githubpics.jpg" alt="Ubong Etok" class="side-profile">
-      <h3>Ubong Etok</h3>
-    </div>
-    
-    <nav class="side-nav-links">
-      <a href="#home">Home</a>
-      <a href="#about">About</a>
-      <a href="#resume-preview">Resume</a>
-      <a href="#projects">Portfolio</a>
-      <a href="#services">Services</a>
-      <a href="#contact">Contact</a>
-    </nav>
-    
-    <div class="side-socials">
-      <a href="https://wa.me/2348161777214" target="_blank"><img src="/assets/img/whatsapp.png" alt="Whatsapp"></a>
-      <a href="https://www.linkedin.com/in/ubong-etok-56b4a0170/" target="_blank"><img src="/assets/img/linkedin.png" alt="LinkedIn"></a>
-      <a href="https://www.facebook.com/uby.etok.5" target="_blank"><img src="/assets/img/facebook.png" alt="Facebook"></a>
-      <a href="mailto:ubyetok@gmail.com"><img src="/assets/img/email.png" alt="Email"></a>
-    </div>
-  </div>
-
-  <!-- OVERLAY -->
-  <div id="overlay" class="overlay"></div>
 
   <!-- HERO SECTION -->
   <section class="hero" id="home">
@@ -76,7 +45,7 @@
           <span class="skill-badge">Excel</span>
         </div>
 
-        <a href="#resume-preview" class="resume-btn">View Complete Resume</a>
+        <a href="/assets/myresume.pdf" class="resume-btn" download>Download Resume</a>
       </div>
     </div>
   </section>
@@ -94,8 +63,9 @@
   <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
   <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
   <script>
-    // Typed.js for Hero
+    // Typed.js
     new Typed("#typed", {
       strings: ["Business Intelligence Manager", "Data Scientist", "Data Analyst", "ML Enthusiast"],
       typeSpeed: 70,
@@ -146,21 +116,6 @@
     }
     window.addEventListener('scroll', animateCounters);
     window.addEventListener('load', animateCounters);
-
-    // Side Navigation toggle
-    const navToggle = document.getElementById('nav-toggle');
-    const sideNav = document.getElementById('side-nav');
-    const overlay = document.getElementById('overlay');
-
-    navToggle.addEventListener('click', () => {
-      sideNav.classList.toggle('open');
-      overlay.classList.toggle('active');
-    });
-
-    overlay.addEventListener('click', () => {
-      sideNav.classList.remove('open');
-      overlay.classList.remove('active');
-    });
   </script>
 </body>
 </html>
