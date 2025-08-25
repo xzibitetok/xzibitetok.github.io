@@ -5,16 +5,13 @@ full-width: true
 ---
 
 <!-- HERO SECTION -->
-<section class="hero" id="home">
-  <canvas id="particles-js"></canvas>
+<section class="hero">
   <div class="hero-content">
-    <div class="hero-left">
-      <img src="{{ '/assets/img/githubpics.jpg' | relative_url }}" alt="Ubong Etok" class="hero-profile">
-    </div>
+    <img src="/assets/img/profile.jpg" alt="Ubong Etok" class="hero-profile">
     <div class="hero-right">
-      <h1>Hi, I'm <span id="typed"></span></h1>
-      <p>Data Analyst | Power BI | SQL | Python | ML Enthusiast</p>
-      <a href="/assets/myresume.pdf" class="resume-btn" download>Download Resume</a>
+      <h1>Hi, I’m <span>Ubong Etok</span></h1>
+      <p id="typed"></p>
+      <a href="/assets/Ubong_Etok_Resume.pdf" class="resume-btn" download>Download Resume</a>
     </div>
   </div>
 </section>
@@ -23,22 +20,16 @@ full-width: true
 <section id="about">
   <h2>About Me</h2>
   <p>
-    I am a data-driven and detail-oriented Business Intelligence Manager with over 4 years of experience in data analysis, reporting, and visualization. I have a strong foundation in tools like Power BI, Excel, MySQL, and Python for creating actionable insights that drive strategic decisions.
-  </p>
-  <p>
-    Currently, I lead business intelligence efforts at Micnous Service Nigeria Ltd, where I design interactive dashboards, conduct risk assessments, and implement KPI-driven performance monitoring for multi-million naira projects.
-  </p>
-  <p>
-    I am passionate about leveraging data to solve real-world problems across health, infrastructure, and development sectors. To strengthen this capability, I am pursuing an MSc in Data Science at the University of South Wales, focusing on machine learning, predictive analytics, and statistical modeling.
+    I am a data-driven and detail-oriented Business Intelligence Manager with over 4 years of experience in data analysis, reporting, and visualization. 
+    Currently pursuing an MSc in Data Science at the University of South Wales, I specialize in turning raw data into actionable insights.
   </p>
 
-  <h3>Core Skills</h3>
   <div class="skills">
-    <span class="skill-badge">Data Analysis & BI</span>
-    <span class="skill-badge">Power BI & Dashboards</span>
-    <span class="skill-badge">MySQL</span>
-    <span class="skill-badge">Excel & Python</span>
-    <span class="skill-badge">KPI & Risk Assessment</span>
+    <span class="skill-badge">Python</span>
+    <span class="skill-badge">Power BI</span>
+    <span class="skill-badge">SQL</span>
+    <span class="skill-badge">Machine Learning</span>
+    <span class="skill-badge">Excel</span>
   </div>
 </section>
 
@@ -48,37 +39,37 @@ full-width: true
   <div class="projects-grid">
     <div class="project-card">
       <h3>Data Visualization</h3>
-      <p>Build interactive dashboards with Power BI & Tableau</p>
+      <p>Build interactive dashboards with Power BI & Tableau.</p>
     </div>
     <div class="project-card">
       <h3>Data Cleaning & Analysis</h3>
-      <p>Transform raw data into actionable insights</p>
+      <p>Transform raw data into actionable insights.</p>
     </div>
     <div class="project-card">
       <h3>Business Intelligence Consulting</h3>
-      <p>Design KPIs and reporting systems</p>
+      <p>Design KPIs and reporting systems.</p>
     </div>
   </div>
 </section>
 
 <!-- PROJECTS SECTION -->
 <section id="projects">
-  <h2>Projects</h2>
+  <h2>My Projects</h2>
   <div class="projects-grid">
     <div class="project-card">
       <h3>Data Visualization Dashboard</h3>
-      <p>Full Excel-based analysis with pivots and dashboards.</p>
-      <a href="https://github.com/xzibitetok/Xzibit-Sales-Analysis" target="_blank">View on GitHub</a>
+      <p>Excel-based analysis with pivots and dashboards.</p>
+      <a href="https://github.com/xzibitetok/Xzibit-Sales-Analysis" target="_blank">View Project →</a>
     </div>
     <div class="project-card">
       <h3>Machine Learning Model</h3>
-      <p>Predictive model for customer churn using Python and scikit-learn.</p>
-      <a href="https://github.com/xzibitetok/project2" target="_blank">View on GitHub</a>
+      <p>Predictive model for customer churn using Python.</p>
+      <a href="https://github.com/xzibitetok/project2" target="_blank">View Project →</a>
     </div>
     <div class="project-card">
       <h3>Web Portfolio</h3>
-      <p>Custom Jekyll-based portfolio with modern design and responsive layout.</p>
-      <a href="https://xzibitetok.github.io" target="_blank">View Live</a>
+      <p>Custom Jekyll-based portfolio with modern design.</p>
+      <a href="https://xzibitetok.github.io" target="_blank">View Live →</a>
     </div>
   </div>
 </section>
@@ -88,20 +79,20 @@ full-width: true
   <h2>📫 Get in Touch</h2>
   <div class="contact-grid">
     <div class="contact-card">
-      <img src="{{ '/assets/img/whatsapp.png' | relative_url }}" alt="WhatsApp">
-      <span>+234 816 177 7214</span>
+      <img src="/assets/img/whatsapp.png" alt="Whatsapp">
+      <a href="https://wa.me/2348161777214" target="_blank">+234 816 177 7214</a>
     </div>
     <div class="contact-card">
-      <img src="{{ '/assets/img/email.png' | relative_url }}" alt="Email">
-      <span>ubyetok@gmail.com</span>
-    </div>
-    <div class="contact-card">
-      <img src="{{ '/assets/img/linkedin.png' | relative_url }}" alt="LinkedIn">
+      <img src="/assets/img/linkedin.png" alt="LinkedIn">
       <a href="https://www.linkedin.com/in/ubong-etok-56b4a0170/" target="_blank">LinkedIn</a>
     </div>
     <div class="contact-card">
-      <img src="{{ '/assets/img/facebook.png' | relative_url }}" alt="Facebook">
+      <img src="/assets/img/facebook.png" alt="Facebook">
       <a href="https://www.facebook.com/uby.etok.5" target="_blank">Facebook</a>
+    </div>
+    <div class="contact-card">
+      <img src="/assets/img/email.png" alt="Email">
+      <a href="mailto:ubyetok@gmail.com">ubyetok@gmail.com</a>
     </div>
   </div>
 
@@ -113,25 +104,26 @@ full-width: true
   </form>
 </section>
 
+<!-- Footer -->
 <footer>
   <p>&copy; {{ site.time | date: '%Y' }} Ubong Etok | Built with ❤️ using Jekyll</p>
 </footer>
 
-<!-- TYPED.JS -->
+<!-- Typed.js -->
 <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
 <script>
   new Typed("#typed", {
-    strings: ["Ubong Etok", "Data Scientist", "Data Analyst", "ML Enthusiast", "Tech Innovator"],
+    strings: ["Business Intelligence Manager", "Data Scientist", "Data Analyst", "ML Enthusiast"],
     typeSpeed: 70,
     backSpeed: 40,
     loop: true
   });
 </script>
 
-<!-- PARTICLES.JS -->
+<!-- Particles.js -->
 <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 <script>
-  particlesJS.load('particles-js', '{{ "/assets/particles.json" | relative_url }}', function() {
+  particlesJS.load('particles-js', '/assets/particles.json', function() {
     console.log('particles.js loaded');
   });
 </script>
