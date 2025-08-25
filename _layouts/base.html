@@ -4,22 +4,38 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{ page.title | default: site.title }}</title>
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
   <link rel="stylesheet" href="{{ '/assets/css/custom-styles.css' | relative_url }}">
 </head>
 <body>
-  <!-- Navigation -->
+
+  <!-- NAVIGATION -->
   <nav>
-    <a href="#home">Home</a>
-    <a href="#about">About</a>
-    <a href="#services">Services</a>
-    <a href="#projects">Projects</a>
-    <a href="#contact">Contact</a>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
   </nav>
 
-  <!-- Page Content -->
-  {{ content }}
+  <!-- HERO SECTION -->
+  <header class="hero" id="home">
+    <div id="particles-js"></div>
+    <div class="hero-content">
+      <img src="{{ '/assets/img/githubpics.jpg' | relative_url }}" alt="Ubong Etok" class="hero-avatar">
+      <h1><span id="typed"></span></h1>
+      <a href="{{ '/assets/myresume.pdf' | relative_url }}" class="resume-btn" download>Download Resume</a>
+    </div>
+  </header>
 
-  <!-- Footer -->
+  <!-- MAIN CONTENT -->
+  <main>
+    {{ content }}
+  </main>
+
+  <!-- FOOTER -->
   <footer>
     <p>&copy; {{ site.time | date: '%Y' }} Ubong Etok | Built with ❤️ using Jekyll</p>
   </footer>
@@ -28,19 +44,17 @@
   <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
   <script>
     new Typed("#typed", {
-      strings: ["Data Scientist", "Data Analyst", "ML Enthusiast", "Tech Innovator"],
+      strings: ["Hi, I’m Ubong Etok", "Data Scientist", "Business Intelligence Manager", "ML & Data Analytics Enthusiast"],
       typeSpeed: 70,
       backSpeed: 40,
+      backDelay: 1500,
       loop: true
     });
   </script>
 
   <!-- Particles.js -->
   <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-  <script>
-    particlesJS.load('particles-js', '/assets/particles.json', function() {
-      console.log('particles.js loaded');
-    });
-  </script>
+  <script src="{{ '/assets/particles.json' | relative_url }}"></script>
+
 </body>
 </html>
