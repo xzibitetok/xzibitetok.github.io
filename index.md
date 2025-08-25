@@ -11,11 +11,6 @@ full-width: true
     <span id="about-typed"></span>
   </p>
 
-  <!-- Resume Download Button -->
-  <div class="resume-download">
-    <a href="/assets/myresume.pdf" download class="btn">📄 Download Resume</a>
-  </div>
-
   <div class="timeline">
     <div class="timeline-item">
       <h4>2025 – Present</h4>
@@ -30,7 +25,7 @@ full-width: true
       <p>Data Analyst, [Your Previous Company]</p>
     </div>
   </div>
-  
+
   <!-- Skills with Animated Bars -->
   <div class="skills">
     <div class="skill">
