@@ -1,10 +1,23 @@
 ---
 layout: default
-title: "Ubong Etok"
+title: Home
+full-width: true
 ---
 
-<!-- Navigation -->
-<nav class="navbar">
+<!-- Particles.js Container -->
+<div id="particles-js"></div>
+
+<!-- HERO SECTION -->
+<section class="hero" id="home">
+  <div class="hero-content">
+    <h1>Hi, I'm <span>Ubong Etok</span></h1>
+    <p><span id="typed"></span></p>
+    <a href="/assets/myresume.pdf" class="resume-btn" download>Download Resume</a>
+  </div>
+</section>
+
+<!-- NAVIGATION -->
+<nav>
   <ul>
     <li><a href="#home">Home</a></li>
     <li><a href="#about">About</a></li>
@@ -13,71 +26,77 @@ title: "Ubong Etok"
   </ul>
 </nav>
 
-<!-- Hero Section -->
-<section id="home" class="hero">
-  <div id="particles-js"></div>
-  <div class="hero-content">
-    <h1 id="animated-text"></h1>
-    <p>Business Intelligence Manager | Data Scientist in View | Analytics Enthusiast</p>
-    <a href="assets/myresume.pdf" class="btn">📄 Download Resume</a>
-  </div>
-</section>
-
-<!-- About Section -->
-<section id="about" class="section">
+<!-- ABOUT SECTION -->
+<section id="about">
   <h2>About Me</h2>
   <p>
-    I am a Business Intelligence Manager with 3+ years of experience in data analytics, dashboard development, and
-    process optimization. Currently pursuing an MSc in Data Science at the University of South Wales, passionate about
-    turning raw data into actionable business insights.
+    I’m a passionate Data Scientist and Analyst with a strong foundation in
+    data analytics, visualization, and machine learning. Currently pursuing an MSc in
+    Data Science at the University of South Wales, I specialize in turning raw data into
+    actionable insights.
   </p>
   <div class="skills">
-    <span class="badge">Python</span>
-    <span class="badge">Power BI</span>
-    <span class="badge">SQL</span>
-    <span class="badge">Excel</span>
-    <span class="badge">Tableau</span>
+    <span class="skill-badge">Python</span>
+    <span class="skill-badge">Power BI</span>
+    <span class="skill-badge">SQL</span>
+    <span class="skill-badge">Machine Learning</span>
+    <span class="skill-badge">GitHub</span>
   </div>
 </section>
 
-<!-- Projects Section -->
-<section id="projects" class="section">
-  <h2>Featured Project</h2>
-  <div class="project-grid">
-    <!-- Main Project -->
+<!-- PROJECTS SECTION -->
+<section id="projects">
+  <h2>My Projects</h2>
+  <div class="projects-grid">
     <div class="project-card">
-      <h3>Xzibit Sales Dashboard</h3>
-      <p>Full Excel-based analysis with pivot tables and interactive dashboards for sales insights.</p>
-      <a href="https://github.com/xzibitetok/Xzibit-Sales-Analysis" target="_blank" class="btn-secondary">View Project →</a>
-    </div>
-
-    <!-- Placeholder Projects -->
-    <div class="project-card">
-      <h3>Data Cleaning & Transformation in Python</h3>
-      <p>Coming Soon: A beginner-friendly Python workflow for cleaning and transforming raw data.</p>
+      <h3>Data Visualization Dashboard</h3>
+      <p>Interactive Power BI dashboard for analyzing financial data trends.</p>
+      <a href="https://github.com/xzibitetok/project1" target="_blank">View on GitHub</a>
     </div>
     <div class="project-card">
-      <h3>Interactive Power BI Dashboard</h3>
-      <p>Coming Soon: Visual dashboards for actionable insights and advanced analytics.</p>
+      <h3>Machine Learning Model</h3>
+      <p>Predictive model for customer churn using Python and scikit-learn.</p>
+      <a href="https://github.com/xzibitetok/project2" target="_blank">View on GitHub</a>
+    </div>
+    <div class="project-card">
+      <h3>Web Portfolio</h3>
+      <p>Custom Jekyll-based portfolio with modern design and responsive layout.</p>
+      <a href="https://xzibitetok.github.io" target="_blank">View Live</a>
     </div>
   </div>
 </section>
 
-<!-- Contact Section -->
-<section id="contact" class="section">
+<!-- CONTACT SECTION -->
+<section id="contact">
   <h2>Contact Me</h2>
-  <form action="https://formspree.io/f/xwpnkevb" method="POST" class="contact-form">
-    <input type="text" name="name" placeholder="Your Name" required />
-    <input type="email" name="_replyto" placeholder="Your Email" required />
-    <textarea name="message" placeholder="Your Message" required></textarea>
-    <button type="submit" class="btn">Send Message</button>
+  <form action="https://formspree.io/f/xwpnkevb" method="POST">
+    <input type="text" name="name" placeholder="Your Name" required>
+    <input type="email" name="_replyto" placeholder="Your Email" required>
+    <textarea name="message" rows="6" placeholder="Your Message" required></textarea>
+    <button type="submit">Send Message</button>
   </form>
-  <div class="social-links">
-    <a href="https://www.linkedin.com/in/ubong-etok-56b4a0170/">LinkedIn</a> |
-    <a href="https://github.com/xzibitetok">GitHub</a>
-  </div>
 </section>
 
+<!-- FOOTER -->
 <footer>
-  <p>© 2025 Ubong Etok • Built with Beautiful Jekyll</p>
+  <p>&copy; {{ site.time | date: '%Y' }} Ubong Etok | Built with ❤️ using Jekyll</p>
 </footer>
+
+<!-- TYPED.JS -->
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+<script>
+  new Typed("#typed", {
+    strings: ["Data Scientist", "Data Analyst", "ML Enthusiast", "Tech Innovator"],
+    typeSpeed: 70,
+    backSpeed: 40,
+    loop: true
+  });
+</script>
+
+<!-- PARTICLES.JS -->
+<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+<script>
+  particlesJS.load('particles-js', 'assets/particles.json', function() {
+    console.log('particles.js loaded');
+  });
+</script>
