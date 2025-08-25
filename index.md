@@ -8,7 +8,7 @@ show_avatar: true
 <div class="hero" style="text-align:center; padding: 40px 20px;">
   <h1 style="font-size: 3rem; font-weight: bold; color:#2c3e50;">Hi, I'm <span style="color:#4CAF50;">Ubong Etok</span></h1>
   <p style="font-size:1.5rem; color:#555;">Business Intelligence Manager | Data Analytics Professional | Future Data Scientist</p>
-  <a href="/assets/files/resume.pdf" class="btn-primary" style="padding:10px 20px; background:#4CAF50; color:white; text-decoration:none; border-radius:8px;">Download Resume</a>
+  <a href="assets/myresume.pdf" target="_blank" style="padding:10px 20px; background:#4CAF50; color:white; text-decoration:none; border-radius:8px; display:inline-block;">📄 Download Resume</a>
 </div>
 
 ---
@@ -45,17 +45,32 @@ Experienced Business Intelligence Manager with a strong background in data analy
 ---
 
 ## 🗂 Featured Projects
+
 <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:20px;">
-  <div style="border:1px solid #eaeaea; padding:15px; border-radius:8px;">
-    <h3>Power BI Sales Dashboard</h3>
-    <p>Interactive dashboard to monitor revenue, trends, and KPIs.</p>
-    <a href="https://github.com/xzibitetok/PowerBI-Dashboard" target="_blank">View Project →</a>
+
+  <!-- Xzibit Sales Dashboard -->
+  <div style="border:1px solid #eaeaea; padding:15px; border-radius:8px; background:#f9f9f9;">
+    <h3>Xzibit Sales Dashboard</h3>
+    <p>Full Excel-based analysis with pivot tables and interactive dashboards for sales insights.</p>
+    <a href="https://github.com/xzibitetok/Xzibit-Sales-Analysis" target="_blank" style="color:#0057D9; font-weight:bold;">View Project →</a>
   </div>
+
+  <!-- Other Projects -->
   <div style="border:1px solid #eaeaea; padding:15px; border-radius:8px;">
-    <h3>Excel Budget Tracker</h3>
-    <p>A dynamic Excel-based tool for personal and business finance tracking.</p>
-    <a href="https://github.com/xzibitetok/Excel-Budget-Tracker" target="_blank">View Project →</a>
+    <h3>Data Cleaning & Transformation in Python</h3>
+    <p>Coming Soon: A beginner-friendly Python workflow for cleaning and transforming raw data.</p>
   </div>
+
+  <div style="border:1px solid #eaeaea; padding:15px; border-radius:8px;">
+    <h3>Interactive Power BI Dashboard</h3>
+    <p>Coming Soon: Visual dashboards for actionable insights and advanced analytics.</p>
+  </div>
+
+  <div style="border:1px solid #eaeaea; padding:15px; border-radius:8px;">
+    <h3>SQL Query Optimization & Analytics</h3>
+    <p>Coming Soon: Best practices and queries for efficient database performance.</p>
+  </div>
+
 </div>
 
 ---
