@@ -78,12 +78,29 @@ full-width: true
 <section id="contact">
   <h2>📫 Get in Touch</h2>
   <div class="contact-cards">
+    <!-- Contact Info -->
     <div class="contact-card">
-      <p><img src="/assets/img/whatsapp.png" class="contact-icon"> +234 816 177 7214</p>
-      <p><img src="/assets/img/facebook.png" class="contact-icon"> <a href="https://www.facebook.com/uby.etok.5" target="_blank">Facebook</a></p>
-      <p><img src="/assets/img/linkedin.png" class="contact-icon"> <a href="https://www.linkedin.com/in/ubong-etok-56b4a0170/" target="_blank">LinkedIn</a></p>
-      <p><img src="/assets/img/email.png" class="contact-icon"> <a href="mailto:ubyetok@gmail.com">ubyetok@gmail.com</a></p>
+      <p>
+        <img src="/assets/img/whatsapp.png" class="contact-icon"> +234 816 177 7214
+      </p>
+      <p>
+        <a href="https://www.facebook.com/uby.etok.5" target="_blank">
+          <img src="/assets/img/facebook.png" class="contact-icon">
+        </a>
+      </p>
+      <p>
+        <a href="https://www.linkedin.com/in/ubong-etok-56b4a0170/" target="_blank">
+          <img src="/assets/img/linkedin.png" class="contact-icon">
+        </a>
+      </p>
+      <p>
+        <a href="mailto:ubyetok@gmail.com">
+          <img src="/assets/img/email.png" class="contact-icon">
+        </a>
+      </p>
     </div>
+
+    <!-- Contact Form -->
     <div class="contact-card">
       <form action="https://formspree.io/f/xwpnkevb" method="POST">
         <input type="text" name="name" placeholder="Your Name" required>
@@ -94,6 +111,7 @@ full-width: true
     </div>
   </div>
 </section>
+
 
 <!-- Footer -->
 <footer>
