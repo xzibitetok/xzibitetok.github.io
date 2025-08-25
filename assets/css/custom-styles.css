@@ -37,13 +37,6 @@ section h2::after { content:''; display:block; width:60px; height:4px; backgroun
 .contact-cards { display:flex; flex-wrap:wrap; gap:20px; justify-content:center; }
 .contact-card { background:#fff; border-radius:12px; box-shadow:0 6px 15px rgba(0,0,0,0.08); padding:20px; flex:1; min-width:300px; max-width:400px; }
 .contact-card form { display:flex; flex-direction:column; gap:15px; }
-.contact-card input, .contact-card textarea { padding:12px; border:1px solid #ccc; border-radius:8px; }
-.contact-card button { background:#4CAF50; color:#fff; padding:12px; border:none; border-radius:8px; font-weight:bold; cursor:pointer; transition:background 0.3s; }
-.contact-card button:hover { background:#388E3C; }
-.contact-icon { width:24px; height:24px; vertical-align:middle; margin-right:8px; }
-
-/* Footer */
-footer { text-align:center; padding:20px; background:#2c3e50; color:#fff; font-size:0.9rem; }
-
-/* Responsive */
-@media screen and (max-width:768px){ .hero h1{ font-size:2.5rem; } .hero p{ font-size:1.2rem; } nav ul{gap:15px;} .contact-cards{flex-direction:column;} }
+.contact-card input, .contact-card textarea { padding:12px; border:1px solid #ccc; border-radius
+::contentReference[oaicite:20]{index=20}
+ 
