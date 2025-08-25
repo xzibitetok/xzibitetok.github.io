@@ -94,11 +94,6 @@ nav ul li a:hover {
   box-shadow: 0 6px 15px rgba(0,0,0,0.15);
 }
 
-.hero p {
-  font-size: 1.5rem;
-  margin: 10px 0 20px;
-}
-
 .hero .resume-btn {
   padding: 12px 25px;
   background: #FFD700;
@@ -156,8 +151,21 @@ section h2::after {
 #about p {
   font-size: 1.2rem;
   line-height: 1.8;
-  text-align: center;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
+}
+
+.skills-list {
+  list-style: disc;
+  padding-left: 40px;
+  max-width: 700px;
+  margin: 0 auto 30px;
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+.skills-list li {
+  margin-bottom: 8px;
 }
 
 .skills {
@@ -165,6 +173,7 @@ section h2::after {
   justify-content: center;
   flex-wrap: wrap;
   gap: 15px;
+  margin-top: 20px;
 }
 
 .skill-badge {
@@ -337,14 +346,6 @@ footer {
     font-size: 2.5rem;
   }
 
-  .hero p {
-    font-size: 1.2rem;
-  }
-
-  nav ul {
-    gap: 15px;
-  }
-
   .hero-avatar {
     width: 140px;
     height: 140px;
@@ -353,5 +354,9 @@ footer {
   .typed-card {
     font-size: 1.1rem;
     padding: 10px 20px;
+  }
+
+  nav ul {
+    gap: 15px;
   }
 }
