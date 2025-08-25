@@ -4,18 +4,6 @@ title: Home
 full-width: true
 ---
 
-<!-- HERO SECTION -->
-<section class="hero" id="home">
-  <div class="hero-content">
-    <img src="/assets/img/githubpics.jpg" alt="Ubong Etok" class="hero-profile">
-    <div class="hero-right">
-      <h1>Hi, I’m <span>Ubong Etok</span></h1>
-      <p id="typed"></p>
-      <a href="/assets/Ubong_Etok_Resume.pdf" class="resume-btn" download>Download Resume</a>
-    </div>
-  </div>
-</section>
-
 <!-- ABOUT SECTION -->
 <section id="about">
   <h2>About Me</h2>
@@ -23,12 +11,68 @@ full-width: true
     I am a data-driven and detail-oriented Business Intelligence Manager with over 4 years of experience in data analysis, reporting, and visualization. 
     Currently pursuing an MSc in Data Science at the University of South Wales, I specialize in turning raw data into actionable insights.
   </p>
+
+  <!-- Timeline -->
+  <div class="timeline">
+    <div class="timeline-item">
+      <h4>2025 – Present</h4>
+      <p>MSc in Data Science, University of South Wales</p>
+    </div>
+    <div class="timeline-item">
+      <h4>2019 – 2023</h4>
+      <p>Business Intelligence Manager, [Your Company]</p>
+    </div>
+    <div class="timeline-item">
+      <h4>2017 – 2019</h4>
+      <p>Data Analyst, [Your Previous Company]</p>
+    </div>
+  </div>
+
+  <!-- Skills with Animated Counters -->
   <div class="skills">
-    <span class="skill-badge">Python</span>
-    <span class="skill-badge">Power BI</span>
-    <span class="skill-badge">SQL</span>
-    <span class="skill-badge">Machine Learning</span>
-    <span class="skill-badge">Excel</span>
+    <div class="skill">
+      <span class="skill-name">Python</span>
+      <div class="skill-bar"><div class="skill-fill" data-percent="95%"></div></div>
+    </div>
+    <div class="skill">
+      <span class="skill-name">Power BI</span>
+      <div class="skill-bar"><div class="skill-fill" data-percent="90%"></div></div>
+    </div>
+    <div class="skill">
+      <span class="skill-name">SQL</span>
+      <div class="skill-bar"><div class="skill-fill" data-percent="85%"></div></div>
+    </div>
+    <div class="skill">
+      <span class="skill-name">Machine Learning</span>
+      <div class="skill-bar"><div class="skill-fill" data-percent="80%"></div></div>
+    </div>
+    <div class="skill">
+      <span class="skill-name">Excel</span>
+      <div class="skill-bar"><div class="skill-fill" data-percent="95%"></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS / ACHIEVEMENTS SECTION -->
+<section id="stats">
+  <h2>📊 Achievements</h2>
+  <div class="stats-grid">
+    <div class="stat-card">
+      <h3 class="counter" data-target="4">0</h3>
+      <p>Years of Experience</p>
+    </div>
+    <div class="stat-card">
+      <h3 class="counter" data-target="25">0</h3>
+      <p>Projects Completed</p>
+    </div>
+    <div class="stat-card">
+      <h3 class="counter" data-target="15">0</h3>
+      <p>Clients Served</p>
+    </div>
+    <div class="stat-card">
+      <h3 class="counter" data-target="5">0</h3>
+      <p>Certifications</p>
+    </div>
   </div>
 </section>
 
@@ -39,14 +83,17 @@ full-width: true
     <div class="project-card">
       <h3>Data Visualization</h3>
       <p>Build interactive dashboards with Power BI & Tableau.</p>
+      <span class="badge">Popular</span>
     </div>
     <div class="project-card">
       <h3>Data Cleaning & Analysis</h3>
       <p>Transform raw data into actionable insights.</p>
+      <span class="badge">Expert</span>
     </div>
     <div class="project-card">
       <h3>Business Intelligence Consulting</h3>
       <p>Design KPIs and reporting systems.</p>
+      <span class="badge">Trusted</span>
     </div>
   </div>
 </section>
@@ -76,7 +123,7 @@ full-width: true
 <!-- CONTACT SECTION -->
 <section id="contact">
   <h2>📫 Get in Touch</h2>
-  <div class="contact-cards">
+  <div class="contact-grid">
     <div class="contact-card">
       <img src="/assets/img/whatsapp.png" alt="Whatsapp">
       <a href="https://wa.me/2348161777214" target="_blank">+234 816 177 7214</a>
