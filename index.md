@@ -5,7 +5,7 @@ full-width: true
 ---
 
 <!-- HERO SECTION -->
-<section class="hero">
+<section class="hero" id="home">
   <div class="hero-content">
     <img src="/assets/img/githubpics.jpg" alt="Ubong Etok" class="hero-profile">
     <div class="hero-right">
@@ -23,7 +23,6 @@ full-width: true
     I am a data-driven and detail-oriented Business Intelligence Manager with over 4 years of experience in data analysis, reporting, and visualization. 
     Currently pursuing an MSc in Data Science at the University of South Wales, I specialize in turning raw data into actionable insights.
   </p>
-
   <div class="skills">
     <span class="skill-badge">Python</span>
     <span class="skill-badge">Power BI</span>
@@ -77,7 +76,7 @@ full-width: true
 <!-- CONTACT SECTION -->
 <section id="contact">
   <h2>📫 Get in Touch</h2>
-  <div class="contact-grid">
+  <div class="contact-cards">
     <div class="contact-card">
       <img src="/assets/img/whatsapp.png" alt="Whatsapp">
       <a href="https://wa.me/2348161777214" target="_blank">+234 816 177 7214</a>
@@ -103,27 +102,3 @@ full-width: true
     <button type="submit">Send Message</button>
   </form>
 </section>
-
-<!-- Footer -->
-<footer>
-  <p>&copy; {{ site.time | date: '%Y' }} Ubong Etok | Built with ❤️ using Jekyll</p>
-</footer>
-
-<!-- Typed.js -->
-<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-<script>
-  new Typed("#typed", {
-    strings: ["Business Intelligence Manager", "Data Scientist", "Data Analyst", "ML Enthusiast"],
-    typeSpeed: 70,
-    backSpeed: 40,
-    loop: true
-  });
-</script>
-
-<!-- Particles.js -->
-<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-<script>
-  particlesJS.load('particles-js', '/assets/particles.json', function() {
-    console.log('particles.js loaded');
-  });
-</script>
