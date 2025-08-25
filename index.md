@@ -4,31 +4,17 @@ title: Home
 full-width: true
 ---
 
-<!-- Particles.js Container -->
-<div id="particles-js"></div>
-
-<!-- HERO SECTION -->
+<!-- Hero Section -->
 <section class="hero" id="home">
   <div class="hero-content">
     <img src="/assets/img/githubpics.jpg" alt="Ubong Etok" class="profile-img">
-    <h1>Hi, I'm <span id="typed"></span></h1>
+    <h1>Hi, I'm Ubong Etok</h1>
     <p>Data Scientist | Data Analyst | ML Enthusiast | BI Specialist</p>
     <a href="/assets/myresume.pdf" class="resume-btn" download>Download Resume</a>
   </div>
 </section>
 
-<!-- NAVIGATION -->
-<nav>
-  <ul>
-    <li><a href="#home">Home</a></li>
-    <li><a href="#about">About</a></li>
-    <li><a href="#projects">Projects</a></li>
-    <li><a href="#services">Services</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-</nav>
-
-<!-- ABOUT SECTION -->
+<!-- About Section -->
 <section id="about">
   <h2>About Me</h2>
   <p>
@@ -47,7 +33,7 @@ full-width: true
   </div>
 </section>
 
-<!-- PROJECTS SECTION -->
+<!-- Projects Section -->
 <section id="projects">
   <h2>My Projects</h2>
   <div class="projects-grid">
@@ -69,7 +55,7 @@ full-width: true
   </div>
 </section>
 
-<!-- SERVICES SECTION -->
+<!-- Services Section -->
 <section id="services">
   <h2>💼 Services</h2>
   <div class="projects-grid">
@@ -88,7 +74,7 @@ full-width: true
   </div>
 </section>
 
-<!-- CONTACT SECTION -->
+<!-- Contact Section -->
 <section id="contact">
   <h2>📫 Get in Touch</h2>
   <div class="contact-cards">
@@ -109,12 +95,12 @@ full-width: true
   </div>
 </section>
 
-<!-- FOOTER -->
+<!-- Footer -->
 <footer>
   <p>&copy; {{ site.time | date: '%Y' }} Ubong Etok | Built with ❤️ using Jekyll</p>
 </footer>
 
-<!-- TYPED.JS -->
+<!-- Typed.js -->
 <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
 <script>
   new Typed("#typed", {
@@ -125,7 +111,7 @@ full-width: true
   });
 </script>
 
-<!-- PARTICLES.JS -->
+<!-- Particles.js -->
 <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 <script>
   particlesJS.load('particles-js', '/assets/particles.json', function() {
