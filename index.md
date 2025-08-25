@@ -53,7 +53,7 @@ full-width: true
 
 <!-- RESUME PREVIEW SECTION -->
 <section id="resume-preview">
-  <h2>📄 Resume Snapshot</h2>
+  <h2>📄 RESUME</h2>
   
   <div class="resume-card">
     <p><strong>ETOK, UBONG EFFIONG</strong><br>
