@@ -21,6 +21,7 @@ full-width: true
   <ul>
     <li><a href="#home">Home</a></li>
     <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
     <li><a href="#projects">Projects</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
@@ -41,6 +42,25 @@ full-width: true
     <span class="skill-badge">SQL</span>
     <span class="skill-badge">Machine Learning</span>
     <span class="skill-badge">GitHub</span>
+  </div>
+</section>
+
+<!-- SERVICES SECTION -->
+<section id="services">
+  <h2>💼 Services</h2>
+  <div class="services-grid">
+    <div class="service-card">
+      <h3>Data Visualization</h3>
+      <p>Build interactive dashboards with Power BI & Tableau.</p>
+    </div>
+    <div class="service-card">
+      <h3>Data Cleaning & Analysis</h3>
+      <p>Transform raw data into actionable insights.</p>
+    </div>
+    <div class="service-card">
+      <h3>Business Intelligence Consulting</h3>
+      <p>Design KPIs and reporting systems for your business.</p>
+    </div>
   </div>
 </section>
 
@@ -66,9 +86,19 @@ full-width: true
   </div>
 </section>
 
-<!-- CONTACT SECTION -->
+<!-- CONTACT / GET IN TOUCH SECTION -->
 <section id="contact">
-  <h2>Contact Me</h2>
+  <h2>📫 Get in Touch</h2>
+  <p>📍 Location: Abuja, Nigeria<br>
+  📧 Email: <a href="mailto:ubyetok@gmail.com">ubyetok@gmail.com</a><br>
+  📞 Phone: +234 816 177 7214</p>
+
+  <p><strong>Connect with me:</strong></p>
+  <p>
+    <a href="https://www.linkedin.com/in/ubong-etok-56b4a0170/" target="_blank">LinkedIn</a> |
+    <a href="https://github.com/xzibitetok" target="_blank">GitHub</a>
+  </p>
+
   <form action="https://formspree.io/f/xwpnkevb" method="POST">
     <input type="text" name="name" placeholder="Your Name" required>
     <input type="email" name="_replyto" placeholder="Your Email" required>
