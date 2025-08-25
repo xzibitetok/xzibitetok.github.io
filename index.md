@@ -4,28 +4,7 @@ title: Home
 full-width: true
 ---
 
-<!-- Particles.js Container -->
-<div id="particles-js"></div>
-
-<!-- HERO SECTION -->
-<section class="hero" id="home">
-  <div class="hero-content">
-    <img src="/assets/img/githubpics.jpg" alt="Ubong Etok" class="hero-avatar">
-    <h1><span id="typed"></span></h1>
-    <a href="/assets/myresume.pdf" class="resume-btn" download>Download Resume</a>
-  </div>
-</section>
-
-<!-- NAVIGATION -->
-<nav>
-  <ul>
-    <li><a href="#home">Home</a></li>
-    <li><a href="#about">About</a></li>
-    <li><a href="#services">Services</a></li>
-    <li><a href="#projects">Projects</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-</nav>
+<!-- HERO is handled in base.html -->
 
 <!-- ABOUT SECTION -->
 <section id="about">
@@ -39,15 +18,15 @@ full-width: true
   <p>
     I am passionate about leveraging data to solve real-world problems across health, infrastructure, and development sectors. To strengthen this capability, I am pursuing an MSc in Data Science at the University of South Wales, focusing on machine learning, predictive analytics, and statistical modeling.
   </p>
-  <h3>Core Skills</h3>
+
   <div class="skills">
-    <span class="skill-badge">Data Analysis & BI</span>
-    <span class="skill-badge">Power BI & Dashboards</span>
-    <span class="skill-badge">MySQL</span>
-    <span class="skill-badge">Data Cleaning (Excel/Python)</span>
-    <span class="skill-badge">KPI & Risk Assessment</span>
+    <span class="skill-badge">Data Analysis</span>
+    <span class="skill-badge">Power BI</span>
+    <span class="skill-badge">Python</span>
+    <span class="skill-badge">SQL/MySQL</span>
+    <span class="skill-badge">Excel</span>
+    <span class="skill-badge">KPI Development</span>
   </div>
-  <p><strong>Career Goal:</strong> To build advanced data solutions that deliver measurable impact and help organizations make informed decisions.</p>
 </section>
 
 <!-- SERVICES SECTION -->
@@ -56,15 +35,15 @@ full-width: true
   <div class="projects-grid">
     <div class="project-card">
       <h3>Data Visualization</h3>
-      <p>Build interactive dashboards with Power BI & Tableau</p>
+      <p>Build interactive dashboards with Power BI & Tableau.</p>
     </div>
     <div class="project-card">
       <h3>Data Cleaning & Analysis</h3>
-      <p>Transform raw data into actionable insights</p>
+      <p>Transform raw data into actionable insights efficiently.</p>
     </div>
     <div class="project-card">
       <h3>Business Intelligence Consulting</h3>
-      <p>Design KPIs and reporting systems for strategic decisions</p>
+      <p>Design KPIs and reporting systems for strategic decisions.</p>
     </div>
   </div>
 </section>
@@ -91,60 +70,36 @@ full-width: true
   </div>
 </section>
 
-<!-- CONTACT / GET IN TOUCH SECTION -->
+<!-- CONTACT SECTION -->
 <section id="contact">
   <h2>📫 Get in Touch</h2>
   <div class="projects-grid">
     <div class="project-card">
-      <h3>Contact Form</h3>
+      <p>📍 Location: Abuja, Nigeria</p>
+      <p>📧 Email: <a href="mailto:ubyetok@gmail.com">ubyetok@gmail.com</a></p>
+      <p>📞 Phone / WhatsApp: <a href="https://wa.me/2348161777214" target="_blank">
+        <img src="{{ '/assets/img/whatsapp.svg' | relative_url }}" alt="WhatsApp" class="contact-icon">
+        +234 816 177 7214
+      </a></p>
+      <p>Connect with me:</p>
+      <p>
+        <a href="https://www.linkedin.com/in/ubong-etok-56b4a0170/" target="_blank">
+          <img src="{{ '/assets/img/linkedin.svg' | relative_url }}" alt="LinkedIn" class="contact-icon"> LinkedIn
+        </a>
+      </p>
+      <p>
+        <a href="https://www.facebook.com/uby.etok.5" target="_blank">
+          <img src="{{ '/assets/img/facebook.svg' | relative_url }}" alt="Facebook" class="contact-icon"> Facebook
+        </a>
+      </p>
+    </div>
+    <div class="project-card">
       <form action="https://formspree.io/f/xwpnkevb" method="POST">
         <input type="text" name="name" placeholder="Your Name" required>
         <input type="email" name="_replyto" placeholder="Your Email" required>
-        <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+        <textarea name="message" rows="6" placeholder="Your Message" required></textarea>
         <button type="submit">Send Message</button>
       </form>
     </div>
-    <div class="project-card">
-      <h3>Direct Info</h3>
-      <p>📍 Location: Abuja, Nigeria</p>
-      <p>📧 Email: <a href="mailto:ubyetok@gmail.com">ubyetok@gmail.com</a></p>
-      <p>📞 Phone: +234 816 177 7214</p>
-      <p><strong>Connect with me:</strong></p>
-      <p>
-        <a href="https://www.linkedin.com/in/ubong-etok-56b4a0170/" target="_blank">LinkedIn</a> | 
-        <a href="https://github.com/xzibitetok" target="_blank">GitHub</a>
-      </p>
-    </div>
   </div>
 </section>
-
-<!-- FOOTER -->
-<footer>
-  <p>&copy; {{ site.time | date: '%Y' }} Ubong Etok | Built with ❤️ using Jekyll</p>
-</footer>
-
-<!-- TYPED.JS -->
-<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-<script>
-  new Typed("#typed", {
-    strings: [
-      "Hi, I’m Ubong Etok", 
-      "Data Scientist", 
-      "Business Intelligence Manager", 
-      "ML & Data Analytics Enthusiast", 
-      "Tech Innovator"
-    ],
-    typeSpeed: 70,
-    backSpeed: 40,
-    backDelay: 1500,
-    loop: true
-  });
-</script>
-
-<!-- PARTICLES.JS -->
-<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-<script>
-  particlesJS.load('particles-js', 'assets/particles.json', function() {
-    console.log('particles.js loaded');
-  });
-</script>
