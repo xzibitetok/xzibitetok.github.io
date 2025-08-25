@@ -120,6 +120,7 @@ full-width: true
 
 <!-- CONTACT SECTION -->
 <section id="contact">
+  <h2>📫 Get in Touch</h2>
   
   <form action="https://formspree.io/f/xwpnkevb" method="POST">
     <input type="text" name="name" placeholder="Your Name" required>
