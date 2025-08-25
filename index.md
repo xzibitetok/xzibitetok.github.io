@@ -18,3 +18,5 @@ A full Excel-based analysis including raw data, pivot tables, and visual dashboa
 - [LinkedIn](https://www.linkedin.com/in/ubong-etok-56b4a0170/)
 - [Facebook](https://www.facebook.com/uby.etok.5)
 - Email: ubyetok@gmail.com
+- [📄 Download My Resume](assets/myresume.pdf){:target="_blank"}
+
