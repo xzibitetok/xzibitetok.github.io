@@ -14,13 +14,6 @@
   <!-- Stylesheets -->
   <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
   <link rel="stylesheet" href="{{ '/assets/css/custom-styles.css' | relative_url }}">
-
-  <!-- Open Graph Meta -->
-  <meta property="og:title" content="{{ site.title }}">
-  <meta property="og:description" content="{{ site.description }}">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="{{ site.url }}">
-  <meta property="og:image" content="{{ '/assets/img/githubpics.jpg' | relative_url }}">
 </head>
 <body>
 
@@ -41,7 +34,7 @@
       <div class="hero-right">
         <h1>Hi, I’m <span>Ubong Etok</span></h1>
         <p id="typed"></p>
-        
+
         <!-- Animated Skill Badges -->
         <div class="hero-skills">
           <span class="skill-badge">Python</span>
@@ -82,14 +75,6 @@
     // Particles.js
     particlesJS.load('particles-js', '/assets/particles.json', function() {
       console.log('particles.js loaded successfully');
-    });
-
-    // Smooth Scroll
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
-      });
     });
 
     // Animate skill bars
