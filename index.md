@@ -10,7 +10,7 @@ full-width: true
 <!-- HERO SECTION -->
 <section class="hero" id="home">
   <div class="hero-avatar">
-    <img src="/assets/img/githubpics.jpg" alt="Ubong Etok" />
+    <img src="/assets/img/githubpics.jpg" alt="Ubong Etok Avatar">
   </div>
   <div class="hero-content">
     <h1>Hi, I'm <span>Ubong Etok</span></h1>
@@ -23,7 +23,7 @@ full-width: true
 <nav>
   <ul>
     <li><a href="#home">Home</a></li>
-    <li><a href="#about">About</a></li>
+    <li><a href="#about">About Me</a></li>
     <li><a href="#services">Services</a></li>
     <li><a href="#projects">Projects</a></li>
     <li><a href="#contact">Contact</a></li>
@@ -46,12 +46,10 @@ full-width: true
   <h3>Core Skills</h3>
   <div class="skills">
     <span class="skill-badge">Data Analysis & BI</span>
-    <span class="skill-badge">Power BI</span>
-    <span class="skill-badge">Google Data Studio</span>
+    <span class="skill-badge">Power BI & Google Data Studio</span>
     <span class="skill-badge">MySQL</span>
-    <span class="skill-badge">Python</span>
-    <span class="skill-badge">KPI Development</span>
-    <span class="skill-badge">Risk Assessment</span>
+    <span class="skill-badge">Excel & Python</span>
+    <span class="skill-badge">KPI & Risk Assessment</span>
   </div>
 
   <p><strong>Career Goal:</strong> To build advanced data solutions that deliver measurable impact and help organizations make informed decisions.</p>
@@ -71,7 +69,7 @@ full-width: true
     </div>
     <div class="project-card">
       <h3>Business Intelligence Consulting</h3>
-      <p>Design KPIs and reporting systems for strategic decisions.</p>
+      <p>Design KPIs and reporting systems for strategic decision-making.</p>
     </div>
   </div>
 </section>
@@ -103,11 +101,12 @@ full-width: true
   <h2>📫 Get in Touch</h2>
   <div class="projects-grid">
     <div class="project-card">
-      <h3>Contact Info</h3>
+      <h3>Contact Information</h3>
       <p>📍 Location: Abuja, Nigeria</p>
       <p>📧 Email: <a href="mailto:ubyetok@gmail.com">ubyetok@gmail.com</a></p>
       <p>📞 Phone: +234 816 177 7214</p>
-      <p>Connect with me: <br>
+      <p>Connect with me:</p>
+      <p>
         <a href="https://www.linkedin.com/in/ubong-etok-56b4a0170/" target="_blank">LinkedIn</a> | 
         <a href="https://github.com/xzibitetok" target="_blank">GitHub</a>
       </p>
@@ -133,13 +132,8 @@ full-width: true
 <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
 <script>
   new Typed("#typed", {
-    strings: [
-      "Data Scientist",
-      "Business Intelligence Analyst",
-      "ML Enthusiast",
-      "Tech Innovator"
-    ],
-    typeSpeed: 60,
+    strings: ["Data Scientist", "Data Analyst", "ML Enthusiast", "Tech Innovator"],
+    typeSpeed: 70,
     backSpeed: 40,
     loop: true
   });
@@ -148,7 +142,7 @@ full-width: true
 <!-- PARTICLES.JS -->
 <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 <script>
-  particlesJS.load('particles-js', '/assets/particles.json', function() {
+  particlesJS.load('particles-js', 'assets/particles.json', function() {
     console.log('particles.js loaded');
   });
 </script>
