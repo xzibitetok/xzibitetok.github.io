@@ -8,11 +8,9 @@ full-width: true
 <section id="about">
   <h2>About Me</h2>
   <p>
-    I am a data-driven and detail-oriented Business Intelligence Manager with over 4 years of experience in data analysis, reporting, and visualization. 
-    Currently pursuing an MSc in Data Science at the University of South Wales, I specialize in turning raw data into actionable insights.
+    <span id="about-typed"></span>
   </p>
 
-  <!-- Timeline -->
   <div class="timeline">
     <div class="timeline-item">
       <h4>2025 – Present</h4>
@@ -53,7 +51,7 @@ full-width: true
   </div>
 </section>
 
-<!-- STATS / ACHIEVEMENTS SECTION -->
+<!-- STATS / ACHIEVEMENTS -->
 <section id="stats">
   <h2>📊 Achievements</h2>
   <div class="stats-grid">
@@ -149,3 +147,13 @@ full-width: true
     <button type="submit">Send Message</button>
   </form>
 </section>
+
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+<script>
+  new Typed("#about-typed", {
+    strings: ["I turn data into actionable insights.", "Passionate about AI & ML.", "Business Intelligence Specialist."],
+    typeSpeed: 60,
+    backSpeed: 30,
+    loop: true
+  });
+</script>
