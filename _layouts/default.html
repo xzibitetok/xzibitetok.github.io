@@ -51,10 +51,6 @@
 
   <!-- HERO SECTION -->
   <section class="hero" id="home">
-    ...
-
-  <!-- HERO SECTION -->
-  <section class="hero" id="home">
     <canvas id="particles-js"></canvas>
 
     <!-- Floating Social Links -->
@@ -80,7 +76,7 @@
           <span class="skill-badge">Excel</span>
         </div>
 
-        <a href="/assets/myresume.pdf" class="resume-btn" download>Download Resume</a>
+        <a href="#resume-preview" class="resume-btn">View Complete Resume</a>
       </div>
     </div>
   </section>
@@ -98,9 +94,8 @@
   <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
   <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-
   <script>
-    // Typed.js
+    // Typed.js for Hero
     new Typed("#typed", {
       strings: ["Business Intelligence Manager", "Data Scientist", "Data Analyst", "ML Enthusiast"],
       typeSpeed: 70,
@@ -151,6 +146,21 @@
     }
     window.addEventListener('scroll', animateCounters);
     window.addEventListener('load', animateCounters);
+
+    // Side Navigation toggle
+    const navToggle = document.getElementById('nav-toggle');
+    const sideNav = document.getElementById('side-nav');
+    const overlay = document.getElementById('overlay');
+
+    navToggle.addEventListener('click', () => {
+      sideNav.classList.toggle('open');
+      overlay.classList.toggle('active');
+    });
+
+    overlay.addEventListener('click', () => {
+      sideNav.classList.remove('open');
+      overlay.classList.remove('active');
+    });
   </script>
 </body>
 </html>
