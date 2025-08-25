@@ -51,6 +51,42 @@ full-width: true
   </div>
 </section>
 
+<!-- RESUME PREVIEW SECTION -->
+<section id="resume-preview">
+  <h2>📄 Resume Snapshot</h2>
+  
+  <div class="resume-card">
+    <p><strong>ETOK, UBONG EFFIONG</strong><br>
+    Abuja, Nigeria • +234 8161777214 • <a href="mailto:ubyetok@gmail.com">ubyetok@gmail.com</a></p>
+
+    <h3>Profile</h3>
+    <p>
+      I am a data-driven and detail-oriented Business Intelligence Manager with a background in Building Technology 
+      and a strong foundation in data analysis, reporting, and visualization. Starting as a Data Analyst at Micnous 
+      Service Nigeria Ltd, I was promoted to lead business intelligence efforts across multiple construction projects, 
+      where I utilized tools such as Power BI, Excel, and MySQL to drive data-informed decisions.
+    </p>
+
+    <h3>Education</h3>
+    <ul>
+      <li>B.Sc. [Hons.] Building – University of Uyo, Akwa Ibom, NG (Sept 2018)</li>
+      <li>WASSCE – Bright Stars Model Secondary School, NG (Dec 2010)</li>
+    </ul>
+
+    <h3>Key Skills</h3>
+    <ul class="resume-skills">
+      <li>Data Cleaning & Transformation (Excel, MySQL, Power BI, Python)</li>
+      <li>Dashboard Design & BI Reporting</li>
+      <li>KPI Development & Project Monitoring</li>
+    </ul>
+  </div>
+
+  <div class="resume-button">
+    <a href="/assets/myresume.pdf" target="_blank" class="btn">📑 View Full Resume</a>
+  </div>
+</section>
+
+
 <!-- STATS / ACHIEVEMENTS -->
 <section id="stats">
   <h2>📊 Achievements</h2>
