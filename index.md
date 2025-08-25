@@ -89,22 +89,26 @@ full-width: true
 <!-- CONTACT / GET IN TOUCH SECTION -->
 <section id="contact">
   <h2>📫 Get in Touch</h2>
-  <p>📍 Location: Abuja, Nigeria<br>
-  📧 Email: <a href="mailto:ubyetok@gmail.com">ubyetok@gmail.com</a><br>
-  📞 Phone: +234 816 177 7214</p>
-
-  <p><strong>Connect with me:</strong></p>
-  <p>
-    <a href="https://www.linkedin.com/in/ubong-etok-56b4a0170/" target="_blank">LinkedIn</a> |
-    <a href="https://github.com/xzibitetok" target="_blank">GitHub</a>
-  </p>
-
-  <form action="https://formspree.io/f/xwpnkevb" method="POST">
-    <input type="text" name="name" placeholder="Your Name" required>
-    <input type="email" name="_replyto" placeholder="Your Email" required>
-    <textarea name="message" rows="6" placeholder="Your Message" required></textarea>
-    <button type="submit">Send Message</button>
-  </form>
+  <div class="contact-grid">
+    <div class="contact-card">
+      <h3>Contact Info</h3>
+      <p>📍 Location: Abuja, Nigeria<br>
+         📧 Email: <a href="mailto:ubyetok@gmail.com">ubyetok@gmail.com</a><br>
+         📞 Phone: +234 816 177 7214</p>
+      <p><strong>Connect with me:</strong><br>
+         <a href="https://www.linkedin.com/in/ubong-etok-56b4a0170/" target="_blank">LinkedIn</a> |
+         <a href="https://github.com/xzibitetok" target="_blank">GitHub</a></p>
+    </div>
+    <div class="contact-card">
+      <h3>Send a Message</h3>
+      <form action="https://formspree.io/f/xwpnkevb" method="POST">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="_replyto" placeholder="Your Email" required>
+        <textarea name="message" rows="6" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+  </div>
 </section>
 
 <!-- FOOTER -->
