@@ -4,11 +4,31 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{ page.title | default: site.title }}</title>
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
   <link rel="stylesheet" href="{{ '/assets/css/custom-styles.css' | relative_url }}">
 </head>
 <body>
 
+  <!-- HERO SECTION -->
+  <section class="hero" id="home">
+    <canvas id="particles-js"></canvas>
+    <div class="hero-content">
+      <img src="/assets/img/profile.jpg" alt="Ubong Etok" class="hero-profile">
+      <div class="hero-right">
+        <h1>Hi, I’m <span>Ubong Etok</span></h1>
+        <p id="typed"></p>
+        <a href="/assets/Ubong_Etok_Resume.pdf" class="resume-btn" download>Download Resume</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTENT -->
   {{ content }}
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; {{ site.time | date: '%Y' }} Ubong Etok | Built with ❤️ using Jekyll</p>
+  </footer>
 
   <!-- Typed.js -->
   <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
@@ -28,5 +48,6 @@
       console.log('particles.js loaded');
     });
   </script>
+
 </body>
 </html>
