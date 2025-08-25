@@ -1,5 +1,20 @@
 /* ================================
-   HERO SECTION ENHANCEMENTS
+   GENERAL STYLES
+=================================== */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Poppins", Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f9f9f9;
+  color: #333;
+}
+
+/* ================================
+   HERO SECTION
 =================================== */
 .hero {
   position: relative;
@@ -28,12 +43,6 @@
   border: 5px solid #4CAF50;
   object-fit: cover;
   box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-  animation: float 4s ease-in-out infinite;
-}
-
-@keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
 }
 
 .hero-right h1 {
@@ -50,52 +59,6 @@
   margin: 10px 0 20px;
 }
 
-/* Animated Skill Badges */
-.hero-skills {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin-bottom: 20px;
-}
-
-.hero-skills .skill-badge {
-  background: #4CAF50;
-  color: #fff;
-  padding: 8px 15px;
-  border-radius: 20px;
-  font-size: 0.9rem;
-  font-weight: 600;
-  animation: badgeFade 2s ease-in-out infinite alternate;
-}
-
-@keyframes badgeFade {
-  0% { opacity: 0.6; transform: scale(0.95); }
-  100% { opacity: 1; transform: scale(1); }
-}
-
-/* Floating Social Links */
-.floating-social {
-  position: fixed;
-  top: 50%;
-  left: 20px;
-  transform: translateY(-50%);
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  z-index: 10;
-}
-
-.floating-social a img {
-  width: 35px;
-  height: 35px;
-  transition: transform 0.3s ease;
-}
-
-.floating-social a:hover img {
-  transform: scale(1.2);
-}
-
-/* Resume Button */
 .resume-btn {
   padding: 12px 25px;
   background: #4CAF50;
@@ -103,23 +66,217 @@
   font-weight: bold;
   text-decoration: none;
   border-radius: 8px;
-  transition: 0.3s ease;
+  transition: background 0.3s ease;
 }
 
 .resume-btn:hover {
   background: #388E3C;
 }
 
-/* Responsive Hero */
-@media screen and (max-width: 768px) {
-  .hero-content {
-    flex-direction: column;
-    text-align: center;
-    gap: 25px;
-  }
+/* Animated Hero Skill Badges */
+.hero-skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+}
 
+.skill-badge {
+  background: #4CAF50;
+  color: #fff;
+  padding: 6px 15px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  animation: floatBadge 3s ease-in-out infinite alternate;
+}
+
+@keyframes floatBadge {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-5px); }
+  100% { transform: translateY(0px); }
+}
+
+/* Floating Social Links */
+.floating-social {
+  position: fixed;
+  top: 40%;
+  left: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  z-index: 10;
+}
+
+.floating-social a img {
+  width: 40px;
+  height: 40px;
+  transition: transform 0.3s;
+}
+
+.floating-social a img:hover {
+  transform: scale(1.2);
+}
+
+/* Particles background */
+#particles-js {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+
+/* ================================
+   SECTIONS
+=================================== */
+section {
+  padding: 80px 20px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+section h2 {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 50px;
+  color: #2c3e50;
+  position: relative;
+}
+
+section h2::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: #4CAF50;
+  margin: 10px auto;
+  border-radius: 2px;
+}
+
+/* ================================
+   ABOUT / SKILLS
+=================================== */
+.timeline { display: flex; flex-direction: column; gap: 15px; margin: 20px 0; }
+.timeline-item h4 { margin: 0; color: #4CAF50; }
+
+.skills { display: flex; flex-direction: column; gap: 15px; }
+.skill { display: flex; flex-direction: column; }
+.skill-name { font-weight: 600; margin-bottom: 5px; }
+.skill-bar { width: 100%; background: #ddd; height: 15px; border-radius: 10px; }
+.skill-fill { width: 0%; height: 100%; background: #4CAF50; border-radius: 10px; transition: width 2s; }
+
+/* ================================
+   STATS / COUNTERS
+=================================== */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 20px;
+  text-align: center;
+}
+
+.stat-card {
+  background: #fff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+}
+
+.counter { font-size: 2.5rem; color: #4CAF50; }
+
+/* ================================
+   PROJECTS / SERVICES
+=================================== */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+}
+
+.project-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+  padding: 25px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+}
+
+.project-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.project-card h3 { color: #2c3e50; }
+.project-card p { font-size: 1rem; color: #555; margin: 10px 0; }
+.project-card a {
+  display: inline-block;
+  margin-top: 10px;
+  color: #4CAF50;
+  font-weight: bold;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+.project-card a:hover { color: #2c3e50; }
+.project-card .badge {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: #4CAF50;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 8px;
+  font-size: 0.8rem;
+}
+
+/* ================================
+   CONTACT / FORM
+=================================== */
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  justify-items: center;
+  margin-bottom: 40px;
+}
+
+.contact-card {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+  text-align: center;
+}
+
+.contact-card img { width: 40px; height: 40px; margin-bottom: 10px; }
+.contact-card a { color: #4CAF50; font-weight: 600; }
+.contact-card a:hover { text-decoration: underline; }
+
+form { display: flex; flex-direction: column; gap: 15px; max-width: 500px; margin: auto; }
+form input, form textarea { padding: 12px; border-radius: 8px; border: 1px solid #ccc; font-size: 1rem; }
+form button { padding: 12px; border: none; border-radius: 8px; background: #4CAF50; color: #fff; font-weight: bold; cursor: pointer; transition: background 0.3s; }
+form button:hover { background: #388E3C; }
+
+/* ================================
+   FOOTER
+=================================== */
+footer {
+  text-align: center;
+  padding: 25px;
+  background: #2c3e50;
+  color: #fff;
+  font-size: 0.95rem;
+}
+
+/* ================================
+   RESPONSIVE
+=================================== */
+@media screen and (max-width: 768px) {
+  .hero-content { flex-direction: column; text-align: center; gap: 25px; }
   .hero-right h1 { font-size: 2.5rem; }
   .hero-right p { font-size: 1.2rem; }
-
-  .floating-social { display: none; }
+  .floating-social { left: 5px; }
 }
