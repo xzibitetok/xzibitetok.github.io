@@ -25,7 +25,6 @@ navbar-links:
   Resources: "resources"
   Contact: "contact"
 
-  # Author's home: "https://deanattali.com"
   Resources:
     - Beautiful Jekyll: "https://beautifuljekyll.com"
     - Learn markdown: "https://www.markdowntutorial.com/"
@@ -60,10 +59,6 @@ social-network-links:
   github: xzibitetok
   linkedin: ubong-etok-56b4a0170
   facebook: uby.etok.5
-  # twitter: null
-  # patreon: null
-  # youtube: null
-  # rss: null
   whatsapp: +2348161777214
 
 # If you want your website to generate an RSS feed, provide a description
@@ -118,17 +113,17 @@ navbar-var-length: false
 
 # Personalize the colours in your website. Colour values can be any valid CSS colour
 
-page-col: "#ffffff"
-text-col: "#222222"
-link-col: "#0057D9"
-hover-col: "#003B91"
-navbar-col: "#ffffff"
-navbar-text-col: "#222222"
-navbar-border-col: "#eaecef"
-footer-col: "#ffffff"
-footer-text-col: "#6b7280"
-footer-link-col: "#222222"
-footer-hover-col: "#0057D9"
+page-col: "#F9FAFB"        # Light gray background
+text-col: "#1F2937"        # Main text color
+link-col: "#2563EB"        # Links (blue accent)
+hover-col: "#1E40AF"       # Hover effect for links
+navbar-col: "#FFFFFF"      # White navbar
+navbar-text-col: "#374151" # Dark gray navbar text
+navbar-border-col: "#E5E7EB" # Light gray navbar border
+footer-col: "#111827"      # Dark footer
+footer-text-col: "#D1D5DB" # Light gray footer text
+footer-link-col: "#93C5FD" # Soft blue footer links
+footer-hover-col: "#60A5FA" # Hover blue on footer links
 
 # Alternatively, the navbar, footer, and page background can be set to an image
 # instead of colour
