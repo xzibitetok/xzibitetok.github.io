@@ -66,35 +66,70 @@
     <p>&copy; {{ site.time | date: '%Y' }} Ubong Etok | Built with ❤️ using Jekyll</p>
   </footer>
 
-  <!-- Typed.js -->
+  <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
   <script>
+    // Typed.js
     new Typed("#typed", {
       strings: ["Business Intelligence Manager", "Data Scientist", "Data Analyst", "ML Enthusiast"],
       typeSpeed: 70,
       backSpeed: 40,
       loop: true
     });
-  </script>
 
-  <!-- Particles.js -->
-  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-  <script>
+    // Particles.js
     particlesJS.load('particles-js', '/assets/particles.json', function() {
       console.log('particles.js loaded successfully');
     });
-  </script>
 
-  <!-- Smooth Scroll -->
-  <script>
+    // Smooth Scroll
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function(e) {
         e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-          behavior: 'smooth'
-        });
+        document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
       });
     });
+
+    // Animate skill bars
+    const skillBars = document.querySelectorAll('.skill-fill');
+    const animateSkills = () => {
+      skillBars.forEach(skill => {
+        const rect = skill.getBoundingClientRect();
+        if(rect.top < window.innerHeight - 50){
+          skill.style.width = skill.getAttribute('data-percent');
+        }
+      });
+    }
+    window.addEventListener('scroll', animateSkills);
+    window.addEventListener('load', animateSkills);
+
+    // Animated counters
+    const counters = document.querySelectorAll('.counter');
+    const speed = 200;
+    const animateCounters = () => {
+      counters.forEach(counter => {
+        const updateCount = () => {
+          const target = +counter.getAttribute('data-target');
+          const count = +counter.innerText;
+          const increment = Math.ceil(target / speed);
+          if(count < target){
+            counter.innerText = count + increment;
+            setTimeout(updateCount, 20);
+          } else {
+            counter.innerText = target;
+          }
+        }
+        const rect = counter.getBoundingClientRect();
+        if(rect.top < window.innerHeight - 50 && !counter.classList.contains('counted')){
+          counter.classList.add('counted');
+          updateCount();
+        }
+      });
+    }
+    window.addEventListener('scroll', animateCounters);
+    window.addEventListener('load', animateCounters);
   </script>
 </body>
 </html>
