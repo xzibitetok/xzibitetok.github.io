@@ -142,9 +142,10 @@ full-width: true
       <a href="https://github.com/xzibitetok/Xzibit-Sales-Analysis" target="_blank">View Project →</a>
     </div>
     <div class="project-card">
-      <h3>Machine Learning Model</h3>
+      <h3>Power BI Visualization dashboard</h3>
       <p>Predictive model for customer churn using Python.</p>
-      <a href="https://github.com/xzibitetok/project2" target="_blank">View Project →</a>
+      <a href="https://github.com/xzibitetok/Frank-s-Sales-Analysis" target="_blank">View Project →</a>
+
     </div>
     <div class="project-card">
       <h3>Web Portfolio</h3>
