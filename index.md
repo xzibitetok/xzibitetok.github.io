@@ -69,6 +69,7 @@ full-width: true
 
     <h3>Education</h3>
     <ul>
+      <li>M.Sc. [Hons.] Data Science – University of South Wales, UK (in view)</li>
       <li>B.Sc. [Hons.] Building – University of Uyo, Akwa Ibom, NG (Sept 2018)</li>
       <li>WASSCE – Bright Stars Model Secondary School, NG (Dec 2010)</li>
     </ul>
@@ -82,7 +83,7 @@ full-width: true
   </div>
 
   <div class="resume-button">
-    <a href="/assets/myresume.pdf" target="_blank" class="btn">📑 View Full Resume</a>
+    <a href="/assets/resume.pdf" target="_blank" class="btn">📑 View Full Resume</a>
   </div>
 </section>
 
