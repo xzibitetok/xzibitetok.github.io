@@ -57,7 +57,7 @@ full-width: true
   
   <div class="resume-card">
     <p><strong>ETOK, UBONG EFFIONG</strong><br>
-    Abuja, Nigeria • +234 8161777214 • <a href="mailto:ubyetok@gmail.com">ubyetok@gmail.com</a></p>
+    Cardiff, United Kingdom • +44 7831072256 • <a href="mailto:ubyetok@gmail.com">ubyetok@gmail.com</a></p>
 
     <h3>Profile</h3>
     <p>
