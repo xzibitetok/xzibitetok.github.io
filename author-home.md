@@ -6,9 +6,9 @@ permalink: /contact/
 
 # Get in Touch
 
-📍 Location: Abuja, Nigeria  
+📍 Location: Cardiff, United Kingdom  
 📧 Email: [ubyetok@gmail.com](mailto:ubyetok@gmail.com)  
-📞 Phone: +234 816 177 7214  
+📞 Phone: +44 7831 072256  
 
 **Connect with me:**  
 - [LinkedIn](https://www.linkedin.com/in/ubong-etok-56b4a0170/)  
