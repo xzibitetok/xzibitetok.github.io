@@ -2,4 +2,32 @@
 layout: base
 ---
 
-{{ content }}
+<header>
+  <nav class="navbar">
+    <div class="nav-logo">
+      <a href="#home">Ubong<span>Etok</span></a>
+    </div>
+
+    <div class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('show')">
+      ☰
+    </div>
+
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#resume">Resume</a></li>
+      <li><a href="#achievements">Achievements</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  {{ content }}
+</main>
+
+<footer>
+  <p>&copy; {{ site.time | date: '%Y' }} Ubong Etok | Built with ❤️ using Jekyll</p>
+</footer>
