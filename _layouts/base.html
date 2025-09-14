@@ -5,26 +5,29 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{ page.title | default: site.title }}</title>
   <meta name="description" content="{{ site.description }}">
-  <meta name="author" content="Ubong Etok">
-  <link rel="icon" href="{{ site.favicon | relative_url }}" type="image/x-icon">
+  <link rel="icon" href="{{ '/assets/img/favicon.ico' | relative_url }}" type="image/x-icon">
 
   <!-- Google Fonts -->
-  <link href="{{ site.google-fonts }}" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <!-- Stylesheets -->
   <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
   <link rel="stylesheet" href="{{ '/assets/css/custom-styles.css' | relative_url }}">
 </head>
 <body>
+
   <!-- NAVBAR -->
   <header>
     <nav class="navbar">
       <div class="nav-logo"><a href="#home">Ubong<span>Etok</span></a></div>
       <div class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('show')">☰</div>
       <ul class="nav-links">
-        {% for item in site.nav-links %}
-          <li><a href="{{ item.link }}">{{ item.name }}</a></li>
-        {% endfor %}
+        <li><a href="#about">About</a></li>
+        <li><a href="#resume-preview">Resume</a></li>
+        <li><a href="#stats">Achievements</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
   </header>
@@ -33,11 +36,11 @@
   <section class="hero" id="home">
     <canvas id="particles-js"></canvas>
     <div class="hero-content">
-      <img src="{{ site.profile-picture | relative_url }}" alt="Ubong Etok" class="hero-profile">
+      <img src="/assets/img/githubpics.jpg" alt="Ubong Etok" class="hero-profile">
       <div class="hero-right">
         <h1>Hi, I’m <span>Ubong Etok</span></h1>
         <p id="typed"></p>
-        <a href="{{ site.resume | relative_url }}" class="resume-btn" download>Download Resume</a>
+        <a href="/assets/Ubong_Etok_Resume.pdf" class="resume-btn" download>Download Resume</a>
         <div class="hero-skills">
           <span class="skill-badge">Python</span>
           <span class="skill-badge">Power BI</span>
@@ -48,12 +51,11 @@
       </div>
     </div>
 
-    <!-- Social Icons -->
     <div class="floating-social">
-      <a href="https://wa.me/{{ site.social-network-links.whatsapp | remove: '+' }}" target="_blank"><img src="/assets/img/whatsapp.png" alt="Whatsapp"></a>
-      <a href="{{ site.social-network-links.linkedin }}" target="_blank"><img src="/assets/img/linkedin.png" alt="LinkedIn"></a>
-      <a href="{{ site.social-network-links.facebook }}" target="_blank"><img src="/assets/img/facebook.png" alt="Facebook"></a>
-      <a href="{{ site.social-network-links.email }}"><img src="/assets/img/email.png" alt="Email"></a>
+      <a href="https://wa.me/+447831072256" target="_blank"><img src="/assets/img/whatsapp.png" alt="Whatsapp"></a>
+      <a href="https://www.linkedin.com/in/ubong-etok-56b4a0170/" target="_blank"><img src="/assets/img/linkedin.png" alt="LinkedIn"></a>
+      <a href="https://www.facebook.com/uby.etok.5" target="_blank"><img src="/assets/img/facebook.png" alt="Facebook"></a>
+      <a href="mailto:ubyetok@gmail.com"><img src="/assets/img/email.png" alt="Email"></a>
     </div>
   </section>
 
@@ -69,7 +71,7 @@
   <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
   <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
   <script>
-    // Typed.js hero
+    // Typed.js
     new Typed("#typed", {
       strings: ["Business Intelligence Manager", "Data Scientist", "Data Analyst", "ML Enthusiast"],
       typeSpeed: 70,
@@ -79,6 +81,14 @@
 
     // Particles.js
     particlesJS.load('particles-js', '/assets/particles.json', function(){console.log('particles loaded');});
+
+    // Smooth scrolling
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e){
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    });
 
     // Animate skill bars
     const skillBars = document.querySelectorAll('.skill-fill');
@@ -117,14 +127,7 @@
     window.addEventListener('scroll', animateCounters);
     window.addEventListener('load', animateCounters);
 
-    // Smooth scroll & scroll spy
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href'))
-          .scrollIntoView({ behavior: 'smooth', block: 'start' });
-      });
-    });
+    // Scrollspy
     const sections = document.querySelectorAll("section");
     const navLinks = document.querySelectorAll(".nav-links li a");
     window.addEventListener("scroll", () => {
