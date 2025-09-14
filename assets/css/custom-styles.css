@@ -52,51 +52,34 @@ body {
 }
 
 .hero-right h1 span {
-  color: #0A0A0A;
+  color: #4CAF50;
 }
 
 .hero-right p {
   font-size: 1.5rem;
   margin: 10px 0 20px;
-}
-
-.resume-btn {
-  padding: 12px 25px;
-  background: #4CAF50;
-  color: #fff;
-  font-weight: bold;
-  text-decoration: none;
-  border-radius: 8px;
-  transition: background 0.3s ease;
-}
-
-.resume-btn:hover {
-  background: #388E3C;
-}
-
-/* Animated Hero Skill Badges */
-.hero-skills {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-bottom: 20px;
-}
-
-.skill-badge {
-  background: #4CAF50;
-  color: #fff;
-  padding: 6px 15px;
-  border-radius: 20px;
-  font-size: 0.9rem;
+  color: #39ff14; /* bright green accent */
   font-weight: 600;
-  animation: floatBadge 3s ease-in-out infinite alternate;
+  text-shadow:
+    0 0 5px #39ff14,
+    0 0 10px #39ff14,
+    0 0 20px #39ff14,
+    0 0 40px rgba(57,255,20,0.5);
+  animation: glowPulse 2s ease-in-out infinite alternate;
 }
 
-@keyframes floatBadge {
-  0% { transform: translateY(0px); }
-  50% { transform: translateY(-5px); }
-  100% { transform: translateY(0px); }
+@keyframes glowPulse {
+  0% {
+    text-shadow: 0 0 5px #39ff14, 0 0 10px #39ff14, 0 0 20px #39ff14, 0 0 40px rgba(57,255,20,0.5);
+  }
+  50% {
+    text-shadow: 0 0 8px #39ff14, 0 0 15px #39ff14, 0 0 25px #39ff14, 0 0 50px rgba(57,255,20,0.7);
+  }
+  100% {
+    text-shadow: 0 0 5px #39ff14, 0 0 10px #39ff14, 0 0 20px #39ff14, 0 0 40px rgba(57,255,20,0.5);
+  }
 }
+
 
 /* Floating Social Links */
 .floating-social {
