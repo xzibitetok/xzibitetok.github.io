@@ -7,7 +7,7 @@ title: "Ubong Etok Portfolio"
 <section class="hero" id="home">
   <div class="hero-content">
     <div class="hero-left">
-      <img src="/assets/img/githubpics/profile.jpg" alt="Ubong Etok" class="hero-profile">
+      <img src="/assets/img/githubpics.jpg" alt="Ubong Etok" class="hero-profile">
     </div>
     <div class="hero-right">
       <h1>Hi, I’m <span>Ubong Etok</span></h1>
@@ -23,24 +23,38 @@ title: "Ubong Etok Portfolio"
   <p>I am a Data Scientist and Business Intelligence Enthusiast passionate about transforming raw data into actionable insights.</p>
 </section>
 
-<!-- Resume Section -->
-<section id="resume" class="section">
-  <h2>Resume</h2>
-  <div class="timeline">
-    <div class="timeline-item">
-      <h3>2025 – Present</h3>
-      <p>MSc in Data Science, University of South Wales</p>
-    </div>
-    <div class="timeline-item">
-      <h3>2019 – 2023</h3>
-      <p>Business Intelligence Manager, [Your Company]</p>
-    </div>
-    <div class="timeline-item">
-      <h3>2017 – 2019</h3>
-      <p>Data Analyst, [Your Previous Company]</p>
-    </div>
+<!-- RESUME SECTION -->
+<section id="resume-preview" class="section-container">
+  <h2>📄 Resume</h2>
+  <div class="resume-card">
+    <p><strong>ETOK, UBONG EFFIONG</strong><br>
+    Cardiff, United Kingdom • +44 7831072256 • <a href="mailto:ubyetok@gmail.com">ubyetok@gmail.com</a></p>
+
+    <h3>Profile</h3>
+    <p>
+      Data-driven Business Intelligence Manager with expertise in Power BI, Excel, SQL, Python, and Machine Learning.
+      Experienced in transforming complex datasets into actionable insights and leading data-driven strategies.
+    </p>
+
+    <h3>Education</h3>
+    <ul>
+      <li>M.Sc. Data Science – University of South Wales, UK (In view)</li>
+      <li>B.Sc. Building – University of Uyo, Akwa Ibom, NG (2018)</li>
+      <li>WASSCE – Bright Stars Model Secondary School, NG (2010)</li>
+    </ul>
+
+    <h3>Key Skills</h3>
+    <ul class="resume-skills">
+      <li>Data Cleaning & Transformation (Excel, MySQL, Power BI, Python)</li>
+      <li>Dashboard Design & BI Reporting</li>
+      <li>KPI Development & Project Monitoring</li>
+    </ul>
+  </div>
+  <div class="resume-button">
+    <a href="/assets/Ubong_Etok_Resume.pdf" target="_blank" class="btn">📑 View Full Resume</a>
   </div>
 </section>
+
 
 <!-- Skills Section -->
 <section id="skills" class="section">
