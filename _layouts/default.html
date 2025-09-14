@@ -17,6 +17,28 @@
 </head>
 <body>
 
+  <!-- HEADER / NAVBAR -->
+  <header>
+    <nav class="navbar">
+      <div class="nav-logo">
+        <a href="#home">Ubong<span>Etok</span></a>
+      </div>
+
+      <div class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('show')">
+        ☰
+      </div>
+
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#resume-preview">Resume</a></li>
+        <li><a href="#stats">Achievements</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
   <!-- HERO SECTION -->
   <section class="hero" id="home">
     <canvas id="particles-js"></canvas>
@@ -115,59 +137,37 @@
     }
     window.addEventListener('scroll', animateCounters);
     window.addEventListener('load', animateCounters);
+
+    // Smooth scrolling
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href'))
+          .scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    });
+
+    // Scroll-spy
+    const sections = document.querySelectorAll("section");
+    const navLinks = document.querySelectorAll(".nav-links li a");
+
+    window.addEventListener("scroll", () => {
+      let current = "";
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop - 90;
+        if (pageYOffset >= sectionTop) {
+          current = section.getAttribute("id");
+        }
+      });
+
+      navLinks.forEach(link => {
+        link.classList.remove("active");
+        if (link.getAttribute("href") === "#" + current) {
+          link.classList.add("active");
+        }
+      });
+    });
   </script>
-  <script>
-  // Smooth scrolling with easing
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-      e.preventDefault();
-      document.querySelector(this.getAttribute('href'))
-        .scrollIntoView({ behavior: 'smooth', block: 'start' });
-    });
-  });
-
-  // Scroll-spy
-  const sections = document.querySelectorAll("section");
-  const navLinks = document.querySelectorAll(".nav-links li a");
-
-  window.addEventListener("scroll", () => {
-    let current = "";
-    sections.forEach(section => {
-      const sectionTop = section.offsetTop - 90;
-      if (pageYOffset >= sectionTop) {
-        current = section.getAttribute("id");
-      }
-    });
-
-    navLinks.forEach(link => {
-      link.classList.remove("active");
-      if (link.getAttribute("href") === "#" + current) {
-        link.classList.add("active");
-      }
-    });
-  });
-</script>
 
 </body>
-  <header>
-  <nav class="navbar">
-    <div class="nav-logo">
-      <a href="#home">Ubong<span>Etok</span></a>
-    </div>
-
-    <div class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('show')">
-      ☰
-    </div>
-
-    <ul class="nav-links">
-      <li><a href="#about">About</a></li>
-      <li><a href="#resume-preview">Resume</a></li>
-      <li><a href="#stats">Achievements</a></li>
-      <li><a href="#services">Services</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
-</header>
-
 </html>
