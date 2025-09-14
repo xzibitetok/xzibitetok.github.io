@@ -15,80 +15,8 @@ body {
   scroll-behavior: smooth;
 }
 
-/* ===========================
-   NAVBAR
-=========================== */
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 2rem;
-  background-color: #0d47a1; /* deep blue header */
-  position: fixed;
-  width: 100%;
-  top: 0;
-  z-index: 1000;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.5);
-}
-
-.nav-logo a {
-  font-size: 1.6rem;
-  font-weight: 700;
-  color: #fff;
-}
-
-.nav-logo a span {
-  color: #ffeb3b; /* yellow accent */
-}
-
-.nav-links {
-  list-style: none;
-  display: flex;
-  gap: 1.5rem;
-}
-
-.nav-links li a {
-  color: #fff;
-  font-weight: 500;
-  transition: color 0.3s ease;
-}
-
-.nav-links li a.active,
-.nav-links li a:hover {
-  color: #ffeb3b;
-}
-
-.nav-toggle {
-  display: none;
-  font-size: 1.8rem;
-  cursor: pointer;
-  color: #ffeb3b;
-}
-
-@media (max-width: 900px) {
-  .nav-links {
-    flex-direction: column;
-    position: absolute;
-    top: 100%;
-    right: 0;
-    background-color: #0d47a1;
-    width: 200px;
-    padding: 1rem;
-    border-radius: 0 0 8px 8px;
-    transform: translateY(-20px);
-    opacity: 0;
-    pointer-events: none;
-    transition: all 0.3s ease;
-  }
-  .nav-links.show {
-    transform: translateY(0);
-    opacity: 1;
-    pointer-events: auto;
-  }
-  .nav-toggle {
-    display: block;
-  }
-}
+a { color: inherit; text-decoration: none; transition: color 0.3s ease; }
+img { max-width: 100%; display: block; }
 
 /* ===========================
    HERO SECTION
@@ -96,12 +24,12 @@ body {
 .hero {
   position: relative;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   min-height: 100vh;
   padding: 0 2rem;
-  background: linear-gradient(to bottom, #121212 0%, #1a1a1a 100%);
   overflow: hidden;
+  background: linear-gradient(to bottom, #121212 0%, #1f1f1f 100%);
 }
 
 .hero-content {
@@ -116,49 +44,43 @@ body {
   width: 180px;
   height: 180px;
   border-radius: 50%;
-  border: 4px solid #ffeb3b;
+  border: 4px solid #39ff14;
   object-fit: cover;
 }
 
 .hero-right h1 {
-  font-size: 2.5rem;
+  font-size: 2.8rem;
   margin-bottom: 1rem;
 }
 
-.hero-right h1 span {
-  color: #ffeb3b;
+.hero-right h1 span { color: #39ff14; }
+
+.resume-btn {
+  display: inline-block;
+  background-color: #39ff14;
+  color: #1f1f1f;
+  padding: 0.6rem 1.2rem;
+  font-weight: 600;
+  border-radius: 6px;
+  transition: background 0.3s ease, transform 0.3s ease;
 }
 
-/* Typed.js animated captions */
-#typed {
-  font-size: 1.3rem;
-  color: #39ff14 !important;
-  font-weight: 600 !important;
-  text-shadow: 
-    0 0 5px #39ff14,
-    0 0 10px #39ff14,
-    0 0 20px #39ff14,
-    0 0 40px rgba(57,255,20,0.5) !important;
-  animation: glowPulse 2s ease-in-out infinite alternate !important;
+.resume-btn:hover {
+  background-color: #32cd32;
+  transform: translateY(-2px);
 }
 
-@keyframes glowPulse {
-  0% { text-shadow: 0 0 5px #39ff14, 0 0 10px #39ff14, 0 0 20px #39ff14, 0 0 40px rgba(57,255,20,0.5); }
-  50% { text-shadow: 0 0 8px #39ff14, 0 0 15px #39ff14, 0 0 25px #39ff14, 0 0 50px rgba(57,255,20,0.7); }
-  100% { text-shadow: 0 0 5px #39ff14, 0 0 10px #39ff14, 0 0 20px #39ff14, 0 0 40px rgba(57,255,20,0.5); }
-}
-
-/* Hero skill badges */
+/* Animated Skill Badges */
 .hero-skills {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
-  margin-bottom: 1rem;
+  margin-top: 1rem;
 }
 
 .skill-badge {
-  background-color: #0d47a1;
-  color: #ffeb3b;
+  background-color: #2a2a2a;
+  color: #39ff14;
   padding: 0.3rem 0.6rem;
   border-radius: 4px;
   font-size: 0.9rem;
@@ -167,65 +89,83 @@ body {
 }
 
 .skill-badge:hover {
-  transform: scale(1.1);
-  background-color: #1565c0;
+  background-color: #39ff14;
+  color: #1f1f1f;
+  transform: translateY(-2px);
 }
 
-/* Resume button */
-.resume-btn {
-  display: inline-block;
-  padding: 0.6rem 1.2rem;
-  background-color: #ffeb3b;
-  color: #121212;
+/* ===========================
+   HERO CAPTION TOP-RIGHT
+=========================== */
+.hero-caption {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  font-size: 1.3rem;
+  color: #39ff14;
   font-weight: 600;
-  border-radius: 6px;
-  transition: background 0.3s ease;
+  text-shadow:
+    0 0 5px #39ff14,
+    0 0 10px #39ff14,
+    0 0 20px #39ff14,
+    0 0 40px rgba(57,255,20,0.5);
+  animation: glowPulse 2s ease-in-out infinite alternate;
+  z-index: 3;
+  text-align: right;
 }
 
-.resume-btn:hover {
-  background-color: #fdd835;
+@keyframes glowPulse {
+  0% { text-shadow: 0 0 5px #39ff14, 0 0 10px #39ff14, 0 0 20px #39ff14, 0 0 40px rgba(57,255,20,0.5); }
+  50% { text-shadow: 0 0 8px #39ff14, 0 0 15px #39ff14, 0 0 25px #39ff14, 0 0 50px rgba(57,255,20,0.7); }
+  100% { text-shadow: 0 0 5px #39ff14, 0 0 10px #39ff14, 0 0 20px #39ff14, 0 0 40px rgba(57,255,20,0.5); }
 }
+
+/* ===========================
+   NAVBAR
+=========================== */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(0,0,0,0.85);
+  z-index: 1000;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+.navbar {
+  max-width: 1100px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+}
+
+.nav-logo a {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #fff;
+  text-decoration: none;
+}
+
+.nav-logo span { color: #39ff14; }
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+.nav-links li a {
+  color: #fff;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav-links li a:hover,
+.nav-links li a.active { color: #39ff14; }
+
+.nav-toggle { display: none; font-size: 1.8rem; color: #fff; cursor: pointer; }
 
 /* Floating social */
-.floating-social {
-  position: fixed;
-  top: 40%;
-  left: 1rem;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  z-index: 10;
-}
-
-.floating-social img {
-  width: 40px;
-  height: 40px;
-  transition: transform 0.3s;
-}
-
-.floating-social img:hover {
-  transform: scale(1.2);
-}
-
-/* ===========================
-   FOOTER
-=========================== */
-footer {
-  text-align: center;
-  padding: 2rem;
-  background-color: #0d47a1;
-  color: #fff;
-  font-size: 0.95rem;
-}
-
-/* ===========================
-   RESPONSIVE
-=========================== */
-@media (max-width: 768px) {
-  .hero-content {
-    flex-direction: column;
-    text-align: center;
-  }
-  .hero-right h1 { font-size: 2rem; }
-  #typed { font-size: 1.1rem; }
-}
+.floating-social { position: fixed; left: 1rem; top: 50%; transform: translateY(-50%); display: flex; flex-direction: column; gap: 
