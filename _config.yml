@@ -12,32 +12,3 @@ social-network-links:
   linkedin: "https://www.linkedin.com/in/ubong-etok-56b4a0170/"
   facebook: "https://www.facebook.com/uby.etok.5"
   email: "mailto:ubyetok@gmail.com"
-
-# Navigation
-nav-links:
-  - name: About
-    link: "#about"
-  - name: Resume
-    link: "#resume-preview"
-  - name: Achievements
-    link: "#stats"
-  - name: Services
-    link: "#services"
-  - name: Projects
-    link: "#projects"
-  - name: Contact
-    link: "#contact"
-
-# Colors
-primary-color: "#39ff14"
-background-color: "#0f111a"
-text-color: "#f0f0f0"
-accent-color: "#1c1f2a"
-
-# Fonts
-google-fonts: "https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
-
-# Assets
-profile-picture: "/assets/img/githubpics.jpg"
-favicon: "/assets/img/favicon.ico"
-resume: "/assets/Ubong_Etok_Resume.pdf"
