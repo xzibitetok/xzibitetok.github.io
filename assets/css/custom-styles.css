@@ -330,11 +330,12 @@ form button:hover { background: #32cd32; }
 }
 
 .floating-social img {
-  width: 30px;
-  height: 30px;
+  width: 24px;  /* smaller than 30px */
+  height: 24px;
   transition: transform 0.3s;
 }
 
+.floating-social img:hover { transform: scale(1.2); }
 .floating-social img:hover { transform: scale(1.2); }
 
 /* ===========================
