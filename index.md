@@ -7,7 +7,9 @@ full-width: true
 <!-- ABOUT SECTION -->
 <section id="about">
   <h2>About Me</h2>
-  <p><span id="about-typed"></span></p>
+  <p>
+    <span id="about-typed"></span>
+  </p>
 
   <div class="timeline">
     <div class="timeline-item">
@@ -24,59 +26,103 @@ full-width: true
     </div>
   </div>
 
-  <!-- Skills -->
   <div class="skills">
-    <div class="skill"><span class="skill-name">Python</span><div class="skill-bar"><div class="skill-fill" data-percent="95%"></div></div></div>
-    <div class="skill"><span class="skill-name">Power BI</span><div class="skill-bar"><div class="skill-fill" data-percent="90%"></div></div></div>
-    <div class="skill"><span class="skill-name">SQL</span><div class="skill-bar"><div class="skill-fill" data-percent="85%"></div></div></div>
-    <div class="skill"><span class="skill-name">Machine Learning</span><div class="skill-bar"><div class="skill-fill" data-percent="80%"></div></div></div>
-    <div class="skill"><span class="skill-name">Excel</span><div class="skill-bar"><div class="skill-fill" data-percent="95%"></div></div></div>
+    <div class="skill">
+      <span class="skill-name">Python</span>
+      <div class="skill-bar"><div class="skill-fill" data-percent="95%"></div></div>
+    </div>
+    <div class="skill">
+      <span class="skill-name">Power BI</span>
+      <div class="skill-bar"><div class="skill-fill" data-percent="90%"></div></div>
+    </div>
+    <div class="skill">
+      <span class="skill-name">SQL</span>
+      <div class="skill-bar"><div class="skill-fill" data-percent="85%"></div></div>
+    </div>
+    <div class="skill">
+      <span class="skill-name">Machine Learning</span>
+      <div class="skill-bar"><div class="skill-fill" data-percent="80%"></div></div>
+    </div>
+    <div class="skill">
+      <span class="skill-name">Excel</span>
+      <div class="skill-bar"><div class="skill-fill" data-percent="90%"></div></div>
+    </div>
   </div>
 </section>
 
-<!-- ACHIEVEMENTS -->
+<!-- ACHIEVEMENTS / STATS -->
 <section id="stats">
   <h2>Achievements</h2>
   <div class="stats-grid">
-    <div class="stat-card"><h3 class="counter" data-target="150">0</h3><p>Projects Completed</p></div>
-    <div class="stat-card"><h3 class="counter" data-target="50">0</h3><p>Clients Served</p></div>
-    <div class="stat-card"><h3 class="counter" data-target="10">0</h3><p>Awards Won</p></div>
-    <div class="stat-card"><h3 class="counter" data-target="5">0</h3><p>Certifications</p></div>
+    <div class="stat-card">
+      <h3 class="counter" data-target="150">0</h3>
+      <p>Projects Completed</p>
+    </div>
+    <div class="stat-card">
+      <h3 class="counter" data-target="50">0</h3>
+      <p>Happy Clients</p>
+    </div>
+    <div class="stat-card">
+      <h3 class="counter" data-target="5">0</h3>
+      <p>Years Experience</p>
+    </div>
+    <div class="stat-card">
+      <h3 class="counter" data-target="10">0</h3>
+      <p>Certifications</p>
+    </div>
   </div>
 </section>
 
-<!-- SERVICES -->
+<!-- SERVICES SECTION -->
 <section id="services">
   <h2>Services</h2>
-  <div class="stats-grid">
-    <div class="stat-card"><h3>Data Analytics</h3><p>Transforming data into actionable insights.</p></div>
-    <div class="stat-card"><h3>Business Intelligence</h3><p>Creating dashboards and reporting solutions.</p></div>
-    <div class="stat-card"><h3>Machine Learning</h3><p>Predictive models for decision support.</p></div>
+  <div class="services-grid">
+    <div class="service-card">
+      <h3>Data Analytics</h3>
+      <p>Transforming data into actionable insights for decision-making.</p>
+    </div>
+    <div class="service-card">
+      <h3>BI Reporting</h3>
+      <p>Designing interactive dashboards using Power BI and Excel.</p>
+    </div>
+    <div class="service-card">
+      <h3>Machine Learning Models</h3>
+      <p>Predictive analytics and modeling for business optimization.</p>
+    </div>
   </div>
 </section>
 
-<!-- PROJECTS -->
+<!-- PROJECTS SECTION -->
 <section id="projects">
   <h2>Projects</h2>
-  <div class="stats-grid">
-    <div class="stat-card"><h3>Sales Dashboard</h3><p>Interactive Excel & Power BI dashboards.</p></div>
-    <div class="stat-card"><h3>Customer Churn Model</h3><p>Predictive model using Python and ML techniques.</p></div>
-    <div class="stat-card"><h3>BI Automation</h3><p>Streamlined reporting processes for clients.</p></div>
+  <div class="projects-grid">
+    <div class="project-card">
+      <h3>Customer Churn Prediction</h3>
+      <p>Machine learning model to predict customer churn using Python.</p>
+      <a href="#">View Project</a>
+    </div>
+    <div class="project-card">
+      <h3>Sales Dashboard</h3>
+      <p>Power BI dashboard visualizing sales trends and KPIs.</p>
+      <a href="#">View Project</a>
+    </div>
   </div>
 </section>
 
-<!-- CONTACT -->
+<!-- CONTACT SECTION -->
 <section id="contact">
   <h2>Contact Me</h2>
-  <p>Email: <a href="mailto:ubyetok@gmail.com">ubyetok@gmail.com</a></p>
-  <p>LinkedIn: <a href="https://www.linkedin.com/in/ubong-etok-56b4a0170/" target="_blank">Profile</a></p>
+  <form action="mailto:ubyetok@gmail.com" method="POST" enctype="text/plain">
+    <input type="text" name="name" placeholder="Your Name" required>
+    <input type="email" name="email" placeholder="Email" required>
+    <textarea name="message" rows="5" placeholder="Message" required></textarea>
+    <button type="submit">Send Message</button>
+  </form>
 </section>
 
-<script>
-new Typed("#about-typed", {
-  strings: ["I turn data into actionable insights.", "Passionate about AI & ML.", "Business Intelligence Specialist."],
-  typeSpeed: 60,
-  backSpeed: 30,
-  loop: true
-});
-</script>
+<!-- Floating Socials -->
+<div class="floating-social">
+  <a href="{{ site.social-network-links.linkedin }}"><img src="/assets/img/linkedin.png" alt="LinkedIn"></a>
+  <a href="{{ site.social-network-links.facebook }}"><img src="/assets/img/facebook.png" alt="Facebook"></a>
+  <a href="mailto:ubyetok@gmail.com"><img src="/assets/img/email.png" alt="Email"></a>
+</div>
