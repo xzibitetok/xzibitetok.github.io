@@ -1,122 +1,127 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{{ page.title | default: site.title }}</title>
-  <meta name="description" content="{{ site.description }}">
-  <meta name="author" content="Ubong Etok">
-  <link rel="icon" href="{{ '/assets/img/favicon.ico' | relative_url }}" type="image/x-icon">
+---
+layout: base
+---
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<!-- HERO SECTION -->
+<section class="hero" id="home">
+  <div class="hero-content">
+    <img src="/assets/img/githubpics/profile.jpg" alt="Ubong Etok" class="hero-profile">
+    <h1>Hi, I’m <span>Ubong Etok</span></h1>
+    <p id="typed"></p>
+    <a href="/assets/Ubong_Etok_Resume.pdf" class="resume-btn" download>Download Resume</a>
+  </div>
+</section>
 
-  <!-- Stylesheets -->
-  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
-  <link rel="stylesheet" href="{{ '/assets/css/custom-styles.css' | relative_url }}">
-</head>
-<body>
-  {% include header.html %}
+<!-- ABOUT -->
+<section id="about">
+  <h2>About Me</h2>
+  <p>I am a passionate Data Scientist and Business Intelligence Manager with strong expertise in data analysis, visualization, and predictive modeling. I enjoy transforming raw data into actionable insights that drive business decisions.</p>
+</section>
 
-  <!-- Hero Section -->
-  <section class="hero" id="home">
-    <canvas id="particles-js"></canvas>
-    <div class="hero-content">
-      <img src="/assets/img/githubpics.jpg" alt="Ubong Etok" class="hero-profile">
-      <div class="hero-right">
-        <h1>Hi, I’m <span>Ubong Etok</span></h1>
-        <p id="typed"></p>
-        <a href="/assets/resume.pdf" class="resume-btn" download>Download Resume</a>
-        <div class="hero-skills">
-          <span class="skill-badge">Python</span>
-          <span class="skill-badge">Power BI</span>
-          <span class="skill-badge">SQL</span>
-          <span class="skill-badge">Machine Learning</span>
-          <span class="skill-badge">Excel</span>
-        </div>
+<!-- RESUME -->
+<section id="resume">
+  <h2>Resume</h2>
+  <div class="timeline">
+    <div class="timeline-card">
+      <h3>2025 – Present</h3>
+      <p>MSc in Data Science, University of South Wales</p>
+    </div>
+    <div class="timeline-card">
+      <h3>2019 – 2023</h3>
+      <p>Business Intelligence Manager, [Your Company]</p>
+    </div>
+    <div class="timeline-card">
+      <h3>2017 – 2019</h3>
+      <p>Data Analyst, [Your Previous Company]</p>
+    </div>
+  </div>
+</section>
+
+<!-- ACHIEVEMENTS -->
+<section id="achievements">
+  <h2>Achievements</h2>
+  <div class="counters">
+    <div>
+      <span class="counter" data-target="15">0</span><br>
+      Projects Completed
+    </div>
+    <div>
+      <span class="counter" data-target="8">0</span><br>
+      Certifications Earned
+    </div>
+    <div>
+      <span class="counter" data-target="5">0</span><br>
+      Years of Experience
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <h2>Skills</h2>
+  <div class="skills">
+    <div>
+      <p>Python</p>
+      <div class="skill-bar" style="--level: 90%">
+        <div class="skill-fill"></div>
       </div>
     </div>
-  </section>
+    <div>
+      <p>Power BI</p>
+      <div class="skill-bar" style="--level: 85%">
+        <div class="skill-fill"></div>
+      </div>
+    </div>
+    <div>
+      <p>SQL</p>
+      <div class="skill-bar" style="--level: 80%">
+        <div class="skill-fill"></div>
+      </div>
+    </div>
+    <div>
+      <p>Machine Learning</p>
+      <div class="skill-bar" style="--level: 75%">
+        <div class="skill-fill"></div>
+      </div>
+    </div>
+  </div>
+</section>
 
-  <main>{{ content }}</main>
+<!-- SERVICES -->
+<section id="services">
+  <h2>Services</h2>
+  <div class="services">
+    <div class="service-card">Data Analysis & Visualization</div>
+    <div class="service-card">Business Intelligence Reporting</div>
+    <div class="service-card">Machine Learning Models</div>
+  </div>
+</section>
 
-  <footer>
-    <p>&copy; {{ site.time | date: '%Y' }} Ubong Etok | Built with ❤️ using Jekyll</p>
-  </footer>
+<!-- PROJECTS -->
+<section id="projects">
+  <h2>Projects</h2>
+  <div class="projects">
+    <div class="project-card">Predictive Model for Customer Churn</div>
+    <div class="project-card">Power BI Sales Dashboard</div>
+    <div class="project-card">SQL Data Warehouse Design</div>
+  </div>
+</section>
 
-  <!-- Scripts -->
-  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-  <script>
-    new Typed("#typed", {
-      strings: ["Business Intelligence Manager", "Data Scientist", "Data Analyst", "ML Enthusiast"],
-      typeSpeed: 70,
-      backSpeed: 40,
-      loop: true
-    });
+<!-- CONTACT -->
+<section id="contact" class="contact">
+  <h2>Contact Me</h2>
+  <form>
+    <input type="text" placeholder="Your Name" required>
+    <input type="email" placeholder="Your Email" required>
+    <textarea rows="5" placeholder="Your Message" required></textarea>
+    <button type="submit">Send Message</button>
+  </form>
+</section>
 
-    particlesJS.load('particles-js', '/assets/particles.json', function() {
-      console.log('particles.js loaded');
-    });
-
-    // Animate skill bars
-    const skillBars = document.querySelectorAll('.skill-fill');
-    const animateSkills = () => {
-      skillBars.forEach(skill => {
-        const rect = skill.getBoundingClientRect();
-        if(rect.top < window.innerHeight - 50){
-          skill.style.width = skill.getAttribute('data-percent');
-        }
-      });
-    }
-    window.addEventListener('scroll', animateSkills);
-    window.addEventListener('load', animateSkills);
-
-    // Animate counters
-    const counters = document.querySelectorAll('.counter');
-    const speed = 200;
-    const animateCounters = () => {
-      counters.forEach(counter => {
-        const updateCount = () => {
-          const target = +counter.getAttribute('data-target');
-          const count = +counter.innerText;
-          const increment = Math.ceil(target / speed);
-          if(count < target){
-            counter.innerText = count + increment;
-            setTimeout(updateCount, 20);
-          } else { counter.innerText = target; }
-        }
-        const rect = counter.getBoundingClientRect();
-        if(rect.top < window.innerHeight - 50 && !counter.classList.contains('counted')){
-          counter.classList.add('counted');
-          updateCount();
-        }
-      });
-    }
-    window.addEventListener('scroll', animateCounters);
-    window.addEventListener('load', animateCounters);
-
-    // Smooth scroll & scroll spy
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href'))
-          .scrollIntoView({ behavior: 'smooth', block: 'start' });
-      });
-    });
-    const sections = document.querySelectorAll("section");
-    const navLinks = document.querySelectorAll(".nav-links li a");
-    window.addEventListener("scroll", () => {
-      let current = "";
-      sections.forEach(section => {
-        const sectionTop = section.offsetTop - 90;
-        if (pageYOffset >= sectionTop) current = section.getAttribute("id");
-      });
-      navLinks.forEach(link => {
-        link.classList.remove("active");
-        if (link.getAttribute("href") === "#" + current) link.classList.add("active");
-      });
-    });
-  </script>
-</body>
-</html>
+<!-- SOCIAL ICONS -->
+<div class="social-icons">
+  <a href="https://wa.me/"><img src="/assets/img/icons/whatsapp.png" alt="WhatsApp"></a>
+  <a href="https://linkedin.com/in/ubong-etok-56b4a0170"><img src="/assets/img/icons/linkedin.png" alt="LinkedIn"></a>
+  <a href="https://facebook.com/uby.etok.5"><img src="/assets/img/icons/facebook.png" alt="Facebook"></a>
+  <a href="mailto:ubyetok@gmail.com"><img src="/assets/img/icons/gmail.png" alt="Gmail"></a>
+</div>
