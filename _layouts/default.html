@@ -8,20 +8,19 @@
   <meta name="author" content="Ubong Etok">
 
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 
   <!-- Stylesheets -->
   <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
   <link rel="stylesheet" href="{{ '/assets/css/custom-styles.css' | relative_url }}">
+
+  <link rel="icon" href="{{ '/assets/img/favicon.ico' | relative_url }}" type="image/x-icon">
 </head>
 <body>
-
-  <!-- NAVBAR -->
+  <!-- HEADER -->
   <header>
     <nav class="navbar">
-      <div class="nav-logo">
-        <a href="#home">Ubong<span>Etok</span></a>
-      </div>
+      <div class="nav-logo"><a href="#home">Ubong<span>Etok</span></a></div>
       <div class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('show')">☰</div>
       <ul class="nav-links">
         <li><a href="#about">About</a></li>
@@ -34,19 +33,20 @@
     </nav>
   </header>
 
-  <!-- HERO -->
+  <!-- HERO SECTION -->
   <section class="hero" id="home">
     <canvas id="particles-js"></canvas>
+    <div class="hero-overlay"></div>
     <div class="hero-content">
       <img src="/assets/img/profile.jpg" alt="Ubong Etok" class="hero-profile">
       <h1>Hi, I’m <span>Ubong Etok</span></h1>
       <p id="typed"></p>
-      <a href="/assets/Ubong_Etok_Resume.pdf" class="resume-btn" download>Download Resume</a>
+      <a href="/assets/resume.pdf" class="resume-btn" download>Download Resume</a>
     </div>
 
-    <!-- Floating Socials -->
+    <!-- Social Icons -->
     <div class="floating-social">
-      <a href="https://wa.me/+447831072256" target="_blank"><img src="/assets/img/whatsapp.png" alt="WhatsApp"></a>
+      <a href="https://wa.me/+447831072256" target="_blank"><img src="/assets/img/whatsapp.png" alt="Whatsapp"></a>
       <a href="https://www.linkedin.com/in/ubong-etok-56b4a0170/" target="_blank"><img src="/assets/img/linkedin.png" alt="LinkedIn"></a>
       <a href="https://www.facebook.com/uby.etok.5" target="_blank"><img src="/assets/img/facebook.png" alt="Facebook"></a>
       <a href="mailto:ubyetok@gmail.com"><img src="/assets/img/email.png" alt="Email"></a>
@@ -63,7 +63,7 @@
     <p>&copy; {{ site.time | date: '%Y' }} Ubong Etok | Built with ❤️ using Jekyll</p>
   </footer>
 
-  <!-- Scripts -->
+  <!-- SCRIPTS -->
   <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
   <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
 
@@ -78,55 +78,71 @@
 
     // Particles.js
     particlesJS.load('particles-js', '/assets/particles.json', function() {
-      console.log('particles.js loaded');
-    });
-
-    // Smooth scrolling
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function(e){
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({behavior:'smooth', block:'start'});
-      });
+      console.log('particles.js loaded successfully');
     });
 
     // Animate skill bars
-    const skills = document.querySelectorAll('.skill-fill');
+    const skillBars = document.querySelectorAll('.skill-fill');
     const animateSkills = () => {
-      skills.forEach(skill => {
+      skillBars.forEach(skill => {
         const rect = skill.getBoundingClientRect();
         if(rect.top < window.innerHeight - 50){
           skill.style.width = skill.getAttribute('data-percent');
         }
       });
-    };
+    }
     window.addEventListener('scroll', animateSkills);
     window.addEventListener('load', animateSkills);
 
-    // Animate counters
+    // Animated counters
     const counters = document.querySelectorAll('.counter');
+    const speed = 200;
     const animateCounters = () => {
       counters.forEach(counter => {
-        if(counter.getBoundingClientRect().top < window.innerHeight - 50 && !counter.classList.contains('counted')){
-          counter.classList.add('counted');
+        const updateCount = () => {
           const target = +counter.getAttribute('data-target');
-          let count = 0;
-          const increment = target / 100;
-          const updateCount = () => {
-            count += increment;
-            if(count < target){
-              counter.innerText = Math.ceil(count);
-              requestAnimationFrame(updateCount);
-            } else {
-              counter.innerText = target;
-            }
-          };
+          const count = +counter.innerText;
+          const increment = Math.ceil(target / speed);
+          if(count < target){
+            counter.innerText = count + increment;
+            setTimeout(updateCount, 20);
+          } else {
+            counter.innerText = target;
+          }
+        }
+        const rect = counter.getBoundingClientRect();
+        if(rect.top < window.innerHeight - 50 && !counter.classList.contains('counted')){
+          counter.classList.add('counted');
           updateCount();
         }
       });
-    };
+    }
     window.addEventListener('scroll', animateCounters);
     window.addEventListener('load', animateCounters);
-  </script>
 
+    // Smooth scrolling
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href'))
+          .scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    });
+
+    // Scroll-spy
+    const sections = document.querySelectorAll("section");
+    const navLinks = document.querySelectorAll(".nav-links li a");
+    window.addEventListener("scroll", () => {
+      let current = "";
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop - 90;
+        if (pageYOffset >= sectionTop) { current = section.getAttribute("id"); }
+      });
+      navLinks.forEach(link => {
+        link.classList.remove("active");
+        if (link.getAttribute("href") === "#" + current) { link.classList.add("active"); }
+      });
+    });
+  </script>
 </body>
 </html>
