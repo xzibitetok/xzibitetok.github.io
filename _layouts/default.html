@@ -17,24 +17,7 @@
 </head>
 <body>
 
-  <!-- NAVBAR -->
-  <header>
-    <nav class="navbar">
-      <div class="nav-logo"><a href="#home">Ubong<span>Etok</span></a></div>
-      <div class="menu-toggle" id="menuToggle" onclick="toggleMenu()">☰</div>
-      <ul class="nav-links" id="navLinks">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#resume-preview">Resume</a></li>
-        <li><a href="#stats">Achievements</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <!-- HERO SECTION -->
+  <!-- HERO -->
   <section class="hero" id="home">
     <canvas id="particles-js"></canvas>
 
@@ -50,9 +33,8 @@
       <img src="/assets/img/githubpics.jpg" alt="Ubong Etok" class="hero-profile">
       <div class="hero-right">
         <h1>Hi, I’m <span>Ubong Etok</span></h1>
-        <p id="typed"></p>
+        <a href="/assets/resume.pdf" class="resume-btn" download>Download Resume</a>
 
-        <!-- Animated Skill Badges -->
         <div class="hero-skills">
           <span class="skill-badge">Python</span>
           <span class="skill-badge">Power BI</span>
@@ -60,106 +42,68 @@
           <span class="skill-badge">Machine Learning</span>
           <span class="skill-badge">Excel</span>
         </div>
-
-        <a href="/assets/resume.pdf" class="resume-btn" download>Download Resume</a>
       </div>
+    </div>
+
+    <div class="hero-caption">
+      <p id="typed"></p>
     </div>
   </section>
 
-  <!-- MAIN CONTENT -->
-  <main>
-    {{ content }}
-  </main>
+  <main>{{ content }}</main>
 
-  <!-- FOOTER -->
   <footer>
     <p>&copy; {{ site.time | date: '%Y' }} Ubong Etok | Built with ❤️ using Jekyll</p>
   </footer>
 
   <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
 
   <script>
-    // ===== Typed.js =====
+    // Hero Typed Caption
     new Typed("#typed", {
-      strings: ["Business Intelligence Manager", "Data Scientist", "Data Analyst", "ML Enthusiast"],
+      strings: ["ML Enthusiast", "Business Intelligence Manager", "Data Scientist", "Data Analyst"],
       typeSpeed: 70,
       backSpeed: 40,
       loop: true
     });
 
-    // ===== Particles.js =====
-    particlesJS.load('particles-js', '/assets/particles.json');
+    // Particles.js
+    particlesJS.load('particles-js', '/assets/particles.json', function(){ console.log('particles.js loaded'); });
 
-    // ===== Mobile Menu Toggle =====
-    function toggleMenu() {
-      document.getElementById('navLinks').classList.toggle('show');
-    }
+    // Skill Bars
+    const skillBars=document.querySelectorAll('.skill-fill');
+    const animateSkills=()=>{ skillBars.forEach(skill=>{ const rect=skill.getBoundingClientRect(); if(rect.top<window.innerHeight-50){ skill.style.width=skill.getAttribute('data-percent'); } }); };
+    window.addEventListener('scroll',animateSkills); window.addEventListener('load',animateSkills);
 
-    // ===== Smooth Scroll & Scroll-Spy =====
-    const navLinks = document.querySelectorAll(".nav-links li a");
-    const sections = document.querySelectorAll("section[id]");
-    const headerHeight = document.querySelector('header').offsetHeight;
+    // Counters
+    const counters=document.querySelectorAll('.counter'); const speed=200;
+    const animateCounters=()=>{ counters.forEach(counter=>{ const updateCount=()=>{ const target=+counter.getAttribute('data-target'); const count=+counter.innerText; const increment=Math.ceil(target/speed); if(count<target){ counter.innerText=count+increment; setTimeout(updateCount,20); } else { counter.innerText=target; } }; const rect=counter.getBoundingClientRect(); if(rect.top<window.innerHeight-50&&!counter.classList.contains('counted')){ counter.classList.add('counted'); updateCount(); } }); };
+    window.addEventListener('scroll',animateCounters); window.addEventListener('load',animateCounters);
 
-    navLinks.forEach(anchor => {
-      anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        const offset = target.offsetTop - headerHeight;
-        window.scrollTo({ top: offset, behavior: 'smooth' });
-        document.getElementById('navLinks').classList.remove('show'); // close mobile
-      });
-    });
+    // Smooth Scroll
+    document.querySelectorAll('a[href^="#"]').forEach(anchor=>{ anchor.addEventListener('click',function(e){ e.preventDefault(); document.querySelector(this.getAttribute('href')).scrollIntoView({behavior:'smooth',block:'start'}); }); });
 
-    window.addEventListener('scroll', () => {
-      let current = "";
-      sections.forEach(section => {
-        if(window.pageYOffset >= section.offsetTop - headerHeight - 20) {
-          current = section.getAttribute('id');
-        }
-      });
-      navLinks.forEach(link => link.classList.toggle('active', link.getAttribute('href') === "#" + current));
-    });
-
-    // ===== Skill Bars Animation =====
-    const skillBars = document.querySelectorAll('.skill-fill');
-    const animateSkills = () => {
-      skillBars.forEach(skill => {
-        const rect = skill.getBoundingClientRect();
-        if(rect.top < window.innerHeight - 50){
-          skill.style.width = skill.getAttribute('data-percent');
-        }
-      });
-    }
-    window.addEventListener('scroll', animateSkills);
-    window.addEventListener('load', animateSkills);
-
-    // ===== Counter Animation =====
-    const counters = document.querySelectorAll('.counter');
-    const speed = 200;
-    const animateCounters = () => {
-      counters.forEach(counter => {
-        if(counter.classList.contains('counted')) return;
-        const rect = counter.getBoundingClientRect();
-        if(rect.top < window.innerHeight - 50) {
-          counter.classList.add('counted');
-          const target = +counter.getAttribute('data-target');
-          let count = 0;
-          const update = () => {
-            count += Math.ceil(target / speed);
-            if(count < target){
-              counter.innerText = count;
-              requestAnimationFrame(update);
-            } else counter.innerText = target;
-          }
-          update();
-        }
-      });
-    }
-    window.addEventListener('scroll', animateCounters);
-    window.addEventListener('load', animateCounters);
+    // Scroll-Spy
+    const sections=document.querySelectorAll("section"); const navLinks=document.querySelectorAll(".nav-links li a");
+    window.addEventListener("scroll",()=>{ let current=""; sections.forEach(section=>{ const sectionTop=section.offsetTop-90; if(pageYOffset>=sectionTop){ current=section.getAttribute("id"); } }); navLinks.forEach(link=>{ link.classList.remove("active"); if(link.getAttribute("href")==="#"+current){ link.classList.add("active"); } }); });
   </script>
 
+  <!-- NAVBAR -->
+  <header>
+    <nav class="navbar">
+      <div class="nav-logo"><a href="#home">Ubong<span>Etok</span></a></div>
+      <div class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('show')">☰</div>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#resume-preview">Resume</a></li>
+        <li><a href="#stats">Achievements</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 </body>
 </html>
