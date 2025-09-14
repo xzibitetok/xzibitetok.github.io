@@ -64,98 +64,103 @@
   <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
   <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 
- <script>
-/* NAV: mobile toggle */
-function toggleMenu() {
-  const nav = document.getElementById('navLinks');
-  if (!nav) return;
-  nav.classList.toggle('show');
-}
+  <script>
+    // Typed.js
+    new Typed("#typed", {
+      strings: ["Business Intelligence Manager", "Data Scientist", "Data Analyst", "ML Enthusiast"],
+      typeSpeed: 70,
+      backSpeed: 40,
+      loop: true
+    });
 
-/* Smooth scrolling with header offset */
-(function() {
-  const header = document.querySelector('header');
-  const headerHeight = header ? header.offsetHeight : 90;
+    // Particles.js
+    particlesJS.load('particles-js', '/assets/particles.json', function() {
+      console.log('particles.js loaded successfully');
+    });
 
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-      const targetId = this.getAttribute('href');
-      if (!targetId || targetId === '#') return;
-      const targetEl = document.querySelector(targetId);
-      if (!targetEl) return;
-
-      e.preventDefault();
-
-      // compute position accounting for fixed header
-      const rect = targetEl.getBoundingClientRect();
-      const absoluteTop = window.pageYOffset + rect.top;
-      const offsetTop = Math.max(absoluteTop - headerHeight + 8, 0);
-
-      window.scrollTo({
-        top: offsetTop,
-        behavior: 'smooth'
+    // Animate skill bars
+    const skillBars = document.querySelectorAll('.skill-fill');
+    const animateSkills = () => {
+      skillBars.forEach(skill => {
+        const rect = skill.getBoundingClientRect();
+        if(rect.top < window.innerHeight - 50){
+          skill.style.width = skill.getAttribute('data-percent');
+        }
       });
+    }
+    window.addEventListener('scroll', animateSkills);
+    window.addEventListener('load', animateSkills);
 
-      // close mobile menu automatically if open
-      const nav = document.getElementById('navLinks');
-      if (nav && nav.classList.contains('show')) nav.classList.remove('show');
+    // Animated counters
+    const counters = document.querySelectorAll('.counter');
+    const speed = 200;
+    const animateCounters = () => {
+      counters.forEach(counter => {
+        const updateCount = () => {
+          const target = +counter.getAttribute('data-target');
+          const count = +counter.innerText;
+          const increment = Math.ceil(target / speed);
+          if(count < target){
+            counter.innerText = count + increment;
+            setTimeout(updateCount, 20);
+          } else {
+            counter.innerText = target;
+          }
+        }
+        const rect = counter.getBoundingClientRect();
+        if(rect.top < window.innerHeight - 50 && !counter.classList.contains('counted')){
+          counter.classList.add('counted');
+          updateCount();
+        }
+      });
+    }
+    window.addEventListener('scroll', animateCounters);
+    window.addEventListener('load', animateCounters);
+  </script>
+  <script>
+  // Smooth scrolling with easing
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      document.querySelector(this.getAttribute('href'))
+        .scrollIntoView({ behavior: 'smooth', block: 'start' });
     });
   });
-})();
 
-/* Scroll-spy using IntersectionObserver (highlights nav link for visible section) */
-(function() {
-  const sections = document.querySelectorAll('section[id]');
-  const navLinks = document.querySelectorAll('.nav-links a');
+  // Scroll-spy
+  const sections = document.querySelectorAll("section");
+  const navLinks = document.querySelectorAll(".nav-links li a");
 
-  if (!sections.length || !navLinks.length || !('IntersectionObserver' in window)) {
-    // Fallback: simple scroll listener
-    window.addEventListener('scroll', function() {
-      let current = '';
-      sections.forEach(sec => {
-        const top = sec.getBoundingClientRect().top;
-        if (top <= (window.innerHeight * 0.35)) current = sec.getAttribute('id');
-      });
-      navLinks.forEach(l => l.classList.toggle('active', l.getAttribute('href') === '#' + current));
-    });
-    return;
-  }
-
-  const observerOptions = {
-    root: null,
-    rootMargin: '-40% 0px -55% 0px', // triggers when section enters middle of viewport
-    threshold: 0
-  };
-
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      const id = entry.target.getAttribute('id');
-      const link = document.querySelector('.nav-links a[href="#' + id + '"]');
-      if (entry.isIntersecting) {
-        navLinks.forEach(l => l.classList.remove('active'));
-        if (link) link.classList.add('active');
+  window.addEventListener("scroll", () => {
+    let current = "";
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop - 90;
+      if (pageYOffset >= sectionTop) {
+        current = section.getAttribute("id");
       }
     });
-  }, observerOptions);
 
-  sections.forEach(section => observer.observe(section));
-})();
+    navLinks.forEach(link => {
+      link.classList.remove("active");
+      if (link.getAttribute("href") === "#" + current) {
+        link.classList.add("active");
+      }
+    });
+  });
 </script>
 
 </body>
- <!-- NAVBAR (paste this immediately after the opening <body> tag) -->
-<header>
+  <header>
   <nav class="navbar">
     <div class="nav-logo">
       <a href="#home">Ubong<span>Etok</span></a>
     </div>
 
-    <!-- Mobile hamburger (placed before the links) -->
-    <div class="menu-toggle" id="menuToggle" onclick="toggleMenu()" aria-label="Toggle navigation">☰</div>
+    <div class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('show')">
+      ☰
+    </div>
 
-    <!-- nav links (give this ul an id so JS can control it) -->
-    <ul class="nav-links" id="navLinks">
-      <li><a href="#home">Home</a></li>
+    <ul class="nav-links">
       <li><a href="#about">About</a></li>
       <li><a href="#resume-preview">Resume</a></li>
       <li><a href="#stats">Achievements</a></li>
@@ -165,6 +170,3 @@ function toggleMenu() {
     </ul>
   </nav>
 </header>
-<!-- END NAVBAR -->
-
-</html>
