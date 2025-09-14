@@ -16,23 +16,11 @@
   <link rel="stylesheet" href="{{ '/assets/css/custom-styles.css' | relative_url }}">
 </head>
 <body>
-  <!-- Floating Social Links -->
-  <div class="floating-social">
-    <a href="https://wa.me/+447831072256" target="_blank"><img src="/assets/img/whatsapp.png" alt="Whatsapp"></a>
-    <a href="https://www.linkedin.com/in/ubong-etok-56b4a0170/" target="_blank"><img src="/assets/img/linkedin.png" alt="LinkedIn"></a>
-    <a href="https://www.facebook.com/uby.etok.5" target="_blank"><img src="/assets/img/facebook.png" alt="Facebook"></a>
-    <a href="mailto:ubyetok@gmail.com"><img src="/assets/img/email.png" alt="Email"></a>
-  </div>
-
-  <!-- HEADER / NAV -->
+  <!-- NAVBAR -->
   <header>
     <nav class="navbar">
-      <div class="nav-logo">
-        <a href="#home">Ubong<span>Etok</span></a>
-      </div>
-      <div class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('show')">
-        ☰
-      </div>
+      <div class="nav-logo"><a href="#home">Ubong<span>Etok</span></a></div>
+      <div class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('show')">☰</div>
       <ul class="nav-links">
         <li><a href="#about">About</a></li>
         <li><a href="#resume-preview">Resume</a></li>
@@ -52,7 +40,7 @@
       <div class="hero-right">
         <h1>Hi, I’m <span>Ubong Etok</span></h1>
         <p id="typed"></p>
-        <a href="/assets/Ubong_Etok_Resume.pdf" class="resume-btn" download>Download Resume</a>
+        <a href="/assets/resume.pdf" class="resume-btn" download>Download Resume</a>
         <div class="hero-skills">
           <span class="skill-badge">Python</span>
           <span class="skill-badge">Power BI</span>
@@ -62,24 +50,28 @@
         </div>
       </div>
     </div>
+
+    <div class="floating-social">
+      <a href="https://wa.me/+447831072256" target="_blank"><img src="/assets/img/whatsapp.png" alt="Whatsapp"></a>
+      <a href="https://www.linkedin.com/in/ubong-etok-56b4a0170/" target="_blank"><img src="/assets/img/linkedin.png" alt="LinkedIn"></a>
+      <a href="https://www.facebook.com/uby.etok.5" target="_blank"><img src="/assets/img/facebook.png" alt="Facebook"></a>
+      <a href="mailto:ubyetok@gmail.com"><img src="/assets/img/email.png" alt="Email"></a>
+    </div>
   </section>
 
   <!-- MAIN CONTENT -->
-  <main>
-    {{ content }}
-  </main>
+  <main>{{ content }}</main>
 
   <!-- FOOTER -->
   <footer>
     <p>&copy; {{ site.time | date: '%Y' }} Ubong Etok | Built with ❤️ using Jekyll</p>
   </footer>
 
-  <!-- Scripts -->
+  <!-- SCRIPTS -->
   <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
   <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-
   <script>
-    // Typed.js
+    // Typed.js hero
     new Typed("#typed", {
       strings: ["Business Intelligence Manager", "Data Scientist", "Data Analyst", "ML Enthusiast"],
       typeSpeed: 70,
@@ -88,68 +80,24 @@
     });
 
     // Particles.js
-    particlesJS.load('particles-js', '/assets/particles.json', function() {
-      console.log('particles.js loaded');
-    });
+    particlesJS.load('particles-js', '/assets/particles.json', function(){console.log('particles loaded');});
 
-    // Smooth scroll
+    // Smooth scrolling
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function(e) {
+      anchor.addEventListener('click', function(e){
         e.preventDefault();
-        document.querySelector(this.getAttribute('href'))
-          .scrollIntoView({ behavior: 'smooth', block: 'start' });
+        document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth', block: 'start' });
       });
     });
 
-    // Scroll-spy for active nav link
+    // Scrollspy
     const sections = document.querySelectorAll("section");
     const navLinks = document.querySelectorAll(".nav-links li a");
     window.addEventListener("scroll", () => {
       let current = "";
-      sections.forEach(section => {
-        const sectionTop = section.offsetTop - 90;
-        if (pageYOffset >= sectionTop) { current = section.getAttribute("id"); }
-      });
-      navLinks.forEach(link => {
-        link.classList.remove("active");
-        if (link.getAttribute("href") === "#" + current) { link.classList.add("active"); }
-      });
+      sections.forEach(section => { if(pageYOffset >= section.offsetTop - 80) current = section.getAttribute("id"); });
+      navLinks.forEach(link => { link.classList.remove("active"); if(link.getAttribute("href")==="#"+current) link.classList.add("active"); });
     });
-
-    // Animate skill bars
-    const skillBars = document.querySelectorAll('.skill-fill');
-    const animateSkills = () => {
-      skillBars.forEach(skill => {
-        const rect = skill.getBoundingClientRect();
-        if(rect.top < window.innerHeight - 50){ skill.style.width = skill.getAttribute('data-percent'); }
-      });
-    }
-    window.addEventListener('scroll', animateSkills);
-    window.addEventListener('load', animateSkills);
-
-    // Animate counters
-    const counters = document.querySelectorAll('.counter');
-    const speed = 200;
-    const animateCounters = () => {
-      counters.forEach(counter => {
-        const updateCount = () => {
-          const target = +counter.getAttribute('data-target');
-          const count = +counter.innerText;
-          const increment = Math.ceil(target / speed);
-          if(count < target){
-            counter.innerText = count + increment;
-            setTimeout(updateCount, 20);
-          } else { counter.innerText = target; }
-        }
-        const rect = counter.getBoundingClientRect();
-        if(rect.top < window.innerHeight - 50 && !counter.classList.contains('counted')){
-          counter.classList.add('counted');
-          updateCount();
-        }
-      });
-    }
-    window.addEventListener('scroll', animateCounters);
-    window.addEventListener('load', animateCounters);
   </script>
 </body>
 </html>
