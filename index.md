@@ -1,27 +1,66 @@
 ---
-layout: default
-title: "Ubong Etok Portfolio"
+layout: base
+title: Home
+full-width: true
 ---
 
-<!-- Hero Section -->
-<section class="hero" id="home">
-  <div class="hero-content">
-    <div class="hero-left">
-      <img src="/assets/img/githubpics.jpg" alt="Ubong Etok" class="hero-profile">
+<!-- ABOUT SECTION -->
+<section id="about" class="section-container">
+  <h2>About Me</h2>
+  <p id="about-typed"></p>
+
+  <div class="timeline">
+    <div class="timeline-item">
+      <h4>2025 – Present</h4>
+      <p>MSc in Data Science, University of South Wales, UK</p>
     </div>
-    <div class="hero-right">
-      <h1>Hi, I’m <span>Ubong Etok</span></h1>
-      <p class="typed-text">Data Scientist | Data Analyst | BI Enthusiast</p>
-      <a href="/assets/Ubong_Etok_Resume.pdf" class="resume-btn" download>Download Resume</a>
+    <div class="timeline-item">
+      <h4>2019 – 2023</h4>
+      <p>Business Intelligence Manager, Ibom Airlines Ltd</p>
+    </div>
+    <div class="timeline-item">
+      <h4>2017 – 2019</h4>
+      <p>Data Analyst, [Previous Company]</p>
+    </div>
+  </div>
+
+  <!-- Skills -->
+  <div class="skills">
+    <div class="skill">
+      <span class="skill-name">Python</span>
+      <div class="skill-bar"><div class="skill-fill" data-percent="95%"></div></div>
+    </div>
+    <div class="skill">
+      <span class="skill-name">Power BI</span>
+      <div class="skill-bar"><div class="skill-fill" data-percent="90%"></div></div>
+    </div>
+    <div class="skill">
+      <span class="skill-name">SQL</span>
+      <div class="skill-bar"><div class="skill-fill" data-percent="85%"></div></div>
+    </div>
+    <div class="skill">
+      <span class="skill-name">Machine Learning</span>
+      <div class="skill-bar"><div class="skill-fill" data-percent="80%"></div></div>
+    </div>
+    <div class="skill">
+      <span class="skill-name">Excel</span>
+      <div class="skill-bar"><div class="skill-fill" data-percent="95%"></div></div>
     </div>
   </div>
 </section>
 
-<!-- About Section -->
-<section id="about" class="section">
-  <h2>About Me</h2>
-  <p>I am a Data Scientist and Business Intelligence Enthusiast passionate about transforming raw data into actionable insights.</p>
-</section>
+<script>
+new Typed("#about-typed", {
+  strings: [
+    "I turn data into actionable insights.",
+    "Passionate about AI & ML.",
+    "Business Intelligence Specialist."
+  ],
+  typeSpeed: 60,
+  backSpeed: 30,
+  loop: true
+});
+</script>
 
 <!-- RESUME SECTION -->
 <section id="resume-preview" class="section-container">
@@ -55,56 +94,80 @@ title: "Ubong Etok Portfolio"
   </div>
 </section>
 
-
-<!-- Skills Section -->
-<section id="skills" class="section">
-  <h2>Skills</h2>
-  <div class="skills-grid">
-    <div class="skill"><p>Python</p><div class="skill-bar" data-skill="90"></div></div>
-    <div class="skill"><p>Power BI</p><div class="skill-bar" data-skill="85"></div></div>
-    <div class="skill"><p>SQL</p><div class="skill-bar" data-skill="80"></div></div>
-    <div class="skill"><p>Machine Learning</p><div class="skill-bar" data-skill="75"></div></div>
+<!-- ACHIEVEMENTS -->
+<section id="stats" class="section-container">
+  <h2>📊 Achievements</h2>
+  <div class="stats-grid">
+    <div class="stat-card">
+      <h3 class="counter" data-target="4">0</h3>
+      <p>Years of Experience</p>
+    </div>
+    <div class="stat-card">
+      <h3 class="counter" data-target="25">0</h3>
+      <p>Projects Completed</p>
+    </div>
+    <div class="stat-card">
+      <h3 class="counter" data-target="15">0</h3>
+      <p>Clients Served</p>
+    </div>
+    <div class="stat-card">
+      <h3 class="counter" data-target="5">0</h3>
+      <p>Certifications</p>
+    </div>
   </div>
 </section>
 
-<!-- Achievements Section -->
-<section id="achievements" class="section">
-  <h2>Achievements</h2>
-  <div class="counters">
-    <div class="counter" data-target="20">0</div><p>Projects Completed</p>
-    <div class="counter" data-target="5">0</div><p>Certifications</p>
-    <div class="counter" data-target="3">0</div><p>Years Experience</p>
+<!-- SERVICES SECTION -->
+<section id="services" class="section-container">
+  <h2>💼 Services</h2>
+  <div class="projects-grid">
+    <div class="project-card">
+      <h3>Data Visualization</h3>
+      <p>Interactive dashboards using Power BI & Tableau.</p>
+      <span class="badge">Popular</span>
+    </div>
+    <div class="project-card">
+      <h3>Data Cleaning & Analysis</h3>
+      <p>Transform raw data into actionable insights.</p>
+      <span class="badge">Expert</span>
+    </div>
+    <div class="project-card">
+      <h3>Business Intelligence Consulting</h3>
+      <p>Design KPIs and reporting systems.</p>
+      <span class="badge">Trusted</span>
+    </div>
   </div>
 </section>
 
-<!-- Services Section -->
-<section id="services" class="section">
-  <h2>Services</h2>
-  <div class="cards">
-    <div class="card">Data Analysis & Visualization</div>
-    <div class="card">Machine Learning Solutions</div>
-    <div class="card">Business Intelligence Reporting</div>
+<!-- PROJECTS SECTION -->
+<section id="projects" class="section-container">
+  <h2>💻 Projects</h2>
+  <div class="projects-grid">
+    <div class="project-card">
+      <h3>Data Visualization Dashboard</h3>
+      <p>Excel-based analysis with pivots and dashboards.</p>
+      <a href="https://github.com/xzibitetok/Xzibit-Sales-Analysis" target="_blank">View Project →</a>
+    </div>
+    <div class="project-card">
+      <h3>Power BI Visualization Dashboard</h3>
+      <p>Dynamic sales metrics dashboard with drill-throughs and interactive charts in Power BI.</p>
+      <a href="https://github.com/xzibitetok/Frank-s-Sales-Analysis" target="_blank">View Project →</a>
+    </div>
+    <div class="project-card">
+      <h3>Web Portfolio</h3>
+      <p>Custom Jekyll-based portfolio with modern design.</p>
+      <a href="https://xzibitetok.github.io" target="_blank">View Live →</a>
+    </div>
   </div>
 </section>
 
-<!-- Projects Section -->
-<section id="projects" class="section">
-  <h2>Projects</h2>
-  <div class="cards">
-    <div class="card">Predictive Model for Customer Churn</div>
-    <div class="card">Power BI Sales Dashboard</div>
-    <div class="card">Machine Learning Classification Model</div>
-  </div>
-</section>
-
-<!-- Contact Section -->
-<section id="contact" class="section">
-  <h2>Contact Me</h2>
-  <p>Email: <a href="mailto:ubyetok@gmail.com">ubyetok@gmail.com</a></p>
-  <div class="social-icons">
-    <a href="https://wa.me/2348161777214"><i class="fab fa-whatsapp"></i></a>
-    <a href="https://www.linkedin.com/in/ubong-etok-56b4a0170/"><i class="fab fa-linkedin"></i></a>
-    <a href="https://www.facebook.com/uby.etok.5"><i class="fab fa-facebook"></i></a>
-    <a href="mailto:ubyetok@gmail.com"><i class="fas fa-envelope"></i></a>
-  </div>
+<!-- CONTACT SECTION -->
+<section id="contact" class="section-container">
+  <h2>📫 Get in Touch</h2>
+  <form action="https://formspree.io/f/xwpnkevb" method="POST">
+    <input type="text" name="name" placeholder="Your Name" required>
+    <input type="email" name="_replyto" placeholder="Your Email" required>
+    <textarea name="message" rows="6" placeholder="Your Message" required></textarea>
+    <button type="submit">Send Message</button>
+  </form>
 </section>
