@@ -34,7 +34,7 @@ img {
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
-  background-color: #0b3d91; /* deep blue navbar */
+  background-color: #1f1f1f;
   position: fixed;
   width: 100%;
   top: 0;
@@ -50,7 +50,7 @@ img {
 }
 
 .navbar .nav-logo a span {
-  color: #39ff14; /* green accent */
+  color: #39ff14; /* Green accent */
 }
 
 .nav-links {
@@ -60,7 +60,7 @@ img {
 }
 
 .nav-links li a {
-  color: #ffffff;
+  color: #e0e0e0;
   font-weight: 500;
   padding: 0.5rem 0;
   position: relative;
@@ -88,12 +88,13 @@ img {
   color: #39ff14;
 }
 
+/* Responsive Navbar */
 @media (max-width: 900px) {
   .nav-links {
     position: absolute;
     top: 100%;
     right: 0;
-    background-color: #0b3d91;
+    background-color: #1f1f1f;
     flex-direction: column;
     width: 200px;
     padding: 1rem;
@@ -148,7 +149,6 @@ img {
 .hero-right h1 {
   font-size: 2.5rem;
   margin-bottom: 1rem;
-  color: #ffffff;
 }
 
 .hero-right h1 span {
@@ -157,27 +157,8 @@ img {
 
 #typed {
   font-size: 1.2rem;
-  color: #39ff14;
+  color: #e0e0e0;
   margin-bottom: 1rem;
-  font-weight: 600;
-  text-shadow:
-    0 0 5px #39ff14,
-    0 0 10px #39ff14,
-    0 0 20px #39ff14,
-    0 0 40px rgba(57,255,20,0.5);
-  animation: glowPulse 2s ease-in-out infinite alternate;
-}
-
-@keyframes glowPulse {
-  0% {
-    text-shadow: 0 0 5px #39ff14, 0 0 10px #39ff14, 0 0 20px #39ff14, 0 0 40px rgba(57,255,20,0.5);
-  }
-  50% {
-    text-shadow: 0 0 8px #39ff14, 0 0 15px #39ff14, 0 0 25px #39ff14, 0 0 50px rgba(57,255,20,0.7);
-  }
-  100% {
-    text-shadow: 0 0 5px #39ff14, 0 0 10px #39ff14, 0 0 20px #39ff14, 0 0 40px rgba(57,255,20,0.5);
-  }
 }
 
 .hero-skills {
@@ -229,7 +210,7 @@ section {
 section h2 {
   font-size: 2rem;
   margin-bottom: 2rem;
-  color: #0b3d91; /* deep blue headers */
+  color: #39ff14;
   text-align: center;
 }
 
@@ -277,8 +258,8 @@ section h2 {
 footer {
   text-align: center;
   padding: 2rem;
-  background-color: #0b3d91; /* deep blue footer */
-  color: #ffffff;
+  background-color: #1f1f1f;
+  color: #e0e0e0;
   font-size: 0.9rem;
 }
 
