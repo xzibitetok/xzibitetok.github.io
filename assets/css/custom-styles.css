@@ -67,15 +67,22 @@ header {
 /* ===========================
    HERO SECTION
 =========================== */
+/* ===========================
+   HERO / ABOUT SECTION FIX
+=========================== */
 .hero {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  padding: 0 2rem;
-  overflow: hidden;
-  background: linear-gradient(to bottom, #0f111a 0%, #1c1f2a 100%);
+  padding-top: 120px; /* add extra top padding so hero text doesn't overlap with fixed navbar */
+  min-height: calc(100vh - 120px);
+}
+
+.section-container {
+  padding-top: 80px; /* ensures sections like About Me aren’t hidden behind navbar */
+}
+
+/* Make sure typed text doesn’t overflow */
+#about-typed, #typed {
+  white-space: normal; /* allow text to wrap */
+  overflow-wrap: break-word;
 }
 
 .hero-content {
