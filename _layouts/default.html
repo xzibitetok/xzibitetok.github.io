@@ -1,109 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{{ page.title | default: site.title }}</title>
-  <meta name="description" content="{{ site.description }}">
-  <meta name="author" content="Ubong Etok">
-  <link rel="icon" href="{{ '/assets/img/favicon.ico' | relative_url }}" type="image/x-icon">
-
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-  <!-- Stylesheets -->
-  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
-  <link rel="stylesheet" href="{{ '/assets/css/custom-styles.css' | relative_url }}">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{ page.title | default: site.title }}</title>
+<meta name="description" content="{{ site.description }}">
+<meta name="author" content="Ubong Etok">
+<link rel="icon" href="{{ '/assets/img/favicon.ico' | relative_url }}" type="image/x-icon">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+<link rel="stylesheet" href="{{ '/assets/css/custom-styles.css' | relative_url }}">
 </head>
 <body>
 
-  <!-- HERO -->
-  <section class="hero" id="home">
-    <canvas id="particles-js"></canvas>
+<section class="hero" id="home">
+<canvas id="particles-js"></canvas>
+<div class="floating-social">
+<a href="https://wa.me/+447831072256" target="_blank"><img src="/assets/img/whatsapp.png" alt="Whatsapp"></a>
+<a href="https://www.linkedin.com/in/ubong-etok-56b4a0170/" target="_blank"><img src="/assets/img/linkedin.png" alt="LinkedIn"></a>
+<a href="https://www.facebook.com/uby.etok.5" target="_blank"><img src="/assets/img/facebook.png" alt="Facebook"></a>
+<a href="mailto:ubyetok@gmail.com"><img src="/assets/img/email.png" alt="Email"></a>
+</div>
 
-    <!-- Floating Social Links -->
-    <div class="floating-social">
-      <a href="https://wa.me/+447831072256" target="_blank"><img src="/assets/img/whatsapp.png" alt="Whatsapp"></a>
-      <a href="https://www.linkedin.com/in/ubong-etok-56b4a0170/" target="_blank"><img src="/assets/img/linkedin.png" alt="LinkedIn"></a>
-      <a href="https://www.facebook.com/uby.etok.5" target="_blank"><img src="/assets/img/facebook.png" alt="Facebook"></a>
-      <a href="mailto:ubyetok@gmail.com"><img src="/assets/img/email.png" alt="Email"></a>
-    </div>
+<div class="hero-content">
+<img src="/assets/img/githubpics.jpg" alt="Ubong Etok" class="hero-profile">
+<div class="hero-right">
+<h1>Hi, I’m <span>Ubong Etok</span></h1>
+<a href="/assets/resume.pdf" class="resume-btn" download>Download Resume</a>
+<div class="hero-skills">
+<span class="skill-badge">Python</span>
+<span class="skill-badge">Power BI</span>
+<span class="skill-badge">SQL</span>
+<span class="skill-badge">Machine Learning</span>
+<span class="skill-badge">Excel</span>
+</div>
+</div>
+</div>
 
-    <div class="hero-content">
-      <img src="/assets/img/githubpics.jpg" alt="Ubong Etok" class="hero-profile">
-      <div class="hero-right">
-        <h1>Hi, I’m <span>Ubong Etok</span></h1>
-        <a href="/assets/resume.pdf" class="resume-btn" download>Download Resume</a>
+<div class="hero-caption"><p id="typed"></p></div>
+</section>
 
-        <div class="hero-skills">
-          <span class="skill-badge">Python</span>
-          <span class="skill-badge">Power BI</span>
-          <span class="skill-badge">SQL</span>
-          <span class="skill-badge">Machine Learning</span>
-          <span class="skill-badge">Excel</span>
-        </div>
-      </div>
-    </div>
+<main>{{ content }}</main>
 
-    <div class="hero-caption">
-      <p id="typed"></p>
-    </div>
-  </section>
+<footer>
+<p>&copy; {{ site.time | date: '%Y' }} Ubong Etok | Built with ❤️ using Jekyll</p>
+</footer>
 
-  <main>{{ content }}</main>
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+<script src="https://cdn.jsdelivr.net/npm/particles.js/2.0.0/particles.min.js"></script>
+<script>
+new Typed("#typed",{strings:["ML Enthusiast","Business Intelligence Manager","Data Scientist","Data Analyst"],typeSpeed:70,backSpeed:40,loop:true});
+particlesJS.load('particles-js','/assets/particles.json',function(){console.log('particles.js loaded');});
+</script>
 
-  <footer>
-    <p>&copy; {{ site.time | date: '%Y' }} Ubong Etok | Built with ❤️ using Jekyll</p>
-  </footer>
-
-  <!-- Scripts -->
-  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-
-  <script>
-    // Hero Typed Caption
-    new Typed("#typed", {
-      strings: ["ML Enthusiast", "Business Intelligence Manager", "Data Scientist", "Data Analyst"],
-      typeSpeed: 70,
-      backSpeed: 40,
-      loop: true
-    });
-
-    // Particles.js
-    particlesJS.load('particles-js', '/assets/particles.json', function(){ console.log('particles.js loaded'); });
-
-    // Skill Bars
-    const skillBars=document.querySelectorAll('.skill-fill');
-    const animateSkills=()=>{ skillBars.forEach(skill=>{ const rect=skill.getBoundingClientRect(); if(rect.top<window.innerHeight-50){ skill.style.width=skill.getAttribute('data-percent'); } }); };
-    window.addEventListener('scroll',animateSkills); window.addEventListener('load',animateSkills);
-
-    // Counters
-    const counters=document.querySelectorAll('.counter'); const speed=200;
-    const animateCounters=()=>{ counters.forEach(counter=>{ const updateCount=()=>{ const target=+counter.getAttribute('data-target'); const count=+counter.innerText; const increment=Math.ceil(target/speed); if(count<target){ counter.innerText=count+increment; setTimeout(updateCount,20); } else { counter.innerText=target; } }; const rect=counter.getBoundingClientRect(); if(rect.top<window.innerHeight-50&&!counter.classList.contains('counted')){ counter.classList.add('counted'); updateCount(); } }); };
-    window.addEventListener('scroll',animateCounters); window.addEventListener('load',animateCounters);
-
-    // Smooth Scroll
-    document.querySelectorAll('a[href^="#"]').forEach(anchor=>{ anchor.addEventListener('click',function(e){ e.preventDefault(); document.querySelector(this.getAttribute('href')).scrollIntoView({behavior:'smooth',block:'start'}); }); });
-
-    // Scroll-Spy
-    const sections=document.querySelectorAll("section"); const navLinks=document.querySelectorAll(".nav-links li a");
-    window.addEventListener("scroll",()=>{ let current=""; sections.forEach(section=>{ const sectionTop=section.offsetTop-90; if(pageYOffset>=sectionTop){ current=section.getAttribute("id"); } }); navLinks.forEach(link=>{ link.classList.remove("active"); if(link.getAttribute("href")==="#"+current){ link.classList.add("active"); } }); });
-  </script>
-
-  <!-- NAVBAR -->
-  <header>
-    <nav class="navbar">
-      <div class="nav-logo"><a href="#home">Ubong<span>Etok</span></a></div>
-      <div class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('show')">☰</div>
-      <ul class="nav-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#resume-preview">Resume</a></li>
-        <li><a href="#stats">Achievements</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
+<header>
+<nav class="navbar">
+<div class="nav-logo"><a href="#home">Ubong<span>Etok</span></a></div>
+<div class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('show')">☰</div>
+<ul class="nav-links">
+<li><a href="#about">About</a></li>
+<li><a href="#resume-preview">Resume</a></li>
+<li><a href="#stats">Achievements</a></li>
+<li><a href="#services">Services</a></li>
+<li><a href="#projects">Projects</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</nav>
+</header>
 </body>
 </html>
