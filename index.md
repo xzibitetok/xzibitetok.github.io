@@ -90,7 +90,7 @@ new Typed("#about-typed", {
     </ul>
   </div>
   <div class="resume-button">
-    <a href="/assets/Ubong_Etok_Resume.pdf" target="_blank" class="btn">📑 View Full Resume</a>
+    <a href="/assets/MYCV.pdf" target="_blank" class="btn">📑 View Full Resume</a>
   </div>
 </section>
 
