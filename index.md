@@ -4,25 +4,7 @@ title: Home
 full-width: true
 ---
 
-<!-- HERO SECTION -->
-<section class="hero" id="home">
-  <canvas id="particles-js"></canvas>
-  <div class="hero-content">
-    <img src="/assets/img/githubpics.jpg" alt="Ubong Etok" class="hero-profile">
-    <div class="hero-right">
-      <h1>Hi, I’m <span>Ubong Etok</span></h1>
-      <p id="typed"></p>
-      <a href="/assets/Ubong_Etok_Resume.pdf" class="resume-btn" download>Download Resume</a>
-      <div class="hero-skills">
-        <span class="skill-badge">Python</span>
-        <span class="skill-badge">Power BI</span>
-        <span class="skill-badge">SQL</span>
-        <span class="skill-badge">Machine Learning</span>
-        <span class="skill-badge">Excel</span>
-      </div>
-    </div>
-  </div>
-</section>
+<!-- HERO SECTION ALREADY IN BASE.HTML -->
 
 <!-- ABOUT SECTION -->
 <section id="about" class="section-container">
@@ -44,7 +26,6 @@ full-width: true
     </div>
   </div>
 
-  <!-- Skills with Animated Bars -->
   <div class="skills">
     <div class="skill">
       <span class="skill-name">Python</span>
@@ -68,6 +49,15 @@ full-width: true
     </div>
   </div>
 </section>
+
+<script>
+new Typed("#about-typed", {
+  strings: ["I turn data into actionable insights.", "Passionate about AI & ML.", "Business Intelligence Specialist."],
+  typeSpeed: 60,
+  backSpeed: 30,
+  loop: true
+});
+</script>
 
 <!-- RESUME SECTION -->
 <section id="resume-preview" class="section-container">
@@ -178,55 +168,3 @@ full-width: true
     <button type="submit">Send Message</button>
   </form>
 </section>
-
-<!-- SCRIPTS -->
-<script>
-  // Typed.js for About section
-  new Typed("#about-typed", {
-    strings: [
-      "I turn data into actionable insights.",
-      "Passionate about AI & ML.",
-      "Business Intelligence Specialist."
-    ],
-    typeSpeed: 60,
-    backSpeed: 30,
-    loop: true
-  });
-
-  // Animate skill bars on scroll
-  const skillBars = document.querySelectorAll('.skill-fill');
-  const animateSkills = () => {
-    skillBars.forEach(skill => {
-      const rect = skill.getBoundingClientRect();
-      if(rect.top < window.innerHeight - 50){
-        skill.style.width = skill.getAttribute('data-percent');
-      }
-    });
-  };
-  window.addEventListener('scroll', animateSkills);
-  window.addEventListener('load', animateSkills);
-
-  // Animate counters
-  const counters = document.querySelectorAll('.counter');
-  const speed = 200;
-  const animateCounters = () => {
-    counters.forEach(counter => {
-      const updateCount = () => {
-        const target = +counter.getAttribute('data-target');
-        const count = +counter.innerText;
-        const increment = Math.ceil(target / speed);
-        if(count < target){
-          counter.innerText = count + increment;
-          setTimeout(updateCount, 20);
-        } else { counter.innerText = target; }
-      };
-      const rect = counter.getBoundingClientRect();
-      if(rect.top < window.innerHeight - 50 && !counter.classList.contains('counted')){
-        counter.classList.add('counted');
-        updateCount();
-      }
-    });
-  };
-  window.addEventListener('scroll', animateCounters);
-  window.addEventListener('load', animateCounters);
-</script>
