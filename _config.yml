@@ -1,12 +1,10 @@
 title: Ubong Etok
 email: ubyetok@gmail.com
 description: "Data Scientist | Business Intelligence Manager | Power BI | Excel | Python | SQL"
-baseurl: "" # leave empty for GitHub Pages root
+baseurl: "" 
 url: "https://xzibitetok.github.io"
-
 theme: jekyll-theme-minimal
 
-# Social links
 social-network-links:
   whatsapp: "+447831072256"
   linkedin: "https://www.linkedin.com/in/ubong-etok-56b4a0170/"
