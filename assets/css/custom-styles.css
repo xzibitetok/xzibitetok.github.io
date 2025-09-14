@@ -300,63 +300,6 @@ header {
   align-items: center;
   padding: 15px 20px;
 }
-/* ================================
-   NAVBAR ADDITIONS — paste immediately AFTER your existing .navbar { ... } block
-   Or paste this whole block at the very end of custom-styles.css
-=================================== */
-
-/* make header fixed at top so it stays visible */
-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 1000;
-  background: rgba(44,62,80,0.95); /* dark glassy background */
-  box-shadow: 0 3px 10px rgba(0,0,0,0.12);
-}
-
-/* style for the mobile hamburger icon */
-.menu-toggle {
-  display: none;               /* shown only on small screens via media query below */
-  font-size: 1.6rem;
-  color: #fff;
-  cursor: pointer;
-  user-select: none;
-}
-
-/* active link style (scroll-spy highlights this) */
-.nav-links li a.active,
-.nav-links li a:hover {
-  color: #4CAF50;
-}
-
-/* mobile rules: hide links and show toggle */
-@media screen and (max-width: 768px) {
-  .nav-links {
-    position: absolute;
-    top: 62px;                 /* sits beneath header */
-    right: 16px;
-    background: #2c3e50;
-    padding: 12px;
-    border-radius: 8px;
-    display: none;
-    flex-direction: column;
-    gap: 8px;
-    min-width: 180px;
-  }
-  .nav-links.show {
-    display: flex;            /* toggled by JS */
-  }
-  .menu-toggle {
-    display: block;
-  }
-}
-
-/* ensure section anchors don't hide under the fixed header */
-section {
-  scroll-margin-top: 100px;    /* adjust value if your header height is different */
-}
 
 .nav-logo a {
   font-size: 1.5rem;
