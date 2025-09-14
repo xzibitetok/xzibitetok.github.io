@@ -4,57 +4,33 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{ page.title | default: site.title }}</title>
-  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
   <link rel="stylesheet" href="{{ '/assets/css/custom-styles.css' | relative_url }}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-  {% include header.html %}
-  {{ content }}
-  {% include footer.html %}
+  <header class="site-header">
+    <div class="container">
+      <h1 class="logo">Ubong<span>Etok</span></h1>
+      <nav>
+        <ul>
+          {% for item in site.nav %}
+            <li><a href="{{ item.link }}">{{ item.name }}</a></li>
+          {% endfor %}
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-  <!-- Typed.js -->
-  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-  <script>
-    new Typed("#typed", {
-      strings: ["Business Intelligence Manager", "Data Scientist", "Data Analyst", "ML Enthusiast"],
-      typeSpeed: 70,
-      backSpeed: 40,
-      loop: true
-    });
-  </script>
+  <main>
+    {{ content }}
+  </main>
 
-  <!-- Counter Animation -->
-  <script>
-    const counters = document.querySelectorAll('.counter');
-    counters.forEach(counter => {
-      counter.innerText = '0';
-      const updateCounter = () => {
-        const target = +counter.getAttribute('data-target');
-        const c = +counter.innerText;
-        const increment = target / 200;
-        if (c < target) {
-          counter.innerText = `${Math.ceil(c + increment)}`;
-          setTimeout(updateCounter, 10);
-        } else {
-          counter.innerText = target;
-        }
-      };
-      updateCounter();
-    });
-  </script>
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; {{ site.time | date: '%Y' }} Ubong Etok | Built with ❤️ using Jekyll</p>
+    </div>
+  </footer>
 
-  <!-- Skills Animation -->
-  <script>
-    const skillBars = document.querySelectorAll('.skill-bar');
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
-    }, { threshold: 0.5 });
-
-    skillBars.forEach(bar => observer.observe(bar));
-  </script>
+  <script src="{{ '/assets/js/animations.js' | relative_url }}"></script>
 </body>
 </html>
