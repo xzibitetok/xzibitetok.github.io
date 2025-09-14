@@ -17,28 +17,6 @@
 </head>
 <body>
 
-  <!-- HEADER / NAVBAR -->
-  <header>
-    <nav class="navbar">
-      <div class="nav-logo">
-        <a href="#home">Ubong<span>Etok</span></a>
-      </div>
-
-      <div class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('show')">
-        ☰
-      </div>
-
-      <ul class="nav-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#resume-preview">Resume</a></li>
-        <li><a href="#stats">Achievements</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
-
   <!-- HERO SECTION -->
   <section class="hero" id="home">
     <canvas id="particles-js"></canvas>
@@ -55,7 +33,7 @@
       <img src="/assets/img/githubpics.jpg" alt="Ubong Etok" class="hero-profile">
       <div class="hero-right">
         <h1>Hi, I’m <span>Ubong Etok</span></h1>
-        <p id="typed"></p>
+        <a href="/assets/resume.pdf" class="resume-btn" download>Download Resume</a>
 
         <!-- Animated Skill Badges -->
         <div class="hero-skills">
@@ -65,9 +43,12 @@
           <span class="skill-badge">Machine Learning</span>
           <span class="skill-badge">Excel</span>
         </div>
-
-        <a href="/assets/resume.pdf" class="resume-btn" download>Download Resume</a>
       </div>
+    </div>
+
+    <!-- Top-Right Typed Caption -->
+    <div class="hero-caption">
+      <p id="typed"></p>
     </div>
   </section>
 
@@ -88,7 +69,7 @@
   <script>
     // Typed.js
     new Typed("#typed", {
-      strings: ["Business Intelligence Manager", "Data Scientist", "Data Analyst", "ML Enthusiast"],
+      strings: ["ML Enthusiast", "Business Intelligence Manager", "Data Scientist", "Data Analyst"],
       typeSpeed: 70,
       backSpeed: 40,
       loop: true
@@ -137,37 +118,56 @@
     }
     window.addEventListener('scroll', animateCounters);
     window.addEventListener('load', animateCounters);
-
-    // Smooth scrolling
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href'))
-          .scrollIntoView({ behavior: 'smooth', block: 'start' });
-      });
-    });
-
-    // Scroll-spy
-    const sections = document.querySelectorAll("section");
-    const navLinks = document.querySelectorAll(".nav-links li a");
-
-    window.addEventListener("scroll", () => {
-      let current = "";
-      sections.forEach(section => {
-        const sectionTop = section.offsetTop - 90;
-        if (pageYOffset >= sectionTop) {
-          current = section.getAttribute("id");
-        }
-      });
-
-      navLinks.forEach(link => {
-        link.classList.remove("active");
-        if (link.getAttribute("href") === "#" + current) {
-          link.classList.add("active");
-        }
-      });
-    });
   </script>
+
+  <script>
+  // Smooth scrolling
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      document.querySelector(this.getAttribute('href'))
+        .scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  });
+
+  // Scroll-spy
+  const sections = document.querySelectorAll("section");
+  const navLinks = document.querySelectorAll(".nav-links li a");
+  window.addEventListener("scroll", () => {
+    let current = "";
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop - 90;
+      if (pageYOffset >= sectionTop) {
+        current = section.getAttribute("id");
+      }
+    });
+    navLinks.forEach(link => {
+      link.classList.remove("active");
+      if (link.getAttribute("href") === "#" + current) {
+        link.classList.add("active");
+      }
+    });
+  });
+</script>
+
+  <header>
+    <nav class="navbar">
+      <div class="nav-logo">
+        <a href="#home">Ubong<span>Etok</span></a>
+      </div>
+      <div class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('show')">
+        ☰
+      </div>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#resume-preview">Resume</a></li>
+        <li><a href="#stats">Achievements</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
 </body>
 </html>
