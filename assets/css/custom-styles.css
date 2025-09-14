@@ -34,7 +34,7 @@ img {
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
-  background-color: #1f1f1f;
+  background-color: #0d1b2a; /* Dark Blue Navbar */
   position: fixed;
   width: 100%;
   top: 0;
@@ -50,7 +50,7 @@ img {
 }
 
 .navbar .nav-logo a span {
-  color: #39ff14; /* Green accent */
+  color: #39ff14; /* Green Accent */
 }
 
 .nav-links {
@@ -94,7 +94,7 @@ img {
     position: absolute;
     top: 100%;
     right: 0;
-    background-color: #1f1f1f;
+    background-color: #0d1b2a;
     flex-direction: column;
     width: 200px;
     padding: 1rem;
@@ -205,6 +205,9 @@ img {
 section {
   padding: 6rem 2rem 4rem;
   scroll-margin-top: 90px;
+  background-color: #1a1a1a; /* Slightly lighter than body */
+  border-radius: 8px;
+  margin: 2rem 0;
 }
 
 section h2 {
@@ -258,9 +261,10 @@ section h2 {
 footer {
   text-align: center;
   padding: 2rem;
-  background-color: #1f1f1f;
+  background-color: #0d1b2a; /* Dark Blue Footer */
   color: #e0e0e0;
   font-size: 0.9rem;
+  border-top: 2px solid #39ff14;
 }
 
 /* Floating Social */
@@ -278,11 +282,12 @@ footer {
 .floating-social a img {
   width: 32px;
   height: 32px;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, filter 0.3s ease;
 }
 
 .floating-social a img:hover {
   transform: scale(1.2);
+  filter: brightness(1.2);
 }
 
 /* Responsive Hero */
