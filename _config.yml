@@ -1,23 +1,9 @@
 title: "Ubong Etok Portfolio"
-description: "Professional portfolio of Ubong Etok — Data Scientist, Analyst, and BI Enthusiast"
-baseurl: "" 
+description: "Professional portfolio of Ubong Etok – Business Intelligence Manager, Data Scientist, and Analyst."
+baseurl: ""
 url: "https://xzibitetok.github.io"
 
 # Build settings
-markdown: kramdown
 theme: minima
-
-# Navigation
-nav:
-  - name: "About"
-    link: "#about"
-  - name: "Resume"
-    link: "#resume"
-  - name: "Achievements"
-    link: "#achievements"
-  - name: "Services"
-    link: "#services"
-  - name: "Projects"
-    link: "#projects"
-  - name: "Contact"
-    link: "#contact"
+plugins:
+  - jekyll-feed
