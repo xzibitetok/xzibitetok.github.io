@@ -6,19 +6,54 @@
   <title>{{ page.title | default: site.title }}</title>
   <meta name="description" content="{{ site.description }}">
   <meta name="author" content="Ubong Etok">
+  <link rel="icon" href="{{ '/assets/img/favicon.ico' | relative_url }}" type="image/x-icon">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-  <!-- Styles -->
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
   <link rel="stylesheet" href="{{ '/assets/css/custom-styles.css' | relative_url }}">
 </head>
 <body>
-  {{ content }}
+  {% include header.html %}
+
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <canvas id="particles-js"></canvas>
+    <div class="hero-content">
+      <img src="/assets/img/githubpics.jpg" alt="Ubong Etok" class="hero-profile">
+      <div class="hero-right">
+        <h1>Hi, I’m <span>Ubong Etok</span></h1>
+        <p id="typed"></p>
+        <a href="/assets/Ubong_Etok_Resume.pdf" class="resume-btn" download>Download Resume</a>
+        <div class="hero-skills">
+          <span class="skill-badge">Python</span>
+          <span class="skill-badge">Power BI</span>
+          <span class="skill-badge">SQL</span>
+          <span class="skill-badge">Machine Learning</span>
+          <span class="skill-badge">Excel</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="floating-social">
+      <a href="https://wa.me/+447831072256" target="_blank"><img src="/assets/img/whatsapp.png" alt="Whatsapp"></a>
+      <a href="https://www.linkedin.com/in/ubong-etok-56b4a0170/" target="_blank"><img src="/assets/img/linkedin.png" alt="LinkedIn"></a>
+      <a href="https://www.facebook.com/uby.etok.5" target="_blank"><img src="/assets/img/facebook.png" alt="Facebook"></a>
+      <a href="mailto:ubyetok@gmail.com"><img src="/assets/img/email.png" alt="Email"></a>
+    </div>
+  </section>
+
+  <main>{{ content }}</main>
+
+  <footer>
+    <p>&copy; {{ site.time | date: '%Y' }} Ubong Etok | Built with ❤️ using Jekyll</p>
+  </footer>
 
   <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-  <script src="{{ '/assets/js/animations.js' | relative_url }}"></script>
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <script src="{{ '/assets/js/custom.js' | relative_url }}"></script>
 </body>
 </html>
