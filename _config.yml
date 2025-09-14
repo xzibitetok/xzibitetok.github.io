@@ -1,9 +1,14 @@
-title: "Ubong Etok Portfolio"
-description: "Professional portfolio of Ubong Etok – Business Intelligence Manager, Data Scientist, and Analyst."
+title: Ubong Etok
+email: ubyetok@gmail.com
+description: "Data Scientist | Business Intelligence Manager | Power BI | Excel | Python | SQL"
 baseurl: ""
 url: "https://xzibitetok.github.io"
 
-# Build settings
-theme: minima
-plugins:
-  - jekyll-feed
+theme: jekyll-theme-minimal
+
+# Social links
+social-network-links:
+  whatsapp: "+447831072256"
+  linkedin: "https://www.linkedin.com/in/ubong-etok-56b4a0170/"
+  facebook: "https://www.facebook.com/uby.etok.5"
+  email: "mailto:ubyetok@gmail.com"
