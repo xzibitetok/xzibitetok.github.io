@@ -7,9 +7,7 @@ full-width: true
 <!-- ABOUT SECTION -->
 <section id="about">
   <h2>About Me</h2>
-  <p>
-    <span id="about-typed"></span>
-  </p>
+  <p><span id="about-typed"></span></p>
 
   <div class="timeline">
     <div class="timeline-item">
@@ -53,25 +51,22 @@ full-width: true
 
 <!-- RESUME PREVIEW SECTION -->
 <section id="resume-preview">
-  <h2>📄 RESUME</h2>
-  
+  <h2>📄 Resume</h2>
   <div class="resume-card">
     <p><strong>ETOK, UBONG EFFIONG</strong><br>
     Cardiff, United Kingdom • +44 7831072256 • <a href="mailto:ubyetok@gmail.com">ubyetok@gmail.com</a></p>
 
     <h3>Profile</h3>
     <p>
-      I am a data-driven and detail-oriented Business Intelligence Manager with a background in Building Technology 
-      and a strong foundation in data analysis, reporting, and visualization. Starting as a Data Analyst at Micnous 
-      Service Nigeria Ltd, I was promoted to lead business intelligence efforts across multiple construction projects, 
-      where I utilized tools such as Power BI, Excel, and MySQL to drive data-informed decisions.
+      Data-driven and detail-oriented Business Intelligence Manager with a foundation in data analysis, reporting, and visualization.
+      Started as a Data Analyst at Micnous Service Nigeria Ltd, then led BI across multiple projects using Power BI, Excel, and MySQL.
     </p>
 
     <h3>Education</h3>
     <ul>
-      <li>M.Sc. [Hons.] Data Science – University of South Wales, UK (in view)</li>
-      <li>B.Sc. [Hons.] Building – University of Uyo, Akwa Ibom, NG (Sept 2018)</li>
-      <li>WASSCE – Bright Stars Model Secondary School, NG (Dec 2010)</li>
+      <li>M.Sc. Data Science – University of South Wales, UK (in view)</li>
+      <li>B.Sc. Building – University of Uyo, Akwa Ibom, NG (2018)</li>
+      <li>WASSCE – Bright Stars Model Secondary School, NG (2010)</li>
     </ul>
 
     <h3>Key Skills</h3>
@@ -86,7 +81,6 @@ full-width: true
     <a href="/assets/resume.pdf" target="_blank" class="btn">📑 View Full Resume</a>
   </div>
 </section>
-
 
 <!-- STATS / ACHIEVEMENTS -->
 <section id="stats">
@@ -143,10 +137,9 @@ full-width: true
       <a href="https://github.com/xzibitetok/Xzibit-Sales-Analysis" target="_blank">View Project →</a>
     </div>
     <div class="project-card">
-      <h3>Power BI Visualization dashboard</h3>
-      <p>Dynamic sales metrics dashboard with drill-throughs and interactive charts in Power BI.</p>
+      <h3>Power BI Visualization Dashboard</h3>
+      <p>Dynamic sales metrics dashboard with drill-throughs and interactive charts.</p>
       <a href="https://github.com/xzibitetok/Frank-s-Sales-Analysis" target="_blank">View Project →</a>
-
     </div>
     <div class="project-card">
       <h3>Web Portfolio</h3>
@@ -159,7 +152,6 @@ full-width: true
 <!-- CONTACT SECTION -->
 <section id="contact">
   <h2>📫 Get in Touch</h2>
-  
   <form action="https://formspree.io/f/xwpnkevb" method="POST">
     <input type="text" name="name" placeholder="Your Name" required>
     <input type="email" name="_replyto" placeholder="Your Email" required>
@@ -170,11 +162,10 @@ full-width: true
 
 <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
 <script>
-  new Typed("#about-typed", {
-    strings: ["I turn data into actionable insights.", "Passionate about AI & ML.", "Business Intelligence Specialist."],
-    typeSpeed: 60,
-    backSpeed: 30,
-    loop: true
-  });
+new Typed("#about-typed", {
+  strings: ["I turn data into actionable insights.", "Passionate about AI & ML.", "Business Intelligence Specialist."],
+  typeSpeed: 60,
+  backSpeed: 30,
+  loop: true
+});
 </script>
-
