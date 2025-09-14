@@ -67,17 +67,22 @@ header {
 /* ===========================
    HERO SECTION
 =========================== */
+/* ===========================
+   HERO / ABOUT SECTION FIX
+=========================== */
 .hero {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding-top: 120px; /* prevent overlap with navbar */
+  padding-top: 120px; /* add extra top padding so hero text doesn't overlap with fixed navbar */
   min-height: calc(100vh - 120px);
-  padding-left: 2rem;
-  padding-right: 2rem;
-  overflow: hidden;
-  background: linear-gradient(to bottom, #0f111a 0%, #1c1f2a 100%);
+}
+
+.section-container {
+  padding-top: 80px; /* ensures sections like About Me aren’t hidden behind navbar */
+}
+
+/* Make sure typed text doesn’t overflow */
+#about-typed, #typed {
+  white-space: normal; /* allow text to wrap */
+  overflow-wrap: break-word;
 }
 
 .hero-content {
@@ -147,36 +152,12 @@ header {
 }
 
 /* ===========================
-   SOCIAL ICONS
-=========================== */
-.floating-social {
-  position: fixed;
-  left: 1rem;
-  bottom: 2rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.8rem;
-  z-index: 3;
-}
-
-.floating-social img {
-  width: 24px;  /* smaller icons */
-  height: 24px;
-  transition: transform 0.3s;
-}
-
-.floating-social img:hover { transform: scale(1.2); }
-
-/* ===========================
    SECTIONS
 =========================== */
 .section-container {
   max-width: 1100px;
   margin: auto;
-  padding-top: 80px; /* prevent cut-off behind navbar */
-  padding-bottom: 50px;
-  padding-left: 20px;
-  padding-right: 20px;
+  padding: 100px 20px 50px 20px;
 }
 
 .section-container h2 {
@@ -184,12 +165,6 @@ header {
   margin-bottom: 2rem;
   text-align: center;
   color: #39ff14;
-}
-
-/* Prevent typed text from overflowing */
-#about-typed, #typed {
-  white-space: normal;
-  overflow-wrap: break-word;
 }
 
 /* ===========================
@@ -340,6 +315,28 @@ form button {
 }
 
 form button:hover { background: #32cd32; }
+
+/* ===========================
+   SOCIAL ICONS
+=========================== */
+.floating-social {
+  position: fixed;
+  left: 1rem;
+  bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  z-index: 3;
+}
+
+.floating-social img {
+  width: 24px;  /* smaller than 30px */
+  height: 24px;
+  transition: transform 0.3s;
+}
+
+.floating-social img:hover { transform: scale(1.2); }
+.floating-social img:hover { transform: scale(1.2); }
 
 /* ===========================
    RESPONSIVE
