@@ -15,11 +15,11 @@ full-width: true
       <p>MSc in Data Science, University of South Wales, UK</p>
     </div>
     <div class="timeline-item">
-      <h4>2022 – 2025</h4>
+      <h4>Jan 2022 – Aug 2025</h4>
       <p>Business Intelligence Manager, Micnous Service Nigeria ltd</p>
     </div>
     <div class="timeline-item">
-      <h4>2020 – 2021</h4>
+      <h4>Jan 2020 – Dec 2021</h4>
       <p>Data Analyst, Micnous Service Nigeria ltd</p>
     </div>
   </div>
