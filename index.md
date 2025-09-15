@@ -16,11 +16,11 @@ full-width: true
     </div>
     <div class="timeline-item">
       <h4>2022 – 2025</h4>
-      <p>Business Intelligence Manager, Micnous Service Nigeria LTD.</p>
+      <p>Business Intelligence Manager, Micnous Service Nigeria ltd</p>
     </div>
     <div class="timeline-item">
       <h4>2020 – 2021</h4>
-      <p>Data Analyst, Micnous Service Nigeria LTD.</p>
+      <p>Data Analyst, Micnous Service Nigeria ltd</p>
     </div>
   </div>
 
