@@ -15,12 +15,12 @@ full-width: true
       <p>MSc in Data Science, University of South Wales, UK</p>
     </div>
     <div class="timeline-item">
-      <h4>2019 – 2023</h4>
-      <p>Business Intelligence Manager, Ibom Airlines Ltd</p>
+      <h4>2022 – 2025</h4>
+      <p>Business Intelligence Manager, Micnous Service Nigeria LTD.</p>
     </div>
     <div class="timeline-item">
-      <h4>2017 – 2019</h4>
-      <p>Data Analyst, [Previous Company]</p>
+      <h4>2020 – 2021</h4>
+      <p>Data Analyst, Micnous Service Nigeria LTD.</p>
     </div>
   </div>
 
