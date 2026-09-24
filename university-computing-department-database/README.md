@@ -153,7 +153,7 @@ The SQL script contains:
 
 ### 📄 Complete SQL Script
 
-[**Open `sql_scripts.sql` →**](oracle_sql_project)
+[**Open the SQL script →**](sql/oracle_sql_project.sql)
 
 ---
 
@@ -210,7 +210,7 @@ Five SQL queries were developed to interrogate the database and demonstrate how 
 **Objective:** Identify tutors, the modules they teach and the courses associated with those modules.
 
 **SQL:**  
-[**Open the SQL script →**](sql/sql_scripts.sql)
+[**Open the SQL script →**](sql/oracle_sql_project.sql)
 
 **Result:**
 
@@ -225,7 +225,7 @@ Five SQL queries were developed to interrogate the database and demonstrate how 
 **Objective:** Show students, the modules they are registered on and the courses to which they belong.
 
 **SQL:**  
-[**Open the SQL script →**](sql/sql_scripts.sql)
+[**Open the SQL script →**](sql/oracle_sql_project.sql)
 
 **Result:**
 
@@ -240,7 +240,7 @@ Five SQL queries were developed to interrogate the database and demonstrate how 
 **Objective:** Analyse student enrolment information in relation to their respective courses.
 
 **SQL:**  
-[**Open the SQL script →**](sql/sql_scripts.sql)
+[**Open the SQL script →**](sql/oracle_sql_project.sql)
 
 **Result:**
 
@@ -255,7 +255,7 @@ Five SQL queries were developed to interrogate the database and demonstrate how 
 **Objective:** Measure student registrations across modules and courses.
 
 **SQL:**  
-[**Open the SQL script →**](sql/sql_scripts.sql)
+[**Open the SQL script →**](sql/oracle_sql_project.sql)
 
 **Result:**
 
@@ -270,7 +270,7 @@ Five SQL queries were developed to interrogate the database and demonstrate how 
 **Objective:** Identify the most recently hired tutor within each department based on hire date.
 
 **SQL:**  
-[**Open the SQL script →**](sql/sql_scripts.sql)
+[**Open the SQL script →**](sql/oracle_sql_project.sql)
 
 **Result:**
 
@@ -316,7 +316,7 @@ university-computing-department-database/
 │   └── query_5_output.png
 │
 └── sql/
-    └── sql_scripts.sql
+    └── oracle_sql_project.sql
 ```
 
 ---
