@@ -1,0 +1,770 @@
+---
+title: "Data Mining Sentiment Analysis"
+author: "Ubong Effiong Etok"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Loading Necessary Libraries
+
+```{r install &Load , message = FALSE}
+libraries <- c(
+  "tm", "tidytext", "ggplot2", "wordcloud", "syuzhet", "dplyr",
+  "tibble", "textstem", "textdata", "tidyr", "Matrix",
+  "topicmodels", "stringr", "reshape2", "LDAvis", "jsonlite",
+  "e1071", "caTools", "caret", "slam"
+)
+
+#install.packages(libraries)
+
+for (lib in libraries) { 
+  library(lib, character.only=TRUE) 
+}
+```
+
+## Load Dataset
+
+```{r Load Dataset}
+filepath <- "womens_clothing_customer_reviews.csv"
+df <- as_tibble(read.csv(filepath, stringsAsFactors = FALSE))
+
+print(summary(df))
+print(head(df))
+print(colnames(df))
+
+```
+
+## Data Selection and Sampling
+
+
+```{r Select Data}
+# This chunk cleans the dataset by removing missing and very short reviews, dropping unused columns, ensuring valid category labels, and adding a unique review identifier so text-level analysis can be aggregated back to the review level.
+
+df <- df %>% filter(!is.na(Review.Text)) # Remove NA reviews first 
+
+df <- df %>% 
+  select(-c(1, 4, 7, 8)) %>% # This drops specific columns by position.
+  filter(str_count(Review.Text, "\\S+") >= 20) # This Keeps only reviews with at least 20 words
+
+
+df <- df[!is.na(df$Review.Text), ] # Removes all rows containing no reviews. it acts as a safety check to ensure no missing review text remains.
+
+
+df <- df %>% filter(Division.Name != "") # Removes all rows containing blank Division.Name (where the field exists but is blank) values.
+
+
+df$Review.ID <- 1:nrow(df) # Creates a unique numeric ID for each review. This ID is used later to: group tokens back into reviews, calculate sentiment per review, rejoin cleaned tokens with metadata, link sentiment, emotion, and topic outputs back to the original review
+
+```
+
+
+```{r count_factors}
+# This chunk performs basic exploratory data analysis on the categorical variables in the dataset. It counts how many reviews belong to each Division, Department, Class
+
+division_counts <- count(df, Division.Name, sort = TRUE) # Groups the dataset by Division.Name, Counts how many rows (reviews) fall into each division, Sorts results in descending order of frequency
+
+department_counts <- count(df, Department.Name, sort = TRUE) # Groups the dataset by Department.Name, Counts how many rows (reviews) fall into each division, Sorts results in descending order of frequency
+
+class_counts <- count(df, Class.Name, sort = TRUE) # Groups the dataset by Class.Name, Counts how many rows (reviews) fall into each division, Sorts results in descending order of frequency
+
+print(head(division_counts))
+print(head(department_counts))
+print(head(class_counts))
+
+```
+
+```{r}
+# This is a sanity check to visually confirm that the cleaned dataset has the expected structure before further analysis. It will help me catch errors early. It prints the first 6 rows of the cleaned dataset df to the output. 
+
+print(head(df))
+```
+
+```{r}
+# This chunk randomly selects a subset of 3,000 reviews from the cleaned dataset and stores it in sample_df. This sampled dataset is what I will use for all subsequent text mining, sentiment analysis, and topic modelling.
+
+set.seed(1) # Ensures reproducibility
+sample_df <- sample_n(df, 3000) # Random sampling minimises bias. It randomly selects 3000 rows from df. It ensures that every time this code is run, the same 3,000 rows are selected. Three thousand reviews are sufficient to capture dominant linguistic and sentiment patterns.
+print(head(sample_df))
+```
+
+## Tokenize Reviews
+
+```{r tokenize}
+# This chunk converts raw review text into tokens, which are the basic units used in text analysis. Single-word tokens (unigrams) and two-word sequences (bigrams) will be created which will be used for  frequency analysis, word clouds, sentiment analysis and phrase-level insights.
+# Unigrams capture general themes, while bigrams capture context and phrases that single words cannot.
+
+word_tokenized_data <- sample_df %>%
+  unnest_tokens(output = word, input = "Review.Text", token = "words", to_lower = TRUE) # It takes a column containing text, breaks it into tokens, expands the dataset so that each token becomes one row Which will be essential for counting words, removing stopwords and joining sentiment dictionaries
+
+bigram_tokenized_data <- sample_df %>%
+  unnest_tokens(output = bigram, input = "Review.Text", token = "ngrams", n=2, to_lower = TRUE) # Bigram-level tokens are best for identifying common phrases, understanding how words are used together and extracting more semantic meaning
+
+```
+
+## Initial Exploratory Analysis
+
+## Plot of top 10 words
+
+```{r initial word plot}
+
+# Counts the occurences of each word and sorts.
+word_counts <- word_tokenized_data %>%
+  count(word, sort = TRUE) # groups the tokenised data by word, counts how many times each word appears across all reviews and sorts the result in descending order of frequency
+
+# Plots first 10 rows of word counts
+ggplot(word_counts[1:10, ], aes(x = reorder(word, n), y = n)) + 
+  geom_col(fill = "blue") + 
+  labs(x = "Words", y = "Frequency") + 
+  coord_flip() + 
+  theme_minimal() 
+
+# Repeats the earlier word count calculation
+word_counts <- word_tokenized_data %>%
+  count(word, sort = TRUE) 
+
+# This output shows that the plot is dominated by stopwords like: “the”, “and”, “i” and “it” proving that raw tokenisation alone is insufficient, preprocessing (stopword removal, cleaning) is necessary before interpretation
+
+```
+##### The initial plot of the top 10 words above is heavily dominated by stop words and offers little to no relevant information related to the context of the task (analysisng customer reviews of women’s clothing). This confirms that data cleaning and preprocessing must be performed to extract any meaningful information.
+
+## Plot of top 10 bigrams
+
+```{r initial bigram plot}
+
+bigram_counts <- bigram_tokenized_data %>%
+  count(bigram, sort = TRUE) # Groups the tokenised bigram data by the bigram column, Counts how many times each two-word sequence appears across all reviews and Sorts the results in descending order of frequency
+
+# Plots first 10 rows of bigram counts
+
+ggplot(bigram_counts[1:10, ], aes(x = reorder(bigram, n), y = n)) + # selects the 10 most frequent bigrams, orders bigrams by frequency so bars appear sorted
+  geom_col(fill = "blue") + # creates a bar chart with actual frequency values
+  labs(x = "Bigrams", y = "Frequency") +
+  coord_flip() + # flips axes so multi-word labels are readable
+  theme_minimal() # applies a clean theme for readability
+
+```
+
+##### Similar to the initial plot of the top 10 words, this plot shows that raw bigrams are still dominated by function words, which motivates the need for preprocessing before extracting meaningful phrases as the bigram plot fails to provide any meaningful information that can help us understand customers reviews. 
+
+## Word Cloud
+
+```{r word cloud}
+set.seed(1)
+wordcloud(words = word_counts$word, freq = word_counts$n, min.freq = 100, 
+          random.order=FALSE, random.color=FALSE, 
+          colors = sample(colors(), size = 12))
+
+```
+
+#### This word cloud shows the words that show up the most in the reviews. The bigger the word, the more often it shows up in the dataset. The fact that common terms like "the" and "and" are so common shows that the text hasn't been thoroughly cleaned yet. This shows that stop-word removal and more preprocessing are needed before any meaningful interpretation can be done.
+
+# TASK A: TEXT MINING
+
+## Data Cleaning and Preprocessing
+
+```{r clean data}
+# This chunk performs text preprocessing by removing stopwords, domain-specific noise, punctuation, and empty tokens, and by lemmatizing words to their base forms. This produces a clean token set suitable for sentiment analysis and topic modelling.
+
+clean_tokens <- word_tokenized_data %>%
+  anti_join(stop_words, by = "word") # keeps only words that do not appear in the stopword list. removes function words that carry little semantic meaning
+
+
+# Removing words including highly generic domain words that are considered "noise" in the domain of clothing reviews for easy identification of trends
+words_to_remove <- c("dress", "size", "wear", "color", "fabric", "length", 
+                     "material", "retailer", "shirt", "length", "pants", "jeans",
+                     "top", "sweater", "skirt", "spin", "short", "buy")
+clean_tokens <- clean_tokens %>%
+  filter(!tolower(word) %in% tolower(words_to_remove)) # Converts both word, words_to_remove to lowercase and removes any token whose word appears in my custom list
+
+clean_tokens$word <- gsub("[^a-zA-Z ]", "", clean_tokens$word) %>% # Removes punctuation, numbers, special characters, Keeps only letters and spaces
+  trimws() %>% # Removes leading and trailing whitespace
+  na_if("") %>% # Converts empty strings into NA
+  lemmatize_words() # Converts words to their base dictionary form
+
+clean_tokens <- na.omit(clean_tokens) # Removes any rows where word became NA
+
+```
+
+```{r cleaned bigrams}
+# This chunk reconstructs each review as a cleaned string, re-attaches review-level metadata, prepares the data for clean bigram extraction
+
+untokenized_data <- clean_tokens %>%
+  group_by(Review.ID) %>% # Groups all word tokens that belong to the same review using the Review.ID that was earlier created
+  
+  summarize(clean_review = paste(word, collapse = " "), .groups = "drop") %>% # Takes all cleaned words in a review, joins them into one single string, separated by spaces. Removes grouping after summarisation to ensure the result is a regular dataframe, not grouped to prevent unexpected behaviour in later steps
+  
+  inner_join(sample_df %>% select(-Review.Text), by = "Review.ID") # This step adds back the non-text information and joins everything else like Age, Rating, Division, etc. back in
+
+clean_bigrams <- untokenized_data %>%
+  unnest_tokens(output = bigram, input = "clean_review", token = "ngrams", n=2, to_lower = TRUE) # Cleaned review are reconstructed from individual tokens and then bigrams are generated from the cleaned text, ensuring that phrase-level analysis reflects meaningful word sequences rather than raw, noisy text.
+
+```
+
+```{r clean word plot}
+# Counts the occurences of clean words and sorts.
+word_counts <- clean_tokens %>%
+  count(word, sort = TRUE) # Groups the cleaned token data by word, counts how often each cleaned word appears across all reviews, sorts results from most frequent to least frequent Key difference from earlier word count
+
+top_words <- top_n(word_counts,10,n)$word # selects the 10 rows with the highest frequency and extracts just the word names
+
+filtered_word_counts <- filter(word_counts, word %in% top_words) # Filters the full frequency table, keeps only rows corresponding to the top 10 words to reduce cluttering and prepares the data specifically for plotting
+
+filtered_word_counts$word <- factor(filtered_word_counts$word, levels = rev(top_words)) # Converts word from a character vector into a factor, explicitly sets the factor levels to the top words in reverse order
+
+# Plots first 10 rows of word counts
+ggplot(filtered_word_counts, aes(x = reorder(word, n), y = n)) +
+  geom_col(fill = "blue") +
+  labs(x = "Words", y = "Frequency") + 
+  coord_flip() +
+  theme_minimal() # keeps the plot clean
+
+
+```
+
+##### Customers often say nice things about dresses, but the fact that size and fit are so crucial reveals that practical fit is a huge part of what makes people happy.
+
+
+```{r clean bigram plot}
+# Counts the occurrences of clean bigrams and sorts.
+bigram_counts <- clean_bigrams %>%
+  count(bigram, sort = TRUE) # Groups the clean bigram dataset by bigram, counts how often each cleaned two-word phrase appears and sorts results from most frequent to least frequent
+
+top_bigrams <- top_n(bigram_counts,10,n)$bigram # Selects the 10 most frequent bigrams based on count, extracts only the bigram text, stores them as a character vector
+
+filtered_bigram_counts <- filter(bigram_counts, bigram %in% top_bigrams) # Filters the full bigram frequency table, keeps only rows corresponding to the top 10 bigrams and prepares a compact dataset for plotting
+
+filtered_bigram_counts$bigram <- factor(filtered_bigram_counts$bigram, levels = rev(top_bigrams)) # Converts bigram into a factor, explicitly sets the plotting order and ensures bars appear ranked by frequency rather than alphabetically
+
+
+# Plots first 10 rows of bigram counts
+ggplot(filtered_bigram_counts, aes(x = reorder(bigram, n), y = n)) +
+  geom_col(fill = "blue") +
+  labs(x = "Bigrams", y = "Frequency") +
+  coord_flip() +
+  theme_minimal()
+
+```
+
+##### This plot further validates the observation that customers care more about how clothes fit on them than the overall looks/ aesthetics of the clothing. 
+
+```{r clean word cloud}
+# This chunk creates a word cloud from the cleaned word frequency data to provide a quick visual overview of dominant themes in customer reviews.
+set.seed(2)
+wordcloud(words = word_counts$word, freq = word_counts$n, min.freq = 25, # Supplies the list of words to display, Supplies frequency counts for each word. Words appearing fewer than 25 times are excluded to reduce clutter keeping the cloud readable and focuses on dominant themes
+          max.words = 100, random.order=FALSE, random.color=FALSE, # Limits the word cloud to the 100 most frequent words preventing overcrowding. This Places most frequent words in the center, Less frequent words appear toward the edges and makes important words visually prominent
+          colors = sample(colors(), size = 12))
+
+```
+
+##### Finally, we have the word cloud that also confirms that customers focus more on how clothes fit on them than on how they appear in the store.
+
+```{r grouped word_plot}
+# This chunk compares how frequently the most common words appear across departments, allowing me to identify differences in what customers emphasise for different product categories.
+
+top_words <- top_n(word_counts,10,n)$word # Gets a vector of top 10 words
+
+# Groups clean_tokens by department and counts the number of occurences of each word, and filters to only the top 10 words.
+grouped_count <- group_by(clean_tokens, Department.Name) %>% 
+  count(word) %>%
+  filter(word %in% top_words)
+
+# Orders the top words according to overall frequency
+grouped_count$word <- factor(grouped_count$word, levels = rev(top_words))
+
+# Plots first 10 word groups
+ggplot(data = grouped_count, aes(x = word, y = n, fill = Department.Name)) + 
+  geom_col(position = "dodge") + 
+  labs(x = "Words", y = "Department", fill = "Department.Name") +
+  coord_flip() +
+  theme_minimal()
+
+```
+
+##### This grouped word-frequency figure demonstrates that different departments focus on distinct parts of the items. In the Tops, Dresses, and Bottoms categories, phrases like "size" and "fit" come up a lot, which shows that getting the right fit is quite important in these categories. The Intimate department, on the other hand, uses more evaluative and usage-related words like "love" and "wear," which suggests that they are more focused on comfort and how the product is worn.
+
+
+```{r grouped bigram plot}
+# Gets a vector of top 10 bigrams
+top_bigrams <- top_n(bigram_counts,10,n)$bigram # Uses the previously computed bigram_counts (from cleaned bigrams), selects the 10 most frequent bigrams overall and extracts only the bigram text into a character vector
+
+grouped_count <- group_by(clean_bigrams, Department.Name) %>% # Groups the data by Department, ensures phrase counts are calculated within each department, 
+
+  count(bigram) %>% # Counts how many times each bigram appears per department, produces one row per (Department.Name, bigram) combination
+  filter(bigram %in% top_bigrams) # Keeps only the top 10 bigrams overall, removes less frequent phrases to keep the plot readable
+
+grouped_count$bigram <- factor(grouped_count$bigram, levels = rev(top_bigrams)) #  # Converts bigram into a factor, Sets factor levels to match the overall frequency ranking, Reverses the order so the most frequent phrases appear at the top
+
+# Plots first 10 bigram groups
+ggplot(data = grouped_count, aes(x = bigram, y = n, fill = Department.Name)) +
+  geom_col(position = "dodge") +
+  labs(x = "Bigrams", y = "Frequency", fill = "Department.Name") +
+  coord_flip() +
+  theme_minimal()
+
+
+```
+
+##### The bigram analysis also suggests that fit and size are significant when it comes to tops, dresses, and bottoms. A lot of the time, people say things like "true size," "fit perfectly," and "usual size." The Intimate portion, on the other hand, focuses more on comfort and material-related words like "soft comfortable" and "fabric soft," as well as adjectives that show how good something is. This suggests that fit is the most critical factor for core clothing categories, but comfort and feel are more vital for intimate items.
+
+
+# Task B: SENTIMENT ANALYSIS
+
+## Bing Lexicon
+
+```{r applying bing lexicon}
+# This chunk calculates a sentiment score for each review using the Bing sentiment dictionary and adds that score back to the dataset.
+
+sentiment_data <- clean_tokens %>%
+  inner_join(get_sentiments("bing"), by = "word") # Takes cleaned words, Keeps only words that have a sentiment label and adds a column saying whether each word is positive or negative
+
+sentiment_score <- sentiment_data %>%
+  group_by(Review.ID) %>%
+  summarize(bing_sentiment = sum(sentiment == "positive") - sum(sentiment == "negative"),.groups = "drop")  # Groups words by review Counts (how many positive words are in the review, how many negative words are in the review) and subtracts negatives from positives
+
+df_with_sentiment <- sample_df %>%
+  inner_join(sentiment_score, by = "Review.ID") # The Bing lexicon to count positive and negative words in each review and creates a sentiment score for every review
+
+```
+
+```{r inspect bing}
+worst_review <- df_with_sentiment$Review.Text[which.min(df_with_sentiment$bing_sentiment)] # This line finds the review with the lowest Bing sentiment score and stores the text of that review in
+
+best_review  <- df_with_sentiment$Review.Text[which.max(df_with_sentiment$bing_sentiment)] # This line finds the review with the highest Bing sentiment score and stores the text of that review in best_review.
+
+print(worst_review)
+print(best_review)
+
+```
+
+```{r}
+# Histogram of sentiment scores
+ggplot(df_with_sentiment, aes(x = bing_sentiment)) +
+  geom_histogram(binwidth = 1)
+
+```
+
+#### The histogram plot exhibits a normal distribution with a slightly positive skew. This suggests that the more customers reporting to having a positive experience than a negative one.
+
+```{r}
+# Average Sentiment by Class.Name
+department_sentiment <- df_with_sentiment %>% # uses the dataset that already has sentiment scores
+  group_by(Class.Name) %>% # groups reviews by product class
+  summarize(Average_Bing_Sentimet = mean(bing_sentiment)) # computes the average sentiment score for each class
+
+ggplot(department_sentiment, aes(x = reorder(Class.Name, Average_Bing_Sentimet), y = Average_Bing_Sentimet, fill = Class.Name)) +
+  geom_bar(stat = "identity", show.legend = FALSE) +
+  coord_flip() +
+  labs(title = "Average Sentiment Score by Class.Name", x = "Class.Name", y = "Average Sentiment Score")
+
+```
+
+#### The bar chart above shows that the average scores for Sleep, Swim, and Jackets are the highest. This means that people are more likely to like using these kinds of things. The average sentiment scores for Layering, Jeans, and Trend, on the other hand, are the lowest. The text mining results showed that "fit" was a prominent theme. This means that customers may be happy in categories where comfort and fit are particularly essential. On the other side, lower scores in certain categories could imply that customers have different expectations or experiences.
+
+```{r}
+# Box Plot of Sentiment against rating
+ggplot(df_with_sentiment, aes(x = factor(Rating), y = bing_sentiment)) +
+  geom_boxplot() +
+  labs(title = "Box Plot of Bing Sentiment Score vs. Rating",
+       x = "Rating",
+       y = "Sentiment Score") # Uses the dataset that contains ratings and sentiment scores TO Convert Rating into a categorical variablE. Sets x-axis = rating (1–5) AND y-axis = sentiment score
+
+```
+
+#### The box plot shows that there is a link between customer evaluations and Bing sentiment scores that is good. Reviews that get higher ratings usually have higher median sentiment values. This suggests that textual sentiment aligns well with the numerical ratings provided by customers.
+
+
+## NRC Lexicon
+
+```{r applying NRC}
+# It assigns emotion categories (like joy, anger, trust, fear) to words using the NRC lexicon and counts how many of each emotion appear in every review.
+
+emotion_data <- clean_tokens %>%
+  inner_join(get_sentiments("nrc"),
+    by = "word",
+    relationship = "many-to-many") # Uses the NRC emotion dictionary, Keeps only words that have an emotion label, adds a column showing the emotion (e.g. joy, anger, trust), many-to-many because one word can belong to multiple emotions
+
+emotion_count <- emotion_data %>%
+  group_by(Review.ID) %>%
+  count(sentiment) # Groups words by review, counts how many times each emotion appears in that review
+
+wide_emotion_data <- emotion_count %>%
+  pivot_wider(names_from = sentiment, values_from = n, values_fill = list(n = 0)) # Converts the data from long format to wide format, each emotion becomes its own column and missing emotions are filled with 0
+
+df_with_sentiment = df_with_sentiment %>%
+  inner_join(wide_emotion_data, by = "Review.ID") # Adds the emotion counts back to the main dataset
+
+```
+
+```{r inspect NRC}
+# It prints the review text that has the highest count for each emotion category.
+
+emotions <- c("joy", "positive", "trust", "anticipation", "surprise", "sadness", "negative", "anger", "disgust", "fear") # Creates a list of emotion names. These match the emotion columns created from the NRC analysis.
+
+for (emotion in emotions) { 
+  print(paste("Review with highest score in", emotion)) # Prints a label to know which emotion is being examined
+  review <- df_with_sentiment$Review.Text[which.max(df_with_sentiment[[emotion]])] #  # Selects the emotion column, finds the row with the highest value for that emotion and extracts the corresponding review text
+  print(review) # Prints the review text with the strongest presence of that emotion
+}
+
+```
+
+```{r NRC Visualisations}
+# It creates a heatmap showing the average intensity of each emotion across product departments.
+
+long_df <- df_with_sentiment %>%
+  pivot_longer(
+    cols = c("joy", "positive", "trust", "anticipation", "surprise", "sadness", "negative", "anger", "disgust", "fear"),
+    names_to = "Emotion",
+    values_to = "Intensity"
+  ) # Converts emotion columns from wide format to long format, each row now represents one review, one emotion and its intensity value which is required for grouped analysis and plotting.
+
+emotion_scores <- long_df %>%
+  group_by(Department.Name, Emotion) %>%
+  summarize(avg_intensity = mean(Intensity), .groups = "drop") # Groups data by department and emotion and calculates the average emotion intensity for each department
+
+ggplot(emotion_scores, aes(x = Department.Name, y = Emotion, fill = avg_intensity)) +
+  geom_tile() +  # Creates the heatmap tiles
+  labs(x = "Department Name", y = "Emotion", fill = "Intensity") +
+  theme(axis.text.x = element_text(angle = 30, hjust = 1)) # Rotates text to 30 degrees and hjust=1 aligns text to the right
+
+```
+
+#### The heat map indicates that there is a strong intensity of positive emotions such as trust, joy, anticipation. This confirms that the majority of reviews were from satisfied customers.
+
+# Task C: TOPIC MODELLING
+## Convert data to a clean Term Document Matrix (TDM)
+
+```{r Create TDM}
+
+# It prepares the review text for topic modelling by cleaning it and converting it into a term–document matrix.
+
+topic_df <- sample_df %>%
+  filter(str_count(Review.Text, "\\S+") >= 50) # Keeps only reviews with at least 50 words because longer reviews work better for topic modelling as it reduces noise from very short texts
+
+corpus <- VCorpus(VectorSource(topic_df$Review.Text)) # Converts the review text into a text corpus
+
+corpus <- tm_map(corpus, content_transformer(tolower)) # Converts all text to lowercase
+
+corpus <- tm_map(corpus, content_transformer(function(x) gsub("[^a-zA-Z ]", "", x))) # Removes punctuation, numbers, and special characters, Keeps only letters and spaces
+
+corpus <- tm_map(corpus, removeWords, stopwords("en")) # Removes common English stopwords like "the", "and", "is", etc., reduces noise in topic modelling
+
+corpus <- tm_map(corpus, stemDocument) # Applies stemming, reduces words to their root form (e.g. fitting → fit) and helps group similar words together
+
+tdm <- TermDocumentMatrix(corpus, control = list(wordLengths = c(3, 15))) # # Convert to a term document matrix and Keeps words between 3 and 15 characters long
+
+tdm_matrix <- as.matrix(tdm) # Converts the term–document matrix into a standard matrix which makes it easier to process later
+
+```
+
+## Term Selection
+
+```{r Word Frequency Distribution}
+
+# Calculates how often each word appears in the corpus, shows the top words, and visualises the overall word-frequency distribution.
+
+term_frequencies <- rowSums(tdm_matrix) # Adds up each row of the term–document matrix
+
+term_frequency_df <- data.frame(term = names(term_frequencies), frequency = term_frequencies) # Converts the frequency results into a dataframe with each row = one word and its total frequency
+
+top_terms <- term_frequency_df %>%
+  arrange(desc(frequency)) %>%
+  head(10) # Sort the data frame by frequency in descending order and select the top 10
+
+print(top_terms) # Displays the top 10 words and their frequencies which is Used as a quick check of dominant terms
+
+ggplot(term_frequency_df, aes(x = frequency)) +
+  geom_histogram(binwidth = 10) +
+  labs(title = "Histogram of Term Frequencies",
+       x = "Term Frequency",
+       y = "Number of Terms") +
+  theme_minimal() # histogram to show how many words occur rarely vs frequently
+
+```
+
+
+#### This histogram shows the distribution of term frequencies in the corpus. Most words occur very rarely, while a small number of words occur very frequently, resulting in a highly right-skewed distribution. This pattern is typical of text data and justifies removing extremely rare and extremely frequent terms before topic modelling to improve model quality.
+
+
+```{r Word Filtering}
+
+frequent_terms <- findFreqTerms(tdm, lowfreq = 0.10 * ncol(tdm_matrix)) # Find terms that appear in more than 10% of documents
+
+rare_terms <- findFreqTerms(tdm, highfreq = 0.005 * ncol(tdm_matrix)) # Find terms that appear in less than 0.5% of documents
+
+print("Frequent Terms")
+print(frequent_terms)
+print("First 20 Infrequent Terms")
+print(rare_terms[1:20])
+
+# Edit list of frequent words to keep useful ones
+to_keep <- c("christian", "recip")
+to_remove <- frequent_terms[!frequent_terms %in% to_keep]
+
+# Removes overly frequent words and overly rare words
+filtered_tdm_matrix <- tdm_matrix[!rownames(tdm_matrix) %in% to_remove, ]
+filtered_tdm_matrix <- filtered_tdm_matrix[!rownames(filtered_tdm_matrix) %in% rare_terms, ]
+
+column_sums <- colSums(filtered_tdm_matrix) # Calculating column sums to Check for documents that now contain no remaining words
+
+zero_columns <- which(column_sums == 0) # Identify columns that are all zeros
+
+# # Removes empty documents to prevent errors in topic modelling.  If no columns are all zeros, just use the original matrix
+if(length(zero_columns) > 0) {
+  filtered_tdm_matrix <- filtered_tdm_matrix[, -zero_columns] 
+} else {
+
+  print("No zero columns in TDM matrix")
+}
+
+```
+
+```{r Word Frequency Distribution 2}
+# This chunk recalculates word frequencies after filtering and visualizes the updated frequency distribution.
+
+term_frequencies <- rowSums(filtered_tdm_matrix) # Adds up how often each remaining word appears using the filtered term–document matrix
+
+# Converts word frequencies into a dataframe. Each row = one word and its total frequency
+term_frequency_df <- data.frame(
+  term = names(term_frequencies),
+  frequency = term_frequencies
+)
+
+# Sorts words by frequency by Selecting the top 10 most frequent remaining words
+top_terms <- term_frequency_df %>%
+  arrange(desc(frequency)) %>%
+  head(10)
+
+print(top_terms) # Display the top 10 most frequent terms after filtering
+
+# Visualize the distribution of term frequencies
+ggplot(term_frequency_df, aes(x = frequency)) +
+  geom_histogram(binwidth = 10) +
+  labs(
+    title = "Histogram of Term Frequencies",
+    x = "Term Frequency",
+    y = "Number of Terms") +
+  theme_minimal()
+
+```
+
+#### This histogram shows the distribution of word frequencies after filtering. Most terms still occur at low frequencies, while a smaller number of terms occur more frequently, indicating a right-skewed distribution. The reduction in extreme values shows that filtering has successfully removed very rare and overly common terms, making the data more suitable for topic modelling.
+
+```{r further_selection}
+# Manually remove remaining generic terms
+
+to_remove <- c("help", "author", "present", "cover", "work") # Creates a list of generic words as these words are not useful for identifying topics
+
+filtered_tdm_matrix <- filtered_tdm_matrix[!rownames(filtered_tdm_matrix) %in% to_remove, ] # Removes those generic words from the term–document matrix , further cleans the vocabulary
+
+term_frequencies <- rowSums(filtered_tdm_matrix) # Recalculates how often each remaining word appears
+
+# Converting frequencies into a dataframe
+term_frequency_df <- data.frame(
+  term = names(term_frequencies),
+  frequency = term_frequencies
+)
+
+# Sort terms by frequency and extract the top 10
+top_terms <- term_frequency_df %>%
+  arrange(desc(frequency)) %>%
+  head(10)
+
+# Display the top 10 most frequent remaining terms
+print(top_terms)
+
+```
+
+
+## Create LDA Model
+
+```{r Initial LDA model}
+# It prepares the data in the correct format and fits an LDA topic model with 3 topics.
+
+dtm <- t(filtered_tdm_matrix) # Transposes the matrix, Changes it from term–document to document–term as LDA requires documents as rows
+
+dtm_stm <- slam::as.simple_triplet_matrix(dtm) # Converts the matrix into a sparse format. This saves memory and is required by the topicmodels package
+
+lda_model <- LDA(dtm_stm, k = 3, control = list(seed = 1)) # Fits an LDA topic model, asks the model to find 3 topics and make results reproducible
+
+```
+
+```{r Choosing k}
+# It tests different numbers of topics and uses perplexity to help decide how many topics to use in the LDA model.
+
+range_k <- seq(2, 10, by = 1) # Creates a list of topic numbers to test Here, it tests 2 to 10 topics
+perplexities <- sapply(range_k, function(k) {  # Loops over each value of k and Runs the same process for every topic number
+  model <- LDA(dtm_stm, k = k, control = list(seed = 1))  # Fits an LDA model using k topics by using the same seed so results are comparable
+  perplexity(model) # Calculates the perplexity score for that model as Perplexity measures how well the model fits the data
+})
+
+# Plotting perplexities
+plot(range_k, perplexities, type = "b", xlab = "Number of Topics", ylab = "Perplexity")
+
+```
+
+#### The perplexity plot indicates that two topics minimise perplexity and are therefore optimal from a statistical standpoint.
+
+```{r LDA Visualisation}
+
+# It extracts the most important words for each topic and visualizes them using bar charts.
+
+topics <- tidy(lda_model, matrix = "beta") # Converts the LDA model into a tidy dataframe with a probability of each word belonging to each topic
+
+# Groups words by topic, Selects the top 10 most important words per topic, sorts them by importance within each topic
+top_terms <- topics %>%
+  group_by(topic) %>%
+  top_n(10, beta) %>%
+  ungroup() %>%
+  arrange(topic, -beta)
+
+# Visualise the top terms for each topic in ggplot
+top_terms %>%
+  ggplot(aes(x = reorder(term, beta), y = beta, fill = factor(topic))) +
+  geom_col(show.legend = FALSE) +
+  facet_wrap(~ topic, scales = "free") +
+  coord_flip()
+
+```
+
+#### Topic 1: The use of words like "return," "hip," "body," and "shoulder" shows that this topic is about consumer problems with fit and comfort, which are often linked to returns and displeasure.
+
+#### Topic 2:  Words like "light," "detail," "front," "model," and "online" are used to talk about this topic. These words illustrate that it has to do with how things look, how they are created, and how they seem when you buy them online.
+
+#### Topic 3: The words "big," "cut," "button," "arm," and "expect" demonstrate that this issue is about how customers communicate about sizing, how garments are created, and whether items live up to their expectations.
+
+```{r pca visualisation}
+# It creates an interactive visualisation of the LDA topics to help interpret how topics and words relate to each other.
+
+set.seed(1) # Set seed for reproducibility of the LDA model
+
+lda_model <- LDA(dtm_stm, k = 3, control = list(seed = 1)) # Fit LDA model with 3 topics on the document-term matrix
+
+# Preparing LDA outputs (topics and terms) for interactive visualization
+lda_vis_data <- createJSON( # Prepares the LDA results in the format required by LDAvis. This converts model outputs into JSON data
+  phi = posterior(lda_model)$terms, # Gives topic–word probabilities. Shows which words are important for each topic
+  theta = posterior(lda_model)$topics, # Gives document–topic probabilities. hows how strongly each review belongs to each topic
+  doc.length = rowSums(as.matrix(dtm_stm)), # Calculates the number of words in each document
+  vocab = colnames(as.matrix(dtm_stm)), # Supplies the list of words used in the model
+  term.frequency = colSums(as.matrix(dtm_stm)) # Calculates how often each word appears overall
+)
+serVis(lda_vis_data) # Launch interactive LDA visualization allowing exploration of topics and keywords in a browser-style view
+
+```
+
+#### From the output, the interactive visualisation summarises the results of the topic model. The circles on the left represent topics, where the size of each circle indicates the proportion of reviews associated with that topic, and the distance between circles shows how distinct the topics are from one another. The separation of the circles suggests that the topics are reasonably well differentiated. On the right, the bar chart displays the most salient terms, with longer bars indicating words that are more important within the selected topic compared to the overall corpus. Together, this output helps interpret both topic prevalence and the key words that define each topic.
+
+```{r Final LDA Visualisations, fig.width=10, fig.height=8}
+# It visualizes the key words for each topic, saves the plot, and extracts how strongly each review belongs to each topic.
+
+topics <- tidy(lda_model, matrix = "beta") # Converts the LDA model into a tidy format with the probability of a word belonging to a topic
+
+# Groups words by topic, Selects the top 6 most important words for each topic and Sorts them by importance
+top_terms <- topics %>%
+  group_by(topic) %>%
+  top_n(6, beta) %>%
+  ungroup() %>%
+  arrange(topic, -beta)
+
+# Creating bar plot of top terms for each topic
+p <- top_terms %>%
+  ggplot(aes(term, beta, fill = factor(topic))) +
+  geom_col(show.legend = FALSE) +
+  facet_wrap(~ topic, scales = "free") +
+  coord_flip()
+
+print(p) # Print plot
+
+ggsave("plot.png", plot = p, width = 10, height = 8) # Save plot
+
+documents <- tidy(lda_model, matrix = "gamma") # Getting the topic proportions for each review showing how much each topic contributes to each document
+
+print(head(documents))
+
+
+```
+
+#### This figure illustrates the words that best describe each of the three subjects that the LDA model found. Each panel is about a different topic, and the bars show the most important words that describe that topic. The beta value, which is the length of each bar, shows how closely a term is related to that issue. Words about fit and returns (like "hip," "shoulder," and "return") make up much of Topic 1. Topic 2 is about product specifics and appearance (like "light," "detail," "chest," and "front"). Topic 3 is about design elements and expectations (like "cut," "button," and "big"). The plot demonstrates that the model has learned distinct and interpretable themes from the reviews.
+
+
+# Task D - Further Exploration
+
+```{r}
+# It recalculates a Bing sentiment score for each review and creates a binary variable indicating whether the product was recommended.
+
+# Uses the review ID and review text only. Keeps only the columns needed for sentiment analysis
+bing_sentiment <- sample_df %>%
+  select(Review.ID, Review.Text) %>%
+  
+  # Breaks each review into individual words. Creates one row per word
+  unnest_tokens(word, Review.Text) %>%
+  
+  # Keeps only words that have positive or negative sentiment and adds a sentiment label to each word
+  inner_join(get_sentiments("bing"), by = "word") %>%
+  
+  # Groups words back into their original reviews
+  group_by(Review.ID) %>%
+  
+  # Adds +1 for each positive word, −1 for each negative word and produces one sentiment score per review
+  summarise(bing_sentiment = sum(ifelse(sentiment == "positive", 1, -1)), .groups = "drop")
+
+# Creates a new variable called recommendation. If rating is 4 or 5 choose recommended (1) Otherwise not recommended (0)
+sample_df <- sample_df %>% 
+  mutate(recommendation = ifelse(Rating >= 4, 1, 0))
+
+```
+
+```{r logistic regression}
+# It builds a logistic regression model to predict whether a product is recommended using sentiment score and age.
+
+# Merges sentiment scores into the review dataset and ensures each review has a sentiment value
+model_data <- sample_df %>%
+  inner_join(bing_sentiment, by = "Review.ID") %>%
+  
+  # Keeps only variables needed for modelling: recommendation (outcome), sentiment score and age
+  select(recommendation, bing_sentiment, Age) %>%
+  
+  # Converts recommendation into a categorical variable required for logistic regression
+  mutate(recommendation = as.factor(recommendation))
+
+# Fits a logistic regression model, Predicts recommendation using sentiment score and age
+linear_model <- glm(recommendation ~ bing_sentiment + Age,
+                 data = model_data,
+                 family = "binomial")
+
+summary(linear_model) # Displays model coefficients and significance by showing how sentiment and age affect recommendation
+
+```
+
+```{r}
+# Plot the probability of recommending a product based on sentiment
+ggplot(model_data, aes(x = bing_sentiment, y = as.numeric(recommendation) - 1)) +
+  geom_smooth(
+    method = "glm",
+    method.args = list(family = "binomial"),
+    color = "blue"
+  ) +
+  labs(
+    title = "Probability of Recommendation by Sentiment Score",
+    x = "Sentiment Score",
+    y = "Probability of Recommendation"
+  )
+
+```
+
+
+#### This plot visualises the predicted probability of recommending a product as sentiment score increases. The S-shaped curve shows that reviews with more positive sentiment have a much higher likelihood of recommendation, while very negative sentiment corresponds to low recommendation probability.
+
+
+
+# References
+[1] Mohammad, S.M. and Turney, P.D. (2012). CROWDSOURCING A WORD-EMOTION ASSOCIATION LEXICON. Computational Intelligence, 29(3), pp.436–465. doi:https://doi.org/10.1111/j.1467-8640.2012.00460.x.
+[2] GeeksforGeeks (2023). Generalized Linear Models Using R. [online] GeeksforGeeks. Available at: https://www.geeksforgeeks.org/r-language/generalized-linear-models-using-r/.
+[3] Blei, D.M., Ng, A.Y. and Jordan, M.I. (2003). Latent Dirichlet Allocation. Journal of Machine Learning Research, 3, pp.993–1022.
+[4] Sievert, C. and Shirley, K. (2014). LDAvis: A method for visualizing and interpreting topics. Proceedings of the Workshop on Interactive Language Learning, Visualization, and Interfaces, pp.63–70.
+
+
