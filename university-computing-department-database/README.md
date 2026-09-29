@@ -1,10 +1,10 @@
 # 🗄️ University Computing Department Database
 
 ![Oracle SQL](https://img.shields.io/badge/Oracle%20SQL-Database-red)
-![SQL Developer](https://img.shields.io/badge/Oracle-SQL%20Developer-orange)
+![Oracle SQL Developer](https://img.shields.io/badge/Oracle-SQL%20Developer-orange)
 ![Database Design](https://img.shields.io/badge/Database-Design-blue)
 ![ERD](https://img.shields.io/badge/ERD-Relational%20Modelling-purple)
-![Project](https://img.shields.io/badge/Project-Academic-green)
+![Academic Project](https://img.shields.io/badge/Project-Academic-green)
 
 > A relational database design and SQL analysis project developed using Oracle SQL Developer to manage courses, modules, tutors and students.
 
