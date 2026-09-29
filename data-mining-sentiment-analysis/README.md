@@ -1057,37 +1057,6 @@ The complete rendered analytical report containing the analysis, results and vis
 The customer review dataset used for the analysis.
 
 **[⬇️ Download Dataset (Excel)](https://github.com/xzibitetok/xzibitetok.github.io/releases/latest/download/womens_clothing_customer_reviews.xlsx)**
----
-
-### 🌐 HTML Analysis Report
-
-The complete rendered analytical report containing the analysis, results and visualisations.
-
-**[⬇️ Download HTML Report](https://raw.githubusercontent.com/xzibitetok/xzibitetok.github.io/master/data-mining-sentiment-analysis/code/data_mining_sentiment_analysis.html)**
-
----
-
-### 🗃️ Dataset
-
-The customer review dataset used for the analysis.
-
-**[⬇️ Download Dataset (CSV)](https://raw.githubusercontent.com/xzibitetok/xzibitetok.github.io/master/data-mining-sentiment-analysis/data/womens_clothing_customer_reviews.csv)**
-
----
-
-### 🗃️ Dataset
-
-The anonymised women's clothing customer review dataset used for the analysis.
-
-**[⬇️ Download Dataset (CSV)](https://raw.githubusercontent.com/xzibitetok/data-mining-sentiment-analysis/master/data/womens_clothing_customer_reviews.csv)**
-
----
-
-### 🗃️ Dataset
-
-The anonymised women's clothing customer review dataset used for the analysis.
-
-**[⬇️ Download Dataset (CSV)](https://github.com/xzibitetok/data-mining-sentiment-analysis/raw/refs/heads/master/data/womens_clothing_customer_reviews.csv)**
 
 ---
 
