@@ -19,11 +19,11 @@
 5. [Database Implementation](#database-implementation)
 6. [Table Results](#table-results)
 7. [SQL Analysis](#sql-analysis)
-   - [Query 1 — Tutors, Modules and Courses](#query-1--tutors-modules-and-courses)
-   - [Query 2 — Students, Modules and Courses](#query-2--students-modules-and-courses)
-   - [Query 3 — Student Enrolment by Course](#query-3--student-enrolment-by-course)
-   - [Query 4 — Module Enrolment](#query-4--module-enrolment)
-   - [Query 5 — Newest Tutor by Department](#query-5--newest-tutor-by-department)
+   - [Query 1 — Tutors, Modules and Courses](#query-1-tutors-modules-and-courses)
+   - [Query 2 — Students, Modules and Courses](#query-2-students-modules-and-courses)
+   - [Query 3 — Student Enrolment by Course](#query-3-student-enrolment-by-course)
+   - [Query 4 — Module Enrolment](#query-4-module-enrolment)
+   - [Query 5 — Newest Tutor by Department](#query-5-newest-tutor-by-department)
 8. [Technologies](#technologies)
 9. [Repository Structure](#repository-structure)
 10. [Key Skills Demonstrated](#key-skills-demonstrated)
@@ -31,6 +31,8 @@
 12. [Author](#author)
 
 ---
+
+<a name="project-overview"></a>
 
 ## 📌 Project Overview
 
@@ -52,6 +54,8 @@ The database was implemented using **Oracle SQL Developer** and populated with f
 
 ---
 
+<a name="project-objectives"></a>
+
 ## 🎯 Project Objectives
 
 The main objectives of the project were to:
@@ -66,6 +70,8 @@ The main objectives of the project were to:
 8. Analyse the resulting data to demonstrate practical use of the database.
 
 ---
+
+<a name="database-structure"></a>
 
 ## 🗂️ Database Structure
 
@@ -128,6 +134,8 @@ A relationship table connecting students with the modules they are registered to
 
 ---
 
+<a name="entity-relationship-diagram"></a>
+
 ## 🔗 Entity Relationship Diagram
 
 The ERD illustrates the entities, attributes and relationships used in the database design.
@@ -137,6 +145,8 @@ The ERD illustrates the entities, attributes and relationships used in the datab
 [**View ERD Image →**](assets/erd.png)
 
 ---
+
+<a name="database-implementation"></a>
 
 ## ⚙️ Database Implementation
 
@@ -156,6 +166,8 @@ The SQL script contains:
 [**Open the SQL script →**](sql/oracle_sql_project.sql)
 
 ---
+
+<a name="table-results"></a>
 
 ## 📊 Table Results
 
@@ -199,11 +211,15 @@ The following screenshots provide visual evidence of the tables created and popu
 
 ---
 
+<a name="sql-analysis"></a>
+
 # 🔎 SQL Analysis
 
 Five SQL queries were developed to interrogate the database and demonstrate how information can be extracted from related tables.
 
 ---
+
+<a name="query-1-tutors-modules-and-courses"></a>
 
 ## Query 1 — Tutors, Modules and Courses
 
@@ -220,6 +236,8 @@ Five SQL queries were developed to interrogate the database and demonstrate how 
 
 ---
 
+<a name="query-2-students-modules-and-courses"></a>
+
 ## Query 2 — Students, Modules and Courses
 
 **Objective:** Show students, the modules they are registered on and the courses to which they belong.
@@ -234,6 +252,8 @@ Five SQL queries were developed to interrogate the database and demonstrate how 
 [**View Query 2 Result →**](assets/query_2_output.png)
 
 ---
+
+<a name="query-3-student-enrolment-by-course"></a>
 
 ## Query 3 — Student Enrolment by Course
 
@@ -250,6 +270,8 @@ Five SQL queries were developed to interrogate the database and demonstrate how 
 
 ---
 
+<a name="query-4-module-enrolment"></a>
+
 ## Query 4 — Module Enrolment
 
 **Objective:** Measure student registrations across modules and courses.
@@ -264,6 +286,8 @@ Five SQL queries were developed to interrogate the database and demonstrate how 
 [**View Query 4 Result →**](assets/query_4_output.png)
 
 ---
+
+<a name="query-5-newest-tutor-by-department"></a>
 
 ## Query 5 — Newest Tutor by Department
 
@@ -280,6 +304,8 @@ Five SQL queries were developed to interrogate the database and demonstrate how 
 
 ---
 
+<a name="technologies"></a>
+
 ## 🛠️ Technologies
 
 The project was developed using the following technologies and concepts:
@@ -293,6 +319,8 @@ The project was developed using the following technologies and concepts:
 - **Relational Data Analysis**
 
 ---
+
+<a name="repository-structure"></a>
 
 ## 📁 Repository Structure
 
@@ -321,6 +349,8 @@ university-computing-department-database/
 
 ---
 
+<a name="key-skills-demonstrated"></a>
+
 ## 💡 Key Skills Demonstrated
 
 This project demonstrates practical experience in:
@@ -339,6 +369,8 @@ This project demonstrates practical experience in:
 - **Oracle SQL Developer**
 
 ---
+
+<a name="project-context"></a>
 
 ## 🎓 Project Context
 
@@ -359,6 +391,8 @@ This repository presents the technical work as part of my professional portfolio
 The original university submission document is not included in this public repository.
 
 ---
+
+<a name="author"></a>
 
 ## 👤 Author
 
