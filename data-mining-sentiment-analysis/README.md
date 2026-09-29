@@ -1038,9 +1038,25 @@ The complete project files are available below.
 
 The complete R Markdown source code used to perform the analysis.
 
-**[👁️ View R Markdown Source](https://github.com/xzibitetok/xzibitetok.github.io/blob/master/data-mining-sentiment-analysis/code/data_mining_sentiment_analysis.Rmd)**  
-**[⬇️ Download R Markdown Source](https://raw.githubusercontent.com/xzibitetok/xzibitetok.github.io/master/data-mining-sentiment-analysis/code/data_mining_sentiment_analysis.Rmd)**
+**[👁️ View R Markdown Source](https://github.com/xzibitetok/xzibitetok.github.io/blob/master/data-mining-sentiment-analysis/code/data_mining_sentiment_analysis.Rmd)**
 
+**[⬇️ Download R Markdown Source](https://github.com/xzibitetok/xzibitetok.github.io/releases/latest/download/data_mining_sentiment_analysis.Rmd)**
+
+---
+
+### 🌐 HTML Analysis Report
+
+The complete rendered analytical report containing the analysis, results and visualisations.
+
+**[⬇️ Download HTML Report](https://github.com/xzibitetok/xzibitetok.github.io/releases/latest/download/data_mining_sentiment_analysis.html)**
+
+---
+
+### 📊 Dataset
+
+The customer review dataset used for the analysis.
+
+**[⬇️ Download Dataset (Excel)](https://github.com/xzibitetok/xzibitetok.github.io/releases/latest/download/womens_clothing_customer_reviews.xlsx)**
 ---
 
 ### 🌐 HTML Analysis Report
