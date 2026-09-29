@@ -1026,31 +1026,34 @@ The R Markdown document can be knitted to HTML to reproduce the full analytical 
 
 <a name="project-files"></a>
 
+<a name="project-files"></a>
+
 # 📂 Project Files
+
+The complete project files are available below.
 
 ### 📄 R Markdown Source
 
-The complete analytical workflow, code, comments and interpretation are available here:
+The complete R Markdown source code used to perform the analysis.
 
-[**Open R Markdown Source →**](code/data_mining_sentiment_analysis.Rmd)
+**[👁️ View R Markdown Source](code/data_mining_sentiment_analysis.Rmd)**  
+**[⬇️ Download R Markdown Source](https://github.com/xzibitetok/data-mining-sentiment-analysis/raw/refs/heads/master/code/data_mining_sentiment_analysis.Rmd)**
 
 ---
 
-### 🌐 Rendered HTML Report
+### 🌐 HTML Analysis Report
 
-The complete rendered analysis is also included:
+The complete rendered analytical report containing the analysis, results and visualisations.
 
-[**Open HTML Report →**](code/data_mining_sentiment_analysis.html)
-
-The HTML report contains the executed code, analytical outputs, visualisations and written interpretation.
+**[⬇️ Download HTML Report](https://github.com/xzibitetok/data-mining-sentiment-analysis/raw/refs/heads/master/code/data_mining_sentiment_analysis.html)**
 
 ---
 
 ### 🗃️ Dataset
 
-The anonymised review dataset used by the analysis is available here:
+The anonymised women's clothing customer review dataset used for the analysis.
 
-[**Open Dataset →**](data/womens_clothing_customer_reviews.csv)
+**[⬇️ Download Dataset (CSV)](https://github.com/xzibitetok/data-mining-sentiment-analysis/raw/refs/heads/master/data/womens_clothing_customer_reviews.csv)**
 
 ---
 
