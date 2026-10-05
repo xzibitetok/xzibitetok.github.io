@@ -1058,10 +1058,6 @@ The customer review dataset used for the analysis.
 
 **[⬇️ Download Dataset (Excel)](https://github.com/xzibitetok/xzibitetok.github.io/releases/latest/download/womens_clothing_customer_reviews.xlsx)**
 
----
-
-<a name="references"></a>
-
 # 📚 References
 
 The analytical methods draw on established work in sentiment analysis, topic modelling and topic visualisation.
