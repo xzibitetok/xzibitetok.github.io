@@ -1,123 +1,173 @@
-# 🐘 Hadoop Distributed Text Analytics
+# PageTurner Books Ltd — Linux, Bash and Hadoop Technical Report
 
-![Apache Hadoop](https://img.shields.io/badge/Apache%20Hadoop-Distributed%20Computing-66CCFF?logo=apachehadoop&logoColor=black)
-![HDFS](https://img.shields.io/badge/HDFS-Distributed%20Storage-1f77b4)
-![YARN](https://img.shields.io/badge/YARN-Resource%20Management-orange)
-![MapReduce](https://img.shields.io/badge/MapReduce-Distributed%20Processing-red)
-![Python](https://img.shields.io/badge/Python-3.x-3776AB?logo=python&logoColor=white)
 ![Ubuntu](https://img.shields.io/badge/Ubuntu-Linux-E95420?logo=ubuntu&logoColor=white)
-![Bash](https://img.shields.io/badge/Bash-Command%20Line-4EAA25?logo=gnu-bash&logoColor=white)
+![Bash](https://img.shields.io/badge/Bash-Shell-4EAA25?logo=gnu-bash&logoColor=white)
+![Apache Hadoop](https://img.shields.io/badge/Apache%20Hadoop-3.4.1-66CCFF?logo=apachehadoop&logoColor=black)
+![HDFS](https://img.shields.io/badge/HDFS-Distributed%20Storage-66CCFF)
+![YARN](https://img.shields.io/badge/YARN-Resource%20Management-66CCFF)
+![MapReduce](https://img.shields.io/badge/MapReduce-Distributed%20Processing-66CCFF)
+![Python](https://img.shields.io/badge/Python-3.x-3776AB?logo=python&logoColor=white)
 
-> An end-to-end Big Data engineering project built in Ubuntu using Bash, Apache Hadoop, HDFS, YARN, Hadoop Streaming, MapReduce and Python to organise book data and perform distributed text analytics.
+## Table of Contents
 
----
-
-## 📌 Project Overview
-
-This project explores how an online bookstore can use Linux command-line tools and distributed computing to organise its digital book collection and extract useful information from large text files.
-
-The work starts at the operating-system level with **Ubuntu and Bash**, where a structured PageTurner Books directory is created and managed entirely from the terminal. It then moves into a two-node Hadoop environment, where literary datasets are stored in **HDFS** and processed using **MapReduce** through Hadoop Streaming.
-
-Two text-analytics workflows were implemented:
-
-1. **Word Frequency Analysis** — analysing *A Christmas Carol* by Charles Dickens and identifying its ten most frequently occurring words.
-2. **Sentence Count Analysis** — analysing *Moby Dick; Or, The Whale* by Herman Melville and calculating its total number of sentences.
-
-The complete workflow is:
-
-```text
-Ubuntu / Bash
-      ↓
-Linux File & Directory Management
-      ↓
-Hadoop Master / Worker Cluster
-      ↓
-HDFS Distributed Storage
-      ↓
-Python Mapper / Reducer
-      ↓
-Hadoop Streaming
-      ↓
-MapReduce Processing
-      ↓
-Structured Output
-      ↓
-Text Analytics & Interpretation
-```
-
----
-
-## 🎯 Project Goals
-
-- Use Bash to create and manage a structured bookstore directory.
-- Work with files and directories directly from the Ubuntu terminal.
-- Understand the main components of the Hadoop ecosystem.
-- Configure and verify a Hadoop master/worker environment.
-- Store book datasets in HDFS.
-- Build Python mapper and reducer programs for Hadoop Streaming.
-- Perform distributed word-frequency analysis.
-- Rank the ten most frequent words in *A Christmas Carol*.
-- Build and validate a sentence-counting MapReduce workflow.
-- Calculate the total number of sentences in *Moby Dick; Or, The Whale*.
-- Verify Hadoop outputs and retrieve them to the Ubuntu filesystem.
-- Transform unstructured literary text into structured analytical results.
-
----
-
-## 🧰 Technology Stack
-
-| Technology | Purpose |
-|---|---|
-| **Ubuntu Linux** | Operating environment |
-| **Bash** | Command-line file, directory and process management |
-| **Apache Hadoop** | Distributed computing framework |
-| **HDFS** | Distributed storage |
-| **YARN** | Resource management and job execution |
-| **MapReduce** | Distributed data-processing model |
-| **Hadoop Streaming** | Running Python programs as MapReduce jobs |
-| **Python 3** | Mapper and reducer implementation |
-| **VirtualBox** | Virtualised Hadoop master/worker environment |
-| **GNU/Linux utilities** | File inspection, sorting and output processing |
+1. [Introduction](#introduction)
+2. [Linux and Bash](#linux-and-bash)
+   - [Brief Overview of Bash](#brief-overview-of-bash)
+   - [Importance of Bash in Linux Systems](#importance-of-bash-in-linux-systems)
+   - [Bash vs Graphical User Interface](#bash-vs-graphical-user-interface)
+   - [Key Bash Commands Used](#key-bash-commands-used)
+   - [Conclusion](#linux-and-bash-conclusion)
+3. [PageTurner Books Directory Structure](#pageturner-books-directory-structure)
+   - [Step 1 — Creating the PageTurnerBooks Directory](#step-1--creating-the-pageturnerbooks-directory)
+   - [Step 2 — Creating Subdirectories](#step-2--creating-subdirectories)
+   - [Step 3 — Creating Inventory Files](#step-3--creating-inventory-files)
+   - [Step 4 — Copying bestsellers.txt to Reviews](#step-4--copying-bestsellerstxt-to-reviews)
+   - [Step 5 — Creating and Populating store_info.md](#step-5--creating-and-populating-store_infomd)
+   - [Resulting Directory Structure](#resulting-directory-structure)
+4. [Hadoop and MapReduce](#hadoop-and-mapreduce)
+   - [Hadoop Cluster Environment](#hadoop-cluster-environment)
+5. [B.1 — Word Frequency Count: A Christmas Carol](#b1--word-frequency-count-a-christmas-carol)
+   - [Introduction](#b1-introduction)
+   - [Step 1 — Starting Hadoop Services](#b1-step-1--starting-hadoop-services)
+   - [Step 2 — Creating the Working Directory](#b1-step-2--creating-the-working-directory)
+   - [Step 3 — Copying the Input File](#b1-step-3--copying-the-input-file)
+   - [Step 4 — Creating the Mapper Script](#b1-step-4--creating-the-mapper-script)
+   - [Step 5 — Creating the Reducer Script](#b1-step-5--creating-the-reducer-script)
+   - [Step 6 — Making the Scripts Executable](#b1-step-6--making-the-scripts-executable)
+   - [Step 7 — Creating the HDFS Directory](#b1-step-7--creating-the-hdfs-directory)
+   - [Step 8 — Uploading the File to HDFS](#b1-step-8--uploading-the-file-to-hdfs)
+   - [Step 9 — Running Hadoop Streaming](#b1-step-9--running-hadoop-streaming)
+   - [Step 10 — Confirming the Hadoop Output](#b1-step-10--confirming-the-hadoop-output)
+   - [Step 11 — Copying Output to the Local System](#b1-step-11--copying-output-to-the-local-system)
+   - [Step 12 — Viewing the Complete Output](#b1-step-12--viewing-the-complete-output)
+   - [Step 13 — Identifying the Top 10 Words](#b1-step-13--identifying-the-top-10-words)
+   - [B.1 Conclusion](#b1-conclusion)
+6. [B.2 — Total Number of Sentences: The Moby Dick or The Whale](#b2--total-number-of-sentences-the-moby-dick-or-the-whale)
+   - [Introduction](#b2-introduction)
+   - [Step 1 — Starting Hadoop Services](#b2-step-1--starting-hadoop-services)
+   - [Step 2 — Creating the Working Directory](#b2-step-2--creating-the-working-directory)
+   - [Step 3 — Copying Moby Dick](#b2-step-3--copying-moby-dick)
+   - [Step 4 — Creating the Mapper Script](#b2-step-4--creating-the-mapper-script)
+   - [Step 5 — Creating the Reducer Script](#b2-step-5--creating-the-reducer-script)
+   - [Step 6 — Making the Scripts Executable](#b2-step-6--making-the-scripts-executable)
+   - [Step 7 — Local Mapper and Reducer Testing](#b2-step-7--local-mapper-and-reducer-testing)
+   - [Step 8 — Creating the HDFS Directory](#b2-step-8--creating-the-hdfs-directory)
+   - [Step 9 — Uploading the File to HDFS](#b2-step-9--uploading-the-file-to-hdfs)
+   - [Step 10 — Confirming the HDFS Upload](#b2-step-10--confirming-the-hdfs-upload)
+   - [Step 11 — Running Hadoop Streaming](#b2-step-11--running-hadoop-streaming)
+   - [Step 12 — Copying Output to the Local System](#b2-step-12--copying-output-to-the-local-system)
+   - [Step 13 — Checking Output Files](#b2-step-13--checking-output-files)
+   - [Step 14 — Viewing the Output](#b2-step-14--viewing-the-output)
+   - [Step 15 — Identifying the Total Number of Sentences](#b2-step-15--identifying-the-total-number-of-sentences)
+   - [B.2 Conclusion](#b2-conclusion)
+7. [Results](#results)
+8. [Screenshot Evidence](#screenshot-evidence)
+9. [Repository Structure](#repository-structure)
+10. [References](#references)
+11. [Author](#author)
 
 ---
 
-# 🐧 1. Ubuntu and Bash Foundation
+## Introduction
 
-## What is Bash?
+PageTurner Books Ltd. is exploring the use of Linux, Bash and Hadoop-based big data technologies to organise business information and analyse large digital book files.
 
-Bash, or **Bourne Again Shell**, is a command-line shell and scripting environment commonly used on Unix and Linux systems such as Ubuntu.
+The work described in this repository covers two connected areas:
 
-Rather than relying on a graphical file manager, Bash provides direct control over the filesystem and system environment through typed commands. This makes operations precise, repeatable and easy to combine into workflows.
+- organising PageTurner Books Ltd. data using Bash commands in Ubuntu; and
+- using Hadoop MapReduce and Hadoop Streaming to analyse literary text.
 
-For this project, Bash was used as the starting point for the entire implementation.
+The practical implementation was carried out in an Ubuntu virtual-machine environment using a Hadoop master/worker cluster. The workflow progressed from creating the required Linux directory structure, through preparing Python mapper and reducer programs, to storing datasets in HDFS, executing distributed Hadoop Streaming jobs and examining the resulting output.
 
-### Bash vs GUI
+The two Hadoop analyses were:
 
-A graphical user interface provides menus, icons and windows for interacting with files and applications.
+1. **Word frequency analysis of _A Christmas Carol_**
+2. **Total sentence count of _The Moby Dick or The Whale_**
 
-Bash provides the same type of control through commands. For example:
-
-- `mkdir` creates directories.
-- `cd` changes the current directory.
-- `touch` creates files.
-- `cp` copies files.
-- `echo` writes text.
-- `ls` displays files and directories.
-- `cat` displays file contents.
-- `chmod` changes execution permissions.
-- `mv` moves or renames files.
-- `sort` orders output.
-- `head` selects the first records.
-
-Using Bash throughout the project made the workflow reproducible and provided a direct foundation for the later Hadoop commands.
+The following sections document the complete process, commands, scripts, outputs and screenshot evidence.
 
 ---
 
-# 📁 2. PageTurner Books Directory
+# Linux and Bash
 
-The first stage was to create a structured local directory representing the bookstore's digital storage environment.
+## Brief Overview of Bash
 
-## Create the main directory
+Bash, also known as the **Bourne Again Shell**, is a command-line shell and scripting language widely used in Unix and Linux operating systems such as Ubuntu.
+
+Bash was originally written for the GNU Project as a replacement for the Bourne Shell and became one of the standard command interpreters used with Linux operating systems.
+
+Bash acts as an intermediary between the user and the operating system. Instead of interacting with the computer through graphical menus, users can enter commands directly into the terminal to create, modify, inspect and manage files and directories.
+
+## Importance of Bash in Linux Systems
+
+Bash is particularly important in Linux because it provides direct system-level access and supports file management, automation and environment configuration.
+
+Linux operating systems are widely used in virtualised environments and big data systems because they provide flexibility, efficiency and a high level of control. Bash supports these environments by allowing users to:
+
+- create and manage directories;
+- create and modify files;
+- move between directories;
+- copy files;
+- inspect directory contents;
+- automate repetitive operations; and
+- execute technical workflows consistently.
+
+For PageTurner Books Ltd., Bash provided the command-line environment used to organise business information and prepare the Ubuntu environment for Hadoop processing.
+
+## Bash vs Graphical User Interface
+
+A **Graphical User Interface (GUI)** allows users to interact with a computer through icons, menus, windows and other visual controls.
+
+Bash can be more effective than a GUI for technical and administrative work, although GUIs can be easier for general users.
+
+Bash provides several advantages:
+
+- routine operations can be performed quickly;
+- commands can be automated through scripts;
+- commands are reproducible;
+- less system resources are generally required than for a graphical environment; and
+- command-line operations provide direct control over files, directories and processes.
+
+In Ubuntu and Hadoop environments, command-line tools are particularly useful because technical procedures can be executed accurately and repeated when required.
+
+## Key Bash Commands Used
+
+| Command | Purpose | Use in the project |
+|---|---|---|
+| `mkdir` | Make a directory | Created `PageTurnerBooks` and its subdirectories |
+| `cd` | Change directory | Moved between the project directories |
+| `touch` | Create an empty file | Created `book_catalog.csv`, `bestsellers.txt` and `store_info.md` |
+| `cp` | Copy a file | Copied `bestsellers.txt` into `reviews` |
+| `echo` | Output/write text | Wrote the PageTurner Books description into `store_info.md` |
+| `ls` | List directory contents | Verified directories and files |
+| `cat` | Display file contents | Checked `store_info.md` and Hadoop output |
+| `chmod` | Change file permissions | Made Python mapper/reducer scripts executable |
+| `sort` | Sort text output | Ranked word-frequency results |
+| `head` | Display the first lines | Selected the top 10 word frequencies |
+| `mv` | Move/rename a file | Standardised the Moby Dick filename |
+| `jps` | List Java processes | Verified Hadoop services |
+
+## Linux and Bash Conclusion
+
+Bash provides an effective way of communicating with Linux systems through command-line operations. Its ability to manage files, automate operations and work with relatively low system overhead makes it highly suitable for technical environments.
+
+The use of commands such as `mkdir`, `cd`, `touch`, `cp`, `echo` and `ls` demonstrates how Bash can be used to plan and manage the data structure required by PageTurner Books Ltd.
+
+---
+
+# PageTurner Books Directory Structure
+
+The PageTurner Books Ltd. directory structure was created entirely through Bash commands in Ubuntu.
+
+The purpose was to establish a structured framework for different categories of business information.
+
+## Step 1 — Creating the `PageTurnerBooks` Directory
+
+The first step was to move to the Ubuntu home directory using `cd ~`.
+
+The main `PageTurnerBooks` directory was then created with `mkdir PageTurnerBooks`. The `ls` command was used to confirm that the directory had been created.
+
+### Bash commands
 
 ```bash
 cd ~
@@ -125,179 +175,131 @@ mkdir PageTurnerBooks
 ls
 ```
 
-## Create the project subdirectories
+### Screenshot
+
+![Creating PageTurnerBooks directory](visualizations/Q1_01_Create_PageTurnerBooks_Directory.png)
+
+## Step 2 — Creating Subdirectories
+
+After entering the `PageTurnerBooks` directory, five subdirectories were created:
+
+- `inventory`
+- `customer`
+- `orders`
+- `reviews`
+- `library`
+
+These folders provide separate areas for organising different types of company information.
+
+### Bash commands
 
 ```bash
 cd PageTurnerBooks
-
-mkdir inventory
-mkdir customer
-mkdir orders
-mkdir reviews
-mkdir library
-
+mkdir inventory customer orders reviews library
 ls
 ```
 
-The resulting structure was:
+### Screenshot
 
-```text
-PageTurnerBooks/
-├── inventory/
-├── customer/
-├── orders/
-├── reviews/
-└── library/
-```
+![Creating project subdirectories](visualizations/Q1_02_Create_Project_Subdirectories.png)
 
-## Create inventory files
+## Step 3 — Creating Inventory Files
 
-The inventory directory was used to store the catalogue and bestseller information.
+The `inventory` directory was opened and two empty files were created:
+
+- `book_catalog.csv`
+- `bestsellers.txt`
+
+The CSV file provides a location for structured inventory information, while the text file provides a location for bestselling-book information.
+
+### Bash commands
 
 ```bash
 cd inventory
-
 touch book_catalog.csv
 touch bestsellers.txt
-
 ls
 ```
 
-## Copy the bestseller file
+### Screenshot
 
-A copy of `bestsellers.txt` was placed in the reviews directory while retaining the original inventory copy.
+![Creating inventory files](visualizations/Q1_03_Create_Inventory_Files.png)
+
+## Step 4 — Copying `bestsellers.txt` to Reviews
+
+The `bestsellers.txt` file was copied from the `inventory` directory into the `reviews` directory.
+
+The original file remained in `inventory`, while a duplicate was created in `reviews`.
+
+### Bash commands
 
 ```bash
 cp bestsellers.txt ../reviews/
-
 ls
 ls ../reviews/
 ```
 
-## Create and populate `store_info.md`
+### Screenshot
 
-The store information file was created at the root of the PageTurner Books directory.
+![Copying bestsellers.txt to reviews](visualizations/Q1_04_Copy_Bestsellers_to_Reviews.png)
+
+## Step 5 — Creating and Populating `store_info.md`
+
+The `cd ..` command was used to return to the `PageTurnerBooks` root directory.
+
+A Markdown file named `store_info.md` was then created and populated with a short description of the company.
+
+### Bash commands
 
 ```bash
 cd ..
-
 touch store_info.md
-
 echo "PageTurner Books Ltd is an independent bookstore based in Manchester specializing in fiction, non-fiction, and rare books." > store_info.md
-
 cat store_info.md
 ```
 
-This completed the local Bash-based storage structure before moving into distributed processing.
+### Screenshot
+
+![Creating and populating store_info.md](visualizations/Q1_05_Create_and_Populate_Store_Info.png)
+
+## Resulting Directory Structure
+
+```text
+PageTurnerBooks/
+├── inventory/
+│   ├── book_catalog.csv
+│   └── bestsellers.txt
+├── customer/
+├── orders/
+├── reviews/
+│   └── bestsellers.txt
+├── library/
+└── store_info.md
+```
+
+## PageTurner Books Directory Conclusion
+
+The directory structure of PageTurner Books Ltd. was successfully developed using Bash commands. The practical work demonstrated how command-line operations can be used to organise files and directories systematically.
+
+The resulting framework provides a structured and scalable basis for handling different categories of business data.
 
 ---
 
-# 🏗️ 3. Hadoop Architecture
+# Hadoop and MapReduce
 
-The distributed-processing stage used a Hadoop environment containing a **master node and worker node**.
+Hadoop was used to process the literary datasets through a distributed MapReduce workflow.
 
-## HDFS — Hadoop Distributed File System
+The Hadoop environment consisted of a **master machine** and a **worker machine**. HDFS was used for distributed storage, while YARN was used to manage cluster resources and execute processing jobs.
 
-HDFS provides Hadoop's distributed storage layer.
+The Python mapper and reducer programs were connected to Hadoop through **Hadoop Streaming**.
 
-In this project, the book datasets were moved from the Ubuntu local filesystem into HDFS before processing. Hadoop outputs were also stored in HDFS before being retrieved to Ubuntu for inspection.
+## Hadoop Cluster Environment
 
-The basic data movement was:
+Before either analysis was performed, the Hadoop services were started on the master machine.
 
-```text
-Ubuntu Local Filesystem
-          ↓
-         HDFS
-          ↓
-Distributed Processing
-          ↓
-      HDFS Output
-          ↓
-Ubuntu Local Filesystem
-```
+The cluster was then verified using the Java process list on both machines.
 
-## MapReduce
-
-MapReduce provides the distributed processing model.
-
-The two workflows followed the same general pattern but solved different analytical problems.
-
-### Word frequency
-
-```text
-Raw Text
-   ↓
-Mapper
-   ↓
-word → 1
-   ↓
-Shuffle / Sort
-   ↓
-Reducer
-   ↓
-word → total frequency
-```
-
-### Sentence count
-
-```text
-Raw Text
-   ↓
-Mapper
-   ↓
-sentence → 1
-   ↓
-Shuffle / Sort
-   ↓
-Reducer
-   ↓
-Total number of sentences
-```
-
-## YARN — Yet Another Resource Negotiator
-
-YARN manages cluster resources and coordinates the execution of Hadoop jobs.
-
-For the text-processing workflows, YARN was involved in executing the Hadoop Streaming jobs across the Hadoop environment.
-
-## Hadoop Common
-
-Hadoop Common provides shared libraries and utilities used by the wider Hadoop ecosystem.
-
-It supports the components and utilities required for HDFS, YARN and Hadoop-based processing.
-
-## How the components work together
-
-```text
-                 Hadoop Cluster
-                       │
-        ┌──────────────┴──────────────┐
-        │                             │
-       HDFS                          YARN
- Distributed Storage          Resource Management
-        │                             │
-        └──────────────┬──────────────┘
-                       ↓
-                    MapReduce
-                       │
-              ┌────────┴────────┐
-              ↓                 ↓
-           Mapper          Shuffle / Sort
-                                ↓
-                             Reducer
-                                ↓
-                      Structured Results
-```
-
----
-
-# 🖥️ 4. Hadoop Cluster Setup
-
-The Hadoop workflows were carried out using a master/worker environment.
-
-The first step was to start the Hadoop services on the master.
-
-## Master node
+### Master machine
 
 ```bash
 start-dfs.sh
@@ -305,15 +307,13 @@ start-yarn.sh
 jps
 ```
 
-## Worker node
+### Worker machine
 
 ```bash
 jps
 ```
 
-The Java process lists were used to verify that the Hadoop services were running.
-
-The environment included services such as:
+The `jps` output was used to verify the Hadoop Java processes, including services such as:
 
 - NameNode
 - SecondaryNameNode
@@ -321,23 +321,61 @@ The environment included services such as:
 - ResourceManager
 - NodeManager
 
-This verification was performed before running the MapReduce workflows.
+The cluster was verified before processing began.
 
 ---
 
-# 📚 5. Word Frequency Analysis — A Christmas Carol
+# B.1 — Word Frequency Count: A Christmas Carol
 
-## Objective
+## B.1 Introduction
 
-The first distributed text-analysis workflow processes *A Christmas Carol* by Charles Dickens.
+PageTurner Books Ltd. can use big data analytics to gain information about its digital book collection.
 
-The purpose is to count word occurrences throughout the text and identify the **ten most frequent words**.
+The first Hadoop workflow used **MapReduce** to perform word frequency analysis on _A Christmas Carol_. The purpose was to convert the unstructured literary text into structured word-frequency data and identify the ten most frequently occurring words.
 
-This converts an unstructured literary document into structured frequency data that can be used for basic vocabulary, keyword and writing-style analysis.
+The practical workflow consisted of:
 
----
+1. starting Hadoop;
+2. preparing a working directory;
+3. copying the dataset;
+4. creating a Python mapper;
+5. creating a Python reducer;
+6. making the scripts executable;
+7. creating an HDFS directory;
+8. uploading the dataset to HDFS;
+9. running Hadoop Streaming;
+10. verifying the generated output;
+11. retrieving the output locally;
+12. viewing the complete frequency output; and
+13. ranking the top 10 words.
 
-## Step 1 — Create a working directory
+## B.1 Step 1 — Starting Hadoop Services
+
+HDFS and YARN were started on the master machine. The Java process list was then checked on both machines to confirm that the Hadoop cluster was running and that the master and worker were communicating.
+
+### Bash commands — Master
+
+```bash
+start-dfs.sh
+start-yarn.sh
+jps
+```
+
+### Bash command — Worker
+
+```bash
+jps
+```
+
+### Screenshot
+
+![Starting Hadoop and verifying cluster](visualizations/Q2_01_Start_Hadoop_and_Verify_Cluster.png)
+
+## B.1 Step 2 — Creating the Working Directory
+
+A dedicated working directory called `Question2_Task_B1` was created to hold the mapper, reducer, input file and generated output.
+
+### Bash commands
 
 ```bash
 cd ~
@@ -346,24 +384,42 @@ cd Question2_Task_B1
 pwd
 ```
 
-## Step 2 — Copy the dataset
+### Screenshot
+
+![Creating B1 working directory](visualizations/Q2_02_Create_B1_Working_Directory.png)
+
+## B.1 Step 3 — Copying the Input File
+
+The `A Christmas Carol.txt` dataset was copied from the Ubuntu Downloads directory into the working directory.
+
+### Bash commands
 
 ```bash
 cp ~/Downloads/"A Christmas Carol.txt" .
 ls
 ```
 
-The dataset was placed inside the dedicated working directory before being uploaded to HDFS.
+### Screenshot
 
----
+![Copying A Christmas Carol dataset](visualizations/Q2_03_Copy_A_Christmas_Carol_Dataset.png)
 
-## Step 3 — Create the word-count mapper
+## B.1 Step 4 — Creating the Mapper Script
+
+The mapper was designed to read the input text line by line, convert the text to lowercase, identify words and output each word with a count of `1`.
+
+This produces intermediate key-value pairs in the form:
+
+```text
+word    1
+```
+
+### Bash command
 
 ```bash
 nano word_count_mapper.py
 ```
 
-The mapper was implemented as:
+### `word_count_mapper.py`
 
 ```python
 #!/usr/bin/env python3
@@ -379,39 +435,21 @@ for line in sys.stdin:
         print(f"{word}\t1")
 ```
 
-### Mapper logic
+### Screenshot
 
-The mapper:
+![Creating word frequency mapper](visualizations/Q2_04_Create_Word_Frequency_Mapper.png)
 
-1. Reads the input one line at a time.
-2. Removes surrounding whitespace.
-3. Converts text to lowercase.
-4. Uses a regular expression to extract alphabetic words.
-5. Emits each word with a value of `1`.
+## B.1 Step 5 — Creating the Reducer Script
 
-For example:
+The reducer receives the key-value pairs generated by the mapper and combines identical words to calculate their total frequency.
 
-```text
-Christmas
-```
-
-becomes:
-
-```text
-christmas    1
-```
-
-Repeated occurrences are therefore converted into multiple key/value records that can later be aggregated by the reducer.
-
----
-
-## Step 4 — Create the word-count reducer
+### Bash command
 
 ```bash
 nano word_count_reducer.py
 ```
 
-The reducer was implemented as:
+### `word_count_reducer.py`
 
 ```python
 #!/usr/bin/env python3
@@ -439,26 +477,19 @@ if last_key == this_key:
     print(f"{last_key}\t{running_total}")
 ```
 
-### Reducer logic
+### Screenshots
 
-The reducer receives grouped word/value pairs from Hadoop's shuffle and sort stage.
+![Creating word frequency reducer](visualizations/Q2_05_Create_Word_Frequency_Reducer.png)
 
-It:
+![Word frequency scripts and permissions](visualizations/Q2_06_Word_Frequency_Scripts_and_Permissions.png)
 
-1. Reads each key/value record.
-2. Tracks the current word.
-3. Adds together repeated values.
-4. Outputs the final frequency for each word.
+![Word frequency reducer code](visualizations/Q2_07_Word_Frequency_Reducer_Code.png)
 
-The result is a structured dataset of:
+## B.1 Step 6 — Making the Scripts Executable
 
-```text
-word    frequency
-```
+Both Python scripts were given executable permissions so they could be used by Hadoop Streaming.
 
----
-
-## Step 5 — Make the scripts executable
+### Bash commands
 
 ```bash
 chmod +x word_count_mapper.py
@@ -466,131 +497,208 @@ chmod +x word_count_reducer.py
 ls -l
 ```
 
-The permissions were checked to confirm that both Python programs could be executed by Hadoop Streaming.
+### Screenshots
 
----
+![Verifying executable scripts](visualizations/Q2_08_Verify_Executable_Scripts.png)
 
-## Step 6 — Create the HDFS working directory
+## B.1 Step 7 — Creating the HDFS Directory
+
+A dedicated HDFS directory was created to store the uploaded dataset and the Hadoop output.
+
+### Bash commands
 
 ```bash
 hadoop fs -mkdir /user/ubong-etok/WordCount_ChristmasCarol
 hadoop fs -ls /user/ubong-etok
 ```
 
-This created the HDFS location used for the Christmas Carol dataset and its output.
+### Screenshot
 
----
+![Creating HDFS word count directory](visualizations/Q2_09_Create_Word_Count_HDFS_Directory.png)
 
-## Step 7 — Upload the dataset to HDFS
+## B.1 Step 8 — Uploading the File to HDFS
+
+The dataset was uploaded into the HDFS directory. The directory was then listed to confirm that the file had been transferred successfully.
+
+### Bash commands
 
 ```bash
 hadoop fs -put A_Christmas_Carol.txt /user/ubong-etok/WordCount_ChristmasCarol/
 hadoop fs -ls /user/ubong-etok/WordCount_ChristmasCarol
 ```
 
-The dataset was now available within distributed storage.
+### Screenshot
 
----
+![Uploading A Christmas Carol to HDFS](visualizations/Q2_10_Upload_Christmas_Carol_to_HDFS.png)
 
-## Step 8 — Run Hadoop Streaming
+## B.1 Step 9 — Running Hadoop Streaming
+
+Hadoop Streaming was used to connect the Python mapper and reducer scripts to the Hadoop MapReduce framework.
+
+The mapper first generated intermediate word/count pairs. Hadoop then grouped the keys and passed them to the reducer, which aggregated the counts.
+
+### Bash command
 
 ```bash
-yarn jar /usr/local/hadoop/share/hadoop/tools/lib/hadoop-streaming-3.4.1.jar -files /home/ubong-etok/Question2_Task_B1/word_count_mapper.py,/home/ubong-etok/Question2_Task_B1/word_count_reducer.py -mapper "python3 word_count_mapper.py" -reducer "python3 word_count_reducer.py" -input /user/ubong-etok/WordCount_ChristmasCarol/A_Christmas_Carol.txt -output /user/ubong-etok/WordCount_ChristmasCarol/output
+yarn jar /usr/local/hadoop/share/hadoop/tools/lib/hadoop-streaming-3.4.1.jar \
+-files /home/ubong-etok/Question2_Task_B1/word_count_mapper.py,/home/ubong-etok/Question2_Task_B1/word_count_reducer.py \
+-mapper "python3 word_count_mapper.py" \
+-reducer "python3 word_count_reducer.py" \
+-input /user/ubong-etok/WordCount_ChristmasCarol/A_Christmas_Carol.txt \
+-output /user/ubong-etok/WordCount_ChristmasCarol/output
 ```
 
-The Hadoop Streaming job connected the Python mapper and reducer to the distributed Hadoop processing framework.
+### Screenshot
 
-The workflow was:
+![Running Hadoop Streaming](visualizations/Q2_11_Hadoop_Streaming_Execution_Output.png)
 
-```text
-A Christmas Carol.txt
-        ↓
-      HDFS
-        ↓
-Python Mapper
-        ↓
-word / 1
-        ↓
-Shuffle & Sort
-        ↓
-Python Reducer
-        ↓
-Word Frequencies
-```
+## B.1 Step 10 — Confirming the Hadoop Output
 
----
+The generated HDFS output directory was inspected.
 
-## Step 9 — Verify Hadoop output
+The presence of `part-00000` and `_SUCCESS` indicated that Hadoop had generated the expected output and that the job completed successfully.
+
+### Bash command
 
 ```bash
 hadoop fs -ls /user/ubong-etok/WordCount_ChristmasCarol/output
 ```
 
-The presence of the generated result file and `_SUCCESS` marker confirmed that Hadoop completed the processing job successfully.
+### Screenshot
 
----
+![Verifying HDFS output files](visualizations/Q2_12_Verify_HDFS_Output_Files.png)
 
-## Step 10 — Retrieve the results
+## B.1 Step 11 — Copying Output to the Local System
+
+The Hadoop output was copied from HDFS back into the local Ubuntu working directory so that it could be inspected.
+
+### Bash commands
 
 ```bash
 hadoop fs -get /user/ubong-etok/WordCount_ChristmasCarol/output
 ls output
 ```
 
-The Hadoop output was copied from HDFS back to the Ubuntu filesystem so it could be inspected locally.
+### Screenshot
 
----
+![Retrieving word frequency output](visualizations/Q2_13_Retrieve_Word_Frequency_Output.png)
 
-## Step 11 — View the complete frequency output
+## B.1 Step 12 — Viewing the Complete Output
+
+The `part-00000` file was opened to display the complete set of word-frequency results.
+
+### Bash command
 
 ```bash
 cat output/part-00000
 ```
 
-The `part-00000` file contained the generated word-frequency results.
+The generated `part-00000` file contains the final word-frequency results produced by the MapReduce job.
 
----
+### Screenshot
 
-## Step 12 — Rank the ten most frequent words
+![Complete word frequency output](visualizations/Q2_14_Complete_Word_Frequency_Output.png)
+
+## B.1 Step 13 — Identifying the Top 10 Words
+
+The complete frequency output was ranked in descending order using the Linux `sort` command. The first ten entries were then selected using `head`.
+
+### Bash command
 
 ```bash
 sort -k2 -nr output/part-00000 | head -10
 ```
 
-The frequency values were sorted numerically in descending order and the first ten records were selected.
-
-### Results
+### Top 10 word frequencies
 
 | Rank | Word | Frequency |
 |---:|---|---:|
-| 1 | `the` | 1,791 |
-| 2 | `and` | 1,139 |
-| 3 | `of` | 865 |
-| 4 | `a` | 774 |
-| 5 | `to` | 761 |
-| 6 | `in` | 589 |
-| 7 | `it` | 560 |
-| 8 | `he` | 492 |
-| 9 | `was` | 427 |
-| 10 | `his` | 417 |
+| 1 | the | 1,791 |
+| 2 | and | 1,139 |
+| 3 | of | 865 |
+| 4 | a | 774 |
+| 5 | to | 761 |
+| 6 | in | 589 |
+| 7 | it | 560 |
+| 8 | he | 492 |
+| 9 | was | 427 |
+| 10 | his | 417 |
 
-The result provides a structured vocabulary profile of the book. Because the workflow counts all extracted words, common grammatical words naturally dominate the ranking.
+### Screenshot
+
+![Top 10 word frequencies](visualizations/Q2_15_Top_10_Word_Frequencies.png)
+
+## B.1 Conclusion
+
+The word-frequency workflow demonstrated how Hadoop MapReduce can be used to process _A Christmas Carol_.
+
+The workflow involved preparing mapper and reducer scripts, starting Hadoop services, uploading the dataset to HDFS, executing a Hadoop Streaming job and analysing the resulting output.
+
+The results were stored in `part-00000`, with the `_SUCCESS` marker confirming successful completion of the Hadoop job.
+
+The most frequently occurring words provide information about the vocabulary used in the text and demonstrate how unstructured literary data can be converted into structured analytical output.
+
+The approach can be extended to larger collections of books for keyword analysis, marketing analysis and recommendation-system applications for PageTurner Books Ltd.
 
 ---
 
-# 📖 6. Sentence Count Analysis — Moby Dick
+# B.2 — Total Number of Sentences: The Moby Dick or The Whale
 
-## Objective
+## B.2 Introduction
 
-The second distributed text-analysis workflow processes *Moby Dick; Or, The Whale* by Herman Melville.
+The second Hadoop workflow was designed to calculate the total number of sentences in _The Moby Dick or The Whale_.
 
-The objective is to calculate the **total number of sentences** in the book.
+This is a text-processing problem in which an unstructured digital book is converted into a structured numerical result using Hadoop MapReduce.
 
-The resulting value provides a simple measure of textual scale that could potentially support book-complexity classification and recommendation strategies.
+The input file, `The Moby Dick or The Whale.txt`, was imported into the BDEA-master Ubuntu virtual machine.
 
----
+The workflow consisted of:
 
-## Step 1 — Create a working directory
+1. starting and verifying Hadoop;
+2. creating a working directory;
+3. copying the dataset;
+4. creating the sentence-count mapper;
+5. creating the sentence-count reducer;
+6. making both scripts executable;
+7. testing the mapper and reducer locally;
+8. creating the HDFS directory;
+9. uploading the dataset;
+10. confirming the upload;
+11. running Hadoop Streaming;
+12. retrieving the output;
+13. checking the output files;
+14. viewing the output; and
+15. identifying the final sentence count.
+
+## B.2 Step 1 — Starting Hadoop Services
+
+HDFS and YARN were started on the master machine. The cluster was then verified on both master and worker machines using `jps`.
+
+### Master machine
+
+```bash
+start-dfs.sh
+start-yarn.sh
+jps
+```
+
+### Worker machine
+
+```bash
+jps
+```
+
+The process list was used to confirm the required Hadoop components were running.
+
+### Screenshot
+
+![Starting Hadoop for sentence count](visualizations/Q2_16_Start_Hadoop_for_Sentence_Count.png)
+
+## B.2 Step 2 — Creating the Working Directory
+
+A dedicated working directory named `Question2_Task_B2` was created to contain the input data, Python scripts and output.
+
+### Bash commands
 
 ```bash
 cd ~
@@ -599,24 +707,40 @@ cd Question2_Task_B2
 ls
 ```
 
-## Step 2 — Copy the dataset
+### Screenshot
+
+![Creating B2 working directory](visualizations/Q2_17_Create_B2_Working_Directory.png)
+
+## B.2 Step 3 — Copying Moby Dick
+
+The Moby Dick dataset was copied from the Downloads directory into the working directory.
+
+### Bash commands
 
 ```bash
 cp ~/Downloads/"Moby Dick or The Whale.txt" .
 ls
 ```
 
-The dataset was copied from the Ubuntu Downloads directory into the dedicated B.2 working directory.
+### Screenshot
 
----
+![Copying Moby Dick dataset](visualizations/Q2_18_Copy_Moby_Dick_Dataset.png)
 
-## Step 3 — Create the sentence mapper
+## B.2 Step 4 — Creating the Mapper Script
+
+The mapper was designed to identify sentence-ending punctuation marks — full stops, question marks and exclamation marks.
+
+Each identified sentence boundary produced a key-value pair with a count of `1`.
+
+The development of this B.2 mapper was supported by AI tools, followed by local testing and execution within the Hadoop workflow.
+
+### Bash command
 
 ```bash
 nano total_sentences_mapper.py
 ```
 
-The mapper was implemented as:
+### `total_sentences_mapper.py`
 
 ```python
 #!/usr/bin/env python3
@@ -631,33 +755,23 @@ for line in sys.stdin:
         print("sentence\t1")
 ```
 
-### Mapper logic
+### Screenshot
 
-The mapper reads the text line by line and searches for sentence-ending punctuation:
+![Creating sentence count mapper](visualizations/Q2_19_Create_Sentence_Count_Mapper.png)
 
-```text
-.
-!
-?
-```
+## B.2 Step 5 — Creating the Reducer Script
 
-Each detected sentence boundary produces:
+The reducer receives the sentence counts produced by the mapper and adds them together to produce one final total.
 
-```text
-sentence    1
-```
+The development of this B.2 reducer was also supported by AI tools.
 
-The individual records can then be aggregated by the reducer.
-
----
-
-## Step 4 — Create the sentence reducer
+### Bash command
 
 ```bash
 nano total_sentences_reducer.py
 ```
 
-The reducer was implemented as:
+### `total_sentences_reducer.py`
 
 ```python
 #!/usr/bin/env python3
@@ -674,24 +788,15 @@ for line in sys.stdin:
 print("Total Sentences\t", total_sentences)
 ```
 
-### Reducer logic
+### Screenshot
 
-The reducer receives the sentence records and adds all the `1` values together.
+![Creating sentence count reducer](visualizations/Q2_20_Create_Sentence_Count_Reducer.png)
 
-Conceptually:
+## B.2 Step 6 — Making the Scripts Executable
 
-```text
-sentence    1
-sentence    1
-sentence    1
-...
-       ↓
-Total Sentences    N
-```
+Both scripts were given executable permissions.
 
----
-
-## Step 5 — Make the scripts executable
+### Bash commands
 
 ```bash
 chmod +x total_sentences_mapper.py
@@ -699,52 +804,44 @@ chmod +x total_sentences_reducer.py
 ls -l
 ```
 
-The file permissions were checked before testing and Hadoop execution.
+### Screenshot
 
----
+![Sentence count scripts and permissions](visualizations/Q2_21_Sentence_Count_Scripts_and_Permissions.png)
 
-## Step 6 — Validate the mapper and reducer locally
+![Verifying sentence count scripts](visualizations/Q2_22_Verify_Sentence_Count_Scripts.png)
 
-Before uploading the full book to Hadoop, the mapper and reducer were tested locally using the two specified sample statements.
+## B.2 Step 7 — Local Mapper and Reducer Testing
 
-### Test 1
+Before uploading the dataset to Hadoop, the mapper and reducer were tested locally using the sample sentences.
+
+The first sample was:
+
+> Hello! Welcome to Page Turner Books Ltd.
+
+The second sample was:
+
+> Page Turner Books? Well, we are a great company!
+
+The `echo` command passed each sample through the mapper and reducer pipeline.
+
+### Bash commands
 
 ```bash
 echo "Hello! Welcome to Page Turner Books Ltd." | ./total_sentences_mapper.py | ./total_sentences_reducer.py
-```
-
-### Test 2
-
-```bash
 echo "Page Turner Books? Well, we are a great company!" | ./total_sentences_mapper.py | ./total_sentences_reducer.py
 ```
 
-This local pipeline:
+This local validation was performed before the Hadoop job so that the sentence-detection and aggregation logic could be checked before distributed processing.
 
-```text
-echo
- ↓
-Mapper
- ↓
-Reducer
- ↓
-Sentence Count
-```
+### Screenshot
 
-provided an early validation of the sentence-detection and aggregation logic before deploying the workflow to Hadoop.
+![Local mapper and reducer testing](visualizations/Q2_23_Local_Mapper_Reducer_Testing.png)
 
-### AI-assisted development
+## B.2 Step 8 — Creating the HDFS Directory
 
-AI assistance was used specifically during the development of:
+The HDFS structure was prepared to store the Moby Dick dataset and generated output.
 
-- `total_sentences_mapper.py`
-- `total_sentences_reducer.py`
-
-The scripts were subsequently tested locally and executed through the Hadoop Streaming workflow.
-
----
-
-## Step 7 — Create the HDFS directory
+### Bash commands
 
 ```bash
 hdfs dfs -mkdir -p /user/ubong-etok
@@ -752,324 +849,228 @@ hadoop fs -mkdir MobyDick_Sentences
 hadoop fs -ls
 ```
 
-This prepared the HDFS location for the Moby Dick dataset.
+### Screenshot
 
----
+![Creating sentence count HDFS directory](visualizations/Q2_24_Create_Sentence_Count_HDFS_Directory.png)
 
-## Step 8 — Rename and upload the dataset
+## B.2 Step 9 — Uploading the File to HDFS
+
+The dataset filename was standardised and then uploaded into HDFS.
+
+### Bash commands
 
 ```bash
 mv *Whale* Moby_Dick_or_The_Whale.txt
-
 hadoop fs -put Moby_Dick_or_The_Whale.txt /user/ubong-etok/MobyDick_Sentences/
 ```
 
-The local filename was standardised before the dataset was uploaded to HDFS.
+### Screenshot
 
----
+![Uploading Moby Dick to HDFS](visualizations/Q2_25_Upload_Moby_Dick_to_HDFS.png)
 
-## Step 9 — Verify the HDFS upload
+## B.2 Step 10 — Confirming the HDFS Upload
+
+The HDFS directory was listed to verify that the Moby Dick input file had been successfully transferred.
+
+### Bash command
 
 ```bash
 hadoop fs -ls /user/ubong-etok/MobyDick_Sentences/
 ```
 
-The directory listing confirmed that the book was successfully available in HDFS.
+### Screenshot
 
----
+![Confirming Moby Dick HDFS upload](visualizations/Q2_26_Confirm_Moby_Dick_HDFS_Upload.png)
 
-## Step 10 — Run Hadoop Streaming
+## B.2 Step 11 — Running Hadoop Streaming
+
+Hadoop Streaming was used to execute the Python mapper and reducer across the Hadoop cluster.
+
+The mapper generated sentence-count pairs and the reducer aggregated those counts into a single total.
+
+### Bash command
 
 ```bash
-yarn jar /usr/local/hadoop/share/hadoop/tools/lib/hadoop-streaming-3.4.1.jar -files /home/ubong-etok/Question2_Task_B2/total_sentences_mapper.py,/home/ubong-etok/Question2_Task_B2/total_sentences_reducer.py -mapper "python3 total_sentences_mapper.py" -reducer "python3 total_sentences_reducer.py" -input /user/ubong-etok/MobyDick_Sentences/Moby_Dick_or_The_Whale.txt -output /user/ubong-etok/MobyDick_Sentences/output
+yarn jar /usr/local/hadoop/share/hadoop/tools/lib/hadoop-streaming-3.4.1.jar \
+-files /home/ubong-etok/Question2_Task_B2/total_sentences_mapper.py,/home/ubong-etok/Question2_Task_B2/total_sentences_reducer.py \
+-mapper "python3 total_sentences_mapper.py" \
+-reducer "python3 total_sentences_reducer.py" \
+-input /user/ubong-etok/MobyDick_Sentences/Moby_Dick_or_The_Whale.txt \
+-output /user/ubong-etok/MobyDick_Sentences/output
 ```
 
-The distributed workflow was:
+### Screenshot
 
-```text
-Moby_Dick_or_The_Whale.txt
-          ↓
-         HDFS
-          ↓
- Sentence Mapper
-          ↓
-    sentence / 1
-          ↓
-    Shuffle / Sort
-          ↓
- Sentence Reducer
-          ↓
-  Total Sentence Count
-```
+![Running sentence count Hadoop Streaming](visualizations/Q2_27_Run_Sentence_Count_Hadoop_Streaming.png)
 
----
+## B.2 Step 12 — Copying Output to the Local System
 
-## Step 11 — Retrieve the Hadoop output
+The generated Hadoop output was copied from HDFS into the local Ubuntu directory for inspection.
+
+### Bash command
 
 ```bash
 hdfs dfs -get /user/ubong-etok/MobyDick_Sentences/output ./output
 ```
 
-The generated Hadoop output was copied back to the Ubuntu filesystem for inspection.
+### Screenshot
 
----
+![Retrieving sentence count output](visualizations/Q2_29_Retrieve_Sentence_Count_Output.png)
 
-## Step 12 — Check the output files
+## B.2 Step 13 — Checking Output Files
+
+The local output directory was inspected to verify that Hadoop had produced the expected result files.
+
+### Bash command
 
 ```bash
 ls output
 ```
 
-The output directory contained the generated result and `_SUCCESS` marker, confirming successful completion of the Hadoop job.
+The output included the Hadoop result file and the `_SUCCESS` marker.
 
----
+### Screenshot
 
-## Step 13 — View the final result
+![Checking sentence count output files](visualizations/Q2_30_Verify_Sentence_Count_Output_Files.png)
 
-```bash
-cat output/part-00000
-```
+## B.2 Step 14 — Viewing the Output
 
-### Final Result
+The final MapReduce output was opened using `cat`.
 
-```text
-Total Sentences    10941
-```
-
-**Total sentences: 10,941**
-
-The mapper detected sentence boundaries and emitted one record for each detected sentence. The reducer then aggregated the records into the final total.
-
----
-
-# 🔄 7. MapReduce Workflow Comparison
-
-The two analytical workflows use the same fundamental MapReduce pattern while solving different problems.
-
-| | Word Frequency | Sentence Count |
-|---|---|---|
-| **Dataset** | *A Christmas Carol* | *Moby Dick; Or, The Whale* |
-| **Mapper output** | `word → 1` | `sentence → 1` |
-| **Shuffle / Sort** | Groups identical words | Groups sentence records |
-| **Reducer** | Sums values for each word | Sums all sentence records |
-| **Final output** | Frequency of every word | One total sentence count |
-| **Final result** | Top 10 ranked words | 10,941 sentences |
-
-The common architecture demonstrates how the mapper/reducer pattern can be adapted to different forms of unstructured text analysis.
-
----
-
-# 📊 8. Results and Interpretation
-
-## A Christmas Carol
-
-The ten most frequent words were:
-
-```text
-the    1791
-and    1139
-of      865
-a       774
-to      761
-in      589
-it      560
-he      492
-was     427
-his     417
-```
-
-The result demonstrates how distributed text processing can transform a literary document into structured frequency data.
-
-The same approach could be extended across a larger catalogue to identify recurring keywords, vocabulary patterns or other textual characteristics.
-
-## Moby Dick
-
-The sentence-count workflow produced:
-
-```text
-Total Sentences    10941
-```
-
-This provides a simple quantitative measure of the size and structure of the text. Across a larger book collection, comparable measurements could contribute to classification and recommendation systems.
-
----
-
-# 🔍 9. Validation and Verification
-
-Validation was built into the workflow rather than relying solely on the final result.
-
-### Local filesystem validation
-
-```bash
-ls
-```
-
-was repeatedly used to confirm that directories, datasets, scripts and output files existed in the expected locations.
-
-### File-content validation
-
-```bash
-cat
-```
-
-was used to inspect generated files and final analytical output.
-
-### Hadoop process validation
-
-```bash
-jps
-```
-
-was used on the master and worker environments to verify Hadoop Java processes.
-
-### HDFS validation
-
-```bash
-hadoop fs -ls
-```
-
-was used to verify HDFS directories, datasets and generated output.
-
-### Job-completion validation
-
-The Hadoop `_SUCCESS` marker was checked after the MapReduce jobs.
-
-### Mapper/reducer validation
-
-The sentence-count mapper and reducer were tested locally using the required `echo` statements before deployment to Hadoop.
-
-### Output validation
-
-Hadoop output was retrieved to Ubuntu using:
-
-```bash
-hadoop fs -get
-```
-
-or:
-
-```bash
-hdfs dfs -get
-```
-
-The generated `part-00000` files were then inspected using:
+### Bash command
 
 ```bash
 cat output/part-00000
 ```
 
-### Ranking validation
+### Screenshot
 
-The complete word-frequency output was ranked using:
+![Viewing sentence count output](visualizations/Q2_28_Sentence_Count_Streaming_Output.png)
 
-```bash
-sort -k2 -nr output/part-00000 | head -10
+## B.2 Step 15 — Identifying the Total Number of Sentences
+
+The final output reported:
+
+```text
+Total Sentences    10941
 ```
 
-This produced the final top-ten ranking.
+Therefore, the total number of sentences identified in _The Moby Dick or The Whale_ dataset was:
+
+## **10,941 sentences**
+
+### Screenshot
+
+![Final sentence count](visualizations/Q2_31_Final_Sentence_Count_Output.png)
+
+## B.2 Conclusion
+
+The sentence-count workflow demonstrated how Hadoop MapReduce can process an unstructured literary text and generate a structured numerical result.
+
+The workflow involved preparing mapper and reducer scripts, testing them locally, uploading the dataset to HDFS and running the Hadoop Streaming job.
+
+The mapper recognised sentence-ending punctuation and generated individual sentence counts, while the reducer summed those counts to produce the final total.
+
+The resulting count of **10,941 sentences** demonstrates the ability of Hadoop to process a large digital text file using a distributed workflow.
+
+This type of analysis could potentially support further applications such as assessing text complexity, reading-level classification, recommendation systems and targeted marketing to advanced readers.
 
 ---
 
-# 🖼️ 10. Implementation Evidence
-
-The `visualizations/` directory contains terminal screenshots captured throughout the implementation.
-
-These images document the progression from local Ubuntu file management through Hadoop setup, data upload, MapReduce execution and final result retrieval.
-
-## Ubuntu / Bash
-
-![PageTurnerBooks Directory](visualizations/Q1_01_Create_PageTurnerBooks_Directory.png)
-
-![Project Subdirectories](visualizations/Q1_02_Create_Project_Subdirectories.png)
-
-![Inventory Files](visualizations/Q1_03_Create_Inventory_Files.png)
-
-![Bestseller Copy](visualizations/Q1_04_Copy_Bestsellers_to_Reviews.png)
-
-![Store Information](visualizations/Q1_05_Create_and_Populate_Store_Info.png)
+# Results
 
 ## Word Frequency — A Christmas Carol
 
-![Hadoop Cluster](visualizations/Q2_01_Start_Hadoop_and_Verify_Cluster.png)
+The Hadoop MapReduce word-frequency workflow produced the following top 10 results:
 
-![B1 Working Directory](visualizations/Q2_02_Create_B1_Working_Directory.png)
-
-![Christmas Carol Dataset](visualizations/Q2_03_Copy_A_Christmas_Carol_Dataset.png)
-
-![Word Mapper](visualizations/Q2_04_Create_Word_Frequency_Mapper.png)
-
-![Word Reducer](visualizations/Q2_05_Create_Word_Frequency_Reducer.png)
-
-![Permissions](visualizations/Q2_06_Word_Frequency_Scripts_and_Permissions.png)
-
-![Reducer Code](visualizations/Q2_07_Word_Frequency_Reducer_Code.png)
-
-![Executable Scripts](visualizations/Q2_08_Verify_Executable_Scripts.png)
-
-![HDFS Directory](visualizations/Q2_09_Create_Word_Count_HDFS_Directory.png)
-
-![HDFS Upload](visualizations/Q2_10_Upload_Christmas_Carol_to_HDFS.png)
-
-![Streaming Execution](visualizations/Q2_11_Hadoop_Streaming_Execution_Output.png)
-
-![HDFS Output](visualizations/Q2_12_Verify_HDFS_Output_Files.png)
-
-![Retrieved Output](visualizations/Q2_13_Retrieve_Word_Frequency_Output.png)
-
-![Complete Frequency Output](visualizations/Q2_14_Complete_Word_Frequency_Output.png)
-
-![Top 10](visualizations/Q2_15_Top_10_Word_Frequencies.png)
+| Rank | Word | Frequency |
+|---:|---|---:|
+| 1 | the | 1,791 |
+| 2 | and | 1,139 |
+| 3 | of | 865 |
+| 4 | a | 774 |
+| 5 | to | 761 |
+| 6 | in | 589 |
+| 7 | it | 560 |
+| 8 | he | 492 |
+| 9 | was | 427 |
+| 10 | his | 417 |
 
 ## Sentence Count — Moby Dick
 
-![Hadoop Startup](visualizations/Q2_16_Start_Hadoop_for_Sentence_Count.png)
+The Hadoop MapReduce sentence-count workflow produced:
 
-![B2 Directory](visualizations/Q2_17_Create_B2_Working_Directory.png)
+```text
+Total Sentences    10941
+```
 
-![Moby Dick Dataset](visualizations/Q2_18_Copy_Moby_Dick_Dataset.png)
-
-![Sentence Mapper](visualizations/Q2_19_Create_Sentence_Count_Mapper.png)
-
-![Sentence Reducer](visualizations/Q2_20_Create_Sentence_Count_Reducer.png)
-
-![Permissions](visualizations/Q2_21_Sentence_Count_Scripts_and_Permissions.png)
-
-![Script Verification](visualizations/Q2_22_Verify_Sentence_Count_Scripts.png)
-
-![Local Testing](visualizations/Q2_23_Local_Mapper_Reducer_Testing.png)
-
-![HDFS Directory](visualizations/Q2_24_Create_Sentence_Count_HDFS_Directory.png)
-
-![Moby Dick Upload](visualizations/Q2_25_Upload_Moby_Dick_to_HDFS.png)
-
-![Upload Verification](visualizations/Q2_26_Confirm_Moby_Dick_HDFS_Upload.png)
-
-![Sentence Streaming](visualizations/Q2_27_Run_Sentence_Count_Hadoop_Streaming.png)
-
-![Streaming Output](visualizations/Q2_28_Sentence_Count_Streaming_Output.png)
-
-![Retrieved Result](visualizations/Q2_29_Retrieve_Sentence_Count_Output.png)
-
-![Output Files](visualizations/Q2_30_Verify_Sentence_Count_Output_Files.png)
-
-![Final Sentence Count](visualizations/Q2_31_Final_Sentence_Count_Output.png)
+**Final result: 10,941 sentences.**
 
 ---
 
-# 📂 11. Repository Structure
+# Screenshot Evidence
+
+The practical workflow was documented with terminal screenshots showing the commands used and the resulting output.
+
+## Linux and Bash
+
+1. `Q1_01_Create_PageTurnerBooks_Directory.png`
+2. `Q1_02_Create_Project_Subdirectories.png`
+3. `Q1_03_Create_Inventory_Files.png`
+4. `Q1_04_Copy_Bestsellers_to_Reviews.png`
+5. `Q1_05_Create_and_Populate_Store_Info.png`
+
+## A Christmas Carol — Word Frequency
+
+1. `Q2_01_Start_Hadoop_and_Verify_Cluster.png`
+2. `Q2_02_Create_B1_Working_Directory.png`
+3. `Q2_03_Copy_A_Christmas_Carol_Dataset.png`
+4. `Q2_04_Create_Word_Frequency_Mapper.png`
+5. `Q2_05_Create_Word_Frequency_Reducer.png`
+6. `Q2_06_Word_Frequency_Scripts_and_Permissions.png`
+7. `Q2_07_Word_Frequency_Reducer_Code.png`
+8. `Q2_08_Verify_Executable_Scripts.png`
+9. `Q2_09_Create_Word_Count_HDFS_Directory.png`
+10. `Q2_10_Upload_Christmas_Carol_to_HDFS.png`
+11. `Q2_11_Hadoop_Streaming_Execution_Output.png`
+12. `Q2_12_Verify_HDFS_Output_Files.png`
+13. `Q2_13_Retrieve_Word_Frequency_Output.png`
+14. `Q2_14_Complete_Word_Frequency_Output.png`
+15. `Q2_15_Top_10_Word_Frequencies.png`
+
+## Moby Dick — Sentence Count
+
+1. `Q2_16_Start_Hadoop_for_Sentence_Count.png`
+2. `Q2_17_Create_B2_Working_Directory.png`
+3. `Q2_18_Copy_Moby_Dick_Dataset.png`
+4. `Q2_19_Create_Sentence_Count_Mapper.png`
+5. `Q2_20_Create_Sentence_Count_Reducer.png`
+6. `Q2_21_Sentence_Count_Scripts_and_Permissions.png`
+7. `Q2_22_Verify_Sentence_Count_Scripts.png`
+8. `Q2_23_Local_Mapper_Reducer_Testing.png`
+9. `Q2_24_Create_Sentence_Count_HDFS_Directory.png`
+10. `Q2_25_Upload_Moby_Dick_to_HDFS.png`
+11. `Q2_26_Confirm_Moby_Dick_HDFS_Upload.png`
+12. `Q2_27_Run_Sentence_Count_Hadoop_Streaming.png`
+13. `Q2_28_Sentence_Count_Streaming_Output.png`
+14. `Q2_29_Retrieve_Sentence_Count_Output.png`
+15. `Q2_30_Verify_Sentence_Count_Output_Files.png`
+16. `Q2_31_Final_Sentence_Count_Output.png`
+
+---
+
+# Repository Structure
+
+The project repository is organised as follows:
 
 ```text
 hadoop-distributed-text-analytics/
-│
 ├── README.md
-│
 ├── code/
 │   └── batch commands used in hadoop distributed text analytics.txt
-│
 ├── data/
 │   ├── A Christmas Carol.txt
 │   └── Moby Dick or The Whale.txt
-│
 └── visualizations/
     ├── Q1_01_Create_PageTurnerBooks_Directory.png
     ├── Q1_02_Create_Project_Subdirectories.png
@@ -1111,209 +1112,55 @@ hadoop-distributed-text-analytics/
 
 ---
 
-# ♻️ 12. Reproducibility
+# References
 
-The project can be reproduced using an Ubuntu environment with Hadoop configured as a master/worker cluster.
+Apache Hadoop (2025). *Hadoop Documentation*. Available at:  
+https://hadoop.apache.org/docs/
 
-## Start Hadoop
+Dean, J. and Ghemawat, S. (2008). ‘MapReduce: Simplified Data Processing on Large Clusters’, *Communications of the ACM*, 51(1), pp. 107–113.
 
-On the master:
+Free Software Foundation (2025). *Bash Reference Manual*. GNU Operating System. Available at:  
+https://www.gnu.org/software/bash/manual/bash.html
 
-```bash
-start-dfs.sh
-start-yarn.sh
-jps
-```
+Griffiths, I. (2026a). *MS4S21 Big Data Engineering and its Applications – Lecture 1*. University of South Wales.
 
-On the worker:
+Griffiths, I. (2026b). *MS4S21 Big Data Engineering and its Applications – Lecture 2*. University of South Wales.
 
-```bash
-jps
-```
+Griffiths, I. (2026). *MS4S21 Big Data Engineering and its Applications – Lecture 3 & 4*. University of South Wales.
 
-## Datasets
-
-The repository contains:
-
-```text
-data/A Christmas Carol.txt
-data/Moby Dick or The Whale.txt
-```
-
-## Command history
-
-The complete command sequence used during implementation is retained in:
-
-```text
-code/batch commands used in hadoop distributed text analytics.txt
-```
-
-The repository therefore contains the datasets, implementation evidence and command workflow needed to understand and reproduce the project.
-
-### Environment-specific paths
-
-The original Hadoop commands use the Ubuntu user path:
-
-```text
-/home/ubong-etok/
-```
-
-When reproducing the project under a different Ubuntu account, this path should be changed to match the local username and Hadoop installation.
+OpenAI (2026). *ChatGPT (GPT-5.3)*. Used to support development of the Python mapper and reducer scripts for Hadoop sentence counting. Available at:  
+https://chat.openai.com/  
+Accessed: 3 May 2026.
 
 ---
 
-# 📝 13. Implementation Notes
-
-## Hadoop Streaming and Python
-
-Hadoop Streaming allows programs that work with standard input and standard output to participate in Hadoop MapReduce jobs.
-
-This made Python suitable for the mapper and reducer programs.
-
-## Mapper
-
-The mapper transforms raw input into intermediate key/value records.
-
-Examples:
-
-```text
-word → 1
-```
-
-or:
-
-```text
-sentence → 1
-```
-
-## Shuffle and Sort
-
-Hadoop groups intermediate records by key before passing them to the reducer.
-
-For word frequency, identical words are grouped together.
-
-For sentence counting, the sentence records are aggregated for the final count.
-
-## Reducer
-
-The reducer performs the aggregation required to transform intermediate records into the final result.
-
-## Local validation
-
-The Moby Dick mapper and reducer were deliberately tested locally before the full dataset was processed by Hadoop. This reduced the risk of deploying untested sentence-counting logic to the cluster.
-
-## HDFS retrieval
-
-Results were retrieved from HDFS back to Ubuntu so that standard Linux utilities could be used to inspect and rank the generated output.
-
----
-
-# ⚠️ 14. Limitations and Considerations
-
-## Word-frequency processing
-
-The word-frequency mapper:
-
-- converts text to lowercase;
-- extracts alphabetic word sequences;
-- counts all extracted words.
-
-Consequently, common grammatical words such as `the`, `and`, `of` and `a` naturally appear at the top.
-
-A more advanced NLP workflow could introduce:
-
-- stop-word removal;
-- stemming;
-- lemmatisation;
-- named-entity recognition;
-- phrase extraction.
-
-## Sentence detection
-
-The sentence mapper uses:
-
-```python
-r'[.!?]+'
-```
-
-This provides a straightforward rule-based method for detecting sentence boundaries.
-
-However, literary text can contain punctuation conventions that make simple punctuation-based detection imperfect. Abbreviations, quotations and other special cases could require a more sophisticated natural-language sentence tokenizer.
-
-## Environment dependency
-
-The Hadoop commands depend on:
-
-- the installed Hadoop version;
-- the Hadoop Streaming JAR location;
-- the Ubuntu username;
-- the configured master/worker environment.
-
-Therefore, paths may need to be adapted when running the project on another machine.
-
-## Analytical scope
-
-This project demonstrates focused distributed text-processing workflows rather than a complete production recommendation or marketing platform.
-
-The same architecture could be extended to a much larger digital book catalogue and combined with additional textual and behavioural features.
-
----
-
-# 📚 15. References
-
-- Apache Hadoop. [Hadoop Documentation](https://hadoop.apache.org/docs/)
-- Dean, J. and Ghemawat, S. (2008). “MapReduce: Simplified Data Processing on Large Clusters.” *Communications of the ACM*, 51(1), pp. 107–113.
-- Free Software Foundation. [Bash Reference Manual](https://www.gnu.org/software/bash/manual/bash.html)
-- Griffiths, I. *MS4S21 Big Data Engineering and its Applications — Lecture Materials*. University of South Wales.
-- Project Gutenberg. *A Christmas Carol* by Charles Dickens.
-- Project Gutenberg. *Moby Dick; Or, The Whale* by Herman Melville.
-
-### AI-assisted development
-
-AI assistance was used specifically during development of the B.2 sentence-counting Python files:
-
-```text
-total_sentences_mapper.py
-total_sentences_reducer.py
-```
-
-The resulting scripts were then locally validated and executed through the Hadoop Streaming workflow.
-
----
-
-# 👤 Author
+# Author
 
 **Ubong Etok**
 
-Data Science | Data Analytics | Business Intelligence | SQL | Machine Learning
+GitHub: https://github.com/xzibitetok
 
-- GitHub: [@xzibitetok](https://github.com/xzibitetok)
-- Portfolio: [xzibitetok.github.io](https://xzibitetok.github.io)
+Portfolio: https://xzibitetok.github.io
 
 ---
 
-## ⭐ Project Summary
+## Project Summary
 
-```text
-Ubuntu
-  ↓
-Bash
-  ↓
-Linux File Management
-  ↓
-Hadoop Master / Worker
-  ↓
-HDFS
-  ↓
-Python Mapper / Reducer
-  ↓
-Hadoop Streaming
-  ↓
-MapReduce
-  ↓
-Structured Output
-  ↓
-Text Analytics
-```
+This project demonstrates an end-to-end workflow beginning with Linux and Bash file-system organisation in Ubuntu and progressing to distributed text processing with Apache Hadoop.
 
-This project demonstrates a complete progression from **Linux command-line fundamentals to distributed Big Data processing**, showing how unstructured literary data can be stored, processed and transformed into meaningful structured results using Hadoop and Python.
+The implementation covered:
+
+- Bash-based directory and file management;
+- PageTurner Books Ltd. data organisation;
+- Hadoop cluster startup and verification;
+- HDFS data storage;
+- Python MapReduce mapper and reducer development;
+- Hadoop Streaming;
+- word-frequency analysis of _A Christmas Carol_;
+- sentence counting of _The Moby Dick or The Whale_;
+- local validation of the sentence-count scripts;
+- HDFS output verification;
+- retrieval and inspection of MapReduce results; and
+- extraction of final analytical results.
+
+The final analytical outputs were **the top 10 most frequent words in _A Christmas Carol_** and a **total of 10,941 sentences in _The Moby Dick or The Whale_**.
