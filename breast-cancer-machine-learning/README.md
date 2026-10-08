@@ -21,16 +21,15 @@ Analysis](https://img.shields.io/badge/Analysis-Reproducible-lightgrey)
 
 ## 📑 Table of Contents
 
-1.  [Project Overview](#project-overview)
-2.  [Analytical Objectives](#analytical-objectives)
-3.  [Dataset](#dataset)
-4.  [Analytical Workflow](#analytical-workflow)
-5.  [Data Preprocessing](#data-preprocessing)
-6.  [Exploratory Data Analysis](#exploratory-data-analysis)
-7.  [Feature Engineering and
-    Selection](#feature-engineering-and-selection)
-8.  [Principal Component Analysis](#principal-component-analysis)
-9.  [Clustering Analysis](#clustering-analysis)
+1. [Project Overview](#project-overview)
+2. [Analytical Objectives](#analytical-objectives)
+3. [Dataset](#dataset)
+4. [Analytical Workflow](#analytical-workflow)
+5. [Data Preprocessing](#data-preprocessing)
+6. [Exploratory Data Analysis](#exploratory-data-analysis)
+7. [Feature Engineering and Selection](#feature-engineering-and-selection)
+8. [Principal Component Analysis](#principal-component-analysis)
+9. [Clustering Analysis](#clustering-analysis)
 10. [Supervised Machine Learning](#supervised-machine-learning)
 11. [Model Evaluation](#model-evaluation)
 12. [Hyperparameter Tuning](#hyperparameter-tuning)
@@ -48,7 +47,7 @@ Analysis](https://img.shields.io/badge/Analysis-Reproducible-lightgrey)
 24. [References](#references)
 25. [Author](#author)
 
-------------------------------------------------------------------------
+---
 
 `<a name="project-overview">`{=html}`</a>`{=html}
 
