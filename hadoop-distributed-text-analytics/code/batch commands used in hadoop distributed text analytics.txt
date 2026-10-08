@@ -1,0 +1,247 @@
+1. Linux/Bash File and Directory Management
+a. Create the main project directory
+cd ~
+mkdir PageTurnerBooks
+ls
+
+b. Create project subdirectories
+cd PageTurnerBooks
+mkdir inventory
+mkdir customer
+mkdir orders
+mkdir reviews
+mkdir library
+ls
+
+c. Create inventory files
+cd inventory
+touch book_catalog.csv
+touch bestsellers.txt
+ls
+
+d. Copy the bestseller file to the reviews directory
+cp bestsellers.txt ../reviews/
+ls
+ls ../reviews/
+
+e. Create and populate the Markdown information file
+cd ..
+touch store_info.md
+echo "PageTurner Books Ltd is an independent bookstore based in Manchester specializing in fiction, non-fiction, and rare books." > store_info.md
+cat store_info.md
+
+2. Hadoop Cluster Startup
+
+a. Master
+start-dfs.sh
+start-yarn.sh
+jps
+
+b. Worker
+jps
+
+
+3. B.1 — Word Frequency Analysis
+
+a. Create the working directory
+#Bash code used on Master
+cd ~
+mkdir Question2_Task_B1
+cd Question2_Task_B1
+pwd
+
+b. Copy the input file
+#Bash code used on Master
+cp ~/Downloads/"A Christmas Carol.txt" .
+ls
+
+4. Word Frequency Mapper
+a. #Bash code used on Master
+nano word_count_mapper.py
+
+b. Python File
+#!/usr/bin/env python3
+import sys
+import re
+for line in sys.stdin:
+    line = line.strip().lower()
+    words = re.findall(r'\b[a-z]+\b', line)
+    for word in words:
+        print(f"{word}\t1")
+
+5. Word Frequency Reducer
+a. #Bash code used on Master
+nano word_count_reducer.py
+
+b. Python File
+#!/usr/bin/env python3
+import sys
+last_key = None
+running_total = 0
+
+for input_line in sys.stdin:
+    input_line = input_line.strip()
+    this_key, value = input_line.split("\t", 1)
+    value = int(value)
+    if last_key == this_key:
+        running_total += value
+    else:
+        if last_key:
+            print(f"{last_key}\t{running_total}")
+        running_total = value
+        last_key = this_key
+if last_key == this_key:
+    print(f"{last_key}\t{running_total}")
+
+
+6. Make the Scripts Executable
+#Bash code used on Master
+chmod +x word_count_mapper.py
+chmod +x word_count_reducer.py
+ls -l
+
+7. Create the HDFS Directory
+#Bash code used on Master
+hadoop fs -mkdir /user/ubong-etok/WordCount_ChristmasCarol
+hadoop fs -ls /user/ubong-etok
+
+
+8. Upload the Dataset to HDFS
+#Bash code used on Master
+hadoop fs -put A_Christmas_Carol.txt /user/ubong-etok/WordCount_ChristmasCarol/
+hadoop fs -ls /user/ubong-etok/WordCount_ChristmasCarol
+
+
+9. Run Hadoop Streaming
+#Bash code used on Master
+yarn jar /usr/local/hadoop/share/hadoop/tools/lib/hadoop-streaming-3.4.1.jar \
+-files /home/ubong-etok/Question2_Task_B1/word_count_mapper.py,/home/ubong-etok/Question2_Task_B1/word_count_reducer.py \
+-mapper "python3 word_count_mapper.py" \
+-reducer "python3 word_count_reducer.py" \
+-input /user/ubong-etok/WordCount_ChristmasCarol/A_Christmas_Carol.txt \
+-output /user/ubong-etok/WordCount_ChristmasCarol/output
+
+
+10. Check Hadoop Output
+#Bash code used on Master
+hadoop fs -ls /user/ubong-etok/WordCount_ChristmasCarol/output
+
+11. Retrieve the Output
+#Bash code used on Master
+hadoop fs -get /user/ubong-etok/WordCount_ChristmasCarol/output
+ls output
+
+
+12. View the Complete Word-Frequency Results
+#Bash code used on Master
+cat output/part-00000
+
+
+13. Identify the Top 10 Words
+#Bash code used on Master
+sort -k2 -nr output/part-00000 | head -10
+
+
+14. B.2 — Sentence Count Analysis
+
+Step 1 — Create the Working Directory
+#Bash code used on Master
+cd ~
+mkdir Question2_Task_B2
+cd Question2_Task_B2
+ls
+
+
+15. Copy the Moby Dick Dataset
+#Bash code used on Master
+cp ~/Downloads/"Moby Dick or The Whale.txt" .
+ls
+
+16. Sentence Mapper
+a. #Bash code used on Master
+nano total_sentences_mapper.py
+
+b. Python File
+#!/usr/bin/env python3
+import sys
+import re
+for line in sys.stdin:
+    sentences = re.findall(r'[.!?]+', line)
+    for sentence in sentences:
+        print("sentence\t1")
+
+
+17. Sentence Reducer
+a. #Bash code used on Master
+nano total_sentences_reducer.py
+
+b. Python File
+#!/usr/bin/env python3
+import sys
+total_sentences = 0
+for line in sys.stdin:
+    line = line.strip()
+    word, count = line.split('\t')
+    total_sentences += int(count)
+print("Total Sentences\t", total_sentences)
+
+
+18. Make Sentence-Counting Scripts Executable
+#Bash code used on Master
+chmod +x total_sentences_mapper.py
+chmod +x total_sentences_reducer.py
+ls -l
+
+19. Test the Mapper and Reducer Locally using the "echo" command before upload
+
+a. Test 1
+#Bash code used on Master
+echo "Hello! Welcome to Page Turner Books Ltd." | ./total_sentences_mapper.py | ./total_sentences_reducer.py
+
+b. Test 2
+#Bash code used on Master
+echo "Page Turner Books? Well, we are a great company!" | ./total_sentences_mapper.py | ./total_sentences_reducer.py
+
+20. Create the HDFS Directory
+#Bash code used on Master
+hdfs dfs -mkdir -p /user/ubong-etok
+hadoop fs -mkdir MobyDick_Sentences
+hadoop fs -ls
+
+21. Rename and Upload the Dataset
+#Bash code used on Master
+mv *Whale* Moby_Dick_or_The_Whale.txt
+hadoop fs -put Moby_Dick_or_The_Whale.txt /user/ubong-etok/MobyDick_Sentences/
+
+
+22. Confirm the HDFS Upload
+#Bash code used on Master
+hadoop fs -ls /user/ubong-etok/MobyDick_Sentences/
+
+
+23. Run Hadoop Streaming
+#Bash code used on Master
+yarn jar /usr/local/hadoop/share/hadoop/tools/lib/hadoop-streaming-3.4.1.jar \
+-files /home/ubong-etok/Question2_Task_B2/total_sentences_mapper.py,/home/ubong-etok/Question2_Task_B2/total_sentences_reducer.py \
+-mapper "python3 total_sentences_mapper.py" \
+-reducer "python3 total_sentences_reducer.py" \
+-input /user/ubong-etok/MobyDick_Sentences/Moby_Dick_or_The_Whale.txt \
+-output /user/ubong-etok/MobyDick_Sentences/output
+
+
+24. Copying output to Local System
+#Bash code used on Master
+hdfs dfs -get /user/ubong-etok/MobyDick_Sentences/output ./output
+
+
+25. Check Output Files
+#Bash code used on Master
+ls output
+
+
+26. View the Final Sentence Count
+#Bash code used on Master
+cat output/part-00000
+
+
+
