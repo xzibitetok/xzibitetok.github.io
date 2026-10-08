@@ -21,16 +21,15 @@ Analysis](https://img.shields.io/badge/Analysis-Reproducible-lightgrey)
 
 ## 📑 Table of Contents
 
-1.  [Project Overview](#project-overview)
-2.  [Analytical Objectives](#analytical-objectives)
-3.  [Dataset](#dataset)
-4.  [Analytical Workflow](#analytical-workflow)
-5.  [Data Preprocessing](#data-preprocessing)
-6.  [Exploratory Data Analysis](#exploratory-data-analysis)
-7.  [Feature Engineering and
-    Selection](#feature-engineering-and-selection)
-8.  [Principal Component Analysis](#principal-component-analysis)
-9.  [Clustering Analysis](#clustering-analysis)
+1. [Project Overview](#project-overview)
+2. [Analytical Objectives](#analytical-objectives)
+3. [Dataset](#dataset)
+4. [Analytical Workflow](#analytical-workflow)
+5. [Data Preprocessing](#data-preprocessing)
+6. [Exploratory Data Analysis](#exploratory-data-analysis)
+7. [Feature Engineering and Selection](#feature-engineering-and-selection)
+8. [Principal Component Analysis](#principal-component-analysis)
+9. [Clustering Analysis](#clustering-analysis)
 10. [Supervised Machine Learning](#supervised-machine-learning)
 11. [Model Evaluation](#model-evaluation)
 12. [Hyperparameter Tuning](#hyperparameter-tuning)
@@ -50,7 +49,7 @@ Analysis](https://img.shields.io/badge/Analysis-Reproducible-lightgrey)
 
 ------------------------------------------------------------------------
 
-`<a id="project-overview">`{=html}`</a>`{=html}
+`<a name="project-overview">`{=html}`</a>`{=html}
 
 ## 📌 Project Overview
 
@@ -95,7 +94,7 @@ clinical decision-making.
 
 ------------------------------------------------------------------------
 
-`<a id="analytical-objectives">`{=html}`</a>`{=html}
+`<a name="analytical-objectives">`{=html}`</a>`{=html}
 
 ## 🎯 Analytical Objectives
 
@@ -122,7 +121,7 @@ The analysis was designed around the following objectives:
 
 ------------------------------------------------------------------------
 
-`<a id="dataset">`{=html}`</a>`{=html}
+`<a name="dataset">`{=html}`</a>`{=html}
 
 ## 📊 Dataset
 
@@ -171,7 +170,7 @@ limitation when interpreting the modelling results.
 
 ------------------------------------------------------------------------
 
-`<a id="analytical-workflow">`{=html}`</a>`{=html}
+`<a name="analytical-workflow">`{=html}`</a>`{=html}
 
 ## 🔄 Analytical Workflow
 
@@ -229,7 +228,7 @@ The project follows a structured machine learning pipeline:
 
 ------------------------------------------------------------------------
 
-`<a id="data-preprocessing">`{=html}`</a>`{=html}
+`<a name="data-preprocessing">`{=html}`</a>`{=html}
 
 ## 🧹 Data Preprocessing
 
@@ -280,7 +279,7 @@ The test set was retained separately for final model evaluation.
 
 ------------------------------------------------------------------------
 
-`<a id="exploratory-data-analysis">`{=html}`</a>`{=html}
+`<a name="exploratory-data-analysis">`{=html}`</a>`{=html}
 
 ## 🔎 Exploratory Data Analysis
 
@@ -313,7 +312,7 @@ provided important information for distinguishing diagnostic groups.
 
 ------------------------------------------------------------------------
 
-`<a id="feature-engineering-and-selection">`{=html}`</a>`{=html}
+`<a name="feature-engineering-and-selection">`{=html}`</a>`{=html}
 
 ## ⚙️ Feature Engineering and Selection
 
@@ -367,7 +366,7 @@ radius_se
 
 ------------------------------------------------------------------------
 
-`<a id="principal-component-analysis">`{=html}`</a>`{=html}
+`<a name="principal-component-analysis">`{=html}`</a>`{=html}
 
 ## 📐 Principal Component Analysis
 
@@ -397,7 +396,7 @@ variables.
 
 ------------------------------------------------------------------------
 
-`<a id="clustering-analysis">`{=html}`</a>`{=html}
+`<a name="clustering-analysis">`{=html}`</a>`{=html}
 
 ## 🔵 Clustering Analysis
 
@@ -477,7 +476,7 @@ score of 0.4183.
 
 ------------------------------------------------------------------------
 
-`<a id="supervised-machine-learning">`{=html}`</a>`{=html}
+`<a name="supervised-machine-learning">`{=html}`</a>`{=html}
 
 ## 🤖 Supervised Machine Learning
 
@@ -512,7 +511,7 @@ optimisation.
 
 ------------------------------------------------------------------------
 
-`<a id="model-evaluation">`{=html}`</a>`{=html}
+`<a name="model-evaluation">`{=html}`</a>`{=html}
 
 ## 📈 Model Evaluation
 
@@ -542,7 +541,7 @@ This resulted in five classification errors on the held-out test set.
 
 ------------------------------------------------------------------------
 
-`<a id="hyperparameter-tuning">`{=html}`</a>`{=html}
+`<a name="hyperparameter-tuning">`{=html}`</a>`{=html}
 
 ## 🎛️ Hyperparameter Tuning
 
@@ -599,7 +598,7 @@ performance on unseen test data.
 
 ------------------------------------------------------------------------
 
-`<a id="feature-importance">`{=html}`</a>`{=html}
+`<a name="feature-importance">`{=html}`</a>`{=html}
 
 ## 🔬 Feature Importance
 
@@ -627,7 +626,7 @@ size, perimeter and concavity characteristics.
 
 ------------------------------------------------------------------------
 
-`<a id="model-robustness">`{=html}`</a>`{=html}
+`<a name="model-robustness">`{=html}`</a>`{=html}
 
 ## 🧪 Model Robustness
 
@@ -659,7 +658,7 @@ stronger claims about performance on independent populations.
 
 ------------------------------------------------------------------------
 
-`<a id="key-findings">`{=html}`</a>`{=html}
+`<a name="key-findings">`{=html}`</a>`{=html}
 
 ## 🔎 Key Findings
 
@@ -741,7 +740,7 @@ dataset, while recognising the need for independent validation.
 
 ------------------------------------------------------------------------
 
-`<a id="limitations">`{=html}`</a>`{=html}
+`<a name="limitations">`{=html}`</a>`{=html}
 
 ## ⚠️ Limitations
 
@@ -787,7 +786,7 @@ evidence.
 
 ------------------------------------------------------------------------
 
-`<a id="ethical-considerations">`{=html}`</a>`{=html}
+`<a name="ethical-considerations">`{=html}`</a>`{=html}
 
 ## ⚖️ Ethical Considerations
 
@@ -823,7 +822,7 @@ to provide more transparent explanations of individual predictions.
 
 ------------------------------------------------------------------------
 
-`<a id="future-improvements">`{=html}`</a>`{=html}
+`<a name="future-improvements">`{=html}`</a>`{=html}
 
 ## 🚀 Future Improvements
 
@@ -873,7 +872,7 @@ independently collected datasets before considering clinical deployment.
 
 ------------------------------------------------------------------------
 
-`<a id="visualisations">`{=html}`</a>`{=html}
+`<a name="visualisations">`{=html}`</a>`{=html}
 
 # 📊 Visualisations
 
@@ -1061,7 +1060,7 @@ Importance](visualizations/17_random_forest_feature_importance.png)
 
 ------------------------------------------------------------------------
 
-`<a id="technologies-and-libraries">`{=html}`</a>`{=html}
+`<a name="technologies-and-libraries">`{=html}`</a>`{=html}
 
 # 🛠️ Technologies and Libraries
 
@@ -1117,7 +1116,7 @@ Importance](visualizations/17_random_forest_feature_importance.png)
 
 ------------------------------------------------------------------------
 
-`<a id="repository-structure">`{=html}`</a>`{=html}
+`<a name="repository-structure">`{=html}`</a>`{=html}
 
 # 📁 Repository Structure
 
@@ -1156,7 +1155,7 @@ breast-cancer-machine-learning/
 
 ------------------------------------------------------------------------
 
-`<a id="reproducibility">`{=html}`</a>`{=html}
+`<a name="reproducibility">`{=html}`</a>`{=html}
 
 # ♻️ Reproducibility
 
@@ -1230,7 +1229,7 @@ the visualisations.
 
 ------------------------------------------------------------------------
 
-`<a id="project-files">`{=html}`</a>`{=html}
+`<a name="project-files">`{=html}`</a>`{=html}
 
 # 📂 Project Files
 
@@ -1269,7 +1268,7 @@ The dataset used throughout the analysis.
 
 ------------------------------------------------------------------------
 
-`<a id="references">`{=html}`</a>`{=html}
+`<a name="references">`{=html}`</a>`{=html}
 
 # 📚 References
 
@@ -1309,7 +1308,7 @@ Discovery and Data Mining*, pp.226--231.
 
 ------------------------------------------------------------------------
 
-`<a id="author">`{=html}`</a>`{=html}
+`<a name="author">`{=html}`</a>`{=html}
 
 # 👤 Author
 
