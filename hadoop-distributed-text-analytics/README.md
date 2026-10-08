@@ -903,13 +903,23 @@ The results demonstrate that Hadoop successfully transformed the unstructured li
 
 ## Project Files
 
-The complete datasets and Hadoop bash commands are available below.
+The complete datasets and Hadoop source code are available below.
 
 ### 📚 Datasets
 
 The literary datasets used for the distributed text analytics workflows.
 
-**[⬇️ Download Datasets](https://github.com/xzibitetok/xzibitetok.github.io/releases/latest/download/PageTurner_Books_Datasets.zip)**
+**[⬇️ Download A Christmas Carol Dataset](https://github.com/xzibitetok/xzibitetok.github.io/releases/latest/download/A.Christmas.Carol.txt)**
+
+**[⬇️ Download Moby Dick; Or, The Whale Dataset](https://github.com/xzibitetok/xzibitetok.github.io/releases/latest/download/Moby.Dick.Or.The.Whale.txt)**
+
+---
+
+### 🐍 Hadoop Bash Commands
+
+The Python mapper and reducer scripts used to perform word-frequency analysis on *A Christmas Carol* and sentence-count analysis on *Moby Dick; Or, The Whale* using Hadoop Streaming.
+
+**[⬇️ Download Hadoop Source Code](https://github.com/xzibitetok/xzibitetok.github.io/archive/refs/tags/Linux_Hadoop_Text_Analytics_v1.0.0.zip)**
 
 ---
 
