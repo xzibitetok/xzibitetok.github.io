@@ -384,7 +384,7 @@ PageTurner Books Ltd.
 ```{=html}
 </summary>
 ```
-![Bash / PageTurnerBooks evidence](visualizations/01_main_directory.png)
+![Bash / PageTurnerBooks evidence](visualizations/Q1_01_Create_PageTurnerBooks_Directory.png)
 
 ```{=html}
 </details>
@@ -507,7 +507,7 @@ directory`</strong>`{=html}
 </summary>
 ```
 ![Creating the PageTurnerBooks
-directory](visualizations/01_main_directory.png)
+directory](visualizations/Q1_01_Create_PageTurnerBooks_Directory.png)
 
 ```{=html}
 </details>
@@ -524,7 +524,7 @@ subdirectories`</strong>`{=html}
 </summary>
 ```
 ![Creating the five business
-subdirectories](visualizations/02_subdirectories.png)
+subdirectories](visualizations/Q1_02_Create_Project_Subdirectories.png)
 
 ```{=html}
 </details>
@@ -539,7 +539,7 @@ subdirectories](visualizations/02_subdirectories.png)
 ```{=html}
 </summary>
 ```
-![Creating the inventory files](visualizations/03_inventory_files.png)
+![Creating the inventory files](visualizations/Q1_03_Create_Inventory_Files.png)
 
 ```{=html}
 </details>
@@ -555,7 +555,7 @@ subdirectories](visualizations/02_subdirectories.png)
 </summary>
 ```
 ![Copying bestsellers.txt into
-reviews](visualizations/04_bestsellers_copy.png)
+reviews](visualizations/Q1_04_Copy_Bestsellers_to_Reviews.png)
 
 ```{=html}
 </details>
@@ -571,7 +571,7 @@ reviews](visualizations/04_bestsellers_copy.png)
 </summary>
 ```
 ![Creating and populating
-store_info.md](visualizations/05_store_info.png)
+store_info.md](visualizations/Q1_05_Create_and_Populate_Store_Info.png)
 
 ```{=html}
 </details>
@@ -631,7 +631,7 @@ jps
 ```{=html}
 </summary>
 ```
-![Hadoop cluster verification](visualizations/q2_01.jpg)
+![Hadoop cluster verification](visualizations/Q2_01_Start_Hadoop_and_Verify_Cluster.png)
 
 ```{=html}
 </details>
@@ -922,7 +922,7 @@ cluster`</strong>`{=html}
 </summary>
 ```
 ![Starting Hadoop services and verifying the
-cluster](visualizations/q2_01.jpg)
+cluster](visualizations/Q2_01_Start_Hadoop_and_Verify_Cluster.png)
 
 ```{=html}
 </details>
@@ -937,7 +937,7 @@ cluster](visualizations/q2_01.jpg)
 ```{=html}
 </summary>
 ```
-![Creating the B.1 working directory](visualizations/q2_02.png)
+![Creating the B.1 working directory](visualizations/Q2_02_Create_B1_Working_Directory.png)
 
 ```{=html}
 </details>
@@ -954,7 +954,7 @@ directory`</strong>`{=html}
 </summary>
 ```
 ![Copying A Christmas Carol into the working
-directory](visualizations/q2_03.png)
+directory](visualizations/Q2_03_Copy_A_Christmas_Carol_Dataset.png)
 
 ```{=html}
 </details>
@@ -969,7 +969,7 @@ directory](visualizations/q2_03.png)
 ```{=html}
 </summary>
 ```
-![Creating the word-frequency mapper](visualizations/q2_04.png)
+![Creating the word-frequency mapper](visualizations/Q2_04_Create_Word_Frequency_Mapper.png)
 
 ```{=html}
 </details>
@@ -984,7 +984,7 @@ directory](visualizations/q2_03.png)
 ```{=html}
 </summary>
 ```
-![Creating the word-frequency reducer](visualizations/q2_05.png)
+![Creating the word-frequency reducer](visualizations/Q2_05_Create_Word_Frequency_Reducer.png)
 
 ```{=html}
 </details>
@@ -1000,7 +1000,7 @@ permissions`</strong>`{=html}
 ```{=html}
 </summary>
 ```
-![Setting mapper and reducer permissions](visualizations/q2_06.png)
+![Setting mapper and reducer permissions](visualizations/Q2_06_Word_Frequency_Scripts_and_Permissions.png)
 
 ```{=html}
 </details>
@@ -1015,7 +1015,7 @@ permissions`</strong>`{=html}
 ```{=html}
 </summary>
 ```
-![Verifying reducer code](visualizations/q2_07.png)
+![Verifying reducer code](visualizations/Q2_07_Word_Frequency_Reducer_Code.png)
 
 ```{=html}
 </details>
@@ -1030,7 +1030,7 @@ permissions`</strong>`{=html}
 ```{=html}
 </summary>
 ```
-![Verifying executable scripts](visualizations/q2_08.png)
+![Verifying executable scripts](visualizations/Q2_08_Verify_Executable_Scripts.png)
 
 ```{=html}
 </details>
@@ -1046,7 +1046,7 @@ directory`</strong>`{=html}
 ```{=html}
 </summary>
 ```
-![Creating the HDFS word-count directory](visualizations/q2_09.png)
+![Creating the HDFS word-count directory](visualizations/Q2_09_Create_Word_Count_HDFS_Directory.png)
 
 ```{=html}
 </details>
@@ -1061,7 +1061,7 @@ directory`</strong>`{=html}
 ```{=html}
 </summary>
 ```
-![Uploading A Christmas Carol to HDFS](visualizations/q2_10.png)
+![Uploading A Christmas Carol to HDFS](visualizations/Q2_10_Upload_Christmas_Carol_to_HDFS.png)
 
 ```{=html}
 </details>
@@ -1077,7 +1077,7 @@ frequency`</strong>`{=html}
 ```{=html}
 </summary>
 ```
-![Running Hadoop Streaming for word frequency](visualizations/q2_11.png)
+![Running Hadoop Streaming for word frequency](visualizations/Q2_11_Hadoop_Streaming_Execution_Output.png)
 
 ```{=html}
 </details>
@@ -1092,7 +1092,7 @@ frequency`</strong>`{=html}
 ```{=html}
 </summary>
 ```
-![Verifying Hadoop output files](visualizations/q2_12.png)
+![Verifying Hadoop output files](visualizations/Q2_12_Verify_HDFS_Output_Files.png)
 
 ```{=html}
 </details>
@@ -1107,7 +1107,7 @@ frequency`</strong>`{=html}
 ```{=html}
 </summary>
 ```
-![Retrieving word-frequency output](visualizations/q2_13.png)
+![Retrieving word-frequency output](visualizations/Q2_13_Retrieve_Word_Frequency_Output.png)
 
 ```{=html}
 </details>
@@ -1123,7 +1123,7 @@ output`</strong>`{=html}
 ```{=html}
 </summary>
 ```
-![Viewing the complete word-frequency output](visualizations/q2_14.png)
+![Viewing the complete word-frequency output](visualizations/Q2_14_Complete_Word_Frequency_Output.png)
 
 ```{=html}
 </details>
@@ -1139,7 +1139,7 @@ frequencies`</strong>`{=html}
 ```{=html}
 </summary>
 ```
-![Identifying the top 10 word frequencies](visualizations/q2_15.jpg)
+![Identifying the top 10 word frequencies](visualizations/Q2_15_Top_10_Word_Frequencies.png)
 
 ```{=html}
 </details>
@@ -1467,7 +1467,7 @@ counting. Available at: https://chat.openai.com/ (Accessed: 3 May 2026).
 ```{=html}
 </summary>
 ```
-![Starting Hadoop for sentence counting](visualizations/q2_16.jpg)
+![Starting Hadoop for sentence counting](visualizations/Q2_16_Start_Hadoop_for_Sentence_Count.png)
 
 ```{=html}
 </details>
@@ -1482,7 +1482,7 @@ counting. Available at: https://chat.openai.com/ (Accessed: 3 May 2026).
 ```{=html}
 </summary>
 ```
-![Creating the B.2 working directory](visualizations/q2_17.png)
+![Creating the B.2 working directory](visualizations/Q2_17_Create_B2_Working_Directory.png)
 
 ```{=html}
 </details>
@@ -1499,7 +1499,7 @@ directory`</strong>`{=html}
 </summary>
 ```
 ![Copying Moby Dick into the working
-directory](visualizations/q2_18.jpg)
+directory](visualizations/Q2_18_Copy_Moby_Dick_Dataset.png)
 
 ```{=html}
 </details>
@@ -1514,7 +1514,7 @@ directory](visualizations/q2_18.jpg)
 ```{=html}
 </summary>
 ```
-![Creating the sentence-count mapper](visualizations/q2_19.png)
+![Creating the sentence-count mapper](visualizations/Q2_19_Create_Sentence_Count_Mapper.png)
 
 ```{=html}
 </details>
@@ -1529,7 +1529,7 @@ directory](visualizations/q2_18.jpg)
 ```{=html}
 </summary>
 ```
-![Creating the sentence-count reducer](visualizations/q2_20.png)
+![Creating the sentence-count reducer](visualizations/Q2_20_Create_Sentence_Count_Reducer.png)
 
 ```{=html}
 </details>
@@ -1544,7 +1544,7 @@ directory](visualizations/q2_18.jpg)
 ```{=html}
 </summary>
 ```
-![Setting sentence-count permissions](visualizations/q2_21.png)
+![Setting sentence-count permissions](visualizations/Q2_21_Sentence_Count_Scripts_and_Permissions.png)
 
 ```{=html}
 </details>
@@ -1559,7 +1559,7 @@ directory](visualizations/q2_18.jpg)
 ```{=html}
 </summary>
 ```
-![Verifying sentence-count scripts](visualizations/q2_22.png)
+![Verifying sentence-count scripts](visualizations/Q2_22_Verify_Sentence_Count_Scripts.png)
 
 ```{=html}
 </details>
@@ -1575,7 +1575,7 @@ echo`</strong>`{=html}
 ```{=html}
 </summary>
 ```
-![Local mapper/reducer validation with echo](visualizations/q2_23.png)
+![Local mapper/reducer validation with echo](visualizations/Q2_23_Local_Mapper_Reducer_Testing.png)
 
 ```{=html}
 </details>
@@ -1591,7 +1591,7 @@ directory`</strong>`{=html}
 ```{=html}
 </summary>
 ```
-![Creating the sentence-count HDFS directory](visualizations/q2_24.png)
+![Creating the sentence-count HDFS directory](visualizations/Q2_24_Create_Sentence_Count_HDFS_Directory.png)
 
 ```{=html}
 </details>
@@ -1606,7 +1606,7 @@ directory`</strong>`{=html}
 ```{=html}
 </summary>
 ```
-![Uploading Moby Dick to HDFS](visualizations/q2_25.png)
+![Uploading Moby Dick to HDFS](visualizations/Q2_25_Upload_Moby_Dick_to_HDFS.png)
 
 ```{=html}
 </details>
@@ -1621,7 +1621,7 @@ directory`</strong>`{=html}
 ```{=html}
 </summary>
 ```
-![Confirming the Moby Dick HDFS upload](visualizations/q2_26.png)
+![Confirming the Moby Dick HDFS upload](visualizations/Q2_26_Confirm_Moby_Dick_HDFS_Upload.png)
 
 ```{=html}
 </details>
@@ -1638,7 +1638,7 @@ counting`</strong>`{=html}
 </summary>
 ```
 ![Running Hadoop Streaming for sentence
-counting](visualizations/q2_27.png)
+counting](visualizations/Q2_27_Run_Sentence_Count_Hadoop_Streaming.png)
 
 ```{=html}
 </details>
@@ -1654,7 +1654,7 @@ output`</strong>`{=html}
 ```{=html}
 </summary>
 ```
-![Viewing sentence-count streaming output](visualizations/q2_28.png)
+![Viewing sentence-count streaming output](visualizations/Q2_28_Sentence_Count_Streaming_Output.png)
 
 ```{=html}
 </details>
@@ -1669,7 +1669,7 @@ output`</strong>`{=html}
 ```{=html}
 </summary>
 ```
-![Retrieving sentence-count output](visualizations/q2_29.png)
+![Retrieving sentence-count output](visualizations/Q2_29_Retrieve_Sentence_Count_Output.png)
 
 ```{=html}
 </details>
@@ -1684,7 +1684,7 @@ output`</strong>`{=html}
 ```{=html}
 </summary>
 ```
-![Verifying sentence-count output files](visualizations/q2_30.png)
+![Verifying sentence-count output files](visualizations/Q2_30_Verify_Sentence_Count_Output_Files.png)
 
 ```{=html}
 </details>
@@ -1700,25 +1700,12 @@ output`</strong>`{=html}
 ```{=html}
 </summary>
 ```
-![Viewing the final sentence-count output](visualizations/q2_31.png)
+![Viewing the final sentence-count output](visualizations/Q2_31_Final_Sentence_Count_Output.png)
 
 ```{=html}
 </details>
 ```
-```{=html}
-<details>
-```
-```{=html}
-<summary>
-```
-`<strong>`{=html}Final sentence-count evidence`</strong>`{=html}
-```{=html}
-</summary>
-```
-![Final sentence-count evidence](visualizations/q2_32.png)
 
-```{=html}
-</details>
 ```
 ### Result
 
