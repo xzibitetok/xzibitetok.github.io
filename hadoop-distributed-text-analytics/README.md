@@ -917,17 +917,9 @@ The literary datasets used for the distributed text analytics workflows.
 
 ### 🐍 Hadoop Bash Commands
 
-The Python mapper and reducer scripts used to perform word-frequency analysis on *A Christmas Carol* and sentence-count analysis on *Moby Dick; Or, The Whale* using Hadoop Streaming.
+The Bash commands used throughout the Hadoop distributed text analytics workflow, including HDFS, YARN, Hadoop Streaming and MapReduce execution.
 
-**[⬇️ Download Hadoop Source Code](https://github.com/xzibitetok/xzibitetok.github.io/archive/refs/tags/Linux_Hadoop_Text_Analytics_v1.0.0.zip)**
-
----
-
-### 🐍 Hadoop Bash Commands
-
-The Python mapper and reducer scripts used to perform word-frequency analysis on *A Christmas Carol* and sentence-count analysis on *Moby Dick; Or, The Whale* using Hadoop Streaming.
-
-**[⬇️ Download Hadoop MapReduce Code](https://github.com/xzibitetok/xzibitetok.github.io/releases/latest/download/PageTurner_Books_Python_MapReduce_Scripts.zip)**
+**[⬇️ Download Hadoop Bash Commands](https://github.com/xzibitetok/xzibitetok.github.io/releases/latest/download/batch.commands.used.in.hadoop.distributed.text.analytics.txt)**
 
 ---
 
