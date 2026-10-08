@@ -919,6 +919,8 @@ The literary datasets used for the distributed text analytics workflows.
 
 The Bash commands used throughout the Hadoop distributed text analytics workflow, including HDFS, YARN, Hadoop Streaming and MapReduce execution.
 
+**[👁️ View Hadoop Bash Commands](https://github.com/xzibitetok/xzibitetok.github.io/blob/master/batch.commands.used.in.hadoop.distributed.text.analytics.txt)**
+
 **[⬇️ Download Hadoop Bash Commands](https://github.com/xzibitetok/xzibitetok.github.io/releases/latest/download/batch.commands.used.in.hadoop.distributed.text.analytics.txt)**
 
 ---
