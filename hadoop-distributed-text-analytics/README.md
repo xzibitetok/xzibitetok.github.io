@@ -903,27 +903,23 @@ The results demonstrate that Hadoop successfully transformed the unstructured li
 
 ## Project Files
 
-The repository contains the project documentation, datasets, Python MapReduce scripts, Bash command reference and visual implementation evidence. The technical workflow is documented directly in this README so that the repository can be understood without the original technical reports.
+The complete datasets and Hadoop bash commands are available below.
 
-### Main Project Components
+### 📚 Datasets
 
-| Component | Purpose |
-|---|---|
-| `README.md` | Complete portfolio documentation, commands, scripts, results and visual evidence |
-| `code/` | Python mapper and reducer implementations |
-| `data/` | Literary text inputs used by the MapReduce workflows |
-| `visualizations/` | 36 terminal screenshots matched to the implementation steps |
-| `batch commands used in hadoop distributed text analytics.txt` | Consolidated Bash commands used during implementation |
+The literary datasets used for the distributed text analytics workflows.
 
-The README deliberately retains the technical-report sequence and substantive explanations so that the project remains self-contained even when the original technical reports are not uploaded to GitHub.
+**[⬇️ Download Datasets](https://github.com/xzibitetok/xzibitetok.github.io/releases/latest/download/PageTurner_Books_Datasets.zip)**
 
-| File / Folder | Purpose |
-|---|---|
-| `README.md` | Complete project documentation and implementation evidence |
-| `code/` | Hadoop and Python implementation files |
-| `data/` | Literary text datasets used by the workflows |
-| `visualizations/` | Terminal screenshots proving each implementation step |
-| `batch commands used in hadoop distributed text analytics.txt` | Consolidated Bash commands used during implementation |
+---
+
+### 🐍 Hadoop Bash Commands
+
+The Python mapper and reducer scripts used to perform word-frequency analysis on *A Christmas Carol* and sentence-count analysis on *Moby Dick; Or, The Whale* using Hadoop Streaming.
+
+**[⬇️ Download Hadoop MapReduce Code](https://github.com/xzibitetok/xzibitetok.github.io/releases/latest/download/PageTurner_Books_Python_MapReduce_Scripts.zip)**
+
+---
 
 ## Repository Structure
 
