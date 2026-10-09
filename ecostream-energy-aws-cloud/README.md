@@ -186,77 +186,137 @@ The Amazon S3 bucket page was revisited to verify that the uploaded telemetry da
 
 **Full guide:** [23122931 Query Validation.pdf](https://github.com/xzibitetok/xzibitetok.github.io/releases/download/Ubong_s_EcoStream_AWS_v1.0.0/23122931%2BQuery%2BValidation.pdf)
 
-Query Validation Introduction This document contains the validation evidence for DynamoDB query operations on the EcoStream telemetry database. The paper includes screenshots of each query produced in Amazon DynamoDB. It shows the query logic, the filters applied, the attributes selected, and the outputs generated from the telemetry dataset.
+## Introduction 
+This document contains the validation evidence for DynamoDB query operations on the EcoStream telemetry database. The paper includes screenshots of each query produced in Amazon DynamoDB. It shows the query logic, the filters applied, the attributes selected, and the outputs generated from the telemetry dataset.
 
 The objective of this document is to show how to correctly implement the required queries on the “23122931-ecostream-telemetry-db” table in the database and extract the requested analytical findings. The screenshots also confirm that the query results were validated and suitable for export and storage to the specified Amazon S3 bucket.
 
-**Step 1:** Go to the AWS Console dashboard and open the DynamoDB service.
+## Step 1: 
+Go to the AWS Console dashboard and open the DynamoDB service.
 
-**Step 2:** Navigate to the Explore items area in the DynamoDB navigation panel and choose the table: “23122931-ecostream-telemetry-db”. Before creating the queries, check if the dataset and the necessary attributes are accessible within the table.
-
-**Visual evidence — guide page 1 (2 images)**
+## Visual evidence — (2 images)
 
 ![Objective 3 — DynamoDB Query Validation — evidence 01](visualizations/Q1B_Query_Validation_01.png)
 
 ![Objective 3 — DynamoDB Query Validation — evidence 02](visualizations/Q1B_Query_Validation_02.png)
 
-Step 3 - Queries: Use the Scan operation to allow filtering across all records in the dataset for Queries 1 to 5 below. Query 1: Return all data for facilities that had no maintenance incidents in 2024 but at least one maintenance incident in 2025. Query 1 Logic To identify facilities with no maintenance incidents in 2024 but at least one incident in 2025, the attribute projection was set to “All attributes” because the requirement requested all facility data. Two filters were used to compare maintenance activity between the two years. The attribute names "Maintenance Incidents 2024" and "Maintenance Incidents 2025" were selected because they directly store the yearly maintenance records. The condition Equal to, with a value of “0” was used to identify facilities with no incidents in 2024, while the condition “Greater than” with a value above “0” was used to identify facilities that recorded incidents in 2025. The Number type was selected because maintenance incident values are numeric. • Specific Attribute Projection: All attributes • 1st filter: • Attribute Name: Maintenance Incidents 2024 • Condition: Equal to • Type: Number • Value: 0
+## Step 2: 
+Navigate to the Explore items area in the DynamoDB navigation panel and choose the table: “23122931-ecostream-telemetry-db”. Before creating the queries, check if the dataset and the necessary attributes are accessible within the table.
 
-- 2nd filter:
+## Visual evidence — (1 image)
+
+![Objective 3 — DynamoDB Query Validation — evidence 03](visualizations/Q1B_Query_Validation_03.png)
+
+## Step 3 - Queries: 
+Use the Scan operation to allow filtering across all records in the dataset for Queries 1 to 5 below. 
+
+## Query 1: Return all data for facilities that had no maintenance incidents in 2024 but at least one maintenance incident in 2025. 
+
+### Query 1 Logic 
+To identify facilities with no maintenance incidents in 2024 but at least one incident in 2025, the attribute projection was set to “All attributes” because the requirement requested all facility data. Two filters were used to compare maintenance activity between the two years. The attribute names "Maintenance Incidents 2024" and "Maintenance Incidents 2025" were selected because they directly store the yearly maintenance records. The condition Equal to, with a value of “0” was used to identify facilities with no incidents in 2024, while the condition “Greater than” with a value above “0” was used to identify facilities that recorded incidents in 2025. The Number type was selected because maintenance incident values are numeric. 
+
+## Specific Attribute Projection: All attributes 
+### 1st filter:
+- Attribute Name: Maintenance Incidents 2024
+- Condition: Equal to
+- Type: Number
+- Value: 0
+
+### 2nd filter:
 - Attribute Name: Maintenance Incidents 2025
 - Condition: Greater than
 - Type: Number
 - Value: 0
 
-**Visual evidence — guide page 2 (1 image)**
-
-![Objective 3 — DynamoDB Query Validation — evidence 03](visualizations/Q1B_Query_Validation_03.png)
-
-After clicking Run, the query result will be exported as a CSV file by selecting the Actions dropdown and choosing Download results to CSV. The downloaded file was then renamed to “23122931query1.csv.”
-
-Query 2: Return Facility ID and Country for facilities with Energy Output less than 50,000 MWh in 2025. Query 2 Logic To identify facilities with low energy production in 2025, the attribute projection was set to “Specific attributes” because only “Facility ID” and “Country” were required in the result. The attribute name “Energy Output 2025 (MWh)” was selected because it stores the energy generation data for 2025. The “Less than” condition with a value of “50000” was applied to return facilities producing less than 50,000 MWh. The “Number” type was selected because energy output values are numeric. • Specific Attribute Projection: Specific attributes • Specific attributes to project: Facility ID, Country • Attribute Name: Energy Output 2025 (MWh) • Condition: Less than • Type: Number • Value: 50000 After clicking Run, the query result will be exported as a CSV file by selecting the Actions dropdown and choosing Download results to CSV. The downloaded file was then renamed to “23122931query2.csv.”
-
-**Visual evidence — guide page 3 (1 image)**
+## Visual evidence — (1 image)
 
 ![Objective 3 — DynamoDB Query Validation — evidence 04](visualizations/Q1B_Query_Validation_04.png)
 
-Query 3: Return Facility ID for facilities with a Wind type on the High-Performance tier. Query 3 Logic To identify wind facilities operating within the high-performance tier, the attribute projection was set to “Specific attributes” because only the “Facility ID” was required in the output. Two filters were used to ensure both conditions were satisfied. The attribute name “Facility Type” was selected to identify the type of renewable facility, while “Operational Tier” was selected to identify the operational performance category. The condition “Equal to” was used in both filters because exact matching values were required. The values “Wind” and “High-Performance” were entered to return only facilities matching both conditions. The “String” type was selected because the values are text-based. • Select attribute projection: Specific attributes • Specific attributes to Project: Facility ID • 1st filter: • Attribute Name: Facility Type • Condition: Equal to • Type: String • Value: Wind • 2nd filter: • Attribute Name: Operational Tier • Condition: Equal to • Type: String • Value: High-Performance
+After clicking Run, the query result will be exported as a CSV file by selecting the Actions dropdown and choosing Download results to CSV. The downloaded file was then renamed to “23122931query1.csv.”
 
-**Visual evidence — guide page 4 (1 image)**
+## Query 2: Return Facility ID and Country for facilities with Energy Output less than 50,000 MWh in 2025. 
+
+### Query 2 Logic 
+To identify facilities with low energy production in 2025, the attribute projection was set to “Specific attributes” because only “Facility ID” and “Country” were required in the result. The attribute name “Energy Output 2025 (MWh)” was selected because it stores the energy generation data for 2025. The “Less than” condition with a value of “50000” was applied to return facilities producing less than 50,000 MWh. The “Number” type was selected because energy output values are numeric. 
+
+## Specific Attribute Projection: Specific attributes
+## Specific attributes to project: Facility ID, Country 
+- Attribute Name: Energy Output 2025 (MWh)
+- Condition: Less than
+- Type: Number
+- Value: 50000
+After clicking Run, the query result will be exported as a CSV file by selecting the Actions dropdown and choosing Download results to CSV. The downloaded file was then renamed to “23122931query2.csv.”
+
+## Visual evidence — guide page 3 (1 image)
 
 ![Objective 3 — DynamoDB Query Validation — evidence 05](visualizations/Q1B_Query_Validation_05.png)
 
+## Query 3: Return Facility ID for facilities with a Wind type on the High-Performance tier. 
+
+### Query 3 Logic 
+To identify wind facilities operating within the high-performance tier, the attribute projection was set to “Specific attributes” because only the “Facility ID” was required in the output. Two filters were used to ensure both conditions were satisfied. The attribute name “Facility Type” was selected to identify the type of renewable facility, while “Operational Tier” was selected to identify the operational performance category. The condition “Equal to” was used in both filters because exact matching values were required. The values “Wind” and “High-Performance” were entered to return only facilities matching both conditions. The “String” type was selected because the values are text-based.
+
+## Select attribute projection: Specific attributes 
+## Specific attributes to Project: Facility ID 
+### 1st filter: 
+- Attribute Name: Facility Type
+- Condition: Equal to
+- Type: String
+- Value: Wind
+
+### 2nd filter: 
+- Attribute Name: Operational Tier
+- Condition: Equal to
+- Type: String
+- Value: High-Performance
 After clicking Run, the query result will be exported as a CSV file by selecting the Actions dropdown and choosing Download results to CSV. The downloaded file was then renamed to “23122931query3.csv.”
-
-Query 4: Return all data for facilities that have an Energy Output greater than 100,000 MWh for both 2024 and 2025. Query 4 Logic To identify facilities with consistently high energy production across both years, the attribute projection was set to “All attributes” because the requirement requested complete facility records. Two filters were applied to compare energy output values for both 2024 and 2025. The attribute names “Energy Output 2024 (MWh)” and “Energy Output 2025 (MWh)” were selected because they contain the yearly energy generation values. The “Greater than” condition with a value of “100000” was used in both filters to return facilities that generate above 100,000 MWh in each year. The “Number” type was selected because energy output values are numeric. • Select attribute projection: All attributes • 1st filter: • Attribute Name: Energy Output 2024 (MWh) • Condition: Greater than • Type: Number • Value: 100000
-
-- 2nd filter:
-- Attribute Name: Energy Output 2025 (MWh)
-- Condition: Greater than
-- Type: Number
-- Value: 100000 After clicking Run, the query result will be exported as a CSV file by selecting the Actions dropdown and choosing Download results to CSV. The downloaded file was then renamed to “23122931query4.csv.”
-
-**Visual evidence — guide page 5 (1 image)**
+## Visual evidence — (1 image)
 
 ![Objective 3 — DynamoDB Query Validation — evidence 06](visualizations/Q1B_Query_Validation_06.png)
 
-Query 5: Identify facilities with impossible downtime hours for 2024 data. Query 5 Logic To identify facilities with impossible downtime values in 2024, the attribute projection was set to “All attributes” because the requirement requested complete facility data. The attribute name “Downtime Hours 2024” was selected because it stores the downtime values for 2024. A full year contains “8760 hours (365 × 24)”, any value above 8,760 hours is considered impossible. The condition “Greater than” with a value of “8760” was used to identify such records. The Number type was selected because downtime values are numeric. • Select attribute projection: All attributes • Attribute name: Downtime Hours 2024 • Condition: Greater than • Type: Number • Value: 8760
+## Query 4: Return all data for facilities that have an Energy Output greater than 100,000 MWh for both 2024 and 2025. 
 
-After clicking Run, the query result will be exported as a CSV file by selecting the Actions dropdown and choosing Download results to CSV. The downloaded file was then renamed to “23122931query5.csv.”
+### Query 4 Logic
+To identify facilities with consistently high energy production across both years, the attribute projection was set to “All attributes” because the requirement requested complete facility records. Two filters were applied to compare energy output values for both 2024 and 2025. The attribute names “Energy Output 2024 (MWh)” and “Energy Output 2025 (MWh)” were selected because they contain the yearly energy generation values. The “Greater than” condition with a value of “100000” was used in both filters to return facilities that generate above 100,000 MWh in each year. The “Number” type was selected because energy output values are numeric. 
+## Select attribute projection: All attributes 
+### 1st filter: 
+- Attribute Name: Energy Output 2024 (MWh)
+- Condition: Greater than
+- Type: Number
+- Value: 100000
 
-**Step 4:** Navigate to the S3 bucket: 23122931-ecostream-energy-bucket and uploaded all 5 downloaded CSV files gotten from the 5 queries I created.
+### 2nd filter:
+- Attribute Name: Energy Output 2025 (MWh)
+- Condition: Greater than
+- Type: Number
+- Value: 100000
+After clicking Run, the query result will be exported as a CSV file by selecting the Actions dropdown and choosing Download results to CSV. The downloaded file was then renamed to “23122931query4.csv.”
 
-**Visual evidence — guide page 6 (2 images)**
+## Visual evidence — (1 image)
 
 ![Objective 3 — DynamoDB Query Validation — evidence 07](visualizations/Q1B_Query_Validation_07.png)
 
+## Query 5: Identify facilities with impossible downtime hours for 2024 data. 
+
+## Query 5 Logic 
+To identify facilities with impossible downtime values in 2024, the attribute projection was set to “All attributes” because the requirement requested complete facility data. The attribute name “Downtime Hours 2024” was selected because it stores the downtime values for 2024. A full year contains “8760 hours (365 × 24)”, any value above 8,760 hours is considered impossible. The condition “Greater than” with a value of “8760” was used to identify such records. The Number type was selected because downtime values are numeric. 
+- Select attribute projection: All attributes
+- Attribute name: Downtime Hours 2024
+- Condition: Greater than
+- Type: Number
+- Value: 8760
+After clicking Run, the query result will be exported as a CSV file by selecting the Actions dropdown and choosing Download results to CSV. The downloaded file was then renamed to “23122931query5.csv.”
+
+## Visual evidence — (1 image)
+
 ![Objective 3 — DynamoDB Query Validation — evidence 08](visualizations/Q1B_Query_Validation_08.png)
 
-**Visual evidence — guide page 7 (1 image)**
+## Step 4: Navigate to the S3 bucket: 23122931-ecostream-energy-bucket and uploaded all 5 downloaded CSV files gotten from the 5 queries I created.
+
+## Visual evidence — (1 image)
 
 ![Objective 3 — DynamoDB Query Validation — evidence 09](visualizations/Q1B_Query_Validation_09.png)
 
-**Download the full step-by-step guide:** [23122931 Query Validation.pdf](https://github.com/xzibitetok/xzibitetok.github.io/releases/download/Ubong_s_EcoStream_AWS_v1.0.0/23122931%2BQuery%2BValidation.pdf)
 
 ---
 
