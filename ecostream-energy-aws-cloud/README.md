@@ -73,11 +73,13 @@ The workflow connects data storage, database querying, reusable compute configur
 
 23122931 S3 Bucket Step-by-Step Guide
 
-Introduction This document guides you through creating and configuring the Amazon S3 bucket needed for the EcoStream Energy cloud storage solution. The guide describes how to create the bucket “23122931-ecostream-energy-bucket” in Amazon Web Services (AWS), including the settings applied to make secure and reliable cloud-based data storage possible. The page also displays the successful upload of the given telemetry collection into the S3 bucket for future database integration and querying. The tutorial includes relevant screenshots and configuration explanations throughout to help EcoStream staff with limited expertise of cloud computing to successfully repeat the setup process. I signed into the AWS Academy Learner Lab environment and began the work of configuring cloud storage for EcoStream Energy. The learner lab environment gave temporary access to the AWS services and resources I will need to build and operate the S3 storage architecture. To start the configuration procedure, the following steps were used:
+### Introduction
+This document guides you through creating and configuring the Amazon S3 bucket needed for the EcoStream Energy cloud storage solution. The guide describes how to create the bucket “23122931-ecostream-energy-bucket” in Amazon Web Services (AWS), including the settings applied to make secure and reliable cloud-based data storage possible. The page also displays the successful upload of the given telemetry collection into the S3 bucket for future database integration and querying. The tutorial includes relevant screenshots and configuration explanations throughout to help EcoStream staff with limited expertise of cloud computing to successfully repeat the setup process. I signed into the AWS Academy Learner Lab environment and began the work of configuring cloud storage for EcoStream Energy. The learner lab environment gave temporary access to the AWS services and resources I will need to build and operate the S3 storage architecture. To start the configuration procedure, the following steps were used:
 
-**Step 1:** After successfully entering the AWS Management Console from the learner lab environment, the AWS search bar was utilized to search for "S3". Then I selected the Amazon S3 service under category “Services” to start the configuration of the cloud storage bucket needed to store the EcoStream telemetry data provided in the assessment resource. This step was an important step as Amazon S3 provides scalable object storage, which would later be utilized to store the “energy-telemetry-2025-2026-dbjson” dataset before integrating it with DynamoDB for querying and analysis.
+## Step 1: 
+After successfully entering the AWS Management Console from the learner lab environment, the AWS search bar was utilized to search for "S3". Then I selected the Amazon S3 service under category “Services” to start the configuration of the cloud storage bucket needed to store the EcoStream telemetry data provided in the assessment resource. This step was an important step as Amazon S3 provides scalable object storage, which would later be utilized to store the “energy-telemetry-2025-2026-dbjson” dataset before integrating it with DynamoDB for querying and analysis.
 
-**Visual evidence — (3 images)**
+## Visual evidence — (3 images)
 
 ![Objective 1 — Amazon S3 Bucket Setup — evidence 01](visualizations/Q1A_S3_01.png)
 
@@ -85,14 +87,14 @@ Introduction This document guides you through creating and configuring the Amazo
 
 ![Objective 1 — Amazon S3 Bucket Setup — evidence 03](visualizations/Q1A_S3_03.png)
 
-**Step 2:** To set up the cloud storage environment required for the EcoStream dataset, the Amazon S3 bucket creation page was opened from the S3 service dashboard. In the “General configuration” section, the AWS Region “US East (N. Virginia) us-east-1” was kept so that it would be the same as that utilized across the assessment brief. The “General purpose” bucket type was chosen because it is suitable for common cloud storage operations and offers high availability across many Availability Zones. The bucket name “23122931-ecostream-energy-bucket " is given in the assessment brief.
+## Step 2:
+To set up the cloud storage environment required for the EcoStream dataset, the Amazon S3 bucket creation page was opened from the S3 service dashboard. In the “General configuration” section, the AWS Region “US East (N. Virginia) us-east-1” was kept so that it would be the same as that utilized across the assessment brief. The “General purpose” bucket type was chosen because it is suitable for common cloud storage operations and offers high availability across many Availability Zones. The bucket name “23122931-ecostream-energy-bucket " is given in the assessment brief.
 
 The default “ACLs disabled” object ownership setting was retained to simplify access management using bucket policies instead of legacy access control lists. Furthermore, the “Block all public access” setting was still enabled to increase the security of the bucket and prevent unauthorised public access to the stored telemetry dataset. The “bucket versioning” was disabled because the assessment did not require the ability to save multiple object versions, only required the fundamental dataset storage feature. For the encryption settings, the default server-side encryption option “SSE-S3” was kept to automatically encrypt all uploaded files stored in the bucket using Amazon S3-managed encryption keys.
 
-
 These parameters were chosen to establish a secure, well designed and cost effective cloud storage environment for the EcoStream telemetry dataset in line with AWS best security practices.
 
-**Visual evidence — (4 images)**
+## Visual evidence — (4 images)
 
 ![Objective 1 — Amazon S3 Bucket Setup — evidence 04](visualizations/Q1A_S3_04.png)
 
@@ -102,20 +104,17 @@ These parameters were chosen to establish a secure, well designed and cost effec
 
 ![Objective 1 — Amazon S3 Bucket Setup — evidence 07](visualizations/Q1A_S3_07.png)
 
-**Step 3:** After setting up the bucket configuration, the option “Create bucket” was selected to deploy the storage bucket. AWS successfully created the bucket “23122931-ecostream-energy- bucket”. And the bucket dashboard opened automatically. The bucket interface had the Objects, Properties, Permissions, Metrics, and Management tabs proving the successful provisioning of the storage environment ready to store data. This phase verified that the S3 bucket infrastructure required for the evaluation has been successfully set up. The “Upload” option inside the S3 bucket dashboard was selected to upload the EcoStream telemetry dataset into the newly created storage bucket. The dataset file “energy-telemetry- 2025-2026-dbjson” was uploaded successfully into the bucket storage environment. The upload status screen indicated that the upload was completed successfully and no mistakes were detected. The uploaded file was listed in the files and folders area with its file type and storage size, which signified that the dataset was successfully stored in the Amazon S3 bucket. This step was necessary because according to the assessment brief, the telemetry dataset has to be saved in Amazon S3 first, and then imported into DynamoDB for database analysis and querying operations.
-
-**Visual evidence — (2 images)**
-
+## Step 3: 
+After setting up the bucket configuration, the option “Create bucket” was selected to deploy the storage bucket. AWS successfully created the bucket “23122931-ecostream-energy- bucket”. And the bucket dashboard opened automatically. The bucket interface had the Objects, Properties, Permissions, Metrics, and Management tabs proving the successful provisioning of the storage environment ready to store data. This phase verified that the S3 bucket infrastructure required for the evaluation has been successfully set up. The “Upload” option inside the S3 bucket dashboard was selected to upload the EcoStream telemetry dataset into the newly created storage bucket. The dataset file “energy-telemetry- 2025-2026-dbjson” was uploaded successfully into the bucket storage environment. The upload status screen indicated that the upload was completed successfully and no mistakes were detected. The uploaded file was listed in the files and folders area with its file type and storage size, which signified that the dataset was successfully stored in the Amazon S3 bucket. This step was necessary because according to the assessment brief, the telemetry dataset has to be saved in Amazon S3 first, and then imported into DynamoDB for database analysis and querying operations.
 
 This step was necessary because the assessment required the telemetry dataset to be stored inside Amazon S3 before it could later be imported into DynamoDB for querying and database analysis tasks.
 
-**Visual evidence — guide page 5 (2 images)**
+## Visual evidence — (2 images)
 
 ![Objective 1 — Amazon S3 Bucket Setup — evidence 08](visualizations/Q1A_S3_08.png)
 
 ![Objective 1 — Amazon S3 Bucket Setup — evidence 09](visualizations/Q1A_S3_09.png)
 
-**Download the full step-by-step guide:** [23122931 S3 Bucket step-by-step guide.pdf](https://github.com/xzibitetok/xzibitetok.github.io/releases/download/Ubong_s_EcoStream_AWS_v1.0.0/23122931%2BS3%2BBucket%2Bstep-by-step%2Bguide.pdf)
 
 ---
 
@@ -124,53 +123,61 @@ This step was necessary because the assessment required the telemetry dataset to
 
 **Full guide:** [23122931 DynamoDB step-by-step guide.pdf](https://github.com/xzibitetok/xzibitetok.github.io/releases/download/Ubong_s_EcoStream_AWS_v1.0.0/23122931%2BDynamoDB%2Bstep-by-step%2Bguide.pdf)
 
-DynamoDB step-by-step guide Introduction This document provides step-by-step instructions for creating and configuring the Amazon DynamoDB table required for the EcoStream telemetry data environment. The instruction demonstrates how to import the uploaded telemetry dataset in Amazon S3 into a DynamoDB table called “23122931-ecostream-telemetry-db”. This document contains the parameters applied during the import process, such as choosing the partition key, table configuration settings, and import validation methods. Relevant screenshots and technical descriptions are provided throughout the guide to ensure that EcoStream workers can successfully reproduce the DynamoDB deployment and data import procedure in the AWS environment.
+## Introduction 
+This document provides step-by-step instructions for creating and configuring the Amazon DynamoDB table required for the EcoStream telemetry data environment. The instruction demonstrates how to import the uploaded telemetry dataset in Amazon S3 into a DynamoDB table called “23122931-ecostream-telemetry-db”. This document contains the parameters applied during the import process, such as choosing the partition key, table configuration settings, and import validation methods. Relevant screenshots and technical descriptions are provided throughout the guide to ensure that EcoStream workers can successfully reproduce the DynamoDB deployment and data import procedure in the AWS environment.
 
-**Step 1:** Having completed the S3 bucket configuration and uploaded the dataset, the AWS search bar was used to locate for the Amazon DynamoDB service. DynamoDB was then picked to start the process of establishing the NoSQL database environment needed to import and query the EcoStream telemetry dataset stored in Amazon S3. The DynamoDB dashboard was opened successfully, displaying the database management interface and available DynamoDB features. In the navigation panel, the “Imports from S3” option was selected to create a DynamoDB table directly from the dataset file stored in the previously created S3 bucket. The DynamoDB dashboard was successfully opened, and the database administration interface and available functionalities of DynamoDB were displayed. In the navigation panel, the “Imports from S3” option was selected to create a DynamoDB table directly from the dataset file stored in the previously created S3 bucket. This step was necessary because the assessment required importing the EcoStream telemetry dataset from Amazon S3 into a DynamoDB table for querying and analysis. The “Imports from S3” feature provided a direct integration between Amazon S3 and DynamoDB, simplifying dataset import.
+## Step 1: 
+Having completed the S3 bucket configuration and uploaded the dataset, the AWS search bar was used to locate for the Amazon DynamoDB service. DynamoDB was then picked to start the process of establishing the NoSQL database environment needed to import and query the EcoStream telemetry dataset stored in Amazon S3. The DynamoDB dashboard was opened successfully, displaying the database management interface and available DynamoDB features. In the navigation panel, the “Imports from S3” option was selected to create a DynamoDB table directly from the dataset file stored in the previously created S3 bucket. The DynamoDB dashboard was successfully opened, and the database administration interface and available functionalities of DynamoDB were displayed. In the navigation panel, the “Imports from S3” option was selected to create a DynamoDB table directly from the dataset file stored in the previously created S3 bucket. This step was necessary because the assessment required importing the EcoStream telemetry dataset from Amazon S3 into a DynamoDB table for querying and analysis. The “Imports from S3” feature provided a direct integration between Amazon S3 and DynamoDB, simplifying dataset import.
 
-**Visual evidence — guide page 1 (1 image)**
+## Visual evidence — (2 images)
 
 ![Objective 2 — DynamoDB Table and S3 Import — evidence 01](visualizations/Q1A_DynamoDB_01.png)
 
-**Step 2:** The S3 bucket containing the EcoStream telemetry dataset was selected using the “Browse S3” option within the DynamoDB import configuration page. The bucket “23122931- ecostream-energy-bucket” was successfully identified and selected from the list of available S3 buckets in the AWS account. The current AWS account was retained as the S3 bucket owner because both the S3 bucket and DynamoDB resources were created within the same AWS learner lab environment. The import file compression setting was left at “No compression” because the uploaded dataset file was stored in its original, uncompressed format. Under the import file format settings, the “DynamoDB JSON” option was selected because the uploaded telemetry dataset used the DynamoDB-compatible JSON structure required for direct table import into Amazon DynamoDB. These settings ensured that DynamoDB could correctly locate, interpret, and import the EcoStream telemetry dataset from Amazon S3 into a new NoSQL database table for further querying and analysis tasks. After configuring the “Import options”, the “Next” option was selected to continue to the “Specify table details page”.
-
-**Visual evidence — guide page 2 (2 images)**
-
 ![Objective 2 — DynamoDB Table and S3 Import — evidence 02](visualizations/Q1A_DynamoDB_02.png)
+
+## Step 2:
+The S3 bucket containing the EcoStream telemetry dataset was selected using the “Browse S3” option within the DynamoDB import configuration page. The bucket “23122931- ecostream-energy-bucket” was successfully identified and selected from the list of available S3 buckets in the AWS account. The current AWS account was retained as the S3 bucket owner because both the S3 bucket and DynamoDB resources were created within the same AWS learner lab environment. The import file compression setting was left at “No compression” because the uploaded dataset file was stored in its original, uncompressed format. Under the import file format settings, the “DynamoDB JSON” option was selected because the uploaded telemetry dataset used the DynamoDB-compatible JSON structure required for direct table import into Amazon DynamoDB. These settings ensured that DynamoDB could correctly locate, interpret, and import the EcoStream telemetry dataset from Amazon S3 into a new NoSQL database table for further querying and analysis tasks. After configuring the “Import options”, the “Next” option was selected to continue to the “Specify table details page”.
+
+## Visual evidence — (2 images)
 
 ![Objective 2 — DynamoDB Table and S3 Import — evidence 03](visualizations/Q1A_DynamoDB_03.png)
 
-**Step 3:** The DynamoDB table configuration page was completed by specifying the table details needed to import the EcoStream telemetry dataset from Amazon S3. The table was named “23122931-ecostream-telemetry-db” to clearly identify it as the main telemetry database table for the assessment task. The partition key was configured as “Facility ID” with the data type set to “String”. This field was selected because each facility identifier in the dataset is unique to its registered region, making it suitable as the primary key for organizing and efficiently retrieving records in DynamoDB. No sort key was configured because the assessment requirements only required a primary partition key for uniquely identifying records. After confirming the table configuration settings, the “Next” option was selected to continue to the table settings configuration stage. This step was necessary because DynamoDB requires a primary key to organize and distribute data efficiently across the database infrastructure, enabling scalable querying and storage operations.
-
-**Visual evidence — guide page 3 (2 images)**
-
 ![Objective 2 — DynamoDB Table and S3 Import — evidence 04](visualizations/Q1A_DynamoDB_04.png)
+
+## Step 3: 
+The DynamoDB table configuration page was completed by specifying the table details needed to import the EcoStream telemetry dataset from Amazon S3. The table was named “23122931-ecostream-telemetry-db” to clearly identify it as the main telemetry database table for the assessment task. The partition key was configured as “Facility ID” with the data type set to “String”. This field was selected because each facility identifier in the dataset is unique to its registered region, making it suitable as the primary key for organizing and efficiently retrieving records in DynamoDB. No sort key was configured because the assessment requirements only required a primary partition key for uniquely identifying records. After confirming the table configuration settings, the “Next” option was selected to continue to the table settings configuration stage. This step was necessary because DynamoDB requires a primary key to organize and distribute data efficiently across the database infrastructure, enabling scalable querying and storage operations.
+
+## Visual evidence — (1 image)
 
 ![Objective 2 — DynamoDB Table and S3 Import — evidence 05](visualizations/Q1A_DynamoDB_05.png)
 
-**Step 4:** The DynamoDB table settings configuration page was opened to review the default database configuration options before importing the telemetry dataset. The “Default settings” option was retained to simplify the deployment process and allow AWS to automatically apply the recommended DynamoDB configuration values. This step was necessary because the default DynamoDB settings provided a fully managed, scalable NoSQL database configuration that efficiently stored and queried the EcoStream telemetry dataset without additional administrative overhead.
+## Step 4: 
+The DynamoDB table settings configuration page was opened to review the default database configuration options before importing the telemetry dataset. The “Default settings” option was retained to simplify the deployment process and allow AWS to automatically apply the recommended DynamoDB configuration values. This step was necessary because the default DynamoDB settings provided a fully managed, scalable NoSQL database configuration that efficiently stored and queried the EcoStream telemetry dataset without additional administrative overhead.
 
-**Visual evidence — guide page 4 (1 image)**
+## Visual evidence — (1 image)
 
 ![Objective 2 — DynamoDB Table and S3 Import — evidence 06](visualizations/Q1A_DynamoDB_06.png)
 
-**Step 5:** The final review page was opened to verify all DynamoDB import configurations before starting the database import process. The review confirmed that the S3 source bucket “s3://23122931-ecostream-energy-bucket” was correctly selected and that the dataset format was configured to “DynamoDB JSON”. The destination table details were also reviewed, confirming that the table name “23122931- ecostream-telemetry-db” and partition key “Facility ID” were correctly configured. The table class remained “Standard” with “On-demand” capacity mode enabled to allow automatic scaling of database read and write operations. Additional settings, such as AWS-owned encryption keys and disabled deletion protection, were also verified before proceeding. After confirming that all configurations matched the assessment requirements, the “Import” button was selected to begin importing the telemetry dataset from the S3 bucket into DynamoDB. This step was necessary to validate that the S3 source location, DynamoDB table structure, and database settings were correctly configured before creating the telemetry database.
+## Step 5: 
+The final review page was opened to verify all DynamoDB import configurations before starting the database import process. The review confirmed that the S3 source bucket “s3://23122931-ecostream-energy-bucket” was correctly selected and that the dataset format was configured to “DynamoDB JSON”. The destination table details were also reviewed, confirming that the table name “23122931- ecostream-telemetry-db” and partition key “Facility ID” were correctly configured. The table class remained “Standard” with “On-demand” capacity mode enabled to allow automatic scaling of database read and write operations. Additional settings, such as AWS-owned encryption keys and disabled deletion protection, were also verified before proceeding. After confirming that all configurations matched the assessment requirements, the “Import” button was selected to begin importing the telemetry dataset from the S3 bucket into DynamoDB. This step was necessary to validate that the S3 source location, DynamoDB table structure, and database settings were correctly configured before creating the telemetry database.
 
-**Visual evidence — guide page 5 (1 image)**
+## Visual evidence — (1 image)
 
 ![Objective 2 — DynamoDB Table and S3 Import — evidence 07](visualizations/Q1A_DynamoDB_07.png)
 
-**Step 6:** The DynamoDB Imports from S3 dashboard confirmed that the import process for the EcoStream telemetry dataset had started successfully. The import job displayed the destination table “23122931-ecostream-telemetry-db,” the selected “DynamoDB JSON” file format, and the import status. The import monitoring page confirmed that AWS was processing the telemetry dataset from the S3 bucket and automatically creating DynamoDB table records. This step verified that the integration between Amazon S3 and DynamoDB was functioning correctly and that the telemetry data import operation had been initiated successfully.
+## Step 6: 
+The DynamoDB Imports from S3 dashboard confirmed that the import process for the EcoStream telemetry dataset had started successfully. The import job displayed the destination table “23122931-ecostream-telemetry-db,” the selected “DynamoDB JSON” file format, and the import status. The import monitoring page confirmed that AWS was processing the telemetry dataset from the S3 bucket and automatically creating DynamoDB table records. This step verified that the integration between Amazon S3 and DynamoDB was functioning correctly and that the telemetry data import operation had been initiated successfully.
 
-**Step 7:** The Amazon S3 bucket page was revisited to verify that the uploaded telemetry dataset “energy-telemetry-2025-2026-dbjson.json” remained successfully stored inside the “23122931- ecostream-energy-bucket”. The Objects section displayed the uploaded JSON dataset together with its file size, storage class, and last modified date. This verification step confirmed that the source dataset remained available and accessible for DynamoDB import operations. It also confirmed that the telemetry file was correctly stored within the S3 bucket and ready for future querying, backup, or database integration tasks required by the assessment.
-
-**Visual evidence — guide page 6 (2 images)**
+## Visual evidence — (1 image)
 
 ![Objective 2 — DynamoDB Table and S3 Import — evidence 08](visualizations/Q1A_DynamoDB_08.png)
 
-![Objective 2 — DynamoDB Table and S3 Import — evidence 09](visualizations/Q1A_DynamoDB_09.png)
+## Step 7: 
+The Amazon S3 bucket page was revisited to verify that the uploaded telemetry dataset “energy-telemetry-2025-2026-dbjson.json” remained successfully stored inside the “23122931- ecostream-energy-bucket”. The Objects section displayed the uploaded JSON dataset together with its file size, storage class, and last modified date. This verification step confirmed that the source dataset remained available and accessible for DynamoDB import operations. It also confirmed that the telemetry file was correctly stored within the S3 bucket and ready for future querying, backup, or database integration tasks required by the assessment.
 
-**Download the full step-by-step guide:** [23122931 DynamoDB step-by-step guide.pdf](https://github.com/xzibitetok/xzibitetok.github.io/releases/download/Ubong_s_EcoStream_AWS_v1.0.0/23122931%2BDynamoDB%2Bstep-by-step%2Bguide.pdf)
+## Visual evidence — guide page 6 (2 images)
+
+![Objective 2 — DynamoDB Table and S3 Import — evidence 09](visualizations/Q1A_DynamoDB_09.png)
 
 ---
 
