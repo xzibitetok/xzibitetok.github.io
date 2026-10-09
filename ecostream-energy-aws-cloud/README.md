@@ -516,49 +516,56 @@ AWS displayed a green success notification confirming that termination protectio
 
 **Full guide:** [23122931 Networking and Web Application step-by-step guide.pdf](https://github.com/xzibitetok/xzibitetok.github.io/releases/download/Ubong_s_EcoStream_AWS_v1.0.0/23122931%2BNetworking%2Band%2BWeb%2BApplication%2Bstep-by-step%2Bguide.pdf)
 
-Networking and Web Application step-by-step guide
-
-Introduction This document describes how to set up the networking and web application for the EcoStream Energy cloud environment using Amazon Web Services. This guide shows how to create a custom Virtual Private Cloud named “23122931-ecostream-vpc” with its public and private subnets, route tables, and internet connectivity settings.
-
+## Introduction
+This document describes how to set up the networking and web application for the EcoStream Energy cloud environment using Amazon Web Services. This guide shows how to create a custom Virtual Private Cloud named “23122931-ecostream-vpc” with its public and private subnets, route tables, and internet connectivity settings.
 The document further discusses setting up an EC2 instance in the defined VPC environment and configuring it as a web application server accessible publicly via the Apache HTTP Server. Relevant screenshots, configuration settings, terminal commands, and validation outputs are provided to enable EcoStream staff to follow along and successfully reproduce the networking and web application deployment.
 
-**Step 1:** The AWS search bar was used to search for “VPC”, and the VPC service under the Services category was selected to begin configuring the networking infrastructure required for the EcoStream environment. The VPC Dashboard was opened successfully. From the dashboard, the “Create VPC” option was selected to begin creating a custom EcoStream Virtual Private Cloud containing the public and private subnets required to host the web application securely.
+## Step 1: The AWS search bar was used to search for “VPC”, and the VPC service under the Services category was selected to begin configuring the networking infrastructure required for the EcoStream environment. 
+The VPC Dashboard was opened successfully. From the dashboard, the “Create VPC” option was selected to begin creating a custom EcoStream Virtual Private Cloud containing the public and private subnets required to host the web application securely.
 
-**Step 2:** The VPC configuration page was completed by selecting the “VPC and more” option, which automatically creates the networking resources required for the EcoStream environment. The VPC was named “23122931-ecostream-vpc” with an IPv4 CIDR block of “10.0.0.0/16”, while the default tenancy and no IPv6 option were retained.
-
-**Visual evidence — guide page 2 (2 images)**
+## Visual evidence — (2 images)
 
 ![Objective 5 — Networking and Web Application — evidence 01](visualizations/Q2B_Networking_Web_01.png)
 
 ![Objective 5 — Networking and Web Application — evidence 02](visualizations/Q2B_Networking_Web_02.png)
 
-The network was configured across “2 Availability Zones” to improve availability and fault tolerance. In addition, “2 public subnets” and “2 private subnets” were created to separate publicly accessible resources from internal private resources. The NAT Gateway option was set to “None” to reduce unnecessary cost since the assessment brief only required a publicly accessible web application. DNS hostnames and DNS resolution were enabled to support proper communication and hostname resolution within the VPC environment.
+## Step 2: The VPC configuration page was completed by selecting the “VPC and more” option, which automatically creates the networking resources required for the EcoStream environment. The VPC was named “23122931-ecostream-vpc” with an IPv4 CIDR block of “10.0.0.0/16”, while the default tenancy and no IPv6 option were retained.
+The network was configured across “2 Availability Zones” to improve availability and fault tolerance. In addition, “2 public subnets” and “2 private subnets” were created to separate publicly accessible resources from internal private resources. 
+The NAT Gateway option was set to “None” to reduce unnecessary cost since the assessment brief only required a publicly accessible web application. DNS hostnames and DNS resolution were enabled to support proper communication and hostname resolution within the VPC environment.
 
-**Step 3:** The VPC deployment workflow page confirmed that the EcoStream Virtual Private Cloud and its associated networking resources were successfully created. AWS automatically provisioned the required components, including the VPC, public and private subnets, route tables, internet gateway, and DNS configurations based on the previously selected settings. The workflow also verified that the route tables were correctly associated with the created subnets and that the internet gateway was successfully attached to provide public internet
-
-**Visual evidence — guide page 3 (2 images)**
+## Visual evidence — (2 images)
 
 ![Objective 5 — Networking and Web Application — evidence 03](visualizations/Q2B_Networking_Web_03.png)
 
 ![Objective 5 — Networking and Web Application — evidence 04](visualizations/Q2B_Networking_Web_04.png)
 
-access for the web application instance. This step confirmed that the networking infrastructure required for hosting the EcoStream web application had been successfully configured and was ready for EC2 deployment.
+## Step 3: The VPC deployment workflow page confirmed that the EcoStream Virtual Private Cloud and its associated networking resources were successfully created. AWS automatically provisioned the required components, including the VPC, public and private subnets, route tables, internet gateway, and DNS configurations based on the previously selected settings.
+The workflow also verified that the route tables were correctly associated with the created subnets and that the internet gateway was successfully attached to provide public internet access for the web application instance. This step confirmed that the networking infrastructure required for hosting the EcoStream web application had been successfully configured and was ready for EC2 deployment.
 
-**Step 4:** After completing the VPC configuration, the AWS search bar was used to locate the EC2 service. The EC2 service was then selected to deploy the EcoStream web application server within the newly created VPC. After navigating to the EC2 dashboard, the “Launch Instance” option was selected to create a new virtual server. The EC2 dashboard also confirmed that the AWS region in use was the “United States (N. Virginia)” and displayed the available EC2 resources and networking components associated with the account. This step was necessary because the assessment required that the EcoStream web application be hosted on a publicly accessible EC2 instance within the newly created VPC infrastructure.
-
-**Visual evidence — guide page 4 (2 images)**
+## Visual evidence — (1 image)
 
 ![Objective 5 — Networking and Web Application — evidence 05](visualizations/Q2B_Networking_Web_05.png)
 
+## Step 4: After completing the VPC configuration, the AWS search bar was used to locate the EC2 service. The EC2 service was then selected to deploy the EcoStream web application server within the newly created VPC.
+After navigating to the EC2 dashboard, the “Launch Instance” option was selected to create a new virtual server. The EC2 dashboard also confirmed that the AWS region in use was the “United States (N. Virginia)” and displayed the available EC2 resources and networking components associated with the account.
+This step was necessary because the assessment required that the EcoStream web application be hosted on a publicly accessible EC2 instance within the newly created VPC infrastructure.
+
+## Visual evidence — (2 images)
+
 ![Objective 5 — Networking and Web Application — evidence 06](visualizations/Q2B_Networking_Web_06.png)
-
-**Step 5:** The EC2 instance creation process was started by selecting the “Launch Instance” option from the EC2 dashboard. The instance was named “23122931-ecostream-web-instance” to clearly identify it as the EcoStream web application server, as required in the brief. The “Amazon Linux 2023 AMI” was selected as the operating system because it provides a stable Linux environment suitable for hosting web applications. The selected instance type, “t3.nano”, was sufficient for the lightweight web application required for the assessment. The previously created key pair “23122931-keypair” was selected to allow secure remote access to the EC2 instance. Under the network settings, the custom VPC “23122931- ecostream-vpc-vpc” was selected together with the public subnet “23122931-ecostream-vpc- subnet-public1-us-east-1a”. Auto-assign public IP was enabled so the web application could be accessed publicly through the internet. A new security group was created with inbound rules allowing: • HTTP traffic (Port 80) from anywhere (`0.0.0.0/0`) • SSH traffic (Port 22) from anywhere (`0.0.0.0/0`) These rules were necessary to allow public users to access the web application while also enabling remote administrative access to the server through the terminal. Finally, the “Launch Instance” button was selected, and AWS confirmed that the EcoStream web application instance had been successfully launched.
-
-**Visual evidence — guide page 5 (1 image)**
 
 ![Objective 5 — Networking and Web Application — evidence 07](visualizations/Q2B_Networking_Web_07.png)
 
-**Visual evidence — guide page 6 (3 images)**
+## Step 5: The EC2 instance creation process was started by selecting the “Launch Instance” option from the EC2 dashboard. The instance was named “23122931-ecostream-web-instance” to clearly identify it as the EcoStream web application server, as required in the brief. 
+The “Amazon Linux 2023 AMI” was selected as the operating system because it provides a stable Linux environment suitable for hosting web applications. The selected instance type, “t3.nano”, was sufficient for the lightweight web application required for the assessment. 
+The previously created key pair “23122931-keypair” was selected to allow secure remote access to the EC2 instance. Under the network settings, the custom VPC “23122931- ecostream-vpc-vpc” was selected together with the public subnet “23122931-ecostream-vpc- subnet-public1-us-east-1a”. Auto-assign public IP was enabled so the web application could be accessed publicly through the internet. 
+A new security group was created with inbound rules allowing:
+- HTTP traffic (Port 80) from anywhere (`0.0.0.0/0`)
+- SSH traffic (Port 22) from anywhere (`0.0.0.0/0`)
+These rules were necessary to allow public users to access the web application while also enabling remote administrative access to the server through the terminal.
+Finally, the “Launch Instance” button was selected, and AWS confirmed that the EcoStream web application instance had been successfully launched.
+
+## Visual evidence — (4 images)
 
 ![Objective 5 — Networking and Web Application — evidence 08](visualizations/Q2B_Networking_Web_08.png)
 
@@ -566,67 +573,82 @@ access for the web application instance. This step confirmed that the networking
 
 ![Objective 5 — Networking and Web Application — evidence 10](visualizations/Q2B_Networking_Web_10.png)
 
-**Step 6:** After the EC2 instance was launched, the Instances page was opened to verify that the “23122931-ecostream-web-instance” was successfully running. The instance status checks showed “3/3 checks passed”, confirming that the server had been deployed correctly within the EcoStream VPC environment. The instance details section also displayed the assigned public IPv4 address and private IP address, confirming that the instance was connected to both the internet and the internal VPC network. The instance was then selected, and the “Connect” option was used to open the EC2 Instance Connect interface. The “EC2 Instance Connect” tab was selected with the default username “ec2-user” retained. The connection was configured using the instance’s public IP address to allow secure browser-based terminal access to the Linux server. This step was necessary to access the EC2 terminal and install the Apache web server required to host the EcoStream web application.
-
-**Visual evidence — guide page 7 (2 images)**
-
 ![Objective 5 — Networking and Web Application — evidence 11](visualizations/Q2B_Networking_Web_11.png)
+
+## Step 6: After the EC2 instance was launched, the Instances page was opened to verify that the “23122931-ecostream-web-instance” was successfully running. The instance status checks showed “3/3 checks passed”, confirming that the server had been deployed correctly within the EcoStream VPC environment. 
+The instance details section also displayed the assigned public IPv4 address and private IP address, confirming that the instance was connected to both the internet and the internal VPC network.
+The instance was then selected, and the “Connect” option was used to open the EC2 Instance Connect interface. The “EC2 Instance Connect” tab was selected with the default username “ec2-user” retained. The connection was configured using the instance’s public IP address to allow secure browser-based terminal access to the Linux server. 
+This step was necessary to access the EC2 terminal and install the Apache web server required to host the EcoStream web application.
+
+## Visual evidence — (2 images)
 
 ![Objective 5 — Networking and Web Application — evidence 12](visualizations/Q2B_Networking_Web_12.png)
 
-**Step 7:** The EC2 Instance Connect terminal was successfully opened for the “23122931- ecostream-web-instance”. The browser-based Linux terminal provided secure remote access to the Amazon Linux 2023 server using the default “ec2-user” account. This step confirmed that the EC2 instance was fully operational and ready for web server configuration. The terminal environment was then prepared for installing and deploying the EcoStream web application using Apache HTTP Server commands.
-
-**Step 8:** The EC2 terminal session was elevated to root administrator access using the “sudo su –” command to allow system-level software installation and configuration. After this, the “yum update -y” command was executed to update the Amazon Linux package repositories and ensure the server environment was running the latest available system packages. The successful completion message confirmed that the system update process executed correctly and that the server environment was ready for Apache web server installation and web application deployment.
-
-**Visual evidence — guide page 8 (2 images)**
-
 ![Objective 5 — Networking and Web Application — evidence 13](visualizations/Q2B_Networking_Web_13.png)
+
+## Step 7: The EC2 Instance Connect terminal was successfully opened for the “23122931- ecostream-web-instance”. The browser-based Linux terminal provided secure remote access to the Amazon Linux 2023 server using the default “ec2-user” account. 
+This step confirmed that the EC2 instance was fully operational and ready for web server configuration. The terminal environment was then prepared for installing and deploying the EcoStream web application using Apache HTTP Server commands.
+
+## Visual evidence — (1 image)
 
 ![Objective 5 — Networking and Web Application — evidence 14](visualizations/Q2B_Networking_Web_14.png)
 
-**Step 9:** The Apache HTTP Server installation was initiated with the command “yum install -y httpd”. This command installed the Apache web server package together with all required dependencies on the Amazon Linux EC2 instance. The terminal output displayed the download, installation, and verification stages of the required packages, confirming that the Apache HTTP Server “httpd” and its supporting components were successfully installed on the server. The completion message at the end of the installation process confirmed that the web server environment had been successfully configured and was ready for web application deployment.
+## Step 8: The EC2 terminal session was elevated to root administrator access using the “sudo su –” command to allow system-level software installation and configuration. After this, the “yum update -y” command was executed to update the Amazon Linux package repositories and ensure the server environment was running the latest available system packages. 
+The successful completion message confirmed that the system update process executed correctly and that the server environment was ready for Apache web server installation and web application deployment.
 
-**Step 10:** The command (echo "Welcome 23122931! Welcome to EcoStream, the largest renewable energy company in the United Kingdom." > /var/www/html/index.html) was executed
-
-**Visual evidence — guide page 9 (3 images)**
+## Visual evidence — (1 image)
 
 ![Objective 5 — Networking and Web Application — evidence 15](visualizations/Q2B_Networking_Web_15.png)
+
+## Step 9: The Apache HTTP Server installation was initiated with the command “yum install -y httpd”. This command installed the Apache web server package together with all required dependencies on the Amazon Linux EC2 instance. 
+The terminal output displayed the download, installation, and verification stages of the required packages, confirming that the Apache HTTP Server “httpd” and its supporting components were successfully installed on the server. The completion message at the end of the installation process confirmed that the web server environment had been successfully configured and was ready for web application deployment.
+
+## Visual evidence — (2 images)
 
 ![Objective 5 — Networking and Web Application — evidence 16](visualizations/Q2B_Networking_Web_16.png)
 
 ![Objective 5 — Networking and Web Application — evidence 17](visualizations/Q2B_Networking_Web_17.png)
 
-to create the default web page content for the EcoStream web application. The command automatically wrote the message, as required by the assessment brief, into the “index.html” file located inside the Apache web server directory. This step was important because the “index.html” file serves as the main webpage users see when accessing the EC2 instance via its public IP address. The successful execution of the command confirmed that the required web application content had been deployed to the Apache web server directory.
+## Step 10: The command (echo "Welcome 23122931! Welcome to EcoStream, the largest renewable energy company in the United Kingdom." > /var/www/html/index.html) was executed to create the default web page content for the EcoStream web application. The command automatically wrote the message, as required by the assessment brief, into the “index.html” file located inside the Apache web server directory. 
+This step was important because the “index.html” file serves as the main webpage users see when accessing the EC2 instance via its public IP address. The successful execution of the command confirmed that the required web application content had been deployed to the Apache web server directory.
 
-**Step 11:** The Apache web server service was configured to automatically start whenever the EC2 instance boots by executing the command “systemctl enable httpd”. The terminal output confirmed that the “httpd.service” symbolic link was successfully created within the system startup configuration. This step was necessary to ensure the EcoStream web application remained accessible after server restarts, without requiring the Apache service to be manually restarted.
-
-**Visual evidence — guide page 10 (2 images)**
+## Visual evidence — (1 image)
 
 ![Objective 5 — Networking and Web Application — evidence 18](visualizations/Q2B_Networking_Web_18.png)
 
+## Step 11: The Apache web server service was configured to automatically start whenever the EC2 instance boots by executing the command “systemctl enable httpd”. The terminal output confirmed that the “httpd.service” symbolic link was successfully created within the system startup configuration. 
+This step was necessary to ensure the EcoStream web application remained accessible after server restarts, without requiring the Apache service to be manually restarted.
+
+## Visual evidence — (1 image)
+
 ![Objective 5 — Networking and Web Application — evidence 19](visualizations/Q2B_Networking_Web_19.png)
 
-**Step 12:** The Apache web server was started using the command “systemctl start httpd”. This command started the Apache HTTP service on the EC2 instance, making the EcoStream web application accessible via the server’s public IP address. The successful execution of the command confirmed that the “httpd” service started successfully and that the web server was ready to host the EcoStream web application.
+## Step 12: The Apache web server was started using the command “systemctl start httpd”. This command started the Apache HTTP service on the EC2 instance, making the EcoStream web application accessible via the server’s public IP address. 
+The successful execution of the command confirmed that the “httpd” service started successfully and that the web server was ready to host the EcoStream web application.
 
-**Step 13:** The status of the Apache web server was verified using the command “systemctl status httpd”. The terminal output confirmed that the “httpd.service” was successfully loaded and running on the EC2 instance. The status message displayed “active (running)”, confirming that the Apache HTTP Server was operating correctly and listening on Port 80 for incoming web traffic. The output also confirmed that the EcoStream web application server was fully operational and ready to serve web content to the public via the instance’s public IP address.
-
-**Step 14:** The EC2 Instances page was accessed to verify that the newly created EcoStream web server instance had been successfully launched and was running. The instance named “23122931-ecostream-web-instance” was selected from the Instances dashboard with its
-
-**Visual evidence — guide page 11 (2 images)**
+## Visual evidence — (1 image)
 
 ![Objective 5 — Networking and Web Application — evidence 20](visualizations/Q2B_Networking_Web_20.png)
 
+## Step 13: The status of the Apache web server was verified using the command “systemctl status httpd”. The terminal output confirmed that the “httpd.service” was successfully loaded and running on the EC2 instance.
+The status message displayed “active (running)”, confirming that the Apache HTTP Server was operating correctly and listening on Port 80 for incoming web traffic. The output also confirmed that the EcoStream web application server was fully operational and ready to serve web content to the public via the instance’s public IP address.
+
+## Visual evidence — (1 image)
+
 ![Objective 5 — Networking and Web Application — evidence 21](visualizations/Q2B_Networking_Web_21.png)
 
-status showing “Running” with all status checks passed, confirming that the virtual server was functioning correctly within the created VPC environment. The public IPv4 address was then copied and opened in a web browser to test external connectivity to the deployed web application. The browser successfully displayed the custom EcoStream welcome message hosted on the Apache web server, confirming that: • the EC2 instance was publicly accessible, • the Apache HTTP server was running correctly, • HTTP traffic was permitted through the configured security group, • and the web application deployment was successful.
+## Step 14: The EC2 Instances page was accessed to verify that the newly created EcoStream web server instance had been successfully launched and was running. The instance named “23122931-ecostream-web-instance” was selected from the Instances dashboard with its status showing “Running” with all status checks passed, confirming that the virtual server was functioning correctly within the created VPC environment. The public IPv4 address was then copied and opened in a web browser to test external connectivity to the deployed web application. 
+The browser successfully displayed the custom EcoStream welcome message hosted on the Apache web server, confirming that:
+- the EC2 instance was publicly accessible,
+- the Apache HTTP server was running correctly,
+- HTTP traffic was permitted through the configured security group,
+- and the web application deployment was successful.
 
-**Visual evidence — guide page 12 (2 images)**
+## Visual evidence — (2 images)
 
 ![Objective 5 — Networking and Web Application — evidence 22](visualizations/Q2B_Networking_Web_22.png)
 
 ![Objective 5 — Networking and Web Application — evidence 23](visualizations/Q2B_Networking_Web_23.png)
-
-**Download the full step-by-step guide:** [23122931 Networking and Web Application step-by-step guide.pdf](https://github.com/xzibitetok/xzibitetok.github.io/releases/download/Ubong_s_EcoStream_AWS_v1.0.0/23122931%2BNetworking%2Band%2BWeb%2BApplication%2Bstep-by-step%2Bguide.pdf)
 
 ---
 
