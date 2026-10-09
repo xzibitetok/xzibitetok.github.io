@@ -1,0 +1,3400 @@
+{
+  "Item": {
+    "Facility ID": {
+      "S": "FAC-001"
+    },
+    "Facility Type": {
+      "S": "Solar"
+    },
+    "Operational Tier": {
+      "S": "Standard Efficiency"
+    },
+    "Country": {
+      "S": "JP"
+    },
+    "Energy Output 2024 (MWh)": {
+      "N": "49256"
+    },
+    "Energy Output 2025 (MWh)": {
+      "N": "46392"
+    },
+    "Maintenance Incidents 2024": {
+      "N": "0"
+    },
+    "Maintenance Incidents 2025": {
+      "N": "2"
+    },
+    "Downtime Hours 2024": {
+      "N": "0"
+    },
+    "Downtime Hours 2025": {
+      "N": "48"
+    }
+  }
+}
+{
+  "Item": {
+    "Facility ID": {
+      "S": "FAC-002"
+    },
+    "Facility Type": {
+      "S": "Biomass"
+    },
+    "Operational Tier": {
+      "S": "Standard Efficiency"
+    },
+    "Country": {
+      "S": "US"
+    },
+    "Energy Output 2024 (MWh)": {
+      "N": "23905"
+    },
+    "Energy Output 2025 (MWh)": {
+      "N": "45000"
+    },
+    "Maintenance Incidents 2024": {
+      "N": "3"
+    },
+    "Maintenance Incidents 2025": {
+      "N": "0"
+    },
+    "Downtime Hours 2024": {
+      "N": "57"
+    },
+    "Downtime Hours 2025": {
+      "N": "0"
+    }
+  }
+}
+{
+  "Item": {
+    "Facility ID": {
+      "S": "FAC-003"
+    },
+    "Facility Type": {
+      "S": "Wind"
+    },
+    "Operational Tier": {
+      "S": "High-Performance"
+    },
+    "Country": {
+      "S": "CA"
+    },
+    "Energy Output 2024 (MWh)": {
+      "N": "105181"
+    },
+    "Energy Output 2025 (MWh)": {
+      "N": "116792"
+    },
+    "Maintenance Incidents 2024": {
+      "N": "1"
+    },
+    "Maintenance Incidents 2025": {
+      "N": "5"
+    },
+    "Downtime Hours 2024": {
+      "N": "31"
+    },
+    "Downtime Hours 2025": {
+      "N": "95"
+    }
+  }
+}
+{
+  "Item": {
+    "Facility ID": {
+      "S": "FAC-004"
+    },
+    "Facility Type": {
+      "S": "Geothermal"
+    },
+    "Operational Tier": {
+      "S": "High-Performance"
+    },
+    "Country": {
+      "S": "US"
+    },
+    "Energy Output 2024 (MWh)": {
+      "N": "110000"
+    },
+    "Energy Output 2025 (MWh)": {
+      "N": "120000"
+    },
+    "Maintenance Incidents 2024": {
+      "N": "1"
+    },
+    "Maintenance Incidents 2025": {
+      "N": "5"
+    },
+    "Downtime Hours 2024": {
+      "N": "14"
+    },
+    "Downtime Hours 2025": {
+      "N": "90"
+    }
+  }
+}
+{
+  "Item": {
+    "Facility ID": {
+      "S": "FAC-005"
+    },
+    "Facility Type": {
+      "S": "Hydro"
+    },
+    "Operational Tier": {
+      "S": "Standard Efficiency"
+    },
+    "Country": {
+      "S": "US"
+    },
+    "Energy Output 2024 (MWh)": {
+      "N": "67052"
+    },
+    "Energy Output 2025 (MWh)": {
+      "N": "77394"
+    },
+    "Maintenance Incidents 2024": {
+      "N": "3"
+    },
+    "Maintenance Incidents 2025": {
+      "N": "0"
+    },
+    "Downtime Hours 2024": {
+      "N": "129"
+    },
+    "Downtime Hours 2025": {
+      "N": "0"
+    }
+  }
+}
+{
+  "Item": {
+    "Facility ID": {
+      "S": "FAC-006"
+    },
+    "Facility Type": {
+      "S": "Solar"
+    },
+    "Operational Tier": {
+      "S": "High-Performance"
+    },
+    "Country": {
+      "S": "CA"
+    },
+    "Energy Output 2024 (MWh)": {
+      "N": "30328"
+    },
+    "Energy Output 2025 (MWh)": {
+      "N": "32317"
+    },
+    "Maintenance Incidents 2024": {
+      "N": "0"
+    },
+    "Maintenance Incidents 2025": {
+      "N": "3"
+    },
+    "Downtime Hours 2024": {
+      "N": "0"
+    },
+    "Downtime Hours 2025": {
+      "N": "132"
+    }
+  }
+}
+{
+  "Item": {
+    "Facility ID": {
+      "S": "FAC-007"
+    },
+    "Facility Type": {
+      "S": "Hydro"
+    },
+    "Operational Tier": {
+      "S": "Standard Efficiency"
+    },
+    "Country": {
+      "S": "JP"
+    },
+    "Energy Output 2024 (MWh)": {
+      "N": "106673"
+    },
+    "Energy Output 2025 (MWh)": {
+      "N": "103298"
+    },
+    "Maintenance Incidents 2024": {
+      "N": "0"
+    },
+    "Maintenance Incidents 2025": {
+      "N": "0"
+    },
+    "Downtime Hours 2024": {
+      "N": "0"
+    },
+    "Downtime Hours 2025": {
+      "N": "0"
+    }
+  }
+}
+{
+  "Item": {
+    "Facility ID": {
+      "S": "FAC-008"
+    },
+    "Facility Type": {
+      "S": "Wind"
+    },
+    "Operational Tier": {
+      "S": "Standard Efficiency"
+    },
+    "Country": {
+      "S": "FR"
+    },
+    "Energy Output 2024 (MWh)": {
+      "N": "103320"
+    },
+    "Energy Output 2025 (MWh)": {
+      "N": "118842"
+    },
+    "Maintenance Incidents 2024": {
+      "N": "2"
+    },
+    "Maintenance Incidents 2025": {
+      "N": "3"
+    },
+    "Downtime Hours 2024": {
+      "N": "30"
+    },
+    "Downtime Hours 2025": {
+      "N": "84"
+    }
+  }
+}
+{
+  "Item": {
+    "Facility ID": {
+      "S": "FAC-009"
+    },
+    "Facility Type": {
+      "S": "Hydro"
+    },
+    "Operational Tier": {
+      "S": "Standard Efficiency"
+    },
+    "Country": {
+      "S": "JP"
+    },
+    "Energy Output 2024 (MWh)": {
+      "N": "142769"
+    },
+    "Energy Output 2025 (MWh)": {
+      "N": "157768"
+    },
+    "Maintenance Incidents 2024": {
+      "N": "2"
+    },
+    "Maintenance Incidents 2025": {
+      "N": "5"
+    },
+    "Downtime Hours 2024": {
+      "N": "18"
+    },
+    "Downtime Hours 2025": {
+      "N": "215"
+    }
+  }
+}
+{
+  "Item": {
+    "Facility ID": {
+      "S": "FAC-010"
+    },
+    "Facility Type": {
+      "S": "Wind"
+    },
+    "Operational Tier": {
+      "S": "Standard Efficiency"
+    },
+    "Country": {
+      "S": "UK"
+    },
+    "Energy Output 2024 (MWh)": {
+      "N": "55382"
+    },
+    "Energy Output 2025 (MWh)": {
+      "N": "66284"
+    },
+    "Maintenance Incidents 2024": {
+      "N": "3"
+    },
+    "Maintenance Incidents 2025": {
+      "N": "3"
+    },
+    "Downtime Hours 2024": {
+      "N": "135"
+    },
+    "Downtime Hours 2025": {
+      "N": "120"
+    }
+  }
+}
+{
+  "Item": {
+    "Facility ID": {
+      "S": "FAC-011"
+    },
+    "Facility Type": {
+      "S": "Wind"
+    },
+    "Operational Tier": {
+      "S": "High-Performance"
+    },
+    "Country": {
+      "S": "US"
+    },
+    "Energy Output 2024 (MWh)": {
+      "N": "125518"
+    },
+    "Energy Output 2025 (MWh)": {
+      "N": "124844"
+    },
+    "Maintenance Incidents 2024": {
+      "N": "1"
+    },
+    "Maintenance Incidents 2025": {
+      "N": "0"
+    },
+    "Downtime Hours 2024": {
+      "N": "22"
+    },
+    "Downtime Hours 2025": {
+      "N": "0"
+    }
+  }
+}
+{
+  "Item": {
+    "Facility ID": {
+      "S": "FAC-012"
+    },
+    "Facility Type": {
+      "S": "Wind"
+    },
+    "Operational Tier": {
+      "S": "High-Performance"
+    },
+    "Country": {
+      "S": "UK"
+    },
+    "Energy Output 2024 (MWh)": {
+      "N": "71856"
+    },
+    "Energy Output 2025 (MWh)": {
+      "N": "83741"
+    },
+    "Maintenance Incidents 2024": {
+      "N": "5"
+    },
+    "Maintenance Incidents 2025": {
+      "N": "3"
+    },
+    "Downtime Hours 2024": {
+      "N": "230"
+    },
+    "Downtime Hours 2025": {
+      "N": "102"
+    }
+  }
+}
+{
+  "Item": {
+    "Facility ID": {
+      "S": "FAC-013"
+    },
+    "Facility Type": {
+      "S": "Wind"
+    },
+    "Operational Tier": {
+      "S": "High-Performance"
+    },
+    "Country": {
+      "S": "UK"
+    },
+    "Energy Output 2024 (MWh)": {
+      "N": "93579"
+    },
+    "Energy Output 2025 (MWh)": {
+      "N": "99352"
+    },
+    "Maintenance Incidents 2024": {
+      "N": "1"
+    },
+    "Maintenance Incidents 2025": {
+      "N": "5"
+    },
+    "Downtime Hours 2024": {
+      "N": "42"
+    },
+    "Downtime Hours 2025": {
+      "N": "160"
+    }
+  }
+}
+{
+  "Item": {
+    "Facility ID": {
+      "S": "FAC-014"
+    },
+    "Facility Type": {
+      "S": "Biomass"
+    },
+    "Operational Tier": {
+      "S": "High-Performance"
+    },
+    "Country": {
+      "S": "DE"
+    },
+    "Energy Output 2024 (MWh)": {
+      "N": "86784"
+    },
+    "Energy Output 2025 (MWh)": {
+      "N": "90954"
+    },
+    "Maintenance Incidents 2024": {
+      "N": "1"
+    },
+    "Maintenance Incidents 2025": {
+      "N": "1"
+    },
+    "Downtime Hours 2024": {
+      "N": "8"
+    },
+    "Downtime Hours 2025": {
+      "N": "12"
+    }
+  }
+}
+{
+  "Item": {
+    "Facility ID": {
+      "S": "FAC-015"
+    },
+    "Facility Type": {
+      "S": "Wind"
+    },
+    "Operational Tier": {
+      "S": "Standard Efficiency"
+    },
+    "Country": {
+      "S": "JP"
+    },
+    "Energy Output 2024 (MWh)": {
+      "N": "28326"
+    },
+    "Energy Output 2025 (MWh)": {
+      "N": "28763"
+    },
+    "Maintenance Incidents 2024": {
+      "N": "3"
+    },
+    "Maintenance Incidents 2025": {
+      "N": "4"
+    },
+    "Downtime Hours 2024": {
+      "N": "129"
+    },
+    "Downtime Hours 2025": {
+      "N": "136"
+    }
+  }
+}
+{
+  "Item": {
+    "Facility ID": {
+      "S": "FAC-016"
+    },
+    "Facility Type": {
+      "S": "Biomass"
+    },
+    "Operational Tier": {
+      "S": "High-Performance"
+    },
+    "Country": {
+      "S": "CA"
+    },
+    "Energy Output 2024 (MWh)": {
+      "N": "114466"
+    },
+    "Energy Output 2025 (MWh)": {
+      "N": "106953"
+    },
+    "Maintenance Incidents 2024": {
+      "N": "0"
+    },
+    "Maintenance Incidents 2025": {
+      "N": "5"
+    },
+    "Downtime Hours 2024": {
+      "N": "0"
+    },
+    "Downtime Hours 2025": {
+      "N": "110"
+    }
+  }
+}
+{
+  "Item": {
+    "Facility ID": {
+      "S": "FAC-017"
+    },
+    "Facility Type": {
+      "S": "Hydro"
+    },
+    "Operational Tier": {
+      "S": "Standard Efficiency"
+    },
+    "Country": {
+      "S": "DE"
+    },
+    "Energy Output 2024 (MWh)": {
+      "N": "79470"
+    },
+    "Energy Output 2025 (MWh)": {
+      "N": "71600"
+    },
+    "Maintenance Incidents 2024": {
+      "N": "3"
+    },
+    "Maintenance Incidents 2025": {
+      "N": "1"
+    },
+    "Downtime Hours 2024": {
+      "N": "63"
+    },
+    "Downtime Hours 2025": {
+      "N": "37"
+    }
+  }
+}
+{
+  "Item": {
+    "Facility ID": {
+      "S": "FAC-018"
+    },
+    "Facility Type": {
+      "S": "Wind"
+    },
+    "Operational Tier": {
+      "S": "Standard Efficiency"
+    },
+    "Country": {
+      "S": "JP"
+    },
+    "Energy Output 2024 (MWh)": {
+      "N": "86540"
+    },
+    "Energy Output 2025 (MWh)": {
+      "N": "93696"
+    },
+    "Maintenance Incidents 2024": {
+      "N": "2"
+    },
+    "Maintenance Incidents 2025": {
+      "N": "5"
+    },
+    "Downtime Hours 2024": {
+      "N": "28"
+    },
+    "Downtime Hours 2025": {
+      "N": "140"
+    }
+  }
+}
+{
+  "Item": {
+    "Facility ID": {
+      "S": "FAC-019"
+    },
+    "Facility Type": {
+      "S": "Wind"
+    },
+    "Operational Tier": {
+      "S": "Standard Efficiency"
+    },
+    "Country": {
+      "S": "CA"
+    },
+    "Energy Output 2024 (MWh)": {
+      "N": "22552"
+    },
+    "Energy Output 2025 (MWh)": {
+      "N": "21053"
+    },
+    "Maintenance Incidents 2024": {
+      "N": "2"
+    },
+    "Maintenance Incidents 2025": {
+      "N": "3"
+    },
+    "Downtime Hours 2024": {
+      "N": "56"
+    },
+    "Downtime Hours 2025": {
+      "N": "72"
+    }
+  }
+}
+{
+  "Item": {
+    "Facility ID": {
+      "S": "FAC-020"
+    },
+    "Facility Type": {
+      "S": "Wind"
+    },
+    "Operational Tier": {
+      "S": "Standard Efficiency"
+    },
+    "Country": {
+      "S": "UK"
+    },
+    "Energy Output 2024 (MWh)": {
+      "N": "31226"
+    },
+    "Energy Output 2025 (MWh)": {
+      "N": "34959"
+    },
+    "Maintenance Incidents 2024": {
+      "N": "4"
+    },
+    "Maintenance Incidents 2025": {
+      "N": "0"
+    },
+    "Downtime Hours 2024": {
+      "N": "36"
+    },
+    "Downtime Hours 2025": {
+      "N": "0"
+    }
+  }
+}
+{
+  "Item": {
+    "Facility ID": {
+      "S": "FAC-021"
+    },
+    "Facility Type": {
+      "S": "Wind"
+    },
+    "Operational Tier": {
+      "S": "Standard Efficiency"
+    },
+    "Country": {
+      "S": "JP"
+    },
+    "Energy Output 2024 (MWh)": {
+      "N": "41643"
+    },
+    "Energy Output 2025 (MWh)": {
+      "N": "40790"
+    },
+    "Maintenance Incidents 2024": {
+      "N": "3"
+    },
+    "Maintenance Incidents 2025": {
+      "N": "4"
+    },
+    "Downtime Hours 2024": {
+      "N": "129"
+    },
+    "Downtime Hours 2025": {
+      "N": "128"
+    }
+  }
+}
+{
+  "Item": {
+    "Facility ID": {
+      "S": "FAC-022"
+    },
+    "Facility Type": {
+      "S": "Wind"
+    },
+    "Operational Tier": {
+      "S": "Standard Efficiency"
+    },
+    "Country": {
+      "S": "JP"
+    },
+    "Energy Output 2024 (MWh)": {
+      "N": "108039"
+    },
+    "Energy Output 2025 (MWh)": {
+      "N": "118298"
+    },
+    "Maintenance Incidents 2024": {
+      "N": "2"
+    },
+    "Maintenance Incidents 2025": {
+      "N": "3"
+    },
+    "Downtime Hours 2024": {
+      "N": "66"
+    },
+    "Downtime Hours 2025": {
+      "N": "114"
+    }
+  }
+}
+{
+  "Item": {
+    "Facility ID": {
+      "S": "FAC-023"
+    },
+    "Facility Type": {
+      "S": "Geothermal"
+    },
+    "Operational Tier": {
+      "S": "Standard Efficiency"
+    },
+    "Country": {
+      "S": "UK"
+    },
+    "Energy Output 2024 (MWh)": {
+      "N": "64313"
+    },
+    "Energy Output 2025 (MWh)": {
+      "N": "58287"
+    },
+    "Maintenance Incidents 2024": {
+      "N": "1"
+    },
+    "Maintenance Incidents 2025": {
+      "N": "0"
+    },
+    "Downtime Hours 2024": {
+      "N": "40"
+    },
+    "Downtime Hours 2025": {
+      "N": "0"
+    }
+  }
+}
+{
+  "Item": {
+    "Facility ID": {
+      "S": "FAC-024"
+    },
+    "Facility Type": {
+      "S": "Biomass"
+    },
+    "Operational Tier": {
+      "S": "Standard Efficiency"
+    },
+    "Country": {
+      "S": "US"
+    },
+    "Energy Output 2024 (MWh)": {
+      "N": "102719"
+    },
+    "Energy Output 2025 (MWh)": {
+      "N": "94261"
+    },
+    "Maintenance Incidents 2024": {
+      "N": "0"
+    },
+    "Maintenance Incidents 2025": {
+      "N": "5"
+    },
+    "Downtime Hours 2024": {
+      "N": "0"
+    },
+    "Downtime Hours 2025": {
+      "N": "35"
+    }
+  }
+}
+{
+  "Item": {
+    "Facility ID": {
+      "S": "FAC-025"
+    },
+    "Facility Type": {
+      "S": "Hydro"
+    },
+    "Operational Tier": {
+      "S": "Standard Efficiency"
+    },
+    "Country": {
+      "S": "CA"
+    },
+    "Energy Output 2024 (MWh)": {
+      "N": "107684"
+    },
+    "Energy Output 2025 (MWh)": {
+      "N": "112597"
+    },
+    "Maintenance Incidents 2024": {
+      "N": "1"
+    },
+    "Maintenance Incidents 2025": {
+      "N": "2"
+    },
+    "Downtime Hours 2024": {
+      "N": "39"
+    },
+    "Downtime Hours 2025": {
+      "N": "26"
+    }
+  }
+}
+{
+  "Item": {
+    "Facility ID": {
+      "S": "FAC-026"
+    },
+    "Facility Type": {
+      "S": "Biomass"
+    },
+    "Operational Tier": {
+      "S": "High-Performance"
+    },
+    "Country": {
+      "S": "UK"
+    },
+    "Energy Output 2024 (MWh)": {
+      "N": "44957"
+    },
+    "Energy Output 2025 (MWh)": {
+      "N": "41733"
+    },
+    "Maintenance Incidents 2024": {
+      "N": "3"
+    },
+    "Maintenance Incidents 2025": {
+      "N": "3"
+    },
+    "Downtime Hours 2024": {
+      "N": "141"
+    },
+    "Downtime Hours 2025": {
+      "N": "96"
+    }
+  }
+}
+{
+  "Item": {
+    "Facility ID": {
+      "S": "FAC-027"
+    },
+    "Facility Type": {
+      "S": "Hydro"
+    },
+    "Operational Tier": {
+      "S": "High-Performance"
+    },
+    "Country": {
+      "S": "FR"
+    },
+    "Energy Output 2024 (MWh)": {
+      "N": "27100"
+    },
+    "Energy Output 2025 (MWh)": {
+      "N": "29864"
+    },
+    "Maintenance Incidents 2024": {
+      "N": "3"
+    },
+    "Maintenance Incidents 2025": {
+      "N": "5"
+    },
+    "Downtime Hours 2024": {
+      "N": "138"
+    },
+    "Downtime Hours 2025": {
+      "N": "55"
+    }
+  }
+}
+{
+  "Item": {
+    "Facility ID": {
+      "S": "FAC-028"
+    },
+    "Facility Type": {
+      "S": "Solar"
+    },
+    "Operational Tier": {
+      "S": "High-Performance"
+    },
+    "Country": {
+      "S": "JP"
+    },
+    "Energy Output 2024 (MWh)": {
+      "N": "52591"
+    },
+    "Energy Output 2025 (MWh)": {
+      "N": "50354"
+    },
+    "Maintenance Incidents 2024": {
+      "N": "2"
+    },
+    "Maintenance Incidents 2025": {
+      "N": "0"
+    },
+    "Downtime Hours 2024": {
+      "N": "78"
+    },
+    "Downtime Hours 2025": {
+      "N": "0"
+    }
+  }
+}
+{
+  "Item": {
+    "Facility ID": {
+      "S": "FAC-029"
+    },
+    "Facility Type": {
+      "S": "Wind"
+    },
+    "Operational Tier": {
+      "S": "High-Performance"
+    },
+    "Country": {
+      "S": "UK"
+    },
+    "Energy Output 2024 (MWh)": {
+      "N": "52742"
+    },
+    "Energy Output 2025 (MWh)": {
+      "N": "61304"
+    },
+    "Maintenance Incidents 2024": {
+      "N": "2"
+    },
+    "Maintenance Incidents 2025": {
+      "N": "3"
+    },
+    "Downtime Hours 2024": {
+      "N": "18"
+    },
+    "Downtime Hours 2025": {
+      "N": "99"
+    }
+  }
+}
+{
+  "Item": {
+    "Facility ID": {
+      "S": "FAC-030"
+    },
+    "Facility Type": {
+      "S": "Biomass"
+    },
+    "Operational Tier": {
+      "S": "Standard Efficiency"
+    },
+    "Country": {
+      "S": "US"
+    },
+    "Energy Output 2024 (MWh)": {
+      "N": "129579"
+    },
+    "Energy Output 2025 (MWh)": {
+      "N": "117194"
+    },
+    "Maintenance Incidents 2024": {
+      "N": "5"
+    },
+    "Maintenance Incidents 2025": {
+      "N": "4"
+    },
+    "Downtime Hours 2024": {
+      "N": "50"
+    },
+    "Downtime Hours 2025": {
+      "N": "80"
+    }
+  }
+}
+{
+  "Item": {
+    "Facility ID": {
+      "S": "FAC-031"
+    },
+    "Facility Type": {
+      "S": "Wind"
+    },
+    "Operational Tier": {
+      "S": "High-Performance"
+    },
+    "Country": {
+      "S": "FR"
+    },
+    "Energy Output 2024 (MWh)": {
+      "N": "133331"
+    },
+    "Energy Output 2025 (MWh)": {
+      "N": "136039"
+    },
+    "Maintenance Incidents 2024": {
+      "N": "3"
+    },
+    "Maintenance Incidents 2025": {
+      "N": "1"
+    },
+    "Downtime Hours 2024": {
+      "N": "24"
+    },
+    "Downtime Hours 2025": {
+      "N": "15"
+    }
+  }
+}
+{
+  "Item": {
+    "Facility ID": {
+      "S": "FAC-032"
+    },
+    "Facility Type": {
+      "S": "Geothermal"
+    },
+    "Operational Tier": {
+      "S": "Standard Efficiency"
+    },
+    "Country": {
+      "S": "FR"
+    },
+    "Energy Output 2024 (MWh)": {
+      "N": "57388"
+    },
+    "Energy Output 2025 (MWh)": {
+      "N": "58931"
+    },
+    "Maintenance Incidents 2024": {
+      "N": "2"
+    },
+    "Maintenance Incidents 2025": {
+      "N": "3"
+    },
+    "Downtime Hours 2024": {
+      "N": "80"
+    },
+    "Downtime Hours 2025": {
+      "N": "141"
+    }
+  }
+}
+{
+  "Item": {
+    "Facility ID": {
+      "S": "FAC-033"
+    },
+    "Facility Type": {
+      "S": "Geothermal"
+    },
+    "Operational Tier": {
+      "S": "Standard Efficiency"
+    },
+    "Country": {
+      "S": "UK"
+    },
+    "Energy Output 2024 (MWh)": {
+      "N": "146970"
+    },
+    "Energy Output 2025 (MWh)": {
+      "N": "134851"
+    },
+    "Maintenance Incidents 2024": {
+      "N": "2"
+    },
+    "Maintenance Incidents 2025": {
+      "N": "1"
+    },
+    "Downtime Hours 2024": {
+      "N": "78"
+    },
+    "Downtime Hours 2025": {
+      "N": "8"
+    }
+  }
+}
+{
+  "Item": {
+    "Facility ID": {
+      "S": "FAC-034"
+    },
+    "Facility Type": {
+      "S": "Hydro"
+    },
+    "Operational Tier": {
+      "S": "Standard Efficiency"
+    },
+    "Country": {
+      "S": "US"
+    },
+    "Energy Output 2024 (MWh)": {
+      "N": "85909"
+    },
+    "Energy Output 2025 (MWh)": {
+      "N": "101013"
+    },
+    "Maintenance Incidents 2024": {
+      "N": "4"
+    },
+    "Maintenance Incidents 2025": {
+      "N": "3"
+    },
+    "Downtime Hours 2024": {
+      "N": "152"
+    },
+    "Downtime Hours 2025": {
+      "N": "45"
+    }
+  }
+}
+{
+  "Item": {
+    "Facility ID": {
+      "S": "FAC-035"
+    },
+    "Facility Type": {
+      "S": "Solar"
+    },
+    "Operational Tier": {
+      "S": "Standard Efficiency"
+    },
+    "Country": {
+      "S": "UK"
+    },
+    "Energy Output 2024 (MWh)": {
+      "N": "28907"
+    },
+    "Energy Output 2025 (MWh)": {
+      "N": "31871"
+    },
+    "Maintenance Incidents 2024": {
+      "N": "0"
+    },
+    "Maintenance Incidents 2025": {
+      "N": "4"
+    },
+    "Downtime Hours 2024": {
+      "N": "0"
+    },
+    "Downtime Hours 2025": {
+      "N": "120"
+    }
+  }
+}
+{
+  "Item": {
+    "Facility ID": {
+      "S": "FAC-036"
+    },
+    "Facility Type": {
+      "S": "Solar"
+    },
+    "Operational Tier": {
+      "S": "Standard Efficiency"
+    },
+    "Country": {
+      "S": "CA"
+    },
+    "Energy Output 2024 (MWh)": {
+      "N": "101183"
+    },
+    "Energy Output 2025 (MWh)": {
+      "N": "93553"
+    },
+    "Maintenance Incidents 2024": {
+      "N": "4"
+    },
+    "Maintenance Incidents 2025": {
+      "N": "0"
+    },
+    "Downtime Hours 2024": {
+      "N": "188"
+    },
+    "Downtime Hours 2025": {
+      "N": "0"
+    }
+  }
+}
+{
+  "Item": {
+    "Facility ID": {
+      "S": "FAC-037"
+    },
+    "Facility Type": {
+      "S": "Biomass"
+    },
+    "Operational Tier": {
+      "S": "High-Performance"
+    },
+    "Country": {
+      "S": "DE"
+    },
+    "Energy Output 2024 (MWh)": {
+      "N": "113872"
+    },
+    "Energy Output 2025 (MWh)": {
+      "N": "113217"
+    },
+    "Maintenance Incidents 2024": {
+      "N": "1"
+    },
+    "Maintenance Incidents 2025": {
+      "N": "5"
+    },
+    "Downtime Hours 2024": {
+      "N": "21"
+    },
+    "Downtime Hours 2025": {
+      "N": "150"
+    }
+  }
+}
+{
+  "Item": {
+    "Facility ID": {
+      "S": "FAC-038"
+    },
+    "Facility Type": {
+      "S": "Wind"
+    },
+    "Operational Tier": {
+      "S": "High-Performance"
+    },
+    "Country": {
+      "S": "FR"
+    },
+    "Energy Output 2024 (MWh)": {
+      "N": "21220"
+    },
+    "Energy Output 2025 (MWh)": {
+      "N": "22015"
+    },
+    "Maintenance Incidents 2024": {
+      "N": "2"
+    },
+    "Maintenance Incidents 2025": {
+      "N": "0"
+    },
+    "Downtime Hours 2024": {
+      "N": "82"
+    },
+    "Downtime Hours 2025": {
+      "N": "0"
+    }
+  }
+}
+{
+  "Item": {
+    "Facility ID": {
+      "S": "FAC-039"
+    },
+    "Facility Type": {
+      "S": "Solar"
+    },
+    "Operational Tier": {
+      "S": "Standard Efficiency"
+    },
+    "Country": {
+      "S": "CA"
+    },
+    "Energy Output 2024 (MWh)": {
+      "N": "142324"
+    },
+    "Energy Output 2025 (MWh)": {
+      "N": "142993"
+    },
+    "Maintenance Incidents 2024": {
+      "N": "2"
+    },
+    "Maintenance Incidents 2025": {
+      "N": "1"
+    },
+    "Downtime Hours 2024": {
+      "N": "18"
+    },
+    "Downtime Hours 2025": {
+      "N": "20"
+    }
+  }
+}
+{
+  "Item": {
+    "Facility ID": {
+      "S": "FAC-040"
+    },
+    "Facility Type": {
+      "S": "Hydro"
+    },
+    "Operational Tier": {
+      "S": "High-Performance"
+    },
+    "Country": {
+      "S": "UK"
+    },
+    "Energy Output 2024 (MWh)": {
+      "N": "112214"
+    },
+    "Energy Output 2025 (MWh)": {
+      "N": "111176"
+    },
+    "Maintenance Incidents 2024": {
+      "N": "3"
+    },
+    "Maintenance Incidents 2025": {
+      "N": "4"
+    },
+    "Downtime Hours 2024": {
+      "N": "138"
+    },
+    "Downtime Hours 2025": {
+      "N": "152"
+    }
+  }
+}
+{
+  "Item": {
+    "Facility ID": {
+      "S": "FAC-041"
+    },
+    "Facility Type": {
+      "S": "Solar"
+    },
+    "Operational Tier": {
+      "S": "High-Performance"
+    },
+    "Country": {
+      "S": "JP"
+    },
+    "Energy Output 2024 (MWh)": {
+      "N": "54664"
+    },
+    "Energy Output 2025 (MWh)": {
+      "N": "51090"
+    },
+    "Maintenance Incidents 2024": {
+      "N": "0"
+    },
+    "Maintenance Incidents 2025": {
+      "N": "1"
+    },
+    "Downtime Hours 2024": {
+      "N": "0"
+    },
+    "Downtime Hours 2025": {
+      "N": "40"
+    }
+  }
+}
+{
+  "Item": {
+    "Facility ID": {
+      "S": "FAC-042"
+    },
+    "Facility Type": {
+      "S": "Wind"
+    },
+    "Operational Tier": {
+      "S": "High-Performance"
+    },
+    "Country": {
+      "S": "DE"
+    },
+    "Energy Output 2024 (MWh)": {
+      "N": "114058"
+    },
+    "Energy Output 2025 (MWh)": {
+      "N": "114384"
+    },
+    "Maintenance Incidents 2024": {
+      "N": "4"
+    },
+    "Maintenance Incidents 2025": {
+      "N": "1"
+    },
+    "Downtime Hours 2024": {
+      "N": "9500"
+    },
+    "Downtime Hours 2025": {
+      "N": "45"
+    }
+  }
+}
+{
+  "Item": {
+    "Facility ID": {
+      "S": "FAC-043"
+    },
+    "Facility Type": {
+      "S": "Hydro"
+    },
+    "Operational Tier": {
+      "S": "High-Performance"
+    },
+    "Country": {
+      "S": "DE"
+    },
+    "Energy Output 2024 (MWh)": {
+      "N": "103136"
+    },
+    "Energy Output 2025 (MWh)": {
+      "N": "105928"
+    },
+    "Maintenance Incidents 2024": {
+      "N": "0"
+    },
+    "Maintenance Incidents 2025": {
+      "N": "0"
+    },
+    "Downtime Hours 2024": {
+      "N": "0"
+    },
+    "Downtime Hours 2025": {
+      "N": "0"
+    }
+  }
+}
+{
+  "Item": {
+    "Facility ID": {
+      "S": "FAC-044"
+    },
+    "Facility Type": {
+      "S": "Solar"
+    },
+    "Operational Tier": {
+      "S": "High-Performance"
+    },
+    "Country": {
+      "S": "UK"
+    },
+    "Energy Output 2024 (MWh)": {
+      "N": "41178"
+    },
+    "Energy Output 2025 (MWh)": {
+      "N": "46216"
+    },
+    "Maintenance Incidents 2024": {
+      "N": "5"
+    },
+    "Maintenance Incidents 2025": {
+      "N": "2"
+    },
+    "Downtime Hours 2024": {
+      "N": "200"
+    },
+    "Downtime Hours 2025": {
+      "N": "64"
+    }
+  }
+}
+{
+  "Item": {
+    "Facility ID": {
+      "S": "FAC-045"
+    },
+    "Facility Type": {
+      "S": "Biomass"
+    },
+    "Operational Tier": {
+      "S": "Standard Efficiency"
+    },
+    "Country": {
+      "S": "US"
+    },
+    "Energy Output 2024 (MWh)": {
+      "N": "138479"
+    },
+    "Energy Output 2025 (MWh)": {
+      "N": "130823"
+    },
+    "Maintenance Incidents 2024": {
+      "N": "0"
+    },
+    "Maintenance Incidents 2025": {
+      "N": "5"
+    },
+    "Downtime Hours 2024": {
+      "N": "0"
+    },
+    "Downtime Hours 2025": {
+      "N": "140"
+    }
+  }
+}
+{
+  "Item": {
+    "Facility ID": {
+      "S": "FAC-046"
+    },
+    "Facility Type": {
+      "S": "Biomass"
+    },
+    "Operational Tier": {
+      "S": "Standard Efficiency"
+    },
+    "Country": {
+      "S": "FR"
+    },
+    "Energy Output 2024 (MWh)": {
+      "N": "60404"
+    },
+    "Energy Output 2025 (MWh)": {
+      "N": "60971"
+    },
+    "Maintenance Incidents 2024": {
+      "N": "1"
+    },
+    "Maintenance Incidents 2025": {
+      "N": "0"
+    },
+    "Downtime Hours 2024": {
+      "N": "7"
+    },
+    "Downtime Hours 2025": {
+      "N": "0"
+    }
+  }
+}
+{
+  "Item": {
+    "Facility ID": {
+      "S": "FAC-047"
+    },
+    "Facility Type": {
+      "S": "Wind"
+    },
+    "Operational Tier": {
+      "S": "Standard Efficiency"
+    },
+    "Country": {
+      "S": "JP"
+    },
+    "Energy Output 2024 (MWh)": {
+      "N": "122251"
+    },
+    "Energy Output 2025 (MWh)": {
+      "N": "130559"
+    },
+    "Maintenance Incidents 2024": {
+      "N": "0"
+    },
+    "Maintenance Incidents 2025": {
+      "N": "2"
+    },
+    "Downtime Hours 2024": {
+      "N": "0"
+    },
+    "Downtime Hours 2025": {
+      "N": "88"
+    }
+  }
+}
+{
+  "Item": {
+    "Facility ID": {
+      "S": "FAC-048"
+    },
+    "Facility Type": {
+      "S": "Wind"
+    },
+    "Operational Tier": {
+      "S": "Standard Efficiency"
+    },
+    "Country": {
+      "S": "UK"
+    },
+    "Energy Output 2024 (MWh)": {
+      "N": "23248"
+    },
+    "Energy Output 2025 (MWh)": {
+      "N": "22174"
+    },
+    "Maintenance Incidents 2024": {
+      "N": "1"
+    },
+    "Maintenance Incidents 2025": {
+      "N": "3"
+    },
+    "Downtime Hours 2024": {
+      "N": "26"
+    },
+    "Downtime Hours 2025": {
+      "N": "93"
+    }
+  }
+}
+{
+  "Item": {
+    "Facility ID": {
+      "S": "FAC-049"
+    },
+    "Facility Type": {
+      "S": "Wind"
+    },
+    "Operational Tier": {
+      "S": "High-Performance"
+    },
+    "Country": {
+      "S": "UK"
+    },
+    "Energy Output 2024 (MWh)": {
+      "N": "70140"
+    },
+    "Energy Output 2025 (MWh)": {
+      "N": "81478"
+    },
+    "Maintenance Incidents 2024": {
+      "N": "5"
+    },
+    "Maintenance Incidents 2025": {
+      "N": "0"
+    },
+    "Downtime Hours 2024": {
+      "N": "175"
+    },
+    "Downtime Hours 2025": {
+      "N": "0"
+    }
+  }
+}
+{
+  "Item": {
+    "Facility ID": {
+      "S": "FAC-050"
+    },
+    "Facility Type": {
+      "S": "Wind"
+    },
+    "Operational Tier": {
+      "S": "High-Performance"
+    },
+    "Country": {
+      "S": "DE"
+    },
+    "Energy Output 2024 (MWh)": {
+      "N": "49219"
+    },
+    "Energy Output 2025 (MWh)": {
+      "N": "44646"
+    },
+    "Maintenance Incidents 2024": {
+      "N": "2"
+    },
+    "Maintenance Incidents 2025": {
+      "N": "1"
+    },
+    "Downtime Hours 2024": {
+      "N": "34"
+    },
+    "Downtime Hours 2025": {
+      "N": "30"
+    }
+  }
+}
+{
+  "Item": {
+    "Facility ID": {
+      "S": "FAC-051"
+    },
+    "Facility Type": {
+      "S": "Hydro"
+    },
+    "Operational Tier": {
+      "S": "High-Performance"
+    },
+    "Country": {
+      "S": "US"
+    },
+    "Energy Output 2024 (MWh)": {
+      "N": "104080"
+    },
+    "Energy Output 2025 (MWh)": {
+      "N": "109577"
+    },
+    "Maintenance Incidents 2024": {
+      "N": "2"
+    },
+    "Maintenance Incidents 2025": {
+      "N": "2"
+    },
+    "Downtime Hours 2024": {
+      "N": "96"
+    },
+    "Downtime Hours 2025": {
+      "N": "78"
+    }
+  }
+}
+{
+  "Item": {
+    "Facility ID": {
+      "S": "FAC-052"
+    },
+    "Facility Type": {
+      "S": "Hydro"
+    },
+    "Operational Tier": {
+      "S": "Standard Efficiency"
+    },
+    "Country": {
+      "S": "US"
+    },
+    "Energy Output 2024 (MWh)": {
+      "N": "96099"
+    },
+    "Energy Output 2025 (MWh)": {
+      "N": "114238"
+    },
+    "Maintenance Incidents 2024": {
+      "N": "2"
+    },
+    "Maintenance Incidents 2025": {
+      "N": "1"
+    },
+    "Downtime Hours 2024": {
+      "N": "42"
+    },
+    "Downtime Hours 2025": {
+      "N": "7"
+    }
+  }
+}
+{
+  "Item": {
+    "Facility ID": {
+      "S": "FAC-053"
+    },
+    "Facility Type": {
+      "S": "Solar"
+    },
+    "Operational Tier": {
+      "S": "High-Performance"
+    },
+    "Country": {
+      "S": "DE"
+    },
+    "Energy Output 2024 (MWh)": {
+      "N": "77199"
+    },
+    "Energy Output 2025 (MWh)": {
+      "N": "83518"
+    },
+    "Maintenance Incidents 2024": {
+      "N": "5"
+    },
+    "Maintenance Incidents 2025": {
+      "N": "2"
+    },
+    "Downtime Hours 2024": {
+      "N": "185"
+    },
+    "Downtime Hours 2025": {
+      "N": "24"
+    }
+  }
+}
+{
+  "Item": {
+    "Facility ID": {
+      "S": "FAC-054"
+    },
+    "Facility Type": {
+      "S": "Geothermal"
+    },
+    "Operational Tier": {
+      "S": "Standard Efficiency"
+    },
+    "Country": {
+      "S": "DE"
+    },
+    "Energy Output 2024 (MWh)": {
+      "N": "77154"
+    },
+    "Energy Output 2025 (MWh)": {
+      "N": "69477"
+    },
+    "Maintenance Incidents 2024": {
+      "N": "0"
+    },
+    "Maintenance Incidents 2025": {
+      "N": "5"
+    },
+    "Downtime Hours 2024": {
+      "N": "0"
+    },
+    "Downtime Hours 2025": {
+      "N": "240"
+    }
+  }
+}
+{
+  "Item": {
+    "Facility ID": {
+      "S": "FAC-055"
+    },
+    "Facility Type": {
+      "S": "Wind"
+    },
+    "Operational Tier": {
+      "S": "High-Performance"
+    },
+    "Country": {
+      "S": "FR"
+    },
+    "Energy Output 2024 (MWh)": {
+      "N": "140687"
+    },
+    "Energy Output 2025 (MWh)": {
+      "N": "140554"
+    },
+    "Maintenance Incidents 2024": {
+      "N": "0"
+    },
+    "Maintenance Incidents 2025": {
+      "N": "5"
+    },
+    "Downtime Hours 2024": {
+      "N": "0"
+    },
+    "Downtime Hours 2025": {
+      "N": "235"
+    }
+  }
+}
+{
+  "Item": {
+    "Facility ID": {
+      "S": "FAC-056"
+    },
+    "Facility Type": {
+      "S": "Solar"
+    },
+    "Operational Tier": {
+      "S": "High-Performance"
+    },
+    "Country": {
+      "S": "CA"
+    },
+    "Energy Output 2024 (MWh)": {
+      "N": "73528"
+    },
+    "Energy Output 2025 (MWh)": {
+      "N": "73370"
+    },
+    "Maintenance Incidents 2024": {
+      "N": "2"
+    },
+    "Maintenance Incidents 2025": {
+      "N": "5"
+    },
+    "Downtime Hours 2024": {
+      "N": "46"
+    },
+    "Downtime Hours 2025": {
+      "N": "200"
+    }
+  }
+}
+{
+  "Item": {
+    "Facility ID": {
+      "S": "FAC-057"
+    },
+    "Facility Type": {
+      "S": "Wind"
+    },
+    "Operational Tier": {
+      "S": "Standard Efficiency"
+    },
+    "Country": {
+      "S": "FR"
+    },
+    "Energy Output 2024 (MWh)": {
+      "N": "108777"
+    },
+    "Energy Output 2025 (MWh)": {
+      "N": "122313"
+    },
+    "Maintenance Incidents 2024": {
+      "N": "5"
+    },
+    "Maintenance Incidents 2025": {
+      "N": "3"
+    },
+    "Downtime Hours 2024": {
+      "N": "80"
+    },
+    "Downtime Hours 2025": {
+      "N": "132"
+    }
+  }
+}
+{
+  "Item": {
+    "Facility ID": {
+      "S": "FAC-058"
+    },
+    "Facility Type": {
+      "S": "Biomass"
+    },
+    "Operational Tier": {
+      "S": "High-Performance"
+    },
+    "Country": {
+      "S": "FR"
+    },
+    "Energy Output 2024 (MWh)": {
+      "N": "59829"
+    },
+    "Energy Output 2025 (MWh)": {
+      "N": "58995"
+    },
+    "Maintenance Incidents 2024": {
+      "N": "4"
+    },
+    "Maintenance Incidents 2025": {
+      "N": "0"
+    },
+    "Downtime Hours 2024": {
+      "N": "128"
+    },
+    "Downtime Hours 2025": {
+      "N": "0"
+    }
+  }
+}
+{
+  "Item": {
+    "Facility ID": {
+      "S": "FAC-059"
+    },
+    "Facility Type": {
+      "S": "Biomass"
+    },
+    "Operational Tier": {
+      "S": "High-Performance"
+    },
+    "Country": {
+      "S": "FR"
+    },
+    "Energy Output 2024 (MWh)": {
+      "N": "108555"
+    },
+    "Energy Output 2025 (MWh)": {
+      "N": "104659"
+    },
+    "Maintenance Incidents 2024": {
+      "N": "3"
+    },
+    "Maintenance Incidents 2025": {
+      "N": "3"
+    },
+    "Downtime Hours 2024": {
+      "N": "105"
+    },
+    "Downtime Hours 2025": {
+      "N": "45"
+    }
+  }
+}
+{
+  "Item": {
+    "Facility ID": {
+      "S": "FAC-060"
+    },
+    "Facility Type": {
+      "S": "Solar"
+    },
+    "Operational Tier": {
+      "S": "High-Performance"
+    },
+    "Country": {
+      "S": "CA"
+    },
+    "Energy Output 2024 (MWh)": {
+      "N": "101167"
+    },
+    "Energy Output 2025 (MWh)": {
+      "N": "101223"
+    },
+    "Maintenance Incidents 2024": {
+      "N": "5"
+    },
+    "Maintenance Incidents 2025": {
+      "N": "5"
+    },
+    "Downtime Hours 2024": {
+      "N": "100"
+    },
+    "Downtime Hours 2025": {
+      "N": "240"
+    }
+  }
+}
+{
+  "Item": {
+    "Facility ID": {
+      "S": "FAC-061"
+    },
+    "Facility Type": {
+      "S": "Hydro"
+    },
+    "Operational Tier": {
+      "S": "Standard Efficiency"
+    },
+    "Country": {
+      "S": "UK"
+    },
+    "Energy Output 2024 (MWh)": {
+      "N": "26057"
+    },
+    "Energy Output 2025 (MWh)": {
+      "N": "25365"
+    },
+    "Maintenance Incidents 2024": {
+      "N": "1"
+    },
+    "Maintenance Incidents 2025": {
+      "N": "0"
+    },
+    "Downtime Hours 2024": {
+      "N": "35"
+    },
+    "Downtime Hours 2025": {
+      "N": "0"
+    }
+  }
+}
+{
+  "Item": {
+    "Facility ID": {
+      "S": "FAC-062"
+    },
+    "Facility Type": {
+      "S": "Solar"
+    },
+    "Operational Tier": {
+      "S": "High-Performance"
+    },
+    "Country": {
+      "S": "FR"
+    },
+    "Energy Output 2024 (MWh)": {
+      "N": "45485"
+    },
+    "Energy Output 2025 (MWh)": {
+      "N": "50738"
+    },
+    "Maintenance Incidents 2024": {
+      "N": "5"
+    },
+    "Maintenance Incidents 2025": {
+      "N": "4"
+    },
+    "Downtime Hours 2024": {
+      "N": "145"
+    },
+    "Downtime Hours 2025": {
+      "N": "144"
+    }
+  }
+}
+{
+  "Item": {
+    "Facility ID": {
+      "S": "FAC-063"
+    },
+    "Facility Type": {
+      "S": "Geothermal"
+    },
+    "Operational Tier": {
+      "S": "Standard Efficiency"
+    },
+    "Country": {
+      "S": "UK"
+    },
+    "Energy Output 2024 (MWh)": {
+      "N": "20726"
+    },
+    "Energy Output 2025 (MWh)": {
+      "N": "24203"
+    },
+    "Maintenance Incidents 2024": {
+      "N": "5"
+    },
+    "Maintenance Incidents 2025": {
+      "N": "5"
+    },
+    "Downtime Hours 2024": {
+      "N": "55"
+    },
+    "Downtime Hours 2025": {
+      "N": "160"
+    }
+  }
+}
+{
+  "Item": {
+    "Facility ID": {
+      "S": "FAC-064"
+    },
+    "Facility Type": {
+      "S": "Wind"
+    },
+    "Operational Tier": {
+      "S": "Standard Efficiency"
+    },
+    "Country": {
+      "S": "JP"
+    },
+    "Energy Output 2024 (MWh)": {
+      "N": "26582"
+    },
+    "Energy Output 2025 (MWh)": {
+      "N": "28368"
+    },
+    "Maintenance Incidents 2024": {
+      "N": "4"
+    },
+    "Maintenance Incidents 2025": {
+      "N": "3"
+    },
+    "Downtime Hours 2024": {
+      "N": "48"
+    },
+    "Downtime Hours 2025": {
+      "N": "102"
+    }
+  }
+}
+{
+  "Item": {
+    "Facility ID": {
+      "S": "FAC-065"
+    },
+    "Facility Type": {
+      "S": "Wind"
+    },
+    "Operational Tier": {
+      "S": "High-Performance"
+    },
+    "Country": {
+      "S": "JP"
+    },
+    "Energy Output 2024 (MWh)": {
+      "N": "98047"
+    },
+    "Energy Output 2025 (MWh)": {
+      "N": "97575"
+    },
+    "Maintenance Incidents 2024": {
+      "N": "4"
+    },
+    "Maintenance Incidents 2025": {
+      "N": "4"
+    },
+    "Downtime Hours 2024": {
+      "N": "132"
+    },
+    "Downtime Hours 2025": {
+      "N": "176"
+    }
+  }
+}
+{
+  "Item": {
+    "Facility ID": {
+      "S": "FAC-066"
+    },
+    "Facility Type": {
+      "S": "Biomass"
+    },
+    "Operational Tier": {
+      "S": "High-Performance"
+    },
+    "Country": {
+      "S": "CA"
+    },
+    "Energy Output 2024 (MWh)": {
+      "N": "117472"
+    },
+    "Energy Output 2025 (MWh)": {
+      "N": "136085"
+    },
+    "Maintenance Incidents 2024": {
+      "N": "3"
+    },
+    "Maintenance Incidents 2025": {
+      "N": "1"
+    },
+    "Downtime Hours 2024": {
+      "N": "99"
+    },
+    "Downtime Hours 2025": {
+      "N": "21"
+    }
+  }
+}
+{
+  "Item": {
+    "Facility ID": {
+      "S": "FAC-067"
+    },
+    "Facility Type": {
+      "S": "Wind"
+    },
+    "Operational Tier": {
+      "S": "High-Performance"
+    },
+    "Country": {
+      "S": "CA"
+    },
+    "Energy Output 2024 (MWh)": {
+      "N": "51358"
+    },
+    "Energy Output 2025 (MWh)": {
+      "N": "50453"
+    },
+    "Maintenance Incidents 2024": {
+      "N": "3"
+    },
+    "Maintenance Incidents 2025": {
+      "N": "5"
+    },
+    "Downtime Hours 2024": {
+      "N": "27"
+    },
+    "Downtime Hours 2025": {
+      "N": "115"
+    }
+  }
+}
+{
+  "Item": {
+    "Facility ID": {
+      "S": "FAC-068"
+    },
+    "Facility Type": {
+      "S": "Wind"
+    },
+    "Operational Tier": {
+      "S": "High-Performance"
+    },
+    "Country": {
+      "S": "DE"
+    },
+    "Energy Output 2024 (MWh)": {
+      "N": "30561"
+    },
+    "Energy Output 2025 (MWh)": {
+      "N": "28773"
+    },
+    "Maintenance Incidents 2024": {
+      "N": "2"
+    },
+    "Maintenance Incidents 2025": {
+      "N": "4"
+    },
+    "Downtime Hours 2024": {
+      "N": "38"
+    },
+    "Downtime Hours 2025": {
+      "N": "116"
+    }
+  }
+}
+{
+  "Item": {
+    "Facility ID": {
+      "S": "FAC-069"
+    },
+    "Facility Type": {
+      "S": "Wind"
+    },
+    "Operational Tier": {
+      "S": "Standard Efficiency"
+    },
+    "Country": {
+      "S": "US"
+    },
+    "Energy Output 2024 (MWh)": {
+      "N": "63369"
+    },
+    "Energy Output 2025 (MWh)": {
+      "N": "67347"
+    },
+    "Maintenance Incidents 2024": {
+      "N": "3"
+    },
+    "Maintenance Incidents 2025": {
+      "N": "3"
+    },
+    "Downtime Hours 2024": {
+      "N": "93"
+    },
+    "Downtime Hours 2025": {
+      "N": "24"
+    }
+  }
+}
+{
+  "Item": {
+    "Facility ID": {
+      "S": "FAC-070"
+    },
+    "Facility Type": {
+      "S": "Wind"
+    },
+    "Operational Tier": {
+      "S": "High-Performance"
+    },
+    "Country": {
+      "S": "FR"
+    },
+    "Energy Output 2024 (MWh)": {
+      "N": "22560"
+    },
+    "Energy Output 2025 (MWh)": {
+      "N": "26102"
+    },
+    "Maintenance Incidents 2024": {
+      "N": "4"
+    },
+    "Maintenance Incidents 2025": {
+      "N": "5"
+    },
+    "Downtime Hours 2024": {
+      "N": "164"
+    },
+    "Downtime Hours 2025": {
+      "N": "145"
+    }
+  }
+}
+{
+  "Item": {
+    "Facility ID": {
+      "S": "FAC-071"
+    },
+    "Facility Type": {
+      "S": "Geothermal"
+    },
+    "Operational Tier": {
+      "S": "Standard Efficiency"
+    },
+    "Country": {
+      "S": "DE"
+    },
+    "Energy Output 2024 (MWh)": {
+      "N": "131863"
+    },
+    "Energy Output 2025 (MWh)": {
+      "N": "153949"
+    },
+    "Maintenance Incidents 2024": {
+      "N": "2"
+    },
+    "Maintenance Incidents 2025": {
+      "N": "3"
+    },
+    "Downtime Hours 2024": {
+      "N": "62"
+    },
+    "Downtime Hours 2025": {
+      "N": "117"
+    }
+  }
+}
+{
+  "Item": {
+    "Facility ID": {
+      "S": "FAC-072"
+    },
+    "Facility Type": {
+      "S": "Biomass"
+    },
+    "Operational Tier": {
+      "S": "Standard Efficiency"
+    },
+    "Country": {
+      "S": "FR"
+    },
+    "Energy Output 2024 (MWh)": {
+      "N": "77125"
+    },
+    "Energy Output 2025 (MWh)": {
+      "N": "80649"
+    },
+    "Maintenance Incidents 2024": {
+      "N": "1"
+    },
+    "Maintenance Incidents 2025": {
+      "N": "2"
+    },
+    "Downtime Hours 2024": {
+      "N": "29"
+    },
+    "Downtime Hours 2025": {
+      "N": "52"
+    }
+  }
+}
+{
+  "Item": {
+    "Facility ID": {
+      "S": "FAC-073"
+    },
+    "Facility Type": {
+      "S": "Geothermal"
+    },
+    "Operational Tier": {
+      "S": "Standard Efficiency"
+    },
+    "Country": {
+      "S": "FR"
+    },
+    "Energy Output 2024 (MWh)": {
+      "N": "90008"
+    },
+    "Energy Output 2025 (MWh)": {
+      "N": "81735"
+    },
+    "Maintenance Incidents 2024": {
+      "N": "1"
+    },
+    "Maintenance Incidents 2025": {
+      "N": "4"
+    },
+    "Downtime Hours 2024": {
+      "N": "30"
+    },
+    "Downtime Hours 2025": {
+      "N": "168"
+    }
+  }
+}
+{
+  "Item": {
+    "Facility ID": {
+      "S": "FAC-074"
+    },
+    "Facility Type": {
+      "S": "Biomass"
+    },
+    "Operational Tier": {
+      "S": "Standard Efficiency"
+    },
+    "Country": {
+      "S": "US"
+    },
+    "Energy Output 2024 (MWh)": {
+      "N": "37786"
+    },
+    "Energy Output 2025 (MWh)": {
+      "N": "43833"
+    },
+    "Maintenance Incidents 2024": {
+      "N": "5"
+    },
+    "Maintenance Incidents 2025": {
+      "N": "3"
+    },
+    "Downtime Hours 2024": {
+      "N": "80"
+    },
+    "Downtime Hours 2025": {
+      "N": "24"
+    }
+  }
+}
+{
+  "Item": {
+    "Facility ID": {
+      "S": "FAC-075"
+    },
+    "Facility Type": {
+      "S": "Hydro"
+    },
+    "Operational Tier": {
+      "S": "High-Performance"
+    },
+    "Country": {
+      "S": "DE"
+    },
+    "Energy Output 2024 (MWh)": {
+      "N": "62840"
+    },
+    "Energy Output 2025 (MWh)": {
+      "N": "62918"
+    },
+    "Maintenance Incidents 2024": {
+      "N": "1"
+    },
+    "Maintenance Incidents 2025": {
+      "N": "3"
+    },
+    "Downtime Hours 2024": {
+      "N": "29"
+    },
+    "Downtime Hours 2025": {
+      "N": "66"
+    }
+  }
+}
+{
+  "Item": {
+    "Facility ID": {
+      "S": "FAC-076"
+    },
+    "Facility Type": {
+      "S": "Geothermal"
+    },
+    "Operational Tier": {
+      "S": "High-Performance"
+    },
+    "Country": {
+      "S": "US"
+    },
+    "Energy Output 2024 (MWh)": {
+      "N": "118176"
+    },
+    "Energy Output 2025 (MWh)": {
+      "N": "125482"
+    },
+    "Maintenance Incidents 2024": {
+      "N": "3"
+    },
+    "Maintenance Incidents 2025": {
+      "N": "0"
+    },
+    "Downtime Hours 2024": {
+      "N": "81"
+    },
+    "Downtime Hours 2025": {
+      "N": "0"
+    }
+  }
+}
+{
+  "Item": {
+    "Facility ID": {
+      "S": "FAC-077"
+    },
+    "Facility Type": {
+      "S": "Solar"
+    },
+    "Operational Tier": {
+      "S": "Standard Efficiency"
+    },
+    "Country": {
+      "S": "US"
+    },
+    "Energy Output 2024 (MWh)": {
+      "N": "129999"
+    },
+    "Energy Output 2025 (MWh)": {
+      "N": "117793"
+    },
+    "Maintenance Incidents 2024": {
+      "N": "1"
+    },
+    "Maintenance Incidents 2025": {
+      "N": "1"
+    },
+    "Downtime Hours 2024": {
+      "N": "14"
+    },
+    "Downtime Hours 2025": {
+      "N": "20"
+    }
+  }
+}
+{
+  "Item": {
+    "Facility ID": {
+      "S": "FAC-078"
+    },
+    "Facility Type": {
+      "S": "Wind"
+    },
+    "Operational Tier": {
+      "S": "High-Performance"
+    },
+    "Country": {
+      "S": "JP"
+    },
+    "Energy Output 2024 (MWh)": {
+      "N": "144224"
+    },
+    "Energy Output 2025 (MWh)": {
+      "N": "139232"
+    },
+    "Maintenance Incidents 2024": {
+      "N": "0"
+    },
+    "Maintenance Incidents 2025": {
+      "N": "4"
+    },
+    "Downtime Hours 2024": {
+      "N": "0"
+    },
+    "Downtime Hours 2025": {
+      "N": "112"
+    }
+  }
+}
+{
+  "Item": {
+    "Facility ID": {
+      "S": "FAC-079"
+    },
+    "Facility Type": {
+      "S": "Wind"
+    },
+    "Operational Tier": {
+      "S": "Standard Efficiency"
+    },
+    "Country": {
+      "S": "UK"
+    },
+    "Energy Output 2024 (MWh)": {
+      "N": "95849"
+    },
+    "Energy Output 2025 (MWh)": {
+      "N": "87002"
+    },
+    "Maintenance Incidents 2024": {
+      "N": "2"
+    },
+    "Maintenance Incidents 2025": {
+      "N": "0"
+    },
+    "Downtime Hours 2024": {
+      "N": "48"
+    },
+    "Downtime Hours 2025": {
+      "N": "0"
+    }
+  }
+}
+{
+  "Item": {
+    "Facility ID": {
+      "S": "FAC-080"
+    },
+    "Facility Type": {
+      "S": "Geothermal"
+    },
+    "Operational Tier": {
+      "S": "High-Performance"
+    },
+    "Country": {
+      "S": "JP"
+    },
+    "Energy Output 2024 (MWh)": {
+      "N": "97607"
+    },
+    "Energy Output 2025 (MWh)": {
+      "N": "108068"
+    },
+    "Maintenance Incidents 2024": {
+      "N": "1"
+    },
+    "Maintenance Incidents 2025": {
+      "N": "0"
+    },
+    "Downtime Hours 2024": {
+      "N": "45"
+    },
+    "Downtime Hours 2025": {
+      "N": "0"
+    }
+  }
+}
+{
+  "Item": {
+    "Facility ID": {
+      "S": "FAC-081"
+    },
+    "Facility Type": {
+      "S": "Solar"
+    },
+    "Operational Tier": {
+      "S": "High-Performance"
+    },
+    "Country": {
+      "S": "JP"
+    },
+    "Energy Output 2024 (MWh)": {
+      "N": "124363"
+    },
+    "Energy Output 2025 (MWh)": {
+      "N": "148632"
+    },
+    "Maintenance Incidents 2024": {
+      "N": "4"
+    },
+    "Maintenance Incidents 2025": {
+      "N": "0"
+    },
+    "Downtime Hours 2024": {
+      "N": "28"
+    },
+    "Downtime Hours 2025": {
+      "N": "0"
+    }
+  }
+}
+{
+  "Item": {
+    "Facility ID": {
+      "S": "FAC-082"
+    },
+    "Facility Type": {
+      "S": "Biomass"
+    },
+    "Operational Tier": {
+      "S": "High-Performance"
+    },
+    "Country": {
+      "S": "JP"
+    },
+    "Energy Output 2024 (MWh)": {
+      "N": "86317"
+    },
+    "Energy Output 2025 (MWh)": {
+      "N": "94453"
+    },
+    "Maintenance Incidents 2024": {
+      "N": "2"
+    },
+    "Maintenance Incidents 2025": {
+      "N": "0"
+    },
+    "Downtime Hours 2024": {
+      "N": "10"
+    },
+    "Downtime Hours 2025": {
+      "N": "0"
+    }
+  }
+}
+{
+  "Item": {
+    "Facility ID": {
+      "S": "FAC-083"
+    },
+    "Facility Type": {
+      "S": "Geothermal"
+    },
+    "Operational Tier": {
+      "S": "Standard Efficiency"
+    },
+    "Country": {
+      "S": "FR"
+    },
+    "Energy Output 2024 (MWh)": {
+      "N": "136860"
+    },
+    "Energy Output 2025 (MWh)": {
+      "N": "157199"
+    },
+    "Maintenance Incidents 2024": {
+      "N": "2"
+    },
+    "Maintenance Incidents 2025": {
+      "N": "5"
+    },
+    "Downtime Hours 2024": {
+      "N": "28"
+    },
+    "Downtime Hours 2025": {
+      "N": "160"
+    }
+  }
+}
+{
+  "Item": {
+    "Facility ID": {
+      "S": "FAC-084"
+    },
+    "Facility Type": {
+      "S": "Wind"
+    },
+    "Operational Tier": {
+      "S": "High-Performance"
+    },
+    "Country": {
+      "S": "CA"
+    },
+    "Energy Output 2024 (MWh)": {
+      "N": "80931"
+    },
+    "Energy Output 2025 (MWh)": {
+      "N": "83413"
+    },
+    "Maintenance Incidents 2024": {
+      "N": "4"
+    },
+    "Maintenance Incidents 2025": {
+      "N": "3"
+    },
+    "Downtime Hours 2024": {
+      "N": "168"
+    },
+    "Downtime Hours 2025": {
+      "N": "66"
+    }
+  }
+}
+{
+  "Item": {
+    "Facility ID": {
+      "S": "FAC-085"
+    },
+    "Facility Type": {
+      "S": "Hydro"
+    },
+    "Operational Tier": {
+      "S": "Standard Efficiency"
+    },
+    "Country": {
+      "S": "US"
+    },
+    "Energy Output 2024 (MWh)": {
+      "N": "51963"
+    },
+    "Energy Output 2025 (MWh)": {
+      "N": "58465"
+    },
+    "Maintenance Incidents 2024": {
+      "N": "2"
+    },
+    "Maintenance Incidents 2025": {
+      "N": "3"
+    },
+    "Downtime Hours 2024": {
+      "N": "82"
+    },
+    "Downtime Hours 2025": {
+      "N": "132"
+    }
+  }
+}
+{
+  "Item": {
+    "Facility ID": {
+      "S": "FAC-086"
+    },
+    "Facility Type": {
+      "S": "Geothermal"
+    },
+    "Operational Tier": {
+      "S": "High-Performance"
+    },
+    "Country": {
+      "S": "US"
+    },
+    "Energy Output 2024 (MWh)": {
+      "N": "43834"
+    },
+    "Energy Output 2025 (MWh)": {
+      "N": "45861"
+    },
+    "Maintenance Incidents 2024": {
+      "N": "3"
+    },
+    "Maintenance Incidents 2025": {
+      "N": "2"
+    },
+    "Downtime Hours 2024": {
+      "N": "81"
+    },
+    "Downtime Hours 2025": {
+      "N": "42"
+    }
+  }
+}
+{
+  "Item": {
+    "Facility ID": {
+      "S": "FAC-087"
+    },
+    "Facility Type": {
+      "S": "Hydro"
+    },
+    "Operational Tier": {
+      "S": "High-Performance"
+    },
+    "Country": {
+      "S": "CA"
+    },
+    "Energy Output 2024 (MWh)": {
+      "N": "92848"
+    },
+    "Energy Output 2025 (MWh)": {
+      "N": "83845"
+    },
+    "Maintenance Incidents 2024": {
+      "N": "5"
+    },
+    "Maintenance Incidents 2025": {
+      "N": "2"
+    },
+    "Downtime Hours 2024": {
+      "N": "85"
+    },
+    "Downtime Hours 2025": {
+      "N": "20"
+    }
+  }
+}
+{
+  "Item": {
+    "Facility ID": {
+      "S": "FAC-088"
+    },
+    "Facility Type": {
+      "S": "Wind"
+    },
+    "Operational Tier": {
+      "S": "High-Performance"
+    },
+    "Country": {
+      "S": "FR"
+    },
+    "Energy Output 2024 (MWh)": {
+      "N": "110519"
+    },
+    "Energy Output 2025 (MWh)": {
+      "N": "115252"
+    },
+    "Maintenance Incidents 2024": {
+      "N": "4"
+    },
+    "Maintenance Incidents 2025": {
+      "N": "1"
+    },
+    "Downtime Hours 2024": {
+      "N": "144"
+    },
+    "Downtime Hours 2025": {
+      "N": "33"
+    }
+  }
+}
+{
+  "Item": {
+    "Facility ID": {
+      "S": "FAC-089"
+    },
+    "Facility Type": {
+      "S": "Solar"
+    },
+    "Operational Tier": {
+      "S": "Standard Efficiency"
+    },
+    "Country": {
+      "S": "DE"
+    },
+    "Energy Output 2024 (MWh)": {
+      "N": "110673"
+    },
+    "Energy Output 2025 (MWh)": {
+      "N": "107683"
+    },
+    "Maintenance Incidents 2024": {
+      "N": "1"
+    },
+    "Maintenance Incidents 2025": {
+      "N": "3"
+    },
+    "Downtime Hours 2024": {
+      "N": "47"
+    },
+    "Downtime Hours 2025": {
+      "N": "126"
+    }
+  }
+}
+{
+  "Item": {
+    "Facility ID": {
+      "S": "FAC-090"
+    },
+    "Facility Type": {
+      "S": "Hydro"
+    },
+    "Operational Tier": {
+      "S": "High-Performance"
+    },
+    "Country": {
+      "S": "CA"
+    },
+    "Energy Output 2024 (MWh)": {
+      "N": "75771"
+    },
+    "Energy Output 2025 (MWh)": {
+      "N": "90848"
+    },
+    "Maintenance Incidents 2024": {
+      "N": "4"
+    },
+    "Maintenance Incidents 2025": {
+      "N": "2"
+    },
+    "Downtime Hours 2024": {
+      "N": "160"
+    },
+    "Downtime Hours 2025": {
+      "N": "52"
+    }
+  }
+}
+{
+  "Item": {
+    "Facility ID": {
+      "S": "FAC-091"
+    },
+    "Facility Type": {
+      "S": "Hydro"
+    },
+    "Operational Tier": {
+      "S": "High-Performance"
+    },
+    "Country": {
+      "S": "DE"
+    },
+    "Energy Output 2024 (MWh)": {
+      "N": "50217"
+    },
+    "Energy Output 2025 (MWh)": {
+      "N": "47012"
+    },
+    "Maintenance Incidents 2024": {
+      "N": "2"
+    },
+    "Maintenance Incidents 2025": {
+      "N": "2"
+    },
+    "Downtime Hours 2024": {
+      "N": "34"
+    },
+    "Downtime Hours 2025": {
+      "N": "50"
+    }
+  }
+}
+{
+  "Item": {
+    "Facility ID": {
+      "S": "FAC-092"
+    },
+    "Facility Type": {
+      "S": "Solar"
+    },
+    "Operational Tier": {
+      "S": "Standard Efficiency"
+    },
+    "Country": {
+      "S": "UK"
+    },
+    "Energy Output 2024 (MWh)": {
+      "N": "83464"
+    },
+    "Energy Output 2025 (MWh)": {
+      "N": "82040"
+    },
+    "Maintenance Incidents 2024": {
+      "N": "1"
+    },
+    "Maintenance Incidents 2025": {
+      "N": "5"
+    },
+    "Downtime Hours 2024": {
+      "N": "42"
+    },
+    "Downtime Hours 2025": {
+      "N": "190"
+    }
+  }
+}
+{
+  "Item": {
+    "Facility ID": {
+      "S": "FAC-093"
+    },
+    "Facility Type": {
+      "S": "Biomass"
+    },
+    "Operational Tier": {
+      "S": "High-Performance"
+    },
+    "Country": {
+      "S": "US"
+    },
+    "Energy Output 2024 (MWh)": {
+      "N": "49816"
+    },
+    "Energy Output 2025 (MWh)": {
+      "N": "50227"
+    },
+    "Maintenance Incidents 2024": {
+      "N": "1"
+    },
+    "Maintenance Incidents 2025": {
+      "N": "2"
+    },
+    "Downtime Hours 2024": {
+      "N": "24"
+    },
+    "Downtime Hours 2025": {
+      "N": "10"
+    }
+  }
+}
+{
+  "Item": {
+    "Facility ID": {
+      "S": "FAC-094"
+    },
+    "Facility Type": {
+      "S": "Biomass"
+    },
+    "Operational Tier": {
+      "S": "Standard Efficiency"
+    },
+    "Country": {
+      "S": "DE"
+    },
+    "Energy Output 2024 (MWh)": {
+      "N": "92529"
+    },
+    "Energy Output 2025 (MWh)": {
+      "N": "91385"
+    },
+    "Maintenance Incidents 2024": {
+      "N": "0"
+    },
+    "Maintenance Incidents 2025": {
+      "N": "0"
+    },
+    "Downtime Hours 2024": {
+      "N": "0"
+    },
+    "Downtime Hours 2025": {
+      "N": "0"
+    }
+  }
+}
+{
+  "Item": {
+    "Facility ID": {
+      "S": "FAC-095"
+    },
+    "Facility Type": {
+      "S": "Geothermal"
+    },
+    "Operational Tier": {
+      "S": "Standard Efficiency"
+    },
+    "Country": {
+      "S": "US"
+    },
+    "Energy Output 2024 (MWh)": {
+      "N": "81524"
+    },
+    "Energy Output 2025 (MWh)": {
+      "N": "85079"
+    },
+    "Maintenance Incidents 2024": {
+      "N": "4"
+    },
+    "Maintenance Incidents 2025": {
+      "N": "2"
+    },
+    "Downtime Hours 2024": {
+      "N": "104"
+    },
+    "Downtime Hours 2025": {
+      "N": "32"
+    }
+  }
+}
+{
+  "Item": {
+    "Facility ID": {
+      "S": "FAC-096"
+    },
+    "Facility Type": {
+      "S": "Solar"
+    },
+    "Operational Tier": {
+      "S": "High-Performance"
+    },
+    "Country": {
+      "S": "FR"
+    },
+    "Energy Output 2024 (MWh)": {
+      "N": "72521"
+    },
+    "Energy Output 2025 (MWh)": {
+      "N": "75967"
+    },
+    "Maintenance Incidents 2024": {
+      "N": "0"
+    },
+    "Maintenance Incidents 2025": {
+      "N": "0"
+    },
+    "Downtime Hours 2024": {
+      "N": "0"
+    },
+    "Downtime Hours 2025": {
+      "N": "0"
+    }
+  }
+}
+{
+  "Item": {
+    "Facility ID": {
+      "S": "FAC-097"
+    },
+    "Facility Type": {
+      "S": "Solar"
+    },
+    "Operational Tier": {
+      "S": "Standard Efficiency"
+    },
+    "Country": {
+      "S": "UK"
+    },
+    "Energy Output 2024 (MWh)": {
+      "N": "31164"
+    },
+    "Energy Output 2025 (MWh)": {
+      "N": "37339"
+    },
+    "Maintenance Incidents 2024": {
+      "N": "4"
+    },
+    "Maintenance Incidents 2025": {
+      "N": "2"
+    },
+    "Downtime Hours 2024": {
+      "N": "48"
+    },
+    "Downtime Hours 2025": {
+      "N": "80"
+    }
+  }
+}
+{
+  "Item": {
+    "Facility ID": {
+      "S": "FAC-098"
+    },
+    "Facility Type": {
+      "S": "Geothermal"
+    },
+    "Operational Tier": {
+      "S": "Standard Efficiency"
+    },
+    "Country": {
+      "S": "CA"
+    },
+    "Energy Output 2024 (MWh)": {
+      "N": "139079"
+    },
+    "Energy Output 2025 (MWh)": {
+      "N": "143643"
+    },
+    "Maintenance Incidents 2024": {
+      "N": "3"
+    },
+    "Maintenance Incidents 2025": {
+      "N": "3"
+    },
+    "Downtime Hours 2024": {
+      "N": "126"
+    },
+    "Downtime Hours 2025": {
+      "N": "96"
+    }
+  }
+}
+{
+  "Item": {
+    "Facility ID": {
+      "S": "FAC-099"
+    },
+    "Facility Type": {
+      "S": "Hydro"
+    },
+    "Operational Tier": {
+      "S": "Standard Efficiency"
+    },
+    "Country": {
+      "S": "CA"
+    },
+    "Energy Output 2024 (MWh)": {
+      "N": "144202"
+    },
+    "Energy Output 2025 (MWh)": {
+      "N": "162778"
+    },
+    "Maintenance Incidents 2024": {
+      "N": "5"
+    },
+    "Maintenance Incidents 2025": {
+      "N": "0"
+    },
+    "Downtime Hours 2024": {
+      "N": "225"
+    },
+    "Downtime Hours 2025": {
+      "N": "0"
+    }
+  }
+}
+{
+  "Item": {
+    "Facility ID": {
+      "S": "FAC-100"
+    },
+    "Facility Type": {
+      "S": "Hydro"
+    },
+    "Operational Tier": {
+      "S": "Standard Efficiency"
+    },
+    "Country": {
+      "S": "UK"
+    },
+    "Energy Output 2024 (MWh)": {
+      "N": "92350"
+    },
+    "Energy Output 2025 (MWh)": {
+      "N": "85194"
+    },
+    "Maintenance Incidents 2024": {
+      "N": "1"
+    },
+    "Maintenance Incidents 2025": {
+      "N": "1"
+    },
+    "Downtime Hours 2024": {
+      "N": "5"
+    },
+    "Downtime Hours 2025": {
+      "N": "31"
+    }
+  }
+}
