@@ -77,35 +77,35 @@ Introduction This document guides you through creating and configuring the Amazo
 
 **Step 1:** After successfully entering the AWS Management Console from the learner lab environment, the AWS search bar was utilized to search for "S3". Then I selected the Amazon S3 service under category “Services” to start the configuration of the cloud storage bucket needed to store the EcoStream telemetry data provided in the assessment resource. This step was an important step as Amazon S3 provides scalable object storage, which would later be utilized to store the “energy-telemetry-2025-2026-dbjson” dataset before integrating it with DynamoDB for querying and analysis.
 
-**Visual evidence — guide page 1 (1 image)**
+**Visual evidence — (3 images)**
 
 ![Objective 1 — Amazon S3 Bucket Setup — evidence 01](visualizations/Q1A_S3_01.png)
-
-**Step 2:** To set up the cloud storage environment required for the EcoStream dataset, the Amazon S3 bucket creation page was opened from the S3 service dashboard. In the “General configuration” section, the AWS Region “US East (N. Virginia) us-east-1” was kept so that it would be the same as that utilized across the assessment brief. The “General purpose” bucket type was chosen because it is suitable for common cloud storage operations and offers high availability across many Availability Zones. The bucket name “23122931-ecostream-energy-bucket " is given in the assessment brief.
-
-The default “ACLs disabled” object ownership setting was retained to simplify access management using bucket policies instead of legacy access control lists. Furthermore, the “Block all public access” setting was still enabled to increase the security of the bucket and prevent unauthorised public access to the stored telemetry dataset. The “bucket versioning” was disabled because the assessment did not require the ability to save multiple object versions, only required the fundamental dataset storage feature. For the encryption settings, the default server-side encryption option “SSE-S3” was kept to automatically encrypt all uploaded files stored in the bucket using Amazon S3-managed encryption keys.
-
-**Visual evidence — guide page 2 (2 images)**
 
 ![Objective 1 — Amazon S3 Bucket Setup — evidence 02](visualizations/Q1A_S3_02.png)
 
 ![Objective 1 — Amazon S3 Bucket Setup — evidence 03](visualizations/Q1A_S3_03.png)
 
+**Step 2:** To set up the cloud storage environment required for the EcoStream dataset, the Amazon S3 bucket creation page was opened from the S3 service dashboard. In the “General configuration” section, the AWS Region “US East (N. Virginia) us-east-1” was kept so that it would be the same as that utilized across the assessment brief. The “General purpose” bucket type was chosen because it is suitable for common cloud storage operations and offers high availability across many Availability Zones. The bucket name “23122931-ecostream-energy-bucket " is given in the assessment brief.
+
+The default “ACLs disabled” object ownership setting was retained to simplify access management using bucket policies instead of legacy access control lists. Furthermore, the “Block all public access” setting was still enabled to increase the security of the bucket and prevent unauthorised public access to the stored telemetry dataset. The “bucket versioning” was disabled because the assessment did not require the ability to save multiple object versions, only required the fundamental dataset storage feature. For the encryption settings, the default server-side encryption option “SSE-S3” was kept to automatically encrypt all uploaded files stored in the bucket using Amazon S3-managed encryption keys.
+
+
 These parameters were chosen to establish a secure, well designed and cost effective cloud storage environment for the EcoStream telemetry dataset in line with AWS best security practices.
 
-**Visual evidence — guide page 3 (2 images)**
+**Visual evidence — (4 images)**
 
 ![Objective 1 — Amazon S3 Bucket Setup — evidence 04](visualizations/Q1A_S3_04.png)
 
 ![Objective 1 — Amazon S3 Bucket Setup — evidence 05](visualizations/Q1A_S3_05.png)
 
-**Step 3:** After setting up the bucket configuration, the option “Create bucket” was selected to deploy the storage bucket. AWS successfully created the bucket “23122931-ecostream-energy- bucket”. And the bucket dashboard opened automatically. The bucket interface had the Objects, Properties, Permissions, Metrics, and Management tabs proving the successful provisioning of the storage environment ready to store data. This phase verified that the S3 bucket infrastructure required for the evaluation has been successfully set up. The “Upload” option inside the S3 bucket dashboard was selected to upload the EcoStream telemetry dataset into the newly created storage bucket. The dataset file “energy-telemetry- 2025-2026-dbjson” was uploaded successfully into the bucket storage environment. The upload status screen indicated that the upload was completed successfully and no mistakes were detected. The uploaded file was listed in the files and folders area with its file type and storage size, which signified that the dataset was successfully stored in the Amazon S3 bucket. This step was necessary because according to the assessment brief, the telemetry dataset has to be saved in Amazon S3 first, and then imported into DynamoDB for database analysis and querying operations.
-
-**Visual evidence — guide page 4 (2 images)**
-
 ![Objective 1 — Amazon S3 Bucket Setup — evidence 06](visualizations/Q1A_S3_06.png)
 
 ![Objective 1 — Amazon S3 Bucket Setup — evidence 07](visualizations/Q1A_S3_07.png)
+
+**Step 3:** After setting up the bucket configuration, the option “Create bucket” was selected to deploy the storage bucket. AWS successfully created the bucket “23122931-ecostream-energy- bucket”. And the bucket dashboard opened automatically. The bucket interface had the Objects, Properties, Permissions, Metrics, and Management tabs proving the successful provisioning of the storage environment ready to store data. This phase verified that the S3 bucket infrastructure required for the evaluation has been successfully set up. The “Upload” option inside the S3 bucket dashboard was selected to upload the EcoStream telemetry dataset into the newly created storage bucket. The dataset file “energy-telemetry- 2025-2026-dbjson” was uploaded successfully into the bucket storage environment. The upload status screen indicated that the upload was completed successfully and no mistakes were detected. The uploaded file was listed in the files and folders area with its file type and storage size, which signified that the dataset was successfully stored in the Amazon S3 bucket. This step was necessary because according to the assessment brief, the telemetry dataset has to be saved in Amazon S3 first, and then imported into DynamoDB for database analysis and querying operations.
+
+**Visual evidence — (2 images)**
+
 
 This step was necessary because the assessment required the telemetry dataset to be stored inside Amazon S3 before it could later be imported into DynamoDB for querying and database analysis tasks.
 
