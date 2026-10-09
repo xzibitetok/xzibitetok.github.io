@@ -325,149 +325,189 @@ After clicking Run, the query result will be exported as a CSV file by selecting
 
 **Full guide:** [23122931 Amazon Machine Image step-by-step guide.pdf](https://github.com/xzibitetok/xzibitetok.github.io/releases/download/Ubong_s_EcoStream_AWS_v1.0.0/23122931%2BAmazon%2BMachine%2BImage%2Bstep-by-step%2Bguide.pdf)
 
-Amazon Machine Image Step-by-Step Guide
+## Introduction 
+This document presents a step-by-step method for creating and validating a custom Amazon Machine Image for EcoStream Energy using Amazon EC2 services. The guide explains how a typical Ubuntu Linux EC2 instance was set up as a template server, how to manually install the Node.js programming environment, and how the configured instance was turned into a reusable custom AMI. 
+It also details how the AMI was validated by creating a second EC2 instance from the modified image and running “Node.js” commands to verify that the software installation was retained in the AMI. Relevant screenshots are attached, along with technical details to aid in replicating the deployment procedure in the AWS environment.
 
-Introduction This document presents a step-by-step method for creating and validating a custom Amazon Machine Image for EcoStream Energy using Amazon EC2 services. The guide explains how a typical Ubuntu Linux EC2 instance was set up as a template server, how to manually install the Node.js programming environment, and how the configured instance was turned into a reusable custom AMI. It also details how the AMI was validated by creating a second EC2 instance from the modified image and running “Node.js” commands to verify that the software installation was retained in the AMI. Relevant screenshots are attached, along with technical details to aid in replicating the deployment procedure in the AWS environment.
+## Step 1: The AWS search menu was used to locate and open the EC2 service in the AWS Management Console. The EC2 dashboard was opened successfully, displaying the available EC2 resources and the Launch Instance option.
 
-**Step 1:** The AWS search menu was used to locate and open the EC2 service in the AWS Management Console. The EC2 dashboard was opened successfully, displaying the available EC2 resources and the Launch Instance option.
-
-**Step 2:** The instance was named 23122931-ec2-template-instance. The latest Ubuntu Linux AMI was selected with a 64-bit specification, and the instance type was set to “t3.nano”.
-
-**Visual evidence — guide page 1 (2 images)**
+## Visual evidence — (2 images)
 
 ![Objective 4 — Custom Amazon Machine Image and Node.js Validation — evidence 01](visualizations/Q2A_AMI_01.png)
 
 ![Objective 4 — Custom Amazon Machine Image and Node.js Validation — evidence 02](visualizations/Q2A_AMI_02.png)
 
-**Step 3:** A new RSA key pair named 23122931-keypair was created and configured in “.pem” format to enable secure SSH access to the EC2 instance. The created key pair was successfully attached to the EC2 instance configuration.
+## Step 2: The instance was named 23122931-ec2-template-instance. The latest Ubuntu Linux AMI was selected with a 64-bit specification, and the instance type was set to “t3.nano”.
 
-**Step 4:** The network security group and storage settings were configured for the EC2 instance. SSH traffic was enabled to support secure remote access, and the storage volume was configured with 12 GiB of gp3 storage, as required in the brief.
-
-**Visual evidence — guide page 2 (3 images)**
+## Visual evidence — (1 image)
 
 ![Objective 4 — Custom Amazon Machine Image and Node.js Validation — evidence 03](visualizations/Q2A_AMI_03.png)
+
+## Step 3: A new RSA key pair named 23122931-keypair was created and configured in “.pem” format to enable secure SSH access to the EC2 instance. The created key pair was successfully attached to the EC2 instance configuration.
+
+## Visual evidence — (2 images)
 
 ![Objective 4 — Custom Amazon Machine Image and Node.js Validation — evidence 04](visualizations/Q2A_AMI_04.png)
 
 ![Objective 4 — Custom Amazon Machine Image and Node.js Validation — evidence 05](visualizations/Q2A_AMI_05.png)
 
-**Step 5:** The EC2 template instance was launched successfully, and the AWS launch log confirmed that the instance initialization, security groups, and security group rules were created successfully.
+## Step 4: The network security group and storage settings were configured for the EC2 instance. SSH traffic was enabled to support secure remote access, and the storage volume was configured with 12 GiB of gp3 storage, as required in the brief.
 
-**Step 6:** The AWS EC2 Dashboard was opened, and the previously created template instance named “23122931-ec2-template-instance” was selected from the list of running instances. To begin creating a reusable Amazon Machine Image, the following navigation path was used from the EC2 Instances page: Actions → Image and templates → Create image. This process created a custom AMI with pre-installed Node.js, which was later used to launch and validate a new EC2 instance.
-
-**Visual evidence — guide page 3 (2 images)**
+## Visual evidence — (1 image)
 
 ![Objective 4 — Custom Amazon Machine Image and Node.js Validation — evidence 06](visualizations/Q2A_AMI_06.png)
 
+## Step 5: The EC2 template instance was launched successfully, and the AWS launch log confirmed that the instance initialization, security groups, and security group rules were created successfully.
+
+## Visual evidence — (1 image)
+
 ![Objective 4 — Custom Amazon Machine Image and Node.js Validation — evidence 07](visualizations/Q2A_AMI_07.png)
 
-**Step 7:** The AMI configuration page was completed to create a reusable machine image from the running EC2 template instance. The image name was set to 23122931-nodejs-ami, and the image description was updated to indicate that the AMI included pre-installed Node.js. The Reboot instance option remained enabled to ensure consistency during snapshot creation; the storage configuration was set to 12 GB of GP3 storage; and the option to “tag image and snapshots together” was selected. After confirming the configuration settings, the Create image button was selected to generate the custom Amazon Machine Image containing the installed Node.js environment.
+## Step 6: The AWS EC2 Dashboard was opened, and the previously created template instance named “23122931-ec2-template-instance” was selected from the list of running instances. To begin creating a reusable Amazon Machine Image, the following navigation path was used from the EC2 Instances page: Actions → Image and templates → Create image. 
+This process created a custom AMI with pre-installed Node.js, which was later used to launch and validate a new EC2 instance.
 
-**Visual evidence — guide page 4 (2 images)**
+## Visual evidence — (1 image)
 
 ![Objective 4 — Custom Amazon Machine Image and Node.js Validation — evidence 08](visualizations/Q2A_AMI_08.png)
 
+## Step 7: The AMI configuration page was completed to create a reusable machine image from the running EC2 template instance. The image name was set to 23122931-nodejs-ami, and the image description was updated to indicate that the AMI included pre-installed Node.js. 
+The Reboot instance option remained enabled to ensure consistency during snapshot creation; the storage configuration was set to 12 GB of GP3 storage; and the option to “tag image and snapshots together” was selected. After confirming the configuration settings, the Create image button was selected to generate the custom Amazon Machine Image containing the installed Node.js environment.
+
+## Visual evidence — (2 images)
+
 ![Objective 4 — Custom Amazon Machine Image and Node.js Validation — evidence 09](visualizations/Q2A_AMI_09.png)
-
-**Step 8:** From the EC2 navigation panel on the left side of the AWS console, the Images section was expanded, and AMIs were selected to open the Amazon Machine Images page. The Private images category was then used to display the reusable custom AMIs created within the account. The reusable Node.js AMI named “23122931-nodejs-ami” was selected from the list, and its status was confirmed as Available, indicating that the custom AMI containing the installed Node.js environment had been successfully created and was ready to be used to launch a new EC2 validation instance.
-
-**Step 9:** On the launch configuration page, the instance name was set to “23122931-ecostream- nodejs-instance,” as required in the assessment brief. The previously created reusable AMI containing Node.js was automatically attached as the software image for the new EC2 instance.
-
-**Step 10:** While configuring the validation EC2 instance, the Network settings section was reviewed, and a new security group was selected within the firewall configuration to control
-
-**Visual evidence — guide page 5 (3 images)**
 
 ![Objective 4 — Custom Amazon Machine Image and Node.js Validation — evidence 10](visualizations/Q2A_AMI_10.png)
 
+## Step 8: From the EC2 navigation panel on the left side of the AWS console, the Images section was expanded, and AMIs were selected to open the Amazon Machine Images page. The Private images category was then used to display the reusable custom AMIs created within the account.
+The reusable Node.js AMI named “23122931-nodejs-ami” was selected from the list, and its status was confirmed as Available, indicating that the custom AMI containing the installed Node.js environment had been successfully created and was ready to be used to launch a new EC2 validation instance.
+
+## Visual evidence — (1 image)
+
 ![Objective 4 — Custom Amazon Machine Image and Node.js Validation — evidence 11](visualizations/Q2A_AMI_11.png)
+
+## Step 9: On the launch configuration page, the instance name was set to “23122931-ecostream- nodejs-instance,” as required in the assessment brief. The previously created reusable AMI containing Node.js was automatically attached as the software image for the new EC2 instance.
+
+## Visual evidence — (1 image)
 
 ![Objective 4 — Custom Amazon Machine Image and Node.js Validation — evidence 12](visualizations/Q2A_AMI_12.png)
 
-inbound access to the instance. During the launch process, AWS displayed a prompt requesting a key pair selection before the instance could be created. Since validation was performed via the AWS browser-based EC2 Instance Connect terminal, the “Proceed without key pair” option was selected. The “Allow SSH traffic from” option was selected, and the remaining launch settings were retained at their default values to ensure the validation instance launched successfully using the reusable Node.js AMI.
+## Step 10: While configuring the validation EC2 instance, the Network settings section was reviewed, and a new security group was selected within the firewall configuration to control inbound access to the instance. During the launch process, AWS displayed a prompt requesting a key pair selection before the instance could be created. Since validation was performed via the AWS browser-based EC2 Instance Connect terminal, the “Proceed without key pair” option was selected. 
+The “Allow SSH traffic from” option was selected, and the remaining launch settings were retained at their default values to ensure the validation instance launched successfully using the reusable Node.js AMI.
 
-**Step 11:** After completing the launch configuration, the Launch instance button was selected to deploy the new EC2 validation instance from the reusable Node.js AMI. The AWS console displayed a successful launch confirmation message indicating that the EC2 validation instance had been created successfully, making the validation environment ready for testing the installed Node.js software.
-
-**Step 12:** After launching the validation instance, the EC2 navigation panel was used to return to the Instances section to verify the status of both EC2 instances. The original template instance “23122931-ec2-template-instance” and the newly launched validation instance “23122931- ecostream-nodejs-instance” were both displayed as Running instances. The status checks also confirmed that the instances were operating correctly, indicating that the validation instance created from the reusable Node.js AMI had launched successfully and was ready for terminal- based Node.js validation. The newly created validation instance, 23122931-ecostream-nodejs-instance, was selected from the Instances list for software validation as required in the brief, and the connect button was used to open the instance connection page.
-
-**Visual evidence — guide page 6 (2 images)**
+## Visual evidence — (1 image)
 
 ![Objective 4 — Custom Amazon Machine Image and Node.js Validation — evidence 13](visualizations/Q2A_AMI_13.png)
 
+## Step 11: After completing the launch configuration, the Launch instance button was selected to deploy the new EC2 validation instance from the reusable Node.js AMI.
+The AWS console displayed a successful launch confirmation message indicating that the EC2 validation instance had been created successfully, making the validation environment ready for testing the installed Node.js software.
+
+## Visual evidence — (1 image)
+
 ![Objective 4 — Custom Amazon Machine Image and Node.js Validation — evidence 14](visualizations/Q2A_AMI_14.png)
 
-**Step 13:** On the connection page, the EC2 Instance Connect tab was selected to establish a browser-based terminal connection to the validation instance. The “Connect using a Public IP” option remained selected to allow remote browser access to the EC2 instance, while the default username root was retained because it matched the configuration of the reusable “Node.js” AMI. These settings were confirmed before selecting the “Connect” button to open the terminal environment required for validating the installed “Node.js” software.
+## Step 12: After launching the validation instance, the EC2 navigation panel was used to return to the Instances section to verify the status of both EC2 instances. The original template instance “23122931-ec2-template-instance” and the newly launched validation instance “23122931- ecostream-nodejs-instance” were both displayed as Running instances. The status checks also confirmed that the instances were operating correctly, indicating that the validation instance created from the reusable Node.js AMI had launched successfully and was ready for terminal- based Node.js validation. 
+The newly created validation instance, 23122931-ecostream-nodejs-instance, was selected from the Instances list for software validation as required in the brief, and the connect button was used to open the instance connection page.
 
-**Step 14:** After selecting the “Connect” button from the EC2 Instance Connect page, a browser- based terminal session was successfully opened for the validation instance “23122931- ecostream-nodejs-instance”. The terminal displayed Ubuntu operating system information, system status details, and the root command prompt, confirming that the EC2 validation instance created from the reusable “Node.js” AMI was running successfully and accessible via the AWS browser terminal. This terminal session was required to perform the “Node.js” validation commands specified in the assessment brief.
-
-**Visual evidence — guide page 7 (3 images)**
+## Visual evidence — (1 image)
 
 ![Objective 4 — Custom Amazon Machine Image and Node.js Validation — evidence 15](visualizations/Q2A_AMI_15.png)
 
+## Step 13: On the connection page, the EC2 Instance Connect tab was selected to establish a browser-based terminal connection to the validation instance. The “Connect using a Public IP” option remained selected to allow remote browser access to the EC2 instance, while the default username root was retained because it matched the configuration of the reusable “Node.js” AMI. 
+These settings were confirmed before selecting the “Connect” button to open the terminal environment required for validating the installed “Node.js” software.
+
+## Visual evidence — (1 image)
+
 ![Objective 4 — Custom Amazon Machine Image and Node.js Validation — evidence 16](visualizations/Q2A_AMI_16.png)
+
+## Step 14: After selecting the “Connect” button from the EC2 Instance Connect page, a browser- based terminal session was successfully opened for the validation instance “23122931- ecostream-nodejs-instance”. 
+The terminal displayed Ubuntu operating system information, system status details, and the root command prompt, confirming that the EC2 validation instance created from the reusable “Node.js” AMI was running successfully and accessible via the AWS browser terminal. This terminal session was required to perform the “Node.js” validation commands specified in the assessment brief.
+
+## Visual evidence — (1 image)
 
 ![Objective 4 — Custom Amazon Machine Image and Node.js Validation — evidence 17](visualizations/Q2A_AMI_17.png)
 
-**Step 15:** This command, “sudo apt update,” was used to refresh the package index and retrieve the latest available information about software packages from the Ubuntu repositories before proceeding with the Node.js validation process. The terminal output confirmed that the system successfully connected to the Ubuntu repositories and downloaded updated package information required for package verification and software management within the EC2 validation instance.
+## Step 15: This command, “sudo apt update,” was used to refresh the package index and retrieve the latest available information about software packages from the Ubuntu repositories before proceeding with the Node.js validation process. 
+The terminal output confirmed that the system successfully connected to the Ubuntu repositories and downloaded updated package information required for package verification and software management within the EC2 validation instance.
 
-**Step 16:** The command “sudo apt install nodejs -y” was used to install Node.js and its dependencies on the EC2 validation instance. The “-y” option automatically approved the installation process without requiring manual confirmation from the user. The terminal output confirmed that the system successfully downloaded and installed the Node.js package, along with its supporting libraries and dependencies, indicating that the Node.js environment was properly configured on the EC2 validation instance.
-
-**Step 17:** The command “node -v” was used to verify that Node.js had been successfully installed on the validation instance. The terminal output displayed the installed Node.js version” v22.22.1”, confirming that the Node.js software package was properly installed and operational within the EC2 validation instance created from the reusable custom AMI.
-
-**Visual evidence — guide page 8 (2 images)**
+## Visual evidence — (1 image)
 
 ![Objective 4 — Custom Amazon Machine Image and Node.js Validation — evidence 18](visualizations/Q2A_AMI_18.png)
 
+## Step 16: The command “sudo apt install nodejs -y” was used to install Node.js and its dependencies on the EC2 validation instance. The “-y” option automatically approved the installation process without requiring manual confirmation from the user. 
+The terminal output confirmed that the system successfully downloaded and installed the Node.js package, along with its supporting libraries and dependencies, indicating that the Node.js environment was properly configured on the EC2 validation instance.
+
+## Visual evidence — (1 image)
+
 ![Objective 4 — Custom Amazon Machine Image and Node.js Validation — evidence 19](visualizations/Q2A_AMI_19.png)
 
-**Step 18:** The command “node 23122931_script.js” was used to run the Java script validation file created during the AMI testing process. The terminal output displayed the message: “23122931, NodeJS has been installed successfully for EcoStream!” confirming that the Node.js environment was functioning correctly within the EC2 validation instance and that the reusable custom AMI had been successfully validated.
+## Step 17: The command “node -v” was used to verify that Node.js had been successfully installed on the validation instance. 
+The terminal output displayed the installed Node.js version” v22.22.1”, confirming that the Node.js software package was properly installed and operational within the EC2 validation instance created from the reusable custom AMI.
 
-**Visual evidence — guide page 9 (2 images)**
+## Visual evidence — (1 image)
 
 ![Objective 4 — Custom Amazon Machine Image and Node.js Validation — evidence 20](visualizations/Q2A_AMI_20.png)
 
+## Step 18: The command “node 23122931_script.js” was used to run the Java script validation file created during the AMI testing process.
+The terminal output displayed the message: “23122931, NodeJS has been installed successfully for EcoStream!” confirming that the Node.js environment was functioning correctly within the EC2 validation instance and that the reusable custom AMI had been successfully validated.
+
+## Visual evidence — (1 image)
+
 ![Objective 4 — Custom Amazon Machine Image and Node.js Validation — evidence 21](visualizations/Q2A_AMI_21.png)
 
-**Step 19:** After successfully validating Node.js within the EC2 validation instance, the EC2 navigation panel was used to return to the Instances section. The validation instance “23122931-ecostream-nodejs-instance” was selected, and the following navigation path was used to begin creating an additional backup AMI: Actions → Image and templates → Create image This step was performed to generate a reusable backup image from the fully validated Node.js EC2 instance.
+## Step 19: After successfully validating Node.js within the EC2 validation instance, the EC2 navigation panel was used to return to the Instances section. The validation instance “23122931-ecostream-nodejs-instance” was selected, and the following navigation path was used to begin creating an additional backup AMI: Actions → Image and templates → Create image 
+This step was performed to generate a reusable backup image from the fully validated Node.js EC2 instance.
 
-**Step 20:** The Create image configuration page was opened for the validation instance after navigating through Actions → Image and templates → Create image. Initially, the AMI name “23122931-nodejs-ami” was entered; however, AWS displayed an error message indicating that the name was already associated with an existing AMI that had been previously created successfully. To resolve this issue, the AMI name was changed to “23122931-nodejs-ami-final”. The “Reboot instance” option remained selected to ensure AWS creates a consistent snapshot of the instance during image creation. Under the storage configuration, the default 12 GB storage volume settings were retained, while the “Delete on termination” option remained enabled. The “Tag image and snapshots together” option was also selected so that both the AMI and its associated snapshots would share the same tagging configuration. After confirming and retaining the remaining default snapshot and storage settings, the “Create image” button was selected to proceed with AMI creation.
-
-**Step 21:** After the updated AMI creation request was submitted, a green status notification appeared at the top of the page confirming that AWS was currently creating the AMI from the validation instance “23122931-ecostream-nodejs-instance”.
-
-**Visual evidence — guide page 10 (2 images)**
+## Visual evidence — (1 image)
 
 ![Objective 4 — Custom Amazon Machine Image and Node.js Validation — evidence 22](visualizations/Q2A_AMI_22.png)
 
+## Step 20: The Create image configuration page was opened for the validation instance after navigating through Actions → Image and templates → Create image. Initially, the AMI name “23122931-nodejs-ami” was entered; however, AWS displayed an error message indicating that the name was already associated with an existing AMI that had been previously created successfully.
+To resolve this issue, the AMI name was changed to “23122931-nodejs-ami-final”. The “Reboot instance” option remained selected to ensure AWS creates a consistent snapshot of the instance during image creation. Under the storage configuration, the default 12 GB storage volume settings were retained, while the “Delete on termination” option remained enabled. The “Tag image and snapshots together” option was also selected so that both the AMI and its associated snapshots would share the same tagging configuration. 
+After confirming and retaining the remaining default snapshot and storage settings, the “Create image” button was selected to proceed with AMI creation.
+
+## Visual evidence — (1 image)
+
 ![Objective 4 — Custom Amazon Machine Image and Node.js Validation — evidence 23](visualizations/Q2A_AMI_23.png)
 
-Both the original template instance “23122931-ec2-template-instance” and the validation instance “23122931-ecostream-nodejs-instance” remained in a Running state with all status checks passed successfully during the AMI creation process. This confirmed that the reusable “Node.js” AMI creation had started successfully and that the instance was operating correctly while AWS generated the machine image snapshots in the background. The EC2 navigation panel was used to navigate to Images → AMIs to verify the successful creation of the reusable Node.js machine images. Within the Private images section, both custom AMIs named “23122931-nodejs-ami” and “23122931-nodejs-ami-final” were displayed in the AMIs list. The status of both AMIs was shown as Available, confirming that AWS had successfully completed AMI creation and snapshot generation and was ready to launch EC2 validation instances with “Node.js” pre-installed.
+## Step 21: After the updated AMI creation request was submitted, a green status notification appeared at the top of the page confirming that AWS was currently creating the AMI from the validation instance “23122931-ecostream-nodejs-instance”.
+Both the original template instance “23122931-ec2-template-instance” and the validation instance “23122931-ecostream-nodejs-instance” remained in a Running state with all status checks passed successfully during the AMI creation process. This confirmed that the reusable “Node.js” AMI creation had started successfully and that the instance was operating correctly while AWS generated the machine image snapshots in the background.
+The EC2 navigation panel was used to navigate to Images → AMIs to verify the successful creation of the reusable Node.js machine images. Within the Private images section, both custom AMIs named “23122931-nodejs-ami” and “23122931-nodejs-ami-final” were displayed in the AMIs list. 
+The status of both AMIs was shown as Available, confirming that AWS had successfully completed AMI creation and snapshot generation and was ready to launch EC2 validation instances with “Node.js” pre-installed.
 
-**Step 22:** The EC2 navigation panel was used to remain in the Instances section, where the original template instance, “23122931-ec2-template-instance,” was selected. The following navigation path was then used to configure deletion protection for the template instance: Actions → Instance settings → Change termination protection This option was selected to prevent the EC2 template instance from being accidentally deleted during future AWS operations. Enabling “termination protection” ensured that the template instance complied with the assessment requirement for protecting critical insurance analytics infrastructure from accidental termination.
-
-**Visual evidence — guide page 11 (2 images)**
+## Visual evidence — (2 images)
 
 ![Objective 4 — Custom Amazon Machine Image and Node.js Validation — evidence 24](visualizations/Q2A_AMI_24.png)
 
 ![Objective 4 — Custom Amazon Machine Image and Node.js Validation — evidence 25](visualizations/Q2A_AMI_25.png)
 
-**Step 23:** The validation instance “23122931-ecostream-nodejs-instance” was then selected separately. The following navigation path was again used: Actions → Instance settings → Change termination protection This option was selected to prevent the EC2 validation instance from being accidentally deleted during future AWS operations. Enabling “termination protection” ensured that the validation instance complied with the assessment requirement for protecting critical insurance analytics infrastructure from accidental termination. AWS displayed a green success notification confirming that termination protection had been successfully enabled for the template instance.
+## Step 22: The EC2 navigation panel was used to remain in the Instances section, where the original template instance, “23122931-ec2-template-instance,” was selected. The following navigation path was then used to configure deletion protection for the template instance:
+Actions → Instance settings → Change termination protection 
+This option was selected to prevent the EC2 template instance from being accidentally deleted during future AWS operations. Enabling “termination protection” ensured that the template instance complied with the assessment requirement for protecting critical insurance analytics infrastructure from accidental termination.
 
-**Visual evidence — guide page 12 (2 images)**
+## Visual evidence — (2 images)
 
 ![Objective 4 — Custom Amazon Machine Image and Node.js Validation — evidence 26](visualizations/Q2A_AMI_26.png)
 
 ![Objective 4 — Custom Amazon Machine Image and Node.js Validation — evidence 27](visualizations/Q2A_AMI_27.png)
 
-**Step 24:** AWS displayed a green success notification confirming that termination protection had been successfully enabled for the validation instance.
+## Step 23: The validation instance “23122931-ecostream-nodejs-instance” was then selected separately. The following navigation path was again used: 
+Actions → Instance settings → Change termination protection
+This option was selected to prevent the EC2 validation instance from being accidentally deleted during future AWS operations. Enabling “termination protection” ensured that the validation instance complied with the assessment requirement for protecting critical insurance analytics infrastructure from accidental termination. 
+AWS displayed a green success notification confirming that termination protection had been successfully enabled for the template instance.
 
-**Visual evidence — guide page 13 (3 images)**
+## Visual evidence — (2 images)
 
 ![Objective 4 — Custom Amazon Machine Image and Node.js Validation — evidence 28](visualizations/Q2A_AMI_28.png)
 
 ![Objective 4 — Custom Amazon Machine Image and Node.js Validation — evidence 29](visualizations/Q2A_AMI_29.png)
 
+## Step 24: AWS displayed a green success notification confirming that termination protection had been successfully enabled for the validation instance.
+
+## Visual evidence — (1 image)
+
 ![Objective 4 — Custom Amazon Machine Image and Node.js Validation — evidence 30](visualizations/Q2A_AMI_30.png)
 
-**Download the full step-by-step guide:** [23122931 Amazon Machine Image step-by-step guide.pdf](https://github.com/xzibitetok/xzibitetok.github.io/releases/download/Ubong_s_EcoStream_AWS_v1.0.0/23122931%2BAmazon%2BMachine%2BImage%2Bstep-by-step%2Bguide.pdf)
 
 ---
 
