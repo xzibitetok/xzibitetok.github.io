@@ -489,11 +489,18 @@ form button:hover { background: #32cd32; }
 ========================================= */
 
 #resume-preview .resume-card a {
-  color: #39ff14;
+  color: #ffffff;
   font-weight: 600;
   text-decoration: none;
   overflow-wrap: anywhere;
   transition: color 0.3s ease;
+}
+
+#resume-preview .resume-card a:hover,
+#resume-preview .resume-card a:focus,
+#resume-preview .resume-card a:active {
+  color: #39ff14;
+  text-decoration: underline;
 }
 
 #resume-preview .resume-card a:hover {
