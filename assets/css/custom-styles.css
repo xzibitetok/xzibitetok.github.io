@@ -672,3 +672,15 @@ form button:hover { background: #32cd32; }
   border-bottom: none !important;
 }
 
+/* Enlarge profile picture on desktop */
+@media (min-width: 769px) {
+  .hero-content .hero-profile {
+    width: 260px !important;
+    height: 260px !important;
+    min-width: 260px;
+    max-width: 260px;
+    flex-shrink: 0;
+    object-fit: cover;
+  }
+}
+
