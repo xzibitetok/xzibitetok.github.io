@@ -544,10 +544,14 @@ form button:hover { background: #32cd32; }
   margin: 0;
 }
 
-  .hero-profile {
-    width: 150px;
-    height: 150px;
-  }
+.hero-profile {
+  width: 240px;
+  height: 240px;
+  min-width: 240px;
+  border-radius: 50%;
+  border: 3px solid #39ff14;
+  object-fit: cover;
+}
 
   .hero-right h1 {
     font-size: clamp(1.8rem, 7vw, 2.3rem);
