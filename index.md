@@ -348,7 +348,7 @@ new Typed("#about-typed", {
   <h2>📊 Achievements</h2>
   <div class="stats-grid">
     <div class="stat-card">
-      <h3 class="counter" data-target="4">0</h3>
+      <h3 class="counter" data-target="6">0</h3>
       <p>Years of Experience</p>
     </div>
     <div class="stat-card">
@@ -360,7 +360,7 @@ new Typed("#about-typed", {
       <p>Clients Served</p>
     </div>
     <div class="stat-card">
-      <h3 class="counter" data-target="5">0</h3>
+      <h3 class="counter" data-target="8">0</h3>
       <p>Certifications</p>
     </div>
   </div>
