@@ -520,14 +520,22 @@ form button:hover { background: #32cd32; }
 @media (max-width: 768px) {
 
   /* 1. Reduce excessive hero height and spacing */
- .hero {
+.hero {
   min-height: auto;
   padding: 15px 16px 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-   
-  .hero-content {
-    gap: 1rem;
-  }
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1rem;
+  margin: 0;
+}
 
   .hero-profile {
     width: 150px;
