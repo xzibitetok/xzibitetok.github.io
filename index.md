@@ -211,12 +211,12 @@ new Typed("#about-typed", {
     </a>
   </li>
 
-  <li>
-    <a href="/assets/certificates/Data_Analysis_with_Excel_and_Python.pdf"
-       target="_blank" rel="noopener">
-      Data Analysis with Excel and Python — View Certificate
-    </a>
-  </li>
+<li>
+  <a href="/assets/certificates/Data_Analysis%20_with%20_Excel_and_Python.pdf"
+     target="_blank" rel="noopener">
+    Data Analysis with Excel and Python — View Certificate
+  </a>
+</li>
 
   <li>
     <a href="/assets/certificates/Data_Analysis_Hands_On_Training_Program_With_Vicroria_Solutions.pdf"
