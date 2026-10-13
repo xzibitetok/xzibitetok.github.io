@@ -522,7 +522,7 @@ form button:hover { background: #32cd32; }
   /* 1. Reduce excessive hero height and spacing */
  .hero {
   min-height: auto;
-  padding: 45px 16px 30px;
+  padding: 15px 16px 30px;
 }
    
   .hero-content {
