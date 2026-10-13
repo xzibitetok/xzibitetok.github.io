@@ -511,3 +511,140 @@ form button:hover { background: #32cd32; }
   margin-bottom: 14px;
   line-height: 1.7;
 }
+
+
+/* =========================================
+   MOBILE LAYOUT IMPROVEMENTS
+   ========================================= */
+
+@media (max-width: 768px) {
+
+  /* 1. Reduce excessive hero height and spacing */
+  .hero {
+    min-height: auto;
+    padding: 100px 16px 30px;
+  }
+
+  .hero-content {
+    gap: 1rem;
+  }
+
+  .hero-profile {
+    width: 150px;
+    height: 150px;
+  }
+
+  .hero-right h1 {
+    font-size: clamp(1.8rem, 7vw, 2.3rem);
+    line-height: 1.2;
+    margin-bottom: 0.7rem;
+  }
+
+  .hero-right #typed {
+    min-height: 1.5em;
+    margin-bottom: 0.8rem;
+  }
+
+  /* 2. Reduce spacing between page sections */
+  .section-container {
+    padding: 60px 16px 30px;
+  }
+
+  .section-container h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1.25rem;
+  }
+
+  /* 3. Make timeline cards more compact */
+  .timeline {
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .timeline-item {
+    padding: 12px 14px;
+  }
+
+  /* 4. Compact Technical Skills cards */
+  .skills {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    margin-top: 0.5rem;
+  }
+
+  .skill {
+    padding: 10px 12px;
+  }
+
+  .skill-name {
+    margin-bottom: 4px;
+  }
+
+  .skill-bar {
+    height: 10px;
+  }
+
+  /* 5. Reduce card sizes in Achievements,
+        Services and Featured Projects */
+  .stats-grid,
+  .projects-grid {
+    gap: 12px;
+  }
+
+  .stat-card,
+  .project-card {
+    padding: 15px;
+  }
+
+  .stat-card h3 {
+    font-size: 1.7rem;
+  }
+
+  .project-card h3 {
+    font-size: 1.05rem;
+  }
+
+  /* 6. Keep social icons in normal page flow
+        on mobile so they do not cover content */
+  .floating-social {
+    position: static;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin: 1.5rem auto 0;
+    padding: 0 0 0.5rem;
+    z-index: auto;
+  }
+
+  .floating-social img {
+    width: 24px;
+    height: 24px;
+  }
+
+  /* 7. Keep the Resume card comfortable to read */
+  #resume-preview .resume-card {
+    padding: 16px;
+  }
+
+  #resume-preview .resume-card h3 {
+    margin-top: 22px;
+  }
+
+  /* 8. Prevent contact form fields from
+        exceeding the available screen width */
+  #contact form {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  #contact input,
+  #contact textarea,
+  #contact button {
+    width: 100%;
+    max-width: 100%;
+  }
+
+}
+
