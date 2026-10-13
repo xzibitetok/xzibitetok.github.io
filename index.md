@@ -33,94 +33,6 @@ full-width: true
 
   </div>
 
-  <!-- TECHNICAL SKILLS -->
-  <div class="skills">
-
-    <div class="skill">
-      <span class="skill-name">Python</span>
-      <div class="skill-bar">
-        <div class="skill-fill" data-percent="90%"></div>
-      </div>
-    </div>
-
-    <div class="skill">
-      <span class="skill-name">R</span>
-      <div class="skill-bar">
-        <div class="skill-fill" data-percent="80%"></div>
-      </div>
-    </div>
-
-    <div class="skill">
-      <span class="skill-name">SQL & Databases</span>
-      <div class="skill-bar">
-        <div class="skill-fill" data-percent="85%"></div>
-      </div>
-    </div>
-
-    <div class="skill">
-      <span class="skill-name">Power BI</span>
-      <div class="skill-bar">
-        <div class="skill-fill" data-percent="90%"></div>
-      </div>
-    </div>
-
-    <div class="skill">
-      <span class="skill-name">Excel</span>
-      <div class="skill-bar">
-        <div class="skill-fill" data-percent="90%"></div>
-      </div>
-    </div>
-
-    <div class="skill">
-      <span class="skill-name">Machine Learning</span>
-      <div class="skill-bar">
-        <div class="skill-fill" data-percent="80%"></div>
-      </div>
-    </div>
-
-    <div class="skill">
-      <span class="skill-name">Statistical Analysis</span>
-      <div class="skill-bar">
-        <div class="skill-fill" data-percent="80%"></div>
-      </div>
-    </div>
-
-    <div class="skill">
-      <span class="skill-name">Tableau & Data Visualisation</span>
-      <div class="skill-bar">
-        <div class="skill-fill" data-percent="80%"></div>
-      </div>
-    </div>
-
-    <div class="skill">
-      <span class="skill-name">Natural Language Processing (NLP)</span>
-      <div class="skill-bar">
-        <div class="skill-fill" data-percent="75%"></div>
-      </div>
-    </div>
-
-    <div class="skill">
-      <span class="skill-name">AWS Cloud Technologies</span>
-      <div class="skill-bar">
-        <div class="skill-fill" data-percent="75%"></div>
-      </div>
-    </div>
-
-    <div class="skill">
-      <span class="skill-name">SAS Studio</span>
-      <div class="skill-bar">
-        <div class="skill-fill" data-percent="70%"></div>
-      </div>
-    </div>
-
-    <div class="skill">
-      <span class="skill-name">Hadoop & Big Data</span>
-      <div class="skill-bar">
-        <div class="skill-fill" data-percent="75%"></div>
-      </div>
-    </div>
-
-  </div>
 </section>
 
 <script>
@@ -333,6 +245,100 @@ new Typed("#about-typed", {
        class="btn">
       📑 View Full Resume
     </a>
+  </div>
+</section>
+
+
+<!-- TECHNICAL SKILLS DISPLAY -->
+<section id="technical-skills" class="section-container">
+  <h2>Technical Skills</h2>
+  <!-- TECHNICAL SKILLS -->
+  <div class="skills">
+
+    <div class="skill">
+      <span class="skill-name">Python</span>
+      <div class="skill-bar">
+        <div class="skill-fill" data-percent="90%"></div>
+      </div>
+    </div>
+
+    <div class="skill">
+      <span class="skill-name">R</span>
+      <div class="skill-bar">
+        <div class="skill-fill" data-percent="80%"></div>
+      </div>
+    </div>
+
+    <div class="skill">
+      <span class="skill-name">SQL & Databases</span>
+      <div class="skill-bar">
+        <div class="skill-fill" data-percent="85%"></div>
+      </div>
+    </div>
+
+    <div class="skill">
+      <span class="skill-name">Power BI</span>
+      <div class="skill-bar">
+        <div class="skill-fill" data-percent="90%"></div>
+      </div>
+    </div>
+
+    <div class="skill">
+      <span class="skill-name">Excel</span>
+      <div class="skill-bar">
+        <div class="skill-fill" data-percent="90%"></div>
+      </div>
+    </div>
+
+    <div class="skill">
+      <span class="skill-name">Machine Learning</span>
+      <div class="skill-bar">
+        <div class="skill-fill" data-percent="80%"></div>
+      </div>
+    </div>
+
+    <div class="skill">
+      <span class="skill-name">Statistical Analysis</span>
+      <div class="skill-bar">
+        <div class="skill-fill" data-percent="80%"></div>
+      </div>
+    </div>
+
+    <div class="skill">
+      <span class="skill-name">Tableau & Data Visualisation</span>
+      <div class="skill-bar">
+        <div class="skill-fill" data-percent="80%"></div>
+      </div>
+    </div>
+
+    <div class="skill">
+      <span class="skill-name">Natural Language Processing (NLP)</span>
+      <div class="skill-bar">
+        <div class="skill-fill" data-percent="75%"></div>
+      </div>
+    </div>
+
+    <div class="skill">
+      <span class="skill-name">AWS Cloud Technologies</span>
+      <div class="skill-bar">
+        <div class="skill-fill" data-percent="75%"></div>
+      </div>
+    </div>
+
+    <div class="skill">
+      <span class="skill-name">SAS Studio</span>
+      <div class="skill-bar">
+        <div class="skill-fill" data-percent="70%"></div>
+      </div>
+    </div>
+
+    <div class="skill">
+      <span class="skill-name">Hadoop & Big Data</span>
+      <div class="skill-bar">
+        <div class="skill-fill" data-percent="75%"></div>
+      </div>
+    </div>
+
   </div>
 </section>
 
