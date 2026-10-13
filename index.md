@@ -10,42 +10,93 @@ full-width: true
   <p id="about-typed"></p>
 
   <div class="timeline">
+
     <div class="timeline-item">
-      <h4>2025 – Present</h4>
-      <p>MSc in Data Science, University of South Wales, UK</p>
+      <h4>Sep 2025 – Oct 2026</h4>
+      <p>
+        MSc Data Science, University of South Wales, UK
+      </p>
+      <p>
+        Taught and project components completed; dissertation defended.
+        Final result pending.
+      </p>
     </div>
+
     <div class="timeline-item">
       <h4>Jan 2022 – Aug 2025</h4>
-      <p>Business Intelligence Manager, Micnous Service Nigeria ltd</p>
+      <p>
+        Business Intelligence Manager, Micnous Service Nigeria Ltd
+      </p>
     </div>
+
     <div class="timeline-item">
       <h4>Jan 2020 – Dec 2021</h4>
-      <p>Data Analyst, Micnous Service Nigeria ltd</p>
+      <p>
+        Data Analyst, Micnous Service Nigeria Ltd
+      </p>
     </div>
+
   </div>
 
-  <!-- Skills -->
+  <!-- TECHNICAL SKILLS -->
   <div class="skills">
+
     <div class="skill">
       <span class="skill-name">Python</span>
-      <div class="skill-bar"><div class="skill-fill" data-percent="95%"></div></div>
+      <div class="skill-bar">
+        <div class="skill-fill" data-percent="90%"></div>
+      </div>
     </div>
+
+    <div class="skill">
+      <span class="skill-name">R</span>
+      <div class="skill-bar">
+        <div class="skill-fill" data-percent="80%"></div>
+      </div>
+    </div>
+
+    <div class="skill">
+      <span class="skill-name">SQL & Databases</span>
+      <div class="skill-bar">
+        <div class="skill-fill" data-percent="85%"></div>
+      </div>
+    </div>
+
     <div class="skill">
       <span class="skill-name">Power BI</span>
-      <div class="skill-bar"><div class="skill-fill" data-percent="90%"></div></div>
+      <div class="skill-bar">
+        <div class="skill-fill" data-percent="90%"></div>
+      </div>
     </div>
-    <div class="skill">
-      <span class="skill-name">SQL</span>
-      <div class="skill-bar"><div class="skill-fill" data-percent="85%"></div></div>
-    </div>
-    <div class="skill">
-      <span class="skill-name">Machine Learning</span>
-      <div class="skill-bar"><div class="skill-fill" data-percent="80%"></div></div>
-    </div>
+
     <div class="skill">
       <span class="skill-name">Excel</span>
-      <div class="skill-bar"><div class="skill-fill" data-percent="95%"></div></div>
+      <div class="skill-bar">
+        <div class="skill-fill" data-percent="90%"></div>
+      </div>
     </div>
+
+    <div class="skill">
+      <span class="skill-name">Machine Learning</span>
+      <div class="skill-bar">
+        <div class="skill-fill" data-percent="80%"></div>
+      </div>
+    </div>
+
+    <div class="skill">
+      <span class="skill-name">Statistical Analysis</span>
+      <div class="skill-bar">
+        <div class="skill-fill" data-percent="80%"></div>
+      </div>
+    </div>
+
+    <div class="skill">
+      <span class="skill-name">Tableau & Data Visualisation</span>
+      <div class="skill-bar">
+        <div class="skill-fill" data-percent="80%"></div>
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -53,11 +104,13 @@ full-width: true
 new Typed("#about-typed", {
   strings: [
     "I turn data into actionable insights.",
-    "Passionate about AI & ML.",
-    "Business Intelligence Specialist."
+    "Data Analyst | Business Intelligence.",
+    "Applying statistical analysis and machine learning to real-world problems.",
+    "Building data-driven solutions through Python, R, SQL and visualisation."
   ],
-  typeSpeed: 60,
-  backSpeed: 30,
+  typeSpeed: 45,
+  backSpeed: 25,
+  backDelay: 1800,
   loop: true
 });
 </script>
