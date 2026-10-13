@@ -65,34 +65,74 @@ new Typed("#about-typed", {
 <!-- RESUME SECTION -->
 <section id="resume-preview" class="section-container">
   <h2>📄 Resume</h2>
-  <div class="resume-card">
-    <p><strong>ETOK, UBONG EFFIONG</strong><br>
-    Cardiff, United Kingdom • +44 7831072256 • <a href="mailto:ubyetok@gmail.com">ubyetok@gmail.com</a></p>
 
-    <h3>Profile</h3>
+  <div class="resume-card">
+    <h3>Professional Profile</h3>
     <p>
-      Data-driven Business Intelligence Manager with expertise in Power BI, Excel, SQL, Python, and Machine Learning.
-      Experienced in transforming complex datasets into actionable insights and leading data-driven strategies.
+      Data and Business Intelligence professional with experience in
+      data analysis, KPI reporting, dashboard development, project
+      monitoring and evidence-based decision-making. Skilled in Python,
+      R, SQL, Excel, Power BI, Tableau and machine learning, with
+      postgraduate training in data science and applied analytical
+      research.
     </p>
 
     <h3>Education</h3>
     <ul>
-      <li>M.Sc. Data Science – University of South Wales, UK (In view)</li>
-      <li>B.Sc. Building – University of Uyo, Akwa Ibom, NG (2018)</li>
-      <li>WASSCE – Bright Stars Model Secondary School, NG (2010)</li>
+      <li>
+        <strong>MSc Data Science</strong> — University of South Wales, UK.
+        Taught and project components completed; final result pending.
+      </li>
+      <li>
+        <strong>BSc Building</strong> — University of Uyo, Nigeria, 2018.
+      </li>
+      <li>
+        <strong>WASSCE</strong> — Bright Stars Model Secondary School, Nigeria, 2010.
+      </li>
     </ul>
 
-    <h3>Key Skills</h3>
+    <h3>Professional Experience</h3>
+    <ul>
+      <li>
+        <strong>Business Intelligence Manager</strong> — Micnous Service
+        Nigeria Ltd | Jan 2022 – Aug 2025.
+        Developed Excel and Power BI reporting for project performance,
+        costs, resource allocation, budgets and operational risks.
+      </li>
+      <li>
+        <strong>Data Analyst</strong> — Micnous Service Nigeria Ltd |
+        Jan 2020 – Dec 2021.
+        Supported data preparation, analysis and reporting for
+        operational decision-making.
+      </li>
+    </ul>
+
+    <h3>Professional Training</h3>
+    <ul>
+      <li>Google Data Analytics Professional Certificate — Google/Coursera, 2025.</li>
+      <li>Data Analysis Hands-On Training — Victoria Solutions, London, 2025.</li>
+      <li>Data Analytics and Visualization Job Simulation — Accenture/Forage, 2024.</li>
+      <li>Data Analytics Virtual Internship — JPMorgan Chase &amp; Co./Forage, 2024.</li>
+    </ul>
+
+    <h3>Key Technical Skills</h3>
     <ul class="resume-skills">
-      <li>Data Cleaning & Transformation (Excel, MySQL, Power BI, Python)</li>
-      <li>Dashboard Design & BI Reporting</li>
-      <li>KPI Development & Project Monitoring</li>
+      <li>Python, R, SQL and Excel</li>
+      <li>Power BI, Tableau and Google Data Studio</li>
+      <li>Statistical Analysis and Predictive Modelling</li>
+      <li>Machine Learning and Model Evaluation</li>
+      <li>Data Cleaning, Transformation and Visualisation</li>
+      <li>Hadoop, HDFS, YARN and MapReduce</li>
+      <li>KPI Reporting and Stakeholder Communication</li>
     </ul>
   </div>
+
   <div class="resume-button">
-    <a href="/assets/MYCV.pdf" target="_blank" class="btn">📑 View Full Resume</a>
+    <a href="/assets/MYCV.pdf" target="_blank" rel="noopener"
+       class="btn">📑 View Full Resume</a>
   </div>
 </section>
+
 
 <!-- ACHIEVEMENTS -->
 <section id="stats" class="section-container">
