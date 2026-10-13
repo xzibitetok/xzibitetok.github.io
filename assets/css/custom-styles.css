@@ -520,11 +520,11 @@ form button:hover { background: #32cd32; }
 @media (max-width: 768px) {
 
   /* 1. Reduce excessive hero height and spacing */
-  .hero {
-    min-height: auto;
-    padding: 100px 16px 30px;
-  }
-
+ .hero {
+  min-height: auto;
+  padding: 45px 16px 30px;
+}
+   
   .hero-content {
     gap: 1rem;
   }
