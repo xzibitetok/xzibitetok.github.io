@@ -79,10 +79,16 @@ header {
   padding-top: 80px; /* ensures sections like About Me aren’t hidden behind navbar */
 }
 
-/* Make sure typed text doesn’t overflow */
+/* Make sure typed text doesn't overflow */
 #about-typed, #typed {
-  white-space: normal; /* allow text to wrap */
+  white-space: normal;
   overflow-wrap: break-word;
+}
+
+.hero-right #typed {
+  display: block;
+  min-height: 1.5em;
+  margin-bottom: 1rem;
 }
 
 .hero-content {
@@ -102,8 +108,9 @@ header {
 }
 
 .hero-right h1 {
-  font-size: 2.8rem;
-  margin-bottom: 0.5rem;
+  font-size: clamp(2rem, 3vw, 2.6rem);
+  line-height: 1.15;
+  margin-bottom: 0.8rem;
   color: #f0f0f0;
 }
 
