@@ -95,21 +95,6 @@ new Typed("#about-typed", {
         Taught and project components completed; dissertation defended.
         Final result pending.
       </li>
-      <li>
-        <strong>BSc (Hons) Building</strong> — University of Uyo, Nigeria |
-        Sep 2012 – Sep 2018.
-        <br>
-        Research project: Assessment of Procurement Methods Adopted for the
-        Development of Religious Building Projects in Akwa Ibom State.
-      </li>
-      <li>
-        <strong>West African Senior School Certificate Examination</strong>
-        — Bright Stars Model Secondary School, Nigeria | Dec 2010.
-      </li>
-      <li>
-        <strong>First School Leaving Certificate</strong>
-        — University Staff School, Nigeria | Jul 2003.
-      </li>
     </ul>
 
 <!-- PROFESSIONAL CERTIFICATES -->
@@ -158,82 +143,6 @@ new Typed("#about-typed", {
     </a>
   </li>
 </ul>
-    
-    <!-- LANGUAGE -->
-    <h3>Language</h3>
-    <p>English — Advanced</p>
-
-    <!-- SELECTED PROJECTS -->
-    <h3>Selected Data Science & Cloud Projects</h3>
-    <ul class="resume-projects">
-
-      <li>
-        <strong>MSc Dissertation | Crime Pattern Recognition and Prediction
-        — Los Angeles</strong>
-        <p>
-          Analysed LAPD incident data from 2020–2023, using 875,087 records
-          with valid geographical coordinates for spatial analysis. Applied
-          DBSCAN to identify 315 spatial clusters and developed monthly
-          forecasting models. HistGradientBoosting achieved 14.18% WAPE on
-          the 2023 test set, compared with 16.00% for a seasonal-naive
-          benchmark. High-volume crime identification achieved 94.62%
-          precision, recall and F1.
-        </p>
-      </li>
-
-      <li>
-        <strong>Breast Cancer Diagnosis | Machine Learning</strong>
-        <p>
-          Developed a reproducible workflow covering data preprocessing,
-          exploratory analysis, feature engineering, PCA, clustering and
-          five supervised classifiers. Random Forest achieved 95.65%
-          held-out test accuracy, while SVM achieved 97.34% mean
-          cross-validation accuracy.
-        </p>
-      </li>
-
-      <li>
-        <strong>Customer Review Intelligence | NLP & Text Mining</strong>
-        <p>
-          Analysed a 23,486-review e-commerce dataset using text mining,
-          sentiment and emotion analysis, LDA topic modelling and logistic
-          regression. Identified recurring fit and sizing themes and
-          examined rating-related recommendation patterns.
-        </p>
-      </li>
-
-      <li>
-        <strong>EcoStream Energy | AWS Cloud Infrastructure & Data Analytics</strong>
-        <p>
-          Built an AWS workflow covering S3 telemetry storage, DynamoDB
-          import, validation of five business queries, CSV result exports,
-          a custom Node.js AMI and an Apache-hosted EC2 web page within
-          a configured VPC.
-        </p>
-      </li>
-
-      <li>
-        <strong>PageTurner Books | Linux, Bash & Hadoop Text Analytics</strong>
-        <p>
-          Created Bash-based directory structures and Python MapReduce
-          workflows using Hadoop, HDFS, YARN and Hadoop Streaming.
-          Ranked the ten most frequent words in A Christmas Carol and
-          produced a sentence-count result of 10,941 for Moby Dick or
-          The Whale.
-        </p>
-      </li>
-
-      <li>
-        <strong>University Computing Department Database | SQL</strong>
-        <p>
-          Designed a relational database and entity-relationship diagram
-          for courses, modules, tutors and students. Implemented tables,
-          primary and foreign keys, sample records and five SQL queries
-          across related tables.
-        </p>
-      </li>
-
-    </ul>
 
   </div>
 
