@@ -201,8 +201,7 @@ new Typed("#about-typed", {
     </ul>
 
 <!-- PROFESSIONAL CERTIFICATES -->
-<h3>Professional Training &amp; Certificates</h3>
-
+<h3>Professional Training & Certificates</h3>
 <ul class="resume-skills">
   <li>
     <a href="/assets/certificates/Google_Data_Analytics_Certification.pdf"
@@ -210,53 +209,40 @@ new Typed("#about-typed", {
       Google Data Analytics Professional Certificate — View Certificate
     </a>
   </li>
-
-<li>
-  <a href="/assets/certificates/Data_Analysis%20_with%20_Excel_and_Python.pdf"
-     target="_blank" rel="noopener">
-    Data Analysis with Excel and Python — View Certificate
-  </a>
-</li>
-
   <li>
     <a href="/assets/certificates/Data_Analysis_Hands_On_Training_Program_With_Vicroria_Solutions.pdf"
        target="_blank" rel="noopener">
       Data Analysis Hands-On Training — Victoria Solutions — View Certificate
     </a>
   </li>
-
   <li>
-    <a href="/assets/certificates/Data_Analytics_Job_Simulation_with_Forage.pdf"
+    <a href="/assets/certificates/Data_Analysis%20_with%20_Excel_and_Python.pdf"
+       target="_blank" rel="noopener">
+      Data Analysis with Excel and Python — View Certificate
+    </a>
+  </li>
+  <li>
+    <a href="/assets/certificates/Data_Analytics_%20Job_Simulation_with_Forage.pdf"
        target="_blank" rel="noopener">
       Data Analytics Job Simulation — Forage — View Certificate
     </a>
   </li>
-
   <li>
-    <a href="/assets/certificates/Data_Analytics_Visualization_with_Google_Data_Studio.pdf"
+    <a href="/assets/certificates/Data_Analytics_Visualization%20_with%20_Google_Data_Studio.pdf"
        target="_blank" rel="noopener">
       Data Analytics Visualisation with Google Data Studio — View Certificate
     </a>
   </li>
-
   <li>
-    <a href="/assets/certificates/Data_Analytics_Visualization_with_Power_BI_and_Tableau.pdf"
+    <a href="/assets/certificates/Data_Analytics_Visualization%20_with%20_Power_BI_and_Tableau.pdf"
        target="_blank" rel="noopener">
       Data Analytics Visualisation with Power BI and Tableau — View Certificate
     </a>
   </li>
-
   <li>
     <a href="/assets/certificates/Database_Mgt_with_MySQL.pdf"
        target="_blank" rel="noopener">
       Database Management with MySQL — View Certificate
-    </a>
-  </li>
-
-  <li>
-    <a href="/assets/certificates/All_Certifications_in_Data_Analytics.pdf"
-       target="_blank" rel="noopener">
-      All Certifications in Data Analytics — View Collection
     </a>
   </li>
 </ul>
