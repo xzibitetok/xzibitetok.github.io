@@ -348,3 +348,132 @@ form button:hover { background: #32cd32; }
   .nav-toggle { display: block; }
   .floating-social { left: auto; right: 1rem; bottom: 2rem; flex-direction: row; gap: 15px; }
 }
+
+
+/* =========================================
+   RESUME SECTION — READABILITY IMPROVEMENTS
+========================================= */
+
+/* Resume card */
+#resume-preview .resume-card {
+  background: #1c1f2a;
+  color: #f0f0f0;
+  padding: 28px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  line-height: 1.7;
+  overflow-wrap: anywhere;
+}
+
+/* Clear and consistent subsection headings */
+#resume-preview .resume-card h3 {
+  color: #39ff14;
+  font-size: 1.15rem;
+  font-weight: 700;
+  line-height: 1.4;
+  margin: 28px 0 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #363b4a;
+}
+
+#resume-preview .resume-card h3:first-child {
+  margin-top: 0;
+}
+
+/* Improve paragraph readability */
+#resume-preview .resume-card p {
+  color: #f0f0f0;
+  font-size: 0.95rem;
+  line-height: 1.75;
+  margin: 0 0 16px;
+  text-align: left;
+}
+
+/* Make bold labels visible */
+#resume-preview .resume-card strong {
+  color: #39ff14;
+  font-weight: 700;
+}
+
+/* Align lists and improve spacing */
+#resume-preview .resume-card ul {
+  padding-left: 24px;
+  margin: 10px 0 22px;
+}
+
+#resume-preview .resume-card ul li {
+  color: #f0f0f0;
+  font-size: 0.94rem;
+  line-height: 1.7;
+  margin-bottom: 12px;
+  padding-left: 4px;
+}
+
+#resume-preview .resume-card li::marker {
+  color: #39ff14;
+}
+
+/* Separate selected project entries */
+#resume-preview .resume-card .resume-projects {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 14px;
+}
+
+#resume-preview .resume-card .resume-projects > li {
+  padding-bottom: 18px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #363b4a;
+}
+
+#resume-preview .resume-card .resume-projects > li:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+}
+
+#resume-preview .resume-card .resume-projects > li > strong {
+  display: block;
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-bottom: 8px;
+}
+
+#resume-preview .resume-card .resume-projects > li > p {
+  margin-bottom: 0;
+}
+
+/* Full resume button */
+#resume-preview .resume-button {
+  margin-top: 20px;
+}
+
+#resume-preview .resume-button .btn {
+  display: inline-block;
+  padding: 12px 22px;
+  background: #39ff14;
+  color: #0f111a;
+  font-weight: 700;
+  border-radius: 7px;
+  text-decoration: none;
+}
+
+#resume-preview .resume-button .btn:hover {
+  background: #32cd32;
+}
+
+/* Resume display on mobile devices */
+@media (max-width: 768px) {
+  #resume-preview .resume-card {
+    padding: 20px;
+  }
+
+  #resume-preview .resume-card h3 {
+    font-size: 1.08rem;
+  }
+
+  #resume-preview .resume-card p,
+  #resume-preview .resume-card ul li {
+    font-size: 0.92rem;
+  }
+}
+
