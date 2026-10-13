@@ -477,3 +477,30 @@ form button:hover { background: #32cd32; }
   }
 }
 
+/* =========================================
+   RESUME — PROFESSIONAL CERTIFICATE LINKS
+========================================= */
+
+#resume-preview .resume-card a {
+  color: #39ff14;
+  font-weight: 600;
+  text-decoration: none;
+  overflow-wrap: anywhere;
+  transition: color 0.3s ease;
+}
+
+#resume-preview .resume-card a:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+#resume-preview .resume-card a:focus-visible {
+  outline: 2px solid #39ff14;
+  outline-offset: 3px;
+}
+
+/* Consistent spacing for certificate entries */
+#resume-preview .resume-card ul.resume-skills li {
+  margin-bottom: 14px;
+  line-height: 1.7;
+}
