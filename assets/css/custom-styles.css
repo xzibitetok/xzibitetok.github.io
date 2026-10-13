@@ -656,3 +656,9 @@ form button:hover { background: #32cd32; }
 
 }
 
+```css
+/* Remove duplicate horizontal divider in hero */
+.hero {
+  border-bottom: none !important;
+}
+```
