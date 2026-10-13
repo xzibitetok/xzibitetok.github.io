@@ -4,6 +4,7 @@ title: Home
 full-width: true
 ---
 
+
 <!-- ABOUT SECTION -->
 <section id="about" class="section-container">
   <h2>About Me</h2>
@@ -13,9 +14,7 @@ full-width: true
 
     <div class="timeline-item">
       <h4>Sep 2025 – Oct 2026</h4>
-      <p>
-        MSc Data Science, University of South Wales, UK
-      </p>
+      <p>MSc Data Science, University of South Wales, UK</p>
       <p>
         Taught and project components completed; dissertation defended.
         Final result pending.
@@ -24,16 +23,12 @@ full-width: true
 
     <div class="timeline-item">
       <h4>Jan 2022 – Aug 2025</h4>
-      <p>
-        Business Intelligence Manager, Micnous Service Nigeria Ltd
-      </p>
+      <p>Business Intelligence Manager, Micnous Service Nigeria Ltd</p>
     </div>
 
     <div class="timeline-item">
       <h4>Jan 2020 – Dec 2021</h4>
-      <p>
-        Data Analyst, Micnous Service Nigeria Ltd
-      </p>
+      <p>Data Analyst, Micnous Service Nigeria Ltd</p>
     </div>
 
   </div>
@@ -97,6 +92,34 @@ full-width: true
       </div>
     </div>
 
+    <div class="skill">
+      <span class="skill-name">Natural Language Processing (NLP)</span>
+      <div class="skill-bar">
+        <div class="skill-fill" data-percent="75%"></div>
+      </div>
+    </div>
+
+    <div class="skill">
+      <span class="skill-name">AWS Cloud Technologies</span>
+      <div class="skill-bar">
+        <div class="skill-fill" data-percent="75%"></div>
+      </div>
+    </div>
+
+    <div class="skill">
+      <span class="skill-name">SAS Studio</span>
+      <div class="skill-bar">
+        <div class="skill-fill" data-percent="70%"></div>
+      </div>
+    </div>
+
+    <div class="skill">
+      <span class="skill-name">Hadoop & Big Data</span>
+      <div class="skill-bar">
+        <div class="skill-fill" data-percent="75%"></div>
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -106,7 +129,9 @@ new Typed("#about-typed", {
     "I turn data into actionable insights.",
     "Data Analyst | Business Intelligence.",
     "Applying statistical analysis and machine learning to real-world problems.",
-    "Building data-driven solutions through Python, R, SQL and visualisation."
+    "Building analytical solutions using Python, R and SQL.",
+    "Exploring Natural Language Processing and text analytics.",
+    "Developing skills in AWS Cloud and Big Data technologies."
   ],
   typeSpeed: 45,
   backSpeed: 25,
