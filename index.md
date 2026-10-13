@@ -128,7 +128,7 @@ new Typed("#about-typed", {
 
     <!-- SELECTED PROJECTS -->
     <h3>Selected Data Science & Cloud Projects</h3>
-    <ul>
+    <ul class="resume-projects">
 
       <li>
         <strong>MSc Dissertation | Crime Pattern Recognition and Prediction
