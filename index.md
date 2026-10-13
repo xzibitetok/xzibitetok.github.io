@@ -62,74 +62,152 @@ new Typed("#about-typed", {
 });
 </script>
 
+
 <!-- RESUME SECTION -->
 <section id="resume-preview" class="section-container">
   <h2>📄 Resume</h2>
 
   <div class="resume-card">
+
+    <!-- PROFESSIONAL PROFILE -->
     <h3>Professional Profile</h3>
     <p>
-      Data and Business Intelligence professional with experience in
-      data analysis, KPI reporting, dashboard development, project
-      monitoring and evidence-based decision-making. Skilled in Python,
-      R, SQL, Excel, Power BI, Tableau and machine learning, with
-      postgraduate training in data science and applied analytical
-      research.
+      Data analyst and emerging data scientist with experience in business
+      intelligence, operational reporting and applied analytics. Having
+      completed the taught and project components of an MSc in Data Science
+      at the University of South Wales and defended a dissertation on
+      crime-pattern recognition and prediction using LAPD data, I bring
+      practical analytical experience across Python, R, SQL, machine learning,
+      natural language processing, Hadoop MapReduce and AWS cloud technologies.
+      My work focuses on transforming data into actionable insights, evaluating
+      analytical models and supporting evidence-based decision-making.
     </p>
 
+    <!-- TECHNICAL SKILLS -->
+    <h3>Technical Skills</h3>
+    <ul class="resume-skills">
+      <li><strong>Data Analysis:</strong> Data cleaning, transformation, exploratory data analysis, statistical analysis, feature engineering and model evaluation.</li>
+      <li><strong>Programming & Databases:</strong> Python, R, SQL, Bash, MySQL and Oracle SQL Developer.</li>
+      <li><strong>Business Intelligence:</strong> Power BI, Excel, Tableau, Google Data Studio/Looker Studio, dashboard design and KPI reporting.</li>
+      <li><strong>Machine Learning:</strong> Classification, regression, clustering, PCA, predictive modelling, cross-validation and performance metrics.</li>
+      <li><strong>Text & Big Data:</strong> NLP, text mining, sentiment and emotion analysis, LDA topic modelling, Hadoop, HDFS, YARN, MapReduce and Hadoop Streaming.</li>
+      <li><strong>Cloud Technologies:</strong> AWS S3, DynamoDB, EC2, AMI, VPC and Apache HTTP Server.</li>
+      <li><strong>Business & Delivery:</strong> Stakeholder communication, requirements analysis, technical documentation, cost-benefit analysis and risk assessment.</li>
+    </ul>
+
+    <!-- EDUCATION -->
     <h3>Education</h3>
     <ul>
       <li>
-        <strong>MSc Data Science</strong> — University of South Wales, UK.
-        Taught and project components completed; final result pending.
+        <strong>MSc (Hons) Data Science</strong> — University of South Wales,
+        United Kingdom | Sep 2025 – Oct 2026.
+        <br>
+        Taught and project components completed; dissertation defended.
+        Final result pending.
       </li>
       <li>
-        <strong>BSc Building</strong> — University of Uyo, Nigeria, 2018.
+        <strong>BSc (Hons) Building</strong> — University of Uyo, Nigeria |
+        Sep 2012 – Sep 2018.
+        <br>
+        Research project: Assessment of Procurement Methods Adopted for the
+        Development of Religious Building Projects in Akwa Ibom State.
       </li>
       <li>
-        <strong>WASSCE</strong> — Bright Stars Model Secondary School, Nigeria, 2010.
+        <strong>West African Senior School Certificate Examination</strong>
+        — Bright Stars Model Secondary School, Nigeria | Dec 2010.
+      </li>
+      <li>
+        <strong>First School Leaving Certificate</strong>
+        — University Staff School, Nigeria | Jul 2003.
       </li>
     </ul>
 
-    <h3>Professional Experience</h3>
+    <!-- LANGUAGE -->
+    <h3>Language</h3>
+    <p>English — Advanced</p>
+
+    <!-- SELECTED PROJECTS -->
+    <h3>Selected Data Science & Cloud Projects</h3>
     <ul>
+
       <li>
-        <strong>Business Intelligence Manager</strong> — Micnous Service
-        Nigeria Ltd | Jan 2022 – Aug 2025.
-        Developed Excel and Power BI reporting for project performance,
-        costs, resource allocation, budgets and operational risks.
+        <strong>MSc Dissertation | Crime Pattern Recognition and Prediction
+        — Los Angeles</strong>
+        <p>
+          Analysed LAPD incident data from 2020–2023, using 875,087 records
+          with valid geographical coordinates for spatial analysis. Applied
+          DBSCAN to identify 315 spatial clusters and developed monthly
+          forecasting models. HistGradientBoosting achieved 14.18% WAPE on
+          the 2023 test set, compared with 16.00% for a seasonal-naive
+          benchmark. High-volume crime identification achieved 94.62%
+          precision, recall and F1.
+        </p>
       </li>
+
       <li>
-        <strong>Data Analyst</strong> — Micnous Service Nigeria Ltd |
-        Jan 2020 – Dec 2021.
-        Supported data preparation, analysis and reporting for
-        operational decision-making.
+        <strong>Breast Cancer Diagnosis | Machine Learning</strong>
+        <p>
+          Developed a reproducible workflow covering data preprocessing,
+          exploratory analysis, feature engineering, PCA, clustering and
+          five supervised classifiers. Random Forest achieved 95.65%
+          held-out test accuracy, while SVM achieved 97.34% mean
+          cross-validation accuracy.
+        </p>
       </li>
+
+      <li>
+        <strong>Customer Review Intelligence | NLP & Text Mining</strong>
+        <p>
+          Analysed a 23,486-review e-commerce dataset using text mining,
+          sentiment and emotion analysis, LDA topic modelling and logistic
+          regression. Identified recurring fit and sizing themes and
+          examined rating-related recommendation patterns.
+        </p>
+      </li>
+
+      <li>
+        <strong>EcoStream Energy | AWS Cloud Infrastructure & Data Analytics</strong>
+        <p>
+          Built an AWS workflow covering S3 telemetry storage, DynamoDB
+          import, validation of five business queries, CSV result exports,
+          a custom Node.js AMI and an Apache-hosted EC2 web page within
+          a configured VPC.
+        </p>
+      </li>
+
+      <li>
+        <strong>PageTurner Books | Linux, Bash & Hadoop Text Analytics</strong>
+        <p>
+          Created Bash-based directory structures and Python MapReduce
+          workflows using Hadoop, HDFS, YARN and Hadoop Streaming.
+          Ranked the ten most frequent words in A Christmas Carol and
+          produced a sentence-count result of 10,941 for Moby Dick or
+          The Whale.
+        </p>
+      </li>
+
+      <li>
+        <strong>University Computing Department Database | SQL</strong>
+        <p>
+          Designed a relational database and entity-relationship diagram
+          for courses, modules, tutors and students. Implemented tables,
+          primary and foreign keys, sample records and five SQL queries
+          across related tables.
+        </p>
+      </li>
+
     </ul>
 
-    <h3>Professional Training</h3>
-    <ul>
-      <li>Google Data Analytics Professional Certificate — Google/Coursera, 2025.</li>
-      <li>Data Analysis Hands-On Training — Victoria Solutions, London, 2025.</li>
-      <li>Data Analytics and Visualization Job Simulation — Accenture/Forage, 2024.</li>
-      <li>Data Analytics Virtual Internship — JPMorgan Chase &amp; Co./Forage, 2024.</li>
-    </ul>
-
-    <h3>Key Technical Skills</h3>
-    <ul class="resume-skills">
-      <li>Python, R, SQL and Excel</li>
-      <li>Power BI, Tableau and Google Data Studio</li>
-      <li>Statistical Analysis and Predictive Modelling</li>
-      <li>Machine Learning and Model Evaluation</li>
-      <li>Data Cleaning, Transformation and Visualisation</li>
-      <li>Hadoop, HDFS, YARN and MapReduce</li>
-      <li>KPI Reporting and Stakeholder Communication</li>
-    </ul>
   </div>
 
+  <!-- FULL CV DOWNLOAD -->
   <div class="resume-button">
-    <a href="/assets/MYCV.pdf" target="_blank" rel="noopener"
-       class="btn">📑 View Full Resume</a>
+    <a href="/assets/MYCV.pdf"
+       target="_blank"
+       rel="noopener"
+       class="btn">
+      📑 View Full Resume
+    </a>
   </div>
 </section>
 
@@ -160,22 +238,88 @@ new Typed("#about-typed", {
 <!-- SERVICES SECTION -->
 <section id="services" class="section-container">
   <h2>💼 Services</h2>
+
+  <p>
+    I help transform raw data into meaningful insights through
+    data analysis, statistical modelling, machine learning,
+    business intelligence, database solutions and data-driven
+    problem-solving.
+  </p>
+
   <div class="projects-grid">
+
     <div class="project-card">
-      <h3>Data Visualization</h3>
-      <p>Interactive dashboards using Power BI & Tableau.</p>
-      <span class="badge">Popular</span>
+      <h3>📊 Data Analysis & Reporting</h3>
+      <p>
+        Data cleaning, transformation, exploratory analysis,
+        statistical analysis and reporting using Python, R,
+        SQL and Excel to support evidence-based decisions.
+      </p>
     </div>
+
     <div class="project-card">
-      <h3>Data Cleaning & Analysis</h3>
-      <p>Transform raw data into actionable insights.</p>
-      <span class="badge">Expert</span>
+      <h3>📈 Data Visualisation & Dashboards</h3>
+      <p>
+        Interactive dashboards, KPI reporting, trend analysis
+        and performance visualisation using Power BI, Tableau,
+        Excel and Google Data Studio.
+      </p>
     </div>
+
     <div class="project-card">
-      <h3>Business Intelligence Consulting</h3>
-      <p>Design KPIs and reporting systems.</p>
-      <span class="badge">Trusted</span>
+      <h3>🤖 Machine Learning & Predictive Analytics</h3>
+      <p>
+        Predictive modelling, classification, clustering,
+        feature engineering and model evaluation to identify
+        patterns and support data-informed decisions.
+      </p>
     </div>
+
+    <div class="project-card">
+      <h3>💼 Business Intelligence & Performance Monitoring</h3>
+      <p>
+        KPI development, management reporting, budget and
+        variance analysis, resource monitoring, risk assessment
+        and decision-support reporting.
+      </p>
+    </div>
+
+    <div class="project-card">
+      <h3>🗄️ Database Design & SQL Solutions</h3>
+      <p>
+        Relational database development, SQL querying,
+        data retrieval, data organisation and database
+        management using MySQL and Oracle SQL.
+      </p>
+    </div>
+
+    <div class="project-card">
+      <h3>🐘 Big Data & Distributed Processing</h3>
+      <p>
+        Linux and Bash operations, HDFS data storage,
+        Hadoop MapReduce and Python-based distributed
+        text processing for large-scale analytical tasks.
+      </p>
+    </div>
+
+    <div class="project-card">
+      <h3>☁️ Cloud Data & Infrastructure</h3>
+      <p>
+        Practical cloud engineering involving Amazon S3,
+        DynamoDB, EC2, machine images and web application
+        deployment, supported by documented project work.
+      </p>
+    </div>
+
+    <div class="project-card">
+      <h3>🔍 Research & Analytical Problem-Solving</h3>
+      <p>
+        Research-driven analysis, model comparison,
+        evidence interpretation and clear communication
+        of findings, limitations and recommendations.
+      </p>
+    </div>
+
   </div>
 </section>
 
