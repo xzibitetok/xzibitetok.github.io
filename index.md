@@ -190,20 +190,7 @@ new Typed("#about-typed", {
   </p>
 
   <div class="projects-grid">
-
-    <div class="project-card">
-      <h3>Crime Pattern Recognition and Prediction</h3>
-      <p>
-        MSc dissertation investigating crime patterns in Los Angeles
-        through spatial clustering, predictive modelling, forecasting
-        and model evaluation.
-      </p>
-      <a href="https://github.com/xzibitetok/xzibitetok.github.io"
-         target="_blank" rel="noopener">
-        View Portfolio Repository →
-      </a>
-    </div>
-
+    
     <div class="project-card">
       <h3>Breast Cancer Machine Learning</h3>
       <p>
