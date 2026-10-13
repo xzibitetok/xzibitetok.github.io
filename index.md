@@ -201,10 +201,9 @@ new Typed("#about-typed", {
     </ul>
 
 <!-- PROFESSIONAL CERTIFICATES -->
-<h3>Professional Training & Certificates</h3>
+<h3>Professional Training &amp; Certificates</h3>
 
 <ul class="resume-skills">
-
   <li>
     <a href="/assets/certificates/Google_Data_Analytics_Certification.pdf"
        target="_blank" rel="noopener">
@@ -213,16 +212,16 @@ new Typed("#about-typed", {
   </li>
 
   <li>
-    <a href="/assets/certificates/Data_Analysis_Hands_On_Training_Program_With_Vicroria_Solutions.pdf"
+    <a href="/assets/certificates/Data_Analysis_with_Excel_and_Python.pdf"
        target="_blank" rel="noopener">
-      Data Analysis Hands-On Training — Victoria Solutions — View Certificate
+      Data Analysis with Excel and Python — View Certificate
     </a>
   </li>
 
   <li>
-    <a href="/assets/certificates/Data_Analysis_with_Excel_and_Python.pdf"
+    <a href="/assets/certificates/Data_Analysis_Hands_On_Training_Program_With_Vicroria_Solutions.pdf"
        target="_blank" rel="noopener">
-      Data Analysis with Excel and Python — View Certificate
+      Data Analysis Hands-On Training — Victoria Solutions — View Certificate
     </a>
   </li>
 
@@ -260,7 +259,6 @@ new Typed("#about-typed", {
       All Certifications in Data Analytics — View Collection
     </a>
   </li>
-
 </ul>
     
     <!-- LANGUAGE -->
