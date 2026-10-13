@@ -181,25 +181,116 @@ new Typed("#about-typed", {
 
 <!-- PROJECTS SECTION -->
 <section id="projects" class="section-container">
-  <h2>💻 Projects</h2>
+  <h2>💻 Featured Projects</h2>
+
+  <p>
+    Selected academic and professional projects demonstrating
+    data analysis, machine learning, business intelligence,
+    database management, cloud engineering and distributed data processing.
+  </p>
+
   <div class="projects-grid">
+
+    <div class="project-card">
+      <h3>Crime Pattern Recognition and Prediction</h3>
+      <p>
+        MSc dissertation investigating crime patterns in Los Angeles
+        through spatial clustering, predictive modelling, forecasting
+        and model evaluation.
+      </p>
+      <a href="https://github.com/xzibitetok/xzibitetok.github.io"
+         target="_blank" rel="noopener">
+        View Portfolio Repository →
+      </a>
+    </div>
+
+    <div class="project-card">
+      <h3>Breast Cancer Machine Learning</h3>
+      <p>
+        Data preprocessing, exploratory analysis, feature engineering,
+        dimensionality reduction and supervised classification.
+      </p>
+      <a href="https://github.com/xzibitetok/xzibitetok.github.io/tree/master/breast-cancer-machine-learning"
+         target="_blank" rel="noopener">
+        View Project →
+      </a>
+    </div>
+
+    <div class="project-card">
+      <h3>Customer Review Intelligence</h3>
+      <p>
+        E-commerce review analysis using text mining, sentiment and
+        emotion analysis, topic modelling and logistic regression.
+      </p>
+      <a href="https://github.com/xzibitetok/xzibitetok.github.io/tree/master/data-mining-sentiment-analysis"
+         target="_blank" rel="noopener">
+        View Project →
+      </a>
+    </div>
+
+    <div class="project-card">
+      <h3>Hadoop Distributed Text Analytics</h3>
+      <p>
+        Linux and Bash, HDFS, YARN, Hadoop Streaming and Python
+        MapReduce for distributed word-frequency and sentence-count analysis.
+      </p>
+      <a href="https://github.com/xzibitetok/xzibitetok.github.io/tree/master/hadoop-distributed-text-analytics"
+         target="_blank" rel="noopener">
+        View Project →
+      </a>
+    </div>
+
+    <div class="project-card">
+      <h3>University Computing Department Database</h3>
+      <p>
+        Database project demonstrating relational database management,
+        SQL and structured data organisation.
+      </p>
+      <a href="https://github.com/xzibitetok/xzibitetok.github.io/tree/master/university-computing-department-database"
+         target="_blank" rel="noopener">
+        View Project →
+      </a>
+    </div>
+
+    <div class="project-card">
+      <h3>EcoStream Energy — AWS Cloud</h3>
+      <p>
+        Cloud engineering involving Amazon S3, DynamoDB, EC2,
+        custom machine images and web application deployment.
+      </p>
+      <a href="https://github.com/xzibitetok/xzibitetok.github.io/tree/master/ecostream-energy-aws-cloud"
+         target="_blank" rel="noopener">
+        View Project →
+      </a>
+    </div>
+
     <div class="project-card">
       <h3>Data Visualization Dashboard</h3>
-      <p>Excel-based analysis with pivots and dashboards.</p>
-      <a href="https://github.com/xzibitetok/Xzibit-Sales-Analysis" target="_blank">View Project →</a>
+      <p>
+        Excel-based sales analysis using pivot tables,
+        summaries and dashboard visualisations.
+      </p>
+      <a href="https://github.com/xzibitetok/Xzibit-Sales-Analysis"
+         target="_blank" rel="noopener">
+        View Project →
+      </a>
     </div>
+
     <div class="project-card">
       <h3>Power BI Visualization Dashboard</h3>
-      <p>Dynamic sales metrics dashboard with drill-throughs and interactive charts in Power BI.</p>
-      <a href="https://github.com/xzibitetok/Frank-s-Sales-Analysis" target="_blank">View Project →</a>
+      <p>
+        Interactive sales reporting with dynamic metrics,
+        drill-through functionality and visual analysis.
+      </p>
+      <a href="https://github.com/xzibitetok/Frank-s-Sales-Analysis"
+         target="_blank" rel="noopener">
+        View Project →
+      </a>
     </div>
-    <div class="project-card">
-      <h3>Web Portfolio</h3>
-      <p>Custom Jekyll-based portfolio with modern design.</p>
-      <a href="https://xzibitetok.github.io" target="_blank">View Live →</a>
-    </div>
+
   </div>
 </section>
+
 
 <!-- CONTACT SECTION -->
 <section id="contact" class="section-container">
