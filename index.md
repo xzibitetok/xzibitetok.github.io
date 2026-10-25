@@ -76,13 +76,13 @@ new Typed("#about-typed", {
     <!-- TECHNICAL SKILLS -->
     <h3>Technical Skills</h3>
     <ul class="resume-skills">
-      <li><strong>Data Analysis:</strong> Data cleaning, transformation, exploratory data analysis, statistical analysis, feature engineering and model evaluation.</li>
-      <li><strong>Programming & Databases:</strong> Python, R, SQL, Bash, MySQL and Oracle SQL Developer.</li>
-      <li><strong>Business Intelligence:</strong> Power BI, Excel, Tableau, Google Data Studio/Looker Studio, dashboard design and KPI reporting.</li>
-      <li><strong>Machine Learning:</strong> Classification, regression, clustering, PCA, predictive modelling, cross-validation and performance metrics.</li>
-      <li><strong>Text & Big Data:</strong> NLP, text mining, sentiment and emotion analysis, LDA topic modelling, Hadoop, HDFS, YARN, MapReduce and Hadoop Streaming.</li>
-      <li><strong>Cloud Technologies:</strong> AWS S3, DynamoDB, EC2, AMI, VPC and Apache HTTP Server.</li>
-      <li><strong>Business & Delivery:</strong> Stakeholder communication, requirements analysis, technical documentation, cost-benefit analysis and risk assessment.</li>
+      <li><strong>Data Analysis:</strong> Data cleaning and transformation, exploratory data analysis, statistical analysis, feature engineering, model evaluation and data interpretation.</li>
+      <li><strong>Programming & Databases:</strong> Python, R, SQL, Bash, MySQL, Oracle SQL Developer.</li>
+      <li><strong>Reporting and visualization:</strong> Microsoft Excel, Power BI, Tableau, Looker Studio, dashboard design, KPI reporting and stakeholder reporting.</li>
+      <li><strong>Advanced analytics:</strong> Spatial clustering, forecasting, classification, regression, clustering, PCA, predictive modelling and cross-validation.</li>
+      <li><strong>Data quality and delivery:</strong> Data-quality assessment, identification of data inconsistencies, record accuracy, data validation, technical documentation, requirements analysis and risk assessment.</li>
+      <li><strong>Exposure to Big data and cloud:</strong> Hadoop, HDFS, YARN, MapReduce and AWS services including S3, DynamoDB and EC2.</li>
+      <li><strong>Microsoft Office:</strong> Excel, Word, PowerPoint, Outlook and Microsoft Teams.</li>
     </ul>
 
     <!-- EDUCATION -->
@@ -92,8 +92,7 @@ new Typed("#about-typed", {
         <strong>MSc (Hons) Data Science</strong> — University of South Wales,
         United Kingdom | Sep 2025 – Oct 2026.
         <br>
-        Taught and project components completed; dissertation defended.
-        Final result pending.
+        Status: Academic requirements completed; formal award confirmation pending.
       </li>
     </ul>
 
