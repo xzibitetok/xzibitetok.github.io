@@ -147,7 +147,7 @@ new Typed("#about-typed", {
 
   <!-- FULL CV DOWNLOAD -->
   <div class="resume-button">
-    <a href="/assets/MYCV.pdf"
+    <a href="/assets/MYCV2.pdf"
        target="_blank"
        rel="noopener"
        class="btn">
