@@ -16,8 +16,7 @@ full-width: true
       <h4>Sep 2025 – Oct 2026</h4>
       <p>MSc Data Science, University of South Wales, UK</p>
       <p>
-        Taught and project components completed; dissertation defended.
-        Final result pending.
+        Status: Academic requirements completed; formal award confirmation pending.
       </p>
     </div>
 
